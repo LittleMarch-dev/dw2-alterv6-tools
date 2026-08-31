@@ -1,0 +1,4665 @@
+{
+  "Rookies": {
+    "Agumon": {
+      "level": "Rookie",
+      "type": "Vaccine",
+      "family": "Dragon",
+      "specialty": "None",
+      "growth": {
+        "hp": "High",
+        "mp": "Normal",
+        "attack": "Normal",
+        "defense": "High",
+        "speed": "Low"
+      },
+      "signature_skill": "Baby Flame",
+      "extra_skills": [],
+      "evolutions": [
+        { "dp": "0-2", "target": "Tyrannomon" },
+        { "dp": "3+", "target": "Greymon" }
+      ]
+    },
+    "Aruraumon": {
+      "level": "Rookie",
+      "type": "Data",
+      "family": "Plant",
+      "specialty": "Nature",
+      "growth": {
+        "hp": "Normal",
+        "mp": "High",
+        "attack": "Normal",
+        "defense": "Normal",
+        "speed": "Normal"
+      },
+      "signature_skill": "Poison Ivy",
+      "extra_skills": [],
+      "evolutions": [
+        { "dp": "0-2", "target": "Kogamon" },
+        { "dp": "3+", "target": "Zassoumon" }
+      ]
+    },
+    "Betamon": {
+      "level": "Rookie",
+      "type": "Virus",
+      "family": "Marine",
+      "specialty": "None",
+      "growth": {
+        "hp": "Normal",
+        "mp": "Normal",
+        "attack": "High",
+        "defense": "Normal",
+        "speed": "Normal"
+      },
+      "signature_skill": "Electric Shock",
+      "extra_skills": [],
+      "evolutions": [
+        { "dp": "0-1", "target": "Airdramon" },
+        { "dp": "2+", "target": "Seadramon" }
+      ]
+    },
+    "Biyomon": {
+      "level": "Rookie",
+      "type": "Vaccine",
+      "family": "Flying",
+      "specialty": "None",
+      "growth": {
+        "hp": "Normal",
+        "mp": "Normal",
+        "attack": "Normal",
+        "defense": "Normal",
+        "speed": "High"
+      },
+      "signature_skill": "Magical Fire",
+      "extra_skills": [],
+      "evolutions": [
+        { "dp": "0-1", "target": "Kokatorimon" },
+        { "dp": "2+", "target": "Birdramon" }
+      ]
+    },
+    "BlackAgumon": {
+      "level": "Rookie",
+      "type": "Virus",
+      "family": "Dragon",
+      "specialty": "None",
+      "growth": {
+        "hp": "High",
+        "mp": "Low",
+        "attack": "High",
+        "defense": "High",
+        "speed": "Low"
+      },
+      "signature_skill": "Baby Flame",
+      "extra_skills": [],
+      "evolutions": [
+        { "dp": "0-2", "target": "D-Tyrannomon" },
+        { "dp": "3+", "target": "Monochromon" }
+      ]
+    },
+    "BlackGabumon": {
+      "level": "Rookie",
+      "type": "Virus",
+      "family": "Beast",
+      "specialty": "None",
+      "growth": {
+        "hp": "High",
+        "mp": "High",
+        "attack": "Normal",
+        "defense": "Low",
+        "speed": "Normal"
+      },
+      "signature_skill": "Petit Fire",
+      "extra_skills": [
+        {
+          "skill": "Anti-Mixup",
+          "type": "Assist",
+          "locations": ["DialUp Desert"]
+        }
+      ],
+      "evolutions": [
+        { "dp": "0-2", "target": "DarkLizamon" },
+        { "dp": "3+", "target": "B-Garurumon" }
+      ]
+    },
+    "Candlemon": {
+      "level": "Rookie",
+      "type": "Data",
+      "family": "Junk",
+      "specialty": "Fire",
+      "growth": {
+        "hp": "Normal",
+        "mp": "High",
+        "attack": "High",
+        "defense": "Normal",
+        "speed": "Low"
+      },
+      "signature_skill": "Bonfire",
+      "extra_skills": [],
+      "evolutions": [
+        { "dp": "0-1", "target": "Bakemon" },
+        { "dp": "2+", "target": "Meramon" }
+      ]
+    },
+    "ClearAgumon": {
+      "level": "Rookie",
+      "type": "Vaccine",
+      "family": "Spirit",
+      "specialty": "None",
+      "growth": {
+        "hp": "High",
+        "mp": "Normal",
+        "attack": "Normal",
+        "defense": "Normal",
+        "speed": "Normal"
+      },
+      "signature_skill": "Toy Flame",
+      "extra_skills": [
+        {
+          "skill": "Small Heal",
+          "type": "Assist",
+          "locations": ["Conflux Cave"]
+        }
+      ],
+      "evolutions": [
+        { "dp": "0", "target": "Sukamon" },
+        { "dp": "1-2", "target": "Sorcerymon" },
+        { "dp": "3+", "target": "Tankmon" }
+      ]
+    },
+    "Crabmon": {
+      "level": "Rookie",
+      "type": "Data",
+      "family": "Marine",
+      "specialty": "Water",
+      "growth": {
+        "hp": "High",
+        "mp": "Normal",
+        "attack": "Normal",
+        "defense": "High",
+        "speed": "Low"
+      },
+      "signature_skill": "Scissor Execution",
+      "extra_skills": [],
+      "evolutions": [
+        { "dp": "0-2", "target": "Coelamon" },
+        { "dp": "3+", "target": "Gesomon" }
+      ]
+    },
+    "DemiDevimon": {
+      "level": "Rookie",
+      "type": "Virus",
+      "family": "Spirit",
+      "specialty": "Darkness",
+      "growth": {
+        "hp": "Low",
+        "mp": "High",
+        "attack": "High",
+        "defense": "Low",
+        "speed": "High"
+      },
+      "signature_skill": "Demi Dart",
+      "extra_skills": [],
+      "evolutions": [
+        { "dp": "0-2", "target": "Wizardmon" },
+        { "dp": "3+", "target": "Devimon" }
+      ]
+    },
+    "Dokunemon": {
+      "level": "Rookie",
+      "type": "Virus",
+      "family": "Insect",
+      "specialty": "Nature",
+      "growth": {
+        "hp": "Normal",
+        "mp": "Normal",
+        "attack": "Normal",
+        "defense": "Normal",
+        "speed": "High"
+      },
+      "signature_skill": "Electro Thread",
+      "extra_skills": [
+        {
+          "skill": "Invisibility",
+          "type": "Assist",
+          "locations": ["Native Forest"]
+        }
+      ],
+      "evolutions": [
+        { "dp": "0-2", "target": "SandYanmamon" },
+        { "dp": "3+", "target": "Flymon" }
+      ]
+    },
+    "Elecmon": {
+      "level": "Rookie",
+      "type": "Data",
+      "family": "Beast",
+      "specialty": "None",
+      "growth": {
+        "hp": "Normal",
+        "mp": "Normal",
+        "attack": "High",
+        "defense": "Normal",
+        "speed": "Normal"
+      },
+      "signature_skill": "Sparkling Thunder",
+      "extra_skills": [
+        {
+          "skill": "Paralyze Breath",
+          "type": "Attack",
+          "locations": ["Conflux Cave"]
+        }
+      ],
+      "evolutions": [
+        { "dp": "0-1", "target": "N-Drimogemon" },
+        { "dp": "2+", "target": "Leomon" }
+      ]
+    },
+    "Floramon": {
+      "level": "Rookie",
+      "type": "Data",
+      "family": "Plant",
+      "specialty": "Nature",
+      "growth": {
+        "hp": "Normal",
+        "mp": "Normal",
+        "attack": "Normal",
+        "defense": "Normal",
+        "speed": "High"
+      },
+      "signature_skill": "Allergy Shower",
+      "extra_skills": [],
+      "evolutions": [
+        { "dp": "0-1", "target": "RedVegimon" },
+        { "dp": "2+", "target": "Kiwimon" }
+      ]
+    },
+    "Gabumon": {
+      "level": "Rookie",
+      "type": "Data",
+      "family": "Beast",
+      "specialty": "None",
+      "growth": {
+        "hp": "High",
+        "mp": "High",
+        "attack": "Low",
+        "defense": "Normal",
+        "speed": "Normal"
+      },
+      "signature_skill": "Petit Fire",
+      "extra_skills": [],
+      "evolutions": [
+        { "dp": "0-2", "target": "Drimogemon" },
+        { "dp": "3+", "target": "Garurumon" }
+      ]
+    },
+    "Gazimon": {
+      "level": "Rookie",
+      "type": "Virus",
+      "family": "Beast",
+      "specialty": "Darkness",
+      "growth": {
+        "hp": "Normal",
+        "mp": "Normal",
+        "attack": "Normal",
+        "defense": "High",
+        "speed": "Normal"
+      },
+      "signature_skill": "Paralyze Breath",
+      "extra_skills": [],
+      "evolutions": [
+        { "dp": "0-2", "target": "Deltamon" },
+        { "dp": "3+", "target": "Gatomon" }
+      ]
+    },
+    "Gizamon": {
+      "level": "Rookie",
+      "type": "Virus",
+      "family": "Marine",
+      "specialty": "Water",
+      "growth": {
+        "hp": "High",
+        "mp": "Low",
+        "attack": "High",
+        "defense": "Normal",
+        "speed": "Normal"
+      },
+      "signature_skill": "Spiral Edge",
+      "extra_skills": [],
+      "evolutions": [
+        { "dp": "0-2", "target": "Tuskmon" },
+        { "dp": "3+", "target": "D-Tyrannomon" }
+      ]
+    },
+    "Goburimon": {
+      "level": "Rookie",
+      "type": "Virus",
+      "family": "Beast",
+      "specialty": "None",
+      "growth": {
+        "hp": "Low",
+        "mp": "Normal",
+        "attack": "High",
+        "defense": "High",
+        "speed": "Normal"
+      },
+      "signature_skill": "Gob Bolt",
+      "extra_skills": [
+        {
+          "skill": "Life Shield",
+          "type": "Interrupt",
+          "locations": [
+            "Conflux Cave",
+            "FSB Field",
+            "Client Coast",
+            "Protocol Pit",
+            "Core Tower"
+          ]
+        },
+        {
+          "skill": "Friendly Fire",
+          "type": "Attack",
+          "locations": ["Native Forest", "Tropical Jungle"]
+        }
+      ],
+      "evolutions": [
+        { "dp": "0-1", "target": "Nanimon" },
+        { "dp": "2+", "target": "Ogremon" }
+      ]
+    },
+    "Gomamon": {
+      "level": "Rookie",
+      "type": "Vaccine",
+      "family": "Marine",
+      "specialty": "Water",
+      "growth": {
+        "hp": "Low",
+        "mp": "High",
+        "attack": "Normal",
+        "defense": "High",
+        "speed": "Normal"
+      },
+      "signature_skill": "Marching Fishes",
+      "extra_skills": [],
+      "evolutions": [
+        { "dp": "0-2", "target": "Mojyamon" },
+        { "dp": "3+", "target": "Ikakkumon" }
+      ]
+    },
+    "Gotsumon": {
+      "level": "Rookie",
+      "type": "Data",
+      "family": "Spirit",
+      "specialty": "Machine",
+      "growth": {
+        "hp": "Normal",
+        "mp": "Normal",
+        "attack": "High",
+        "defense": "High",
+        "speed": "Low"
+      },
+      "signature_skill": "Angry Rock",
+      "extra_skills": [],
+      "evolutions": [
+        { "dp": "0-2", "target": "Icemon" },
+        { "dp": "3+", "target": "Cyclomon" }
+      ]
+    },
+    "Hagurumon": {
+      "level": "Rookie",
+      "type": "Virus",
+      "family": "Junk",
+      "specialty": "Machine",
+      "growth": {
+        "hp": "Normal",
+        "mp": "High",
+        "attack": "Normal",
+        "defense": "Normal",
+        "speed": "Normal"
+      },
+      "signature_skill": "Darkness Gear",
+      "extra_skills": [],
+      "evolutions": [
+        { "dp": "0-2", "target": "Raremon" },
+        { "dp": "3+", "target": "Guardromon" }
+      ]
+    },
+    "Kunemon": {
+      "level": "Rookie",
+      "type": "Virus",
+      "family": "Insect",
+      "specialty": "Nature",
+      "growth": {
+        "hp": "Low",
+        "mp": "Normal",
+        "attack": "High",
+        "defense": "Low",
+        "speed": "High"
+      },
+      "signature_skill": "Electro Thread",
+      "extra_skills": [],
+      "evolutions": [
+        { "dp": "0-3", "target": "Flymon" },
+        { "dp": "4+", "target": "Kuwagamon" }
+      ]
+    },
+    "ModokiBetamon": {
+      "level": "Rookie",
+      "type": "Data",
+      "family": "Marine",
+      "specialty": "Nature",
+      "growth": {
+        "hp": "Low",
+        "mp": "High",
+        "attack": "Normal",
+        "defense": "High",
+        "speed": "Normal"
+      },
+      "signature_skill": "Electric Shock",
+      "extra_skills": [
+        {
+          "skill": "Anti-Freeze",
+          "type": "Assist",
+          "locations": ["Initial Cave", "UEFI Uplands", "Core Tower"]
+        }
+      ],
+      "evolutions": [
+        { "dp": "0-2", "target": "Numemon" },
+        { "dp": "3+", "target": "MoriShellmon" }
+      ]
+    },
+    "Muchomon": {
+      "level": "Rookie",
+      "type": "Data",
+      "family": "Flying",
+      "specialty": "Nature",
+      "growth": {
+        "hp": "High",
+        "mp": "Normal",
+        "attack": "Normal",
+        "defense": "Normal",
+        "speed": "Normal"
+      },
+      "signature_skill": "Super Slap",
+      "extra_skills": [
+        {
+          "skill": "Small Heal",
+          "type": "Assist",
+          "locations": ["Registry Roost", "Codec Cavern", "Core Tower"]
+        }
+      ],
+      "evolutions": [
+        { "dp": "0-1", "target": "Ikkakumon" },
+        { "dp": "2+", "target": "Akatorimon" }
+      ]
+    },
+    "Mushroomon": {
+      "level": "Rookie",
+      "type": "Virus",
+      "family": "Plant",
+      "specialty": "Nature",
+      "growth": {
+        "hp": "High",
+        "mp": "Normal",
+        "attack": "Normal",
+        "defense": "High",
+        "speed": "Low"
+      },
+      "signature_skill": "Allergy Shower",
+      "extra_skills": [],
+      "evolutions": [
+        { "dp": "0-2", "target": "Ninjamon" },
+        { "dp": "3+", "target": "Woodmon" }
+      ]
+    },
+    "Otamamon": {
+      "level": "Rookie",
+      "type": "Virus",
+      "family": "Marine",
+      "specialty": "Water",
+      "growth": {
+        "hp": "Normal",
+        "mp": "High",
+        "attack": "Low",
+        "defense": "Normal",
+        "speed": "High"
+      },
+      "signature_skill": "Stun Bubble",
+      "extra_skills": [],
+      "evolutions": [
+        { "dp": "0-2", "target": "Gekomon" },
+        { "dp": "3+", "target": "Tortamon" }
+      ]
+    },
+    "Palmon": {
+      "level": "Rookie",
+      "type": "Data",
+      "family": "Plant",
+      "specialty": "Nature",
+      "growth": {
+        "hp": "Normal",
+        "mp": "High",
+        "attack": "Low",
+        "defense": "High",
+        "speed": "Normal"
+      },
+      "signature_skill": "Poison Ivy",
+      "extra_skills": [],
+      "evolutions": [
+        { "dp": "0-1", "target": "Vegimon" },
+        { "dp": "2+", "target": "Togemon" }
+      ]
+    },
+    "Patamon": {
+      "level": "Rookie",
+      "type": "Data",
+      "family": "Spirit",
+      "specialty": "None",
+      "growth": {
+        "hp": "Normal",
+        "mp": "Normal",
+        "attack": "Normal",
+        "defense": "High",
+        "speed": "Normal"
+      },
+      "signature_skill": "Air Shot",
+      "extra_skills": [],
+      "evolutions": [
+        { "dp": "0-2", "target": "Centarumon" },
+        { "dp": "3+", "target": "Angemon" }
+      ]
+    },
+    "Penguinmon": {
+      "level": "Rookie",
+      "type": "Vaccine",
+      "family": "Marine",
+      "specialty": "Water",
+      "growth": {
+        "hp": "Normal",
+        "mp": "Normal",
+        "attack": "Normal",
+        "defense": "High",
+        "speed": "Normal"
+      },
+      "signature_skill": "Super Slap",
+      "extra_skills": [],
+      "evolutions": [
+        { "dp": "0-2", "target": "Gururumon" },
+        { "dp": "3+", "target": "Dolphmon" }
+      ]
+    },
+    "Psychemon": {
+      "level": "Rookie",
+      "type": "Data",
+      "family": "Beast",
+      "specialty": "None",
+      "growth": {
+        "hp": "Normal",
+        "mp": "Normal",
+        "attack": "High",
+        "defense": "Normal",
+        "speed": "Normal"
+      },
+      "signature_skill": "Colorful Spark",
+      "extra_skills": [],
+      "evolutions": [
+        { "dp": "0-1", "target": "P-Sukamon" },
+        { "dp": "2+", "target": "Gururumon" }
+      ]
+    },
+    "S-ToyAgumon": {
+      "level": "Rookie",
+      "type": "Virus",
+      "family": "Junk",
+      "specialty": "None",
+      "growth": {
+        "hp": "Low",
+        "mp": "High",
+        "attack": "High",
+        "defense": "High",
+        "speed": "Low"
+      },
+      "signature_skill": "Toy Flame",
+      "extra_skills": [
+        {
+          "skill": "Patch-Up",
+          "type": "Assist",
+          "locations": ["FSB Field", "Core Tower"]
+        }
+      ],
+      "evolutions": [
+        { "dp": "0-1", "target": "Guardromon" },
+        { "dp": "2+", "target": "Deltamon" }
+      ]
+    },
+    "Shamamon": {
+      "level": "Rookie",
+      "type": "Virus",
+      "family": "Beast",
+      "specialty": "Nature",
+      "growth": {
+        "hp": "Low",
+        "mp": "High",
+        "attack": "Normal",
+        "defense": "High",
+        "speed": "Normal"
+      },
+      "signature_skill": "Shama Bomb",
+      "extra_skills": [
+        {
+          "skill": "Gob Bolt",
+          "type": "Attack",
+          "locations": ["Conflux Cave"]
+        }
+      ],
+      "evolutions": [
+        { "dp": "0-2", "target": "Apemon" },
+        { "dp": "3+", "target": "Fugamon" }
+      ]
+    },
+    "SnowAgumon": {
+      "level": "Rookie",
+      "type": "Vaccine",
+      "family": "Spirit",
+      "specialty": "Water",
+      "growth": {
+        "hp": "High",
+        "mp": "High",
+        "attack": "Normal",
+        "defense": "Normal",
+        "speed": "Low"
+      },
+      "signature_skill": "Hail Storm",
+      "extra_skills": [],
+      "evolutions": [
+        { "dp": "0-2", "target": "ShimaUnimon" },
+        { "dp": "3+", "target": "IceDevimon" }
+      ]
+    },
+    "SnowGoburimon": {
+      "level": "Rookie",
+      "type": "Virus",
+      "family": "Beast",
+      "specialty": "Water",
+      "growth": {
+        "hp": "Low",
+        "mp": "High",
+        "attack": "High",
+        "defense": "Normal",
+        "speed": "Normal"
+      },
+      "signature_skill": "Gob Bolt",
+      "extra_skills": [
+        {
+          "skill": "Life Shield",
+          "type": "Interrupt",
+          "locations": ["Conflux Cave"]
+        }
+      ],
+      "evolutions": [
+        { "dp": "0-2", "target": "Hyogamon" },
+        { "dp": "3+", "target": "Frigimon" }
+      ]
+    },
+    "Solarmon": {
+      "level": "Rookie",
+      "type": "Vaccine",
+      "family": "Junk",
+      "specialty": "Fire",
+      "growth": {
+        "hp": "Low",
+        "mp": "Low",
+        "attack": "High",
+        "defense": "High",
+        "speed": "High"
+      },
+      "signature_skill": "Sol Calor",
+      "extra_skills": [
+        {
+          "skill": "Friendly Fire",
+          "type": "Attack",
+          "locations": [
+            "Registry Roost",
+            "TCP Terrace",
+            "Protocol Pit",
+            "Core Tower"
+          ]
+        }
+      ],
+      "evolutions": [
+        { "dp": "0-2", "target": "FlareLizamon" },
+        { "dp": "3+", "target": "Clockmon" }
+      ]
+    },
+    "Syakomon": {
+      "level": "Rookie",
+      "type": "Virus",
+      "family": "Marine",
+      "specialty": "Water",
+      "growth": {
+        "hp": "High",
+        "mp": "High",
+        "attack": "Low",
+        "defense": "High",
+        "speed": "Low"
+      },
+      "signature_skill": "Black Pearl",
+      "extra_skills": [
+        {
+          "skill": "Stun Bubble",
+          "type": "Attack",
+          "locations": ["IDS Ice Cave"]
+        },
+        {
+          "skill": "Small Heal",
+          "type": "Assist",
+          "locations": ["IDS Ice Cave"]
+        }
+      ],
+      "evolutions": [
+        { "dp": "0-1", "target": "Shellmon" },
+        { "dp": "2+", "target": "Octomon" }
+      ]
+    },
+    "Tapirmon": {
+      "level": "Rookie",
+      "type": "Vaccine",
+      "family": "Beast",
+      "specialty": "Darkness",
+      "growth": {
+        "hp": "Normal",
+        "mp": "High",
+        "attack": "Normal",
+        "defense": "Normal",
+        "speed": "Normal"
+      },
+      "signature_skill": "Nightmare Syndrome",
+      "extra_skills": [],
+      "evolutions": [
+        { "dp": "0-1", "target": "Unimon" },
+        { "dp": "2+", "target": "Apemon" }
+      ]
+    },
+    "Tentomon": {
+      "level": "Rookie",
+      "type": "Vaccine",
+      "family": "Insect",
+      "specialty": "Nature",
+      "growth": {
+        "hp": "Normal",
+        "mp": "Normal",
+        "attack": "High",
+        "defense": "Normal",
+        "speed": "Normal"
+      },
+      "signature_skill": "Petit Thunder",
+      "extra_skills": [],
+      "evolutions": [
+        { "dp": "0-1", "target": "Yanmamon" },
+        { "dp": "2+", "target": "Kabuterimon" }
+      ]
+    },
+    "ToyAgumon": {
+      "level": "Rookie",
+      "type": "Vaccine",
+      "family": "Spirit",
+      "specialty": "None",
+      "growth": {
+        "hp": "High",
+        "mp": "Normal",
+        "attack": "Low",
+        "defense": "High",
+        "speed": "Normal"
+      },
+      "signature_skill": "Toy Flame",
+      "extra_skills": [],
+      "evolutions": [
+        { "dp": "0-2", "target": "Tankmon" },
+        { "dp": "3+", "target": "Starmon" }
+      ]
+    },
+    "Tsukaimon": {
+      "level": "Rookie",
+      "type": "Virus",
+      "family": "Spirit",
+      "specialty": "Darkness",
+      "growth": {
+        "hp": "High",
+        "mp": "Normal",
+        "attack": "Normal",
+        "defense": "Normal",
+        "speed": "Normal"
+      },
+      "signature_skill": "Air Shot",
+      "extra_skills": [],
+      "evolutions": [
+        { "dp": "0-2", "target": "Soulmon" },
+        { "dp": "3+", "target": "Devidramon" }
+      ]
+    },
+    "Veemon": {
+      "level": "Rookie",
+      "type": "Vaccine",
+      "Family": "Dragon",
+      "specialty": "None",
+      "growth": {
+        "hp": "Normal",
+        "mp": "Low",
+        "attack": "High",
+        "defense": "Normal",
+        "speed": "High"
+      },
+      "signature_skill": "Vee Headbutt",
+      "extra_skills": [],
+      "evolutions": [
+        { "dp": "0-2", "target": "Veedramon" },
+        { "dp": "3+", "target": "Flamedramon" }
+      ]
+    }
+  },
+  "Champions": {
+    "Airdramon": {
+      "level": "Champion",
+      "type": "Vaccine",
+      "family": "Flying",
+      "specialty": "None",
+      "growth": {
+        "hp": "Low",
+        "mp": "Normal",
+        "attack": "Normal",
+        "defense": "Normal",
+        "speed": "High"
+      },
+      "signature_skill": "Spinning Needle",
+      "extra_skills": [],
+      "evolutions": [
+        { "dp": "0-3", "target": "AeroVeedramon" },
+        { "dp": "4+", "target": "Megadramon" }
+      ]
+    },
+    "Akatorimon": {
+      "level": "Champion",
+      "type": "Data",
+      "family": "Flying",
+      "specialty": "Nature",
+      "growth": {
+        "hp": "Normal",
+        "mp": "Normal",
+        "attack": "Normal",
+        "defense": "Low",
+        "speed": "High"
+      },
+      "signature_skill": "Petri-Fire",
+      "extra_skills": [
+        {
+          "skill": "Turbo Rooster",
+          "type": "Assist",
+          "locations": [
+            "Readme Ruins",
+            "Coastal Depot",
+            "Titan Bunker",
+            "Native Forest",
+            "Misty Trees",
+            "Factorial Town",
+            "Core Tower"
+          ]
+        }
+      ],
+      "evolutions": [
+        { "dp": "0-2", "target": "Garudamon" },
+        { "dp": "3+", "target": "Piximon" }
+      ]
+    },
+    "Angemon": {
+      "level": "Champion",
+      "type": "Vaccine",
+      "family": "Spirit",
+      "specialty": "None",
+      "growth": {
+        "hp": "Normal",
+        "mp": "Low",
+        "attack": "High",
+        "defense": "Normal",
+        "speed": "Normal"
+      },
+      "signature_skill": "Heaven's Knuckle",
+      "extra_skills": [],
+      "evolutions": [{ "dp": "0+", "target": "MagnaAngemon" }]
+    },
+    "Apemon": {
+      "level": "Champion",
+      "type": "Vaccine",
+      "family": "Beast",
+      "specialty": "Nature",
+      "growth": {
+        "hp": "Low",
+        "mp": "High",
+        "attack": "Normal",
+        "defense": "Low",
+        "speed": "High"
+      },
+      "signature_skill": "Dohatsuten",
+      "extra_skills": [],
+      "evolutions": [
+        { "dp": "0-2", "target": "WereGarurumon" },
+        { "dp": "3+", "target": "Mammothmon" }
+      ]
+    },
+    "B-Garurumon": {
+      "level": "Champion",
+      "type": "Virus",
+      "family": "Beast",
+      "specialty": "None",
+      "growth": {
+        "hp": "High",
+        "mp": "Normal",
+        "attack": "Normal",
+        "defense": "Low",
+        "speed": "Normal"
+      },
+      "signature_skill": "Fox Fire",
+      "extra_skills": [
+        {
+          "skill": "Fossil Bite",
+          "type": "Attack",
+          "locations": ["Deserted Fort", "Core Tower"]
+        },
+        {
+          "skill": "Mad Coat",
+          "type": "Assist",
+          "locations": ["Deserted Fort", "Core Tower"]
+        },
+        {
+          "skill": "Darkness Ray",
+          "type": "Assist",
+          "locations": ["Beetleland"]
+        }
+      ],
+      "evolutions": [{ "dp": "0+", "target": "BW-Garurumon" }]
+    },
+    "Bakemon": {
+      "level": "Champion",
+      "type": "Virus",
+      "family": "Spirit",
+      "specialty": "Darkness",
+      "growth": {
+        "hp": "Low",
+        "mp": "High",
+        "attack": "High",
+        "defense": "Low",
+        "speed": "Normal"
+      },
+      "signature_skill": "Death Charm",
+      "extra_skills": [
+        {
+          "skill": "Death Claw",
+          "type": "Attack",
+          "locations": ["IDS Ice Cave", "Titan Bunker", "Freezeland"]
+        },
+        {
+          "skill": "Dark Inferno",
+          "type": "Assist",
+          "locations": ["IDS Ice Cave", "Titan Bunker", "Freezeland"]
+        },
+        {
+          "skill": "Triplex Force",
+          "type": "Attack",
+          "locations": ["Misty Trees", "GreyLord Manor"]
+        }
+      ],
+      "evolutions": [
+        { "dp": "0-3", "target": "Pumpkinmon" },
+        { "dp": "4+", "target": "Phantomon" }
+      ]
+    },
+    "Birdramon": {
+      "level": "Champion",
+      "type": "Vaccine",
+      "family": "Flying",
+      "specialty": "Fire",
+      "growth": {
+        "hp": "Normal",
+        "mp": "Low",
+        "attack": "Normal",
+        "defense": "Normal",
+        "speed": "High"
+      },
+      "signature_skill": "Meteor Wing",
+      "extra_skills": [
+        {
+          "skill": "Mega Flame",
+          "type": "Attack",
+          "locations": [
+            "QoS Quarry",
+            "Titan Bunker",
+            "Great Canyon",
+            "Core Tower"
+          ]
+        }
+      ],
+      "evolutions": [{ "dp": "0+", "target": "Garudamon" }]
+    },
+    "Centarumon": {
+      "level": "Champion",
+      "type": "Data",
+      "family": "Beast",
+      "specialty": "Machine",
+      "growth": {
+        "hp": "Normal",
+        "mp": "Low",
+        "attack": "High",
+        "defense": "Normal",
+        "speed": "Normal"
+      },
+      "signature_skill": "Hunting Cannon",
+      "extra_skills": [
+        {
+          "skill": "Mech Ray",
+          "type": "Assist",
+          "locations": ["Readme Ruins"]
+        }
+      ],
+      "evolutions": [
+        { "dp": "0-2", "target": "Andromon" },
+        { "dp": "3-4", "target": "Giromon" },
+        { "dp": "5+", "target": "Andromon" }
+      ]
+    },
+    "Clockmon": {
+      "level": "Champion",
+      "type": "Data",
+      "family": "Junk",
+      "specialty": "Machine",
+      "growth": {
+        "hp": "Normal",
+        "mp": "Low",
+        "attack": "High",
+        "defense": "High",
+        "speed": "Low"
+      },
+      "signature_skill": "Chrono Breaker",
+      "extra_skills": [
+        {
+          "skill": "Darkness Gear",
+          "type": "Attack",
+          "locations": ["Deserted Fort", "Core Tower"]
+        }
+      ],
+      "evolutions": [{ "dp": "0+", "target": "Tinmon" }]
+    },
+    "Coelamon": {
+      "level": "Champion",
+      "type": "Data",
+      "family": "Marine",
+      "specialty": "Water",
+      "growth": {
+        "hp": "Low",
+        "mp": "High",
+        "attack": "Normal",
+        "defense": "Normal",
+        "speed": "Normal"
+      },
+      "signature_skill": "Fossil Bite",
+      "extra_skills": [],
+      "evolutions": [
+        { "dp": "0-2", "target": "Dagomon" },
+        { "dp": "3+", "target": "Scorpiomon" }
+      ]
+    },
+    "Cyclomon": {
+      "level": "Champion",
+      "type": "Virus",
+      "family": "Dragon",
+      "specialty": "None",
+      "growth": {
+        "hp": "Normal",
+        "mp": "Low",
+        "attack": "High",
+        "defense": "High",
+        "speed": "Low"
+      },
+      "signature_skill": "Hyper Heat",
+      "extra_skills": [
+        {
+          "skill": "Scissoer Arm",
+          "type": "Attack",
+          "locations": ["PCI Preserve", "Core Tower"]
+        },
+        {
+          "skill": "Crimson Nail",
+          "type": "Attack",
+          "locations": ["Undersea Base", "Coastal Depot", "Core Tower"]
+        },
+        {
+          "skill": "Hydro Pressure",
+          "type": "Attack",
+          "locations": ["Undersea Base", "Coastal Depot", "Core Tower"]
+        }
+      ],
+      "evolutions": [
+        { "dp": "0-2", "target": "ME-Tyrannomon" },
+        { "dp": "3-4", "target": "MA-Tyrannomon" },
+        { "dp": "5+", "target": "WaruSeadramon" }
+      ]
+    },
+    "D-Tyrannomon": {
+      "level": "Champion",
+      "type": "Virus",
+      "family": "Dragon",
+      "specialty": "Darkness",
+      "growth": {
+        "hp": "High",
+        "mp": "Low",
+        "attack": "High",
+        "defense": "Normal",
+        "speed": "Low"
+      },
+      "signature_skill": "Fire Blast",
+      "extra_skills": [],
+      "evolutions": [
+        { "dp": "0-2", "target": "ME-Tyrannomon" },
+        { "dp": "3-4", "target": "Gigadramon" },
+        { "dp": "5+", "target": "SkullGreymon" }
+      ]
+    },
+    "DarkLizamon": {
+      "level": "Champion",
+      "type": "Virus",
+      "family": "Dragon",
+      "specialty": "Darkness",
+      "growth": {
+        "hp": "Low",
+        "mp": "High",
+        "attack": "Normal",
+        "defense": "Normal",
+        "speed": "Normal"
+      },
+      "signature_skill": "Hyper Heat",
+      "extra_skills": [
+        {
+          "skill": "Darkness Ray",
+          "type": "Assist",
+          "locations": ["PCI Preserve"]
+        },
+        {
+          "skill": "Fire Blast",
+          "type": "Attack",
+          "locations": ["QoS Quarry", "Core Tower"]
+        },
+        {
+          "skill": "Dark Inferno",
+          "type": "Assist",
+          "locations": ["QoS Quarry", "Beetleland", "Core Tower"]
+        },
+        {
+          "skill": "Hazard Breath",
+          "type": "Interrupt",
+          "locations": ["Misty Trees", "GreyLord Manor"]
+        },
+        {
+          "skill": "Petri-Fire",
+          "type": "Attack",
+          "locations": ["Beetleland"]
+        }
+      ],
+      "evolutions": [
+        { "dp": "0-3", "target": "ExTyrannomon" },
+        { "dp": "4+", "target": "Gigadramon" }
+      ]
+    },
+    "Deltamon": {
+      "level": "Champion",
+      "type": "Virus",
+      "family": "Dragon",
+      "specialty": "Darkness",
+      "growth": {
+        "hp": "High",
+        "mp": "Low",
+        "attack": "Normal",
+        "defense": "High",
+        "speed": "Low"
+      },
+      "signature_skill": "Triplex Force",
+      "extra_skills": [],
+      "evolutions": [
+        { "dp": "0-2", "target": "MetalGreymon" },
+        { "dp": "3-4", "target": "Datamon" },
+        { "dp": "5+", "target": "Kimeramon" }
+      ]
+    },
+    "Devidramon": {
+      "level": "Champion",
+      "type": "Virus",
+      "family": "Dragon",
+      "specialty": "Darkness",
+      "growth": {
+        "hp": "Low",
+        "mp": "Low",
+        "attack": "High",
+        "defense": "Normal",
+        "speed": "High"
+      },
+      "signature_skill": "Crimson Nail",
+      "extra_skills": [],
+      "evolutions": [
+        { "dp": "0-2", "target": "Gigadramon" },
+        { "dp": "3-4", "target": "Megadramon" },
+        { "dp": "5+", "target": "Kimeramon" }
+      ]
+    },
+    "Devimon": {
+      "level": "Champion",
+      "type": "Virus",
+      "family": "Spirit",
+      "specialty": "Darkness",
+      "growth": {
+        "hp": "Normal",
+        "mp": "High",
+        "attack": "Normal",
+        "defense": "Low",
+        "speed": "Normal"
+      },
+      "signature_skill": "Death Claw",
+      "extra_skills": [],
+      "evolutions": [{ "dp": "0+", "target": "Myotismon" }]
+    },
+    "Dolphmon": {
+      "level": "Champion",
+      "type": "Vaccine",
+      "family": "Marine",
+      "specialty": "Water",
+      "growth": {
+        "hp": "Normal",
+        "mp": "Normal",
+        "attack": "Normal",
+        "defense": "Low",
+        "speed": "High"
+      },
+      "signature_skill": "Pulse Blast",
+      "extra_skills": [],
+      "evolutions": [{ "dp": "0+", "target": "Whamon" }]
+    },
+    "Drimogemon": {
+      "level": "Champion",
+      "type": "Data",
+      "family": "Beast",
+      "specialty": "Machine",
+      "growth": {
+        "hp": "Normal",
+        "mp": "Normal",
+        "attack": "High",
+        "defense": "Normal",
+        "speed": "Low"
+      },
+      "signature_skill": "Drill Spin",
+      "extra_skills": [
+        {
+          "skill": "Flame Hit",
+          "type": "Assist",
+          "locations": ["Factorial Town", "Mt. Infinity"]
+        }
+      ],
+      "evolutions": [
+        { "dp": "0-3", "target": "Meteormon" },
+        { "dp": "4+", "target": "MetalGreymon" }
+      ]
+    },
+    "Flamedramon": {
+      "level": "Champion",
+      "type": "Vaccine",
+      "family": "Flying",
+      "specialty": "Fire",
+      "growth": {
+        "hp": "Normal",
+        "mp": "Low",
+        "attack": "High",
+        "defense": "Normal",
+        "speed": "Normal"
+      },
+      "signature_skill": "Fire Rocket",
+      "extra_skills": [],
+      "evolutions": [{ "dp": "0+", "target": "Raidramon" }]
+    },
+    "FlareLizamon": {
+      "level": "Champion",
+      "type": "Data",
+      "family": "Dragon",
+      "specialty": "Fire",
+      "growth": {
+        "hp": "Normal",
+        "mp": "High",
+        "attack": "Normal",
+        "defense": "Low",
+        "speed": "Normal"
+      },
+      "signature_skill": "Blaze Blast",
+      "extra_skills": [
+        {
+          "skill": "Hyper Heat",
+          "type": "Attack",
+          "locations": [
+            "PCI Preserve",
+            "QoS Quarry",
+            "Titan Bunker",
+            "Native Forest",
+            "Misty Trees",
+            "Factorial Town",
+            "Core Tower"
+          ]
+        },
+        {
+          "skill": "Meteor Squall",
+          "type": "Counter",
+          "locations": ["PCI Preserve", "Core Tower"]
+        },
+        {
+          "skill": "Blaze Buster",
+          "type": "Assist",
+          "locations": ["QoS Quarry", "Titan Bunker", "Core Tower"]
+        },
+        {
+          "skill": "Fire Blast",
+          "type": "Attack",
+          "locations": ["Tropical Jungle", "Great Canyon", "Factorial Town"]
+        }
+      ],
+      "evolutions": [
+        { "dp": "0-3", "target": "Megadramon" },
+        { "dp": "4+", "target": "ME-Tyrannomon" }
+      ]
+    },
+    "Flymon": {
+      "level": "Champion",
+      "type": "Virus",
+      "family": "Insect",
+      "specialty": "Nature",
+      "growth": {
+        "hp": "Low",
+        "mp": "Normal",
+        "attack": "High",
+        "defense": "Low",
+        "speed": "High"
+      },
+      "signature_skill": "Deadly Sting",
+      "extra_skills": [],
+      "evolutions": [
+        { "dp": "0-5", "target": "Cherrymon" },
+        { "dp": "6+", "target": "Okuwamon" }
+      ]
+    },
+    "Frigimon": {
+      "level": "Champion",
+      "type": "Vaccine",
+      "family": "Beast",
+      "specialty": "Water",
+      "growth": {
+        "hp": "High",
+        "mp": "Normal",
+        "attack": "Low",
+        "defense": "High",
+        "speed": "Low"
+      },
+      "signature_skill": "Sub Zero Ice Punch",
+      "extra_skills": [
+        {
+          "skill": "Ice Arrow",
+          "type": "Attack",
+          "locations": ["Freezeland"]
+        }
+      ],
+      "evolutions": [
+        { "dp": "0-3", "target": "Monzaemon" },
+        { "dp": "4+", "target": "Mamemon" }
+      ]
+    },
+    "Fugamon": {
+      "level": "Champion",
+      "type": "Virus",
+      "family": "Beast",
+      "specialty": "None",
+      "growth": {
+        "hp": "Low",
+        "mp": "High",
+        "attack": "Normal",
+        "defense": "Normal",
+        "speed": "Normal"
+      },
+      "signature_skill": "Evil Hurricane",
+      "extra_skills": [],
+      "evolutions": [
+        { "dp": "0-1", "target": "WaruMonzaemon" },
+        { "dp": "2-3", "target": "Etemon" },
+        { "dp": "4+", "target": "BW-Garurumon" }
+      ]
+    },
+    "Garurumon": {
+      "level": "Champion",
+      "type": "Vaccine",
+      "family": "Beast",
+      "specialty": "None",
+      "growth": {
+        "hp": "Low",
+        "mp": "Normal",
+        "attack": "High",
+        "defense": "Normal",
+        "speed": "Normal"
+      },
+      "signature_skill": "Fox Fire",
+      "extra_skills": [],
+      "evolutions": [{ "dp": "0+", "target": "WereGarurumon" }]
+    },
+    "Gatomon": {
+      "level": "Champion",
+      "type": "Vaccine",
+      "family": "Spirit",
+      "specialty": "None",
+      "growth": {
+        "hp": "Normal",
+        "mp": "High",
+        "attack": "Low",
+        "defense": "Normal",
+        "speed": "Normal"
+      },
+      "signature_skill": "Cat Punch",
+      "extra_skills": [
+        {
+          "skill": "Ice Arrow",
+          "type": "Attack",
+          "locations": ["Freezeland"]
+        }
+      ],
+      "evolutions": [{ "dp": "0+", "target": "Angewomon" }]
+    },
+    "Gekomon": {
+      "level": "Champion",
+      "type": "Virus",
+      "family": "Marine",
+      "specialty": "Water",
+      "growth": {
+        "hp": "Normal",
+        "mp": "High",
+        "attack": "Low",
+        "defense": "Normal",
+        "speed": "Normal"
+      },
+      "signature_skill": "Sonic Crusher",
+      "extra_skills": [
+        {
+          "skill": "Panic Wave",
+          "type": "Assist",
+          "locations": ["Undersea Base", "Coastal Depot", "Core Tower"]
+        }
+      ],
+      "evolutions": [{ "dp": "0+", "target": "ShogunGekomon" }]
+    },
+    "Gesomon": {
+      "level": "Champion",
+      "type": "Virus",
+      "family": "Marine",
+      "specialty": "Water",
+      "growth": {
+        "hp": "Low",
+        "mp": "Low",
+        "attack": "High",
+        "defense": "Normal",
+        "speed": "High"
+      },
+      "signature_skill": "Deadly Shade",
+      "extra_skills": [],
+      "evolutions": [{ "dp": "0+", "target": "MarineDevimon" }]
+    },
+    "Greymon": {
+      "level": "Champion",
+      "type": "Vaccine",
+      "family": "Dragon",
+      "specialty": "None",
+      "growth": {
+        "hp": "Normal",
+        "mp": "Low",
+        "attack": "High",
+        "defense": "High",
+        "speed": "Low"
+      },
+      "signature_skill": "Mega Flame",
+      "extra_skills": [
+        {
+          "skill": "Mega Heal",
+          "type": "Assist",
+          "locations": ["PCI Preserve", "Core Tower"]
+        },
+        {
+          "skill": "Evil Hurricane",
+          "type": "Counter",
+          "locations": ["Great Canyon"]
+        }
+      ],
+      "evolutions": [{ "dp": "0+", "target": "MetalGreymon" }]
+    },
+    "Guardromon": {
+      "level": "Champion",
+      "type": "Virus",
+      "family": "Junk",
+      "specialty": "Machine",
+      "growth": {
+        "hp": "Normal",
+        "mp": "Low",
+        "attack": "Low",
+        "defense": "High",
+        "speed": "High"
+      },
+      "signature_skill": "Destruction Grenade",
+      "extra_skills": [
+        {
+          "skill": "Mech Ray",
+          "type": "Assist",
+          "locations": [
+            "Factorial Town",
+            "Mt. Infinity",
+            "Staog Shrine",
+            "Rootkit Rift",
+            "Core Tower",
+            "Chaos Tower"
+          ]
+        }
+      ],
+      "evolutions": [
+        { "dp": "0-2", "target": "Datamon" },
+        { "dp": "3-4", "target": "Andromon" },
+        { "dp": "5+", "target": "Datamon" }
+      ]
+    },
+    "Gururumon": {
+      "level": "Champion",
+      "type": "Vaccine",
+      "family": "Beast",
+      "specialty": "None",
+      "growth": {
+        "hp": "Normal",
+        "mp": "Normal",
+        "attack": "Normal",
+        "defense": "Low",
+        "speed": "High"
+      },
+      "signature_skill": "Fox Fire",
+      "extra_skills": [],
+      "evolutions": [
+        { "dp": "0-2", "target": "WaruMonzaemon" },
+        { "dp": "3+", "target": "BlueMeramon" }
+      ]
+    },
+    "Hyogamon": {
+      "level": "Champion",
+      "type": "Virus",
+      "family": "Beast",
+      "specialty": "Water",
+      "growth": {
+        "hp": "Normal",
+        "mp": "Normal",
+        "attack": "High",
+        "defense": "Normal",
+        "speed": "Low"
+      },
+      "signature_skill": "Icicle Shot",
+      "extra_skills": [
+        {
+          "skill": "Ice Arrow",
+          "type": "Attack",
+          "locations": ["IDS Ice Cave", "Titan Bunker", "Freezeland"]
+        }
+      ],
+      "evolutions": [
+        { "dp": "0-2", "target": "WaruMonzaemon" },
+        { "dp": "3-4", "target": "Zudomon" },
+        { "dp": "5+", "target": "WaruMonzaemon" }
+      ]
+    },
+    "IceDevimon": {
+      "level": "Champion",
+      "type": "Virus",
+      "family": "Spirit",
+      "specialty": "Water",
+      "growth": {
+        "hp": "Low",
+        "mp": "High",
+        "attack": "Normal",
+        "defense": "Normal",
+        "speed": "Normal"
+      },
+      "signature_skill": "Death Claw",
+      "extra_skills": [
+        {
+          "skill": "Ice Arrow",
+          "type": "Attack",
+          "locations": ["IDS Ice Cave", "Titan Bunker", "Freezeland"]
+        }
+      ],
+      "evolutions": [
+        { "dp": "0-2", "target": "Dagomon" },
+        { "dp": "3-4", "target": "MarineDevimon" },
+        { "dp": "5+", "target": "Myotismon" }
+      ]
+    },
+    "Icemon": {
+      "level": "Champion",
+      "type": "Data",
+      "family": "Spirit",
+      "specialty": "Water",
+      "growth": {
+        "hp": "Normal",
+        "mp": "Low",
+        "attack": "High",
+        "defense": "High",
+        "speed": "Low"
+      },
+      "signature_skill": "Ice Arrow",
+      "extra_skills": [
+        {
+          "skill": "Panzer Knuckle",
+          "type": "Attack",
+          "locations": ["IDS Ice Cave"]
+        },
+        {
+          "skill": "Solid State",
+          "type": "Assist",
+          "locations": ["IDS Ice Cave", "Freezeland", "Factorial Town"]
+        },
+        {
+          "skill": "Hydro Pressure",
+          "type": "Attack",
+          "locations": ["Freezeland", "Factorial Town"]
+        }
+      ],
+      "evolutions": [
+        { "dp": "0-3", "target": "Meteormon" },
+        { "dp": "4-7", "target": "Panjyamon" },
+        { "dp": "8+", "target": "Meteormon" }
+      ]
+    },
+    "Ikkakumon": {
+      "level": "Champion",
+      "type": "Vaccine",
+      "family": "Marine",
+      "specialty": "Water",
+      "growth": {
+        "hp": "High",
+        "mp": "Low",
+        "attack": "High",
+        "defense": "Normal",
+        "speed": "Low"
+      },
+      "signature_skill": "Harpoon Vulcan",
+      "extra_skills": [
+        {
+          "skill": "Water Ray",
+          "type": "Assist",
+          "locations": ["IDS Ice Cave", "Titan Bunker", "Core Tower"]
+        }
+      ],
+      "evolutions": [{ "dp": "0+", "target": "Zudomon" }]
+    },
+    "Kabuterimon": {
+      "level": "Champion",
+      "type": "Vaccine",
+      "family": "Insect",
+      "specialty": "Nature",
+      "growth": {
+        "hp": "Low",
+        "mp": "Normal",
+        "attack": "Normal",
+        "defense": "High",
+        "speed": "Normal"
+      },
+      "signature_skill": "Mega Blaster",
+      "extra_skills": [
+        {
+          "skill": "Deadly Sting",
+          "type": "Attack",
+          "locations": ["PCI Preserve", "Core Tower"]
+        },
+        {
+          "skill": "Electro Thread",
+          "type": "Attack",
+          "locations": ["QoS Quarry", "Titan Bunker", "Core Tower"]
+        }
+      ],
+      "evolutions": [{ "dp": "0+", "target": "M-Kabuterimon" }]
+    },
+    "Kiwimon": {
+      "level": "Champion",
+      "type": "Data",
+      "family": "Flying",
+      "specialty": "Nature",
+      "growth": {
+        "hp": "Low",
+        "mp": "Normal",
+        "attack": "Normal",
+        "defense": "Normal",
+        "speed": "High"
+      },
+      "signature_skill": "Pummel Peck",
+      "extra_skills": [
+        {
+          "skill": "Nature Hit",
+          "type": "Assist",
+          "locations": ["Exchange with Frigimon"]
+        }
+      ],
+      "evolutions": [
+        { "dp": "0-3", "target": "Lillymon" },
+        { "dp": "4+", "target": "Deramon" }
+      ]
+    },
+    "Kogamon": {
+      "level": "Champion",
+      "type": "Data",
+      "family": "Spirit",
+      "specialty": "Darkness",
+      "growth": {
+        "hp": "Low",
+        "mp": "Normal",
+        "attack": "High",
+        "defense": "Low",
+        "speed": "High"
+      },
+      "signature_skill": "Ninja Knife Throw",
+      "extra_skills": [
+        {
+          "skill": "Darkness Ray",
+          "type": "Assist",
+          "locations": ["Deserted Fort", "Core Tower"]
+        }
+      ],
+      "evolutions": [
+        { "dp": "0-3", "target": "Tekkamon" },
+        { "dp": "4+", "target": "SkullMeramon" }
+      ]
+    },
+    "Kokatorimon": {
+      "level": "Champion",
+      "type": "Data",
+      "family": "Flying",
+      "specialty": "Nature",
+      "growth": {
+        "hp": "Normal",
+        "mp": "High",
+        "attack": "Normal",
+        "defense": "Low",
+        "speed": "Normal"
+      },
+      "signature_skill": "Petri-Fire",
+      "extra_skills": [
+        {
+          "skill": "Fire Blast",
+          "type": "Attack",
+          "locations": ["TCP Terrace", "Core Tower"]
+        },
+        {
+          "skill": "Flame Hit",
+          "type": "Assist",
+          "locations": ["DialUp Desert", "Coastal Depot", "Titan Bunker"]
+        }
+      ],
+      "evolutions": [
+        { "dp": "0-2", "target": "Piximon" },
+        { "dp": "3+", "target": "Deramon" }
+      ]
+    },
+    "Kuwagamon": {
+      "level": "Champion",
+      "type": "Virus",
+      "family": "Insect",
+      "specialty": "Nature",
+      "growth": {
+        "hp": "Low",
+        "mp": "Normal",
+        "attack": "High",
+        "defense": "Normal",
+        "speed": "Normal"
+      },
+      "signature_skill": "Scissoer Arm",
+      "extra_skills": [],
+      "evolutions": [{ "dp": "0+", "target": "Okuwamon" }]
+    },
+    "Leomon": {
+      "level": "Champion",
+      "type": "Vaccine",
+      "family": "Spirit",
+      "specialty": "None",
+      "growth": {
+        "hp": "Normal",
+        "mp": "Normal",
+        "attack": "Normal",
+        "defense": "Normal",
+        "speed": "Normal"
+      },
+      "signature_skill": "Jyuouken",
+      "extra_skills": [
+        {
+          "skill": "Holy Shot",
+          "type": "Attack",
+          "locations": ["Readme Ruins", "Coastal Depot", "Core Tower"]
+        },
+        {
+          "skill": "Cat Punch",
+          "type": "Interrupt",
+          "locations": ["Native Forest"]
+        }
+      ],
+      "evolutions": [
+        { "dp": "0-3", "target": "Panjyamon" },
+        { "dp": "4+", "target": "SuperStarmon" }
+      ]
+    },
+    "Meramon": {
+      "level": "Champion",
+      "type": "Data",
+      "family": "Junk",
+      "specialty": "Fire",
+      "growth": {
+        "hp": "Low",
+        "mp": "Normal",
+        "attack": "High",
+        "defense": "Normal",
+        "speed": "Normal"
+      },
+      "signature_skill": "Burning Fist",
+      "extra_skills": [],
+      "evolutions": [
+        { "dp": "0-3", "target": "BlueMeramon" },
+        { "dp": "4+", "target": "SkullMeramon" }
+      ]
+    },
+    "Mojyamon": {
+      "level": "Champion",
+      "type": "Vaccine",
+      "family": "Beast",
+      "specialty": "Water",
+      "growth": {
+        "hp": "High",
+        "mp": "Normal",
+        "attack": "Normal",
+        "defense": "Normal",
+        "speed": "Low"
+      },
+      "signature_skill": "Icicle Shot",
+      "extra_skills": [
+        {
+          "skill": "Cold Blood",
+          "type": "Assist",
+          "locations": ["IDS Ice Cave", "Titan Bunker", "Freezeland"]
+        }
+      ],
+      "evolutions": [
+        { "dp": "0-2", "target": "MetalMamemon" },
+        { "dp": "3+", "target": "ExTyrannomon" }
+      ]
+    },
+    "Monochromon": {
+      "level": "Champion",
+      "type": "Data",
+      "family": "Dragon",
+      "specialty": "None",
+      "growth": {
+        "hp": "High",
+        "mp": "Low",
+        "attack": "High",
+        "defense": "Normal",
+        "speed": "Low"
+      },
+      "signature_skill": "Volcano Strike",
+      "extra_skills": [],
+      "evolutions": [
+        { "dp": "0-4", "target": "Vermilimon" },
+        { "dp": "5+", "target": "SkullGreymon" }
+      ]
+    },
+    "MoriShellmon": {
+      "level": "Champion",
+      "type": "Data",
+      "family": "Marine",
+      "specialty": "Nature",
+      "growth": {
+        "hp": "High",
+        "mp": "High",
+        "attack": "Low",
+        "defense": "Normal",
+        "speed": "Low"
+      },
+      "signature_skill": "Hydro Pressure",
+      "extra_skills": [
+        {
+          "skill": "Icicle Shot",
+          "type": "Attack",
+          "locations": ["Deserted Fort", "Core Tower"]
+        },
+        {
+          "skill": "Thunder Ray",
+          "type": "Attack",
+          "locations": ["Deserted Fort", "Core Tower"]
+        },
+        {
+          "skill": "Green Trap",
+          "type": "Counter",
+          "locations": ["Tropical Jungle", "Misty Trees"]
+        }
+      ],
+      "evolutions": [
+        { "dp": "0-3", "target": "Scorpiomon" },
+        { "dp": "4+", "target": "Triceramon" }
+      ]
+    },
+    "N-Drimogemon": {
+      "level": "Champion",
+      "type": "Data",
+      "family": "Beast",
+      "specialty": "Machine",
+      "growth": {
+        "hp": "Normal",
+        "mp": "Normal",
+        "attack": "High",
+        "defense": "Low",
+        "speed": "Normal"
+      },
+      "signature_skill": "Drill Spin",
+      "extra_skills": [],
+      "evolutions": [
+        { "dp": "0-3", "target": "Meteormon" },
+        { "dp": "4+", "target": "WereGarurumon" }
+      ]
+    },
+    "Nanimon": {
+      "level": "Champion",
+      "type": "Virus",
+      "family": "Spirit",
+      "specialty": "None",
+      "growth": {
+        "hp": "High",
+        "mp": "Low",
+        "attack": "Normal",
+        "defense": "Normal",
+        "speed": "Normal"
+      },
+      "signature_skill": "Poop Toss",
+      "extra_skills": [
+        {
+          "skill": "Heaven's Knuckle",
+          "type": "Attack",
+          "locations": ["Native Forest", "Misty Trees"]
+        },
+        {
+          "skill": "Poison Mushroom",
+          "type": "Assist",
+          "locations": ["Native Forest", "Misty Trees"]
+        }
+      ],
+      "evolutions": [
+        { "dp": "0-2", "target": "Digitamamon" },
+        { "dp": "3+", "target": "Tekkamon" }
+      ]
+    },
+    "Ninjamon": {
+      "level": "Champion",
+      "type": "Data",
+      "family": "Spirit",
+      "specialty": "Nature",
+      "growth": {
+        "hp": "Low",
+        "mp": "High",
+        "attack": "High",
+        "defense": "Low",
+        "speed": "Normal"
+      },
+      "signature_skill": "Ninja Knife Throw",
+      "extra_skills": [],
+      "evolutions": [
+        { "dp": "0-3", "target": "Mamemon" },
+        { "dp": "4+", "target": "Giromon" }
+      ]
+    },
+    "Numemon": {
+      "level": "Champion",
+      "type": "Virus",
+      "family": "Junk",
+      "specialty": "Water",
+      "growth": {
+        "hp": "Low",
+        "mp": "High",
+        "attack": "High",
+        "defense": "Low",
+        "speed": "Normal"
+      },
+      "signature_skill": "Horizontal Kick",
+      "extra_skills": [
+        {
+          "skill": "Buffalo Breath",
+          "type": "Counter",
+          "locations": ["Native Forest", "Tropical Jungle"]
+        }
+      ],
+      "evolutions": [
+        { "dp": "0-2", "target": "Vademon" },
+        { "dp": "3+", "target": "Monzaemon" }
+      ]
+    },
+    "Octomon": {
+      "level": "Champion",
+      "type": "Virus",
+      "family": "Marine",
+      "specialty": "Water",
+      "growth": {
+        "hp": "Low",
+        "mp": "High",
+        "attack": "Low",
+        "defense": "High",
+        "speed": "Normal"
+      },
+      "signature_skill": "Ink Gun",
+      "extra_skills": [],
+      "evolutions": [{ "dp": "0+", "target": "Dagomon" }]
+    },
+    "Ogremon": {
+      "level": "Champion",
+      "type": "Virus",
+      "family": "Beast",
+      "specialty": "None",
+      "growth": {
+        "hp": "Normal",
+        "mp": "Normal",
+        "attack": "Normal",
+        "defense": "Normal",
+        "speed": "Normal"
+      },
+      "signature_skill": "Haouken",
+      "extra_skills": [
+        {
+          "skill": "Mega Heal",
+          "type": "Assist",
+          "locations": [
+            "QoS Quarry",
+            "Titan Bunker",
+            "Great Canyon",
+            "Core Tower"
+          ]
+        }
+      ],
+      "evolutions": [
+        { "dp": "0-2", "target": "Etemon" },
+        { "dp": "3-4", "target": "BW-Garurumon" },
+        { "dp": "5+", "target": "Digitamamon" }
+      ]
+    },
+    "P-Sukamon": {
+      "level": "Champion",
+      "type": "Virus",
+      "family": "Junk",
+      "specialty": "Machine",
+      "growth": {
+        "hp": "Low",
+        "mp": "High",
+        "attack": "Normal",
+        "defense": "Normal",
+        "speed": "Normal"
+      },
+      "signature_skill": "Poop Toss",
+      "extra_skills": [],
+      "evolutions": [{ "dp": "0+", "target": "Vademon" }]
+    },
+    "Raremon": {
+      "level": "Champion",
+      "type": "Virus",
+      "family": "Junk",
+      "specialty": "Machine",
+      "growth": {
+        "hp": "High",
+        "mp": "Normal",
+        "attack": "Normal",
+        "defense": "Normal",
+        "speed": "Low"
+      },
+      "signature_skill": "Buffalo Breath",
+      "extra_skills": [
+        {
+          "skill": "Fire Blast",
+          "type": "Attack",
+          "locations": ["GreyLord Manor", "Mt. Infinity"]
+        }
+      ],
+      "evolutions": [
+        { "dp": "0-3", "target": "ExTyrannomon" },
+        { "dp": "4+", "target": "Garbagemon" }
+      ]
+    },
+    "RedVegimon": {
+      "level": "Champion",
+      "type": "Virus",
+      "family": "Plant",
+      "specialty": "Nature",
+      "growth": {
+        "hp": "Low",
+        "mp": "Normal",
+        "attack": "Normal",
+        "defense": "Normal",
+        "speed": "High"
+      },
+      "signature_skill": "Hazard Breath",
+      "extra_skills": [
+        {
+          "skill": "Poison Mushroom",
+          "type": "Assist",
+          "locations": ["RISC River", "Coastal Depot", "Core Tower"]
+        }
+      ],
+      "evolutions": [
+        { "dp": "0-4", "target": "Garbagemon" },
+        { "dp": "5+", "target": "M-Kabuterimon" }
+      ]
+    },
+    "SandYanmamon": {
+      "level": "Champion",
+      "type": "Data",
+      "family": "Insect",
+      "specialty": "None",
+      "growth": {
+        "hp": "Normal",
+        "mp": "Low",
+        "attack": "Normal",
+        "defense": "Normal",
+        "speed": "High"
+      },
+      "signature_skill": "Thunder Ray",
+      "extra_skills": [
+        {
+          "skill": "Stun Ray",
+          "type": "Assist",
+          "locations": [
+            "DialUp Desert",
+            "Great Canyon",
+            "Mt. Infinity",
+            "Staog Shrine",
+            "Core Tower"
+          ]
+        },
+        {
+          "skill": "Evil Hurricane",
+          "type": "Counter",
+          "locations": ["Deserted Fort", "Titan Bunker", "Great Canyon"]
+        }
+      ],
+      "evolutions": [
+        { "dp": "0-2", "target": "Scorpiomon" },
+        { "dp": "3-4", "target": "Okuwamon" },
+        { "dp": "5+", "target": "Scorpiomon" }
+      ]
+    },
+    "Seadramon": {
+      "level": "Champion",
+      "type": "Data",
+      "family": "Marine",
+      "specialty": "Water",
+      "growth": {
+        "hp": "Low",
+        "mp": "High",
+        "attack": "Low",
+        "defense": "Normal",
+        "speed": "High"
+      },
+      "signature_skill": "Ice Arrow",
+      "extra_skills": [
+        {
+          "skill": "Hyper Heat",
+          "type": "Attack",
+          "locations": ["Undersea Base", "Coastal Depot", "Core Tower"]
+        }
+      ],
+      "evolutions": [
+        { "dp": "0-3", "target": "MegaSeadramon" },
+        { "dp": "4+", "target": "WaruSeadramon" }
+      ]
+    },
+    "Shellmon": {
+      "level": "Champion",
+      "type": "Data",
+      "family": "Marine",
+      "specialty": "Water",
+      "growth": {
+        "hp": "Normal",
+        "mp": "High",
+        "attack": "Low",
+        "defense": "High",
+        "speed": "Low"
+      },
+      "signature_skill": "Hydro Pressure",
+      "extra_skills": [],
+      "evolutions": [
+        { "dp": "0-2", "target": "ShogunGekomon" },
+        { "dp": "3+", "target": "MegaSeadramon" }
+      ]
+    },
+    "ShimaUnimon": {
+      "level": "Champion",
+      "type": "Vaccine",
+      "family": "Beast",
+      "specialty": "Nature",
+      "growth": {
+        "hp": "High",
+        "mp": "Low",
+        "attack": "Normal",
+        "defense": "Normal",
+        "speed": "Normal"
+      },
+      "signature_skill": "Holy Shot",
+      "extra_skills": [
+        {
+          "skill": "Megalo Spark",
+          "type": "Interrupt",
+          "locations": ["Tropical Jungle", "Misty Trees", "Beetleland"]
+        }
+      ],
+      "evolutions": [{ "dp": "0+", "target": "Mammothmon" }]
+    },
+    "Sorcerymon": {
+      "level": "Champion",
+      "type": "Vaccine",
+      "family": "Spirit",
+      "specialty": "Water",
+      "growth": {
+        "hp": "Normal",
+        "mp": "High",
+        "attack": "Normal",
+        "defense": "Normal",
+        "speed": "Low"
+      },
+      "signature_skill": "Crystal Cloud",
+      "extra_skills": [],
+      "evolutions": [{ "dp": "0+", "target": "BlueMeramon" }]
+    },
+    "Soulmon": {
+      "level": "Champion",
+      "type": "Virus",
+      "family": "Spirit",
+      "specialty": "Darkness",
+      "growth": {
+        "hp": "Low",
+        "mp": "High",
+        "attack": "Low",
+        "defense": "High",
+        "speed": "Normal"
+      },
+      "signature_skill": "Megalo Spark",
+      "extra_skills": [
+        {
+          "skill": "Death Charm",
+          "type": "Attack",
+          "locations": [
+            "IDS Ice Cave",
+            "Coastal Depot",
+            "Titan Bunker",
+            "Core Tower"
+          ]
+        },
+        {
+          "skill": "Hail Storm",
+          "type": "Attack",
+          "locations": [
+            "IDS Ice Cave",
+            "Coastal Depot",
+            "Titan Bunker",
+            "Core Tower"
+          ]
+        },
+        {
+          "skill": "Necro Magic",
+          "type": "Assist",
+          "locations": [
+            "GreyLord Manor",
+            "Mt. Infinity",
+            "Rootkit Rift",
+            "Core Tower",
+            "Chaos Tower"
+          ]
+        }
+      ],
+      "evolutions": [{ "dp": "0+", "target": "Phantomon" }]
+    },
+    "Starmon": {
+      "level": "Champion",
+      "type": "Data",
+      "family": "Spirit",
+      "specialty": "None",
+      "growth": {
+        "hp": "Normal",
+        "mp": "Normal",
+        "attack": "Normal",
+        "defense": "Normal",
+        "speed": "Normal"
+      },
+      "signature_skill": "Meteor Squall",
+      "extra_skills": [
+        {
+          "skill": "Hyper Heat",
+          "type": "Attack",
+          "locations": [
+            "Deserted Fort",
+            "Coastal Depot",
+            "Titan Bunker",
+            "Core Tower"
+          ]
+        }
+      ],
+      "evolutions": [{ "dp": "0+", "target": "SuperStarmon" }]
+    },
+    "Sukamon": {
+      "level": "Champion",
+      "type": "Virus",
+      "family": "Junk",
+      "specialty": "None",
+      "growth": {
+        "hp": "High",
+        "mp": "Normal",
+        "attack": "Normal",
+        "defense": "Low",
+        "speed": "Normal"
+      },
+      "signature_skill": "Poop Toss",
+      "extra_skills": [],
+      "evolutions": [
+        { "dp": "0-2", "target": "Garbagemon" },
+        { "dp": "3+", "target": "Etemon" }
+      ]
+    },
+    "Tankmon": {
+      "level": "Champion",
+      "type": "Data",
+      "family": "Junk",
+      "specialty": "Machine",
+      "growth": {
+        "hp": "Normal",
+        "mp": "Low",
+        "attack": "High",
+        "defense": "High",
+        "speed": "Low"
+      },
+      "signature_skill": "Hyper Canon",
+      "extra_skills": [
+        {
+          "skill": "Implant",
+          "type": "Assist",
+          "locations": ["Deserted Fort", "Titan Bunker", "Great Canyon"]
+        }
+      ],
+      "evolutions": [
+        { "dp": "0-3", "target": "Giromon" },
+        { "dp": "4+", "target": "MetalMamemon" }
+      ]
+    },
+    "Togemon": {
+      "level": "Champion",
+      "type": "Data",
+      "family": "Plant",
+      "specialty": "Nature",
+      "growth": {
+        "hp": "Low",
+        "mp": "Low",
+        "attack": "High",
+        "defense": "High",
+        "speed": "Normal"
+      },
+      "signature_skill": "Prickly Bang Bang",
+      "extra_skills": [
+        {
+          "skill": "Panzer Knuckle",
+          "type": "Attack",
+          "locations": ["Native Forest", "Tropical Jungle"]
+        }
+      ],
+      "evolutions": [{ "dp": "0+", "target": "Lillymon" }]
+    },
+    "Tortamon": {
+      "level": "Champion",
+      "type": "Vaccine",
+      "family": "Marine",
+      "specialty": "Water",
+      "growth": {
+        "hp": "Normal",
+        "mp": "Normal",
+        "attack": "Normal",
+        "defense": "High",
+        "speed": "Low"
+      },
+      "signature_skill": "Shell Phalanx",
+      "extra_skills": [
+        {
+          "skill": "Neutralize",
+          "type": "Assist",
+          "locations": [
+            "IDS Ice Cave",
+            "Coastal Depot",
+            "Titan Bunker",
+            "Freezeland",
+            "Core Tower"
+          ]
+        }
+      ],
+      "evolutions": [
+        { "dp": "0-3", "target": "Zudomon" },
+        { "dp": "4+", "target": "Whamon" }
+      ]
+    },
+    "Tuskmon": {
+      "level": "Champion",
+      "type": "Virus",
+      "family": "Dragon",
+      "specialty": "None",
+      "growth": {
+        "hp": "Normal",
+        "mp": "Low",
+        "attack": "High",
+        "defense": "Normal",
+        "speed": "Normal"
+      },
+      "signature_skill": "Panzer Knuckle",
+      "extra_skills": [],
+      "evolutions": [
+        { "dp": "0-4", "target": "Triceramon" },
+        { "dp": "5+", "target": "ME-Tyrannomon" }
+      ]
+    },
+    "Tyrannomon": {
+      "level": "Champion",
+      "type": "Data",
+      "family": "Dragon",
+      "specialty": "None",
+      "growth": {
+        "hp": "Normal",
+        "mp": "Low",
+        "attack": "High",
+        "defense": "Normal",
+        "speed": "Normal"
+      },
+      "signature_skill": "Blaze Blast",
+      "extra_skills": [
+        {
+          "skill": "Neutralize",
+          "type": "Assist",
+          "locations": ["PCI Preserve"]
+        },
+        {
+          "skill": "Crimson Nail",
+          "type": "Attack",
+          "locations": ["Great Canyon"]
+        }
+      ],
+      "evolutions": [{ "dp": "0+", "target": "MA-Tyrannomon" }]
+    },
+    "Unimon": {
+      "level": "Champion",
+      "type": "Vaccine",
+      "family": "Beast",
+      "specialty": "None",
+      "growth": {
+        "hp": "Low",
+        "mp": "High",
+        "attack": "Normal",
+        "defense": "Normal",
+        "speed": "Normal"
+      },
+      "signature_skill": "Holy Shot",
+      "extra_skills": [
+        {
+          "skill": "Mega Heal",
+          "type": "Assist",
+          "locations": ["Native Forest", "Misty Trees", "Factorial Town"]
+        }
+      ],
+      "evolutions": [
+        { "dp": "0-3", "target": "Mammothmon" },
+        { "dp": "4+", "target": "MagnaAngemon" }
+      ]
+    },
+    "Veedramon": {
+      "level": "Champion",
+      "type": "Vaccine",
+      "family": "Flying",
+      "specialty": "None",
+      "growth": {
+        "hp": "Normal",
+        "mp": "Normal",
+        "attack": "High",
+        "defense": "Low",
+        "speed": "Normal"
+      },
+      "signature_skill": "V-Nova Blast",
+      "extra_skills": [],
+      "evolutions": [{ "dp": "0+", "target": "AeroVeedramon" }]
+    },
+    "Vegimon": {
+      "level": "Champion",
+      "type": "Virus",
+      "family": "Plant",
+      "specialty": "Nature",
+      "growth": {
+        "hp": "Low",
+        "mp": "High",
+        "attack": "Normal",
+        "defense": "Normal",
+        "speed": "Normal"
+      },
+      "signature_skill": "Green Trap",
+      "extra_skills": [
+        {
+          "skill": "Return to Nature",
+          "type": "Assist",
+          "locations": ["Deserted Fort"]
+        }
+      ],
+      "evolutions": [
+        { "dp": "0-3", "target": "Vademon" },
+        { "dp": "4+", "target": "Cherrymon" }
+      ]
+    },
+    "Wizardmon": {
+      "level": "Champion",
+      "type": "Data",
+      "family": "Spirit",
+      "specialty": "Darkness",
+      "growth": {
+        "hp": "Low",
+        "mp": "High",
+        "attack": "Normal",
+        "defense": "Normal",
+        "speed": "Normal"
+      },
+      "signature_skill": "Thunder Cloud",
+      "extra_skills": [
+        {
+          "skill": "Death Charm",
+          "type": "Attack",
+          "locations": [
+            "Deserted Fort",
+            "Coastal Depot",
+            "Titan Bunker",
+            "Core Tower"
+          ]
+        },
+        {
+          "skill": "Dope Cancel",
+          "type": "Assist",
+          "locations": [
+            "Deserted Fort",
+            "Coastal Depot",
+            "Titan Bunker",
+            "Core Tower"
+          ]
+        },
+        {
+          "skill": "Deadly Shade",
+          "type": "Attack",
+          "locations": ["Misty Trees", "GreyLord Manor"]
+        }
+      ],
+      "evolutions": [
+        { "dp": "0-3", "target": "SkullMeramon" },
+        { "dp": "4+", "target": "Andromon" }
+      ]
+    },
+    "Woodmon": {
+      "level": "Champion",
+      "type": "Virus",
+      "family": "Plant",
+      "specialty": "Nature",
+      "growth": {
+        "hp": "Low",
+        "mp": "High",
+        "attack": "Normal",
+        "defense": "High",
+        "speed": "Low"
+      },
+      "signature_skill": "Branch Drain",
+      "extra_skills": [],
+      "evolutions": [{ "dp": "0+", "target": "Cherrymon" }]
+    },
+    "Yanmamon": {
+      "level": "Champion",
+      "type": "Data",
+      "family": "Insect",
+      "specialty": "Nature",
+      "growth": {
+        "hp": "Low",
+        "mp": "Normal",
+        "attack": "Normal",
+        "defense": "Normal",
+        "speed": "High"
+      },
+      "signature_skill": "Thunder Ray",
+      "extra_skills": [],
+      "evolutions": [{ "dp": "0+", "target": "Pumpkinmon" }]
+    },
+    "Zassoumon": {
+      "level": "Champion",
+      "type": "Virus",
+      "family": "Plant",
+      "specialty": "None",
+      "growth": {
+        "hp": "Low",
+        "mp": "Normal",
+        "attack": "High",
+        "defense": "Normal",
+        "speed": "Normal"
+      },
+      "signature_skill": "Green Trap",
+      "extra_skills": [
+        {
+          "skill": "Poop Toss",
+          "type": "Attack",
+          "locations": [
+            "DialUp Desert",
+            "Readme Ruins",
+            "Coastal Depot",
+            "Titan Bunker",
+            "Core Tower"
+          ]
+        },
+        {
+          "skill": "Hazard Breath",
+          "type": "Interrupt",
+          "locations": [
+            "DialUp Desert",
+            "Readme Ruins",
+            "Coastal Depot",
+            "Titan Bunker",
+            "Core Tower"
+          ]
+        },
+        {
+          "skill": "Prickly Bang Bang",
+          "type": "Counter",
+          "locations": ["Great Canyon"]
+        }
+      ],
+      "evolutions": [{ "dp": "0+", "target": "Blossomon" }]
+    }
+  },
+  "Ultimates": {
+    "AeroVeedramon": {
+      "level": "Ultimate",
+      "type": "Vaccine",
+      "family": "Flying",
+      "specialty": "None",
+      "growth": {
+        "hp": "Normal",
+        "mp": "Low",
+        "attack": "High",
+        "defense": "Normal",
+        "speed": "Normal"
+      },
+      "signature_skill": "V-Wing Blade",
+      "extra_skills": [],
+      "evolutions": [
+        { "dp": "0-4", "target": "Phoenixmon" },
+        { "dp": "5-8", "target": "WarGreymon" },
+        { "dp": "9+", "target": "I-Dramon" }
+      ]
+    },
+    "Andromon": {
+      "level": "Ultimate",
+      "type": "Vaccine",
+      "family": "Junk",
+      "specialty": "Machine",
+      "growth": {
+        "hp": "Normal",
+        "mp": "High",
+        "attack": "Low",
+        "defense": "High",
+        "speed": "Low"
+      },
+      "signature_skill": "Spiral Sword",
+      "extra_skills": [
+        {
+          "skill": "Shadow Wing",
+          "type": "Interrupt",
+          "locations": ["Core Tower", "Chaos Tower"]
+        },
+        {
+          "skill": "Lovely Attack",
+          "type": "Assist",
+          "locations": ["Core Tower", "Chaos Tower"]
+        }
+      ],
+      "evolutions": [{ "dp": "0+", "target": "HiAndromon" }]
+    },
+    "Angewomon": {
+      "level": "Ultimate",
+      "type": "Vaccine",
+      "family": "Spirit",
+      "specialty": "None",
+      "growth": {
+        "hp": "High",
+        "mp": "High",
+        "attack": "Low",
+        "defense": "Low",
+        "speed": "Normal"
+      },
+      "signature_skill": "Holy Arrow",
+      "extra_skills": [],
+      "evolutions": [{ "dp": "0+", "target": "Magnadramon" }]
+    },
+    "BW-Garurumon": {
+      "level": "Ultimate",
+      "type": "Virus",
+      "family": "Beast",
+      "specialty": "None",
+      "growth": {
+        "hp": "Normal",
+        "mp": "Normal",
+        "attack": "High",
+        "defense": "Low",
+        "speed": "Normal"
+      },
+      "signature_skill": "Kaiser Nail",
+      "extra_skills": [],
+      "evolutions": [{ "dp": "0+", "target": "BM-Garurumon" }]
+    },
+    "Blossomon": {
+      "level": "Ultimate",
+      "type": "Data",
+      "family": "Plant",
+      "specialty": "Nature",
+      "growth": {
+        "hp": "Normal",
+        "mp": "Normal",
+        "attack": "High",
+        "defense": "Normal",
+        "speed": "Low"
+      },
+      "signature_skill": "Spiral Flower",
+      "extra_skills": [],
+      "evolutions": [{ "dp": "0+", "target": "Rosemon" }]
+    },
+    "BlueMeramon": {
+      "level": "Ultimate",
+      "type": "Virus",
+      "family": "Junk",
+      "specialty": "Fire",
+      "growth": {
+        "hp": "Low",
+        "mp": "High",
+        "attack": "High",
+        "defense": "Low",
+        "speed": "Normal"
+      },
+      "signature_skill": "MP Alchemy",
+      "extra_skills": [
+        {
+          "skill": "Heavy Metal Fire",
+          "type": "Attack",
+          "locations": [
+            "GreyLord Manor",
+            "Mt. Infinity",
+            "Rootkit Rift",
+            "Core Tower",
+            "Chaos Tower"
+          ]
+        }
+      ],
+      "evolutions": [
+        { "dp": "0-5", "target": "Boltmon" },
+        { "dp": "6+", "target": "Pierrotmon" }
+      ]
+    },
+    "Cherrymon": {
+      "level": "Ultimate",
+      "type": "Virus",
+      "family": "Plant",
+      "specialty": "Nature",
+      "growth": {
+        "hp": "High",
+        "mp": "High",
+        "attack": "Normal",
+        "defense": "Low",
+        "speed": "Low"
+      },
+      "signature_skill": "Cherry Bomb",
+      "extra_skills": [],
+      "evolutions": [{ "dp": "0+", "target": "Puppetmon" }]
+    },
+    "Dagomon": {
+      "level": "Ultimate",
+      "type": "Virus",
+      "family": "Marine",
+      "specialty": "Water",
+      "growth": {
+        "hp": "Normal",
+        "mp": "Normal",
+        "attack": "High",
+        "defense": "Normal",
+        "speed": "Low"
+      },
+      "signature_skill": "Forbidden Trident",
+      "extra_skills": [
+        {
+          "skill": "Stun Ray",
+          "type": "Assist",
+          "locations": [
+            "Adware Abyss",
+            "Rootkit Rift",
+            "Core Tower",
+            "Chaos Tower"
+          ]
+        }
+      ],
+      "evolutions": [
+        { "dp": "0-4", "target": "Pukumon" },
+        { "dp": "5+", "target": "V-Myotismon" }
+      ]
+    },
+    "Datamon": {
+      "level": "Ultimate",
+      "type": "Virus",
+      "family": "Junk",
+      "specialty": "Machine",
+      "growth": {
+        "hp": "Low",
+        "mp": "High",
+        "attack": "Normal",
+        "defense": "Normal",
+        "speed": "Normal"
+      },
+      "signature_skill": "Plug Bomb",
+      "extra_skills": [],
+      "evolutions": [
+        { "dp": "0-4", "target": "P-Numemon" },
+        { "dp": "5+", "target": "BM-Garurumon" }
+      ]
+    },
+    "Deramon": {
+      "level": "Ultimate",
+      "type": "Data",
+      "family": "Flying",
+      "specialty": "Nature",
+      "growth": {
+        "hp": "High",
+        "mp": "Low",
+        "attack": "Low",
+        "defense": "Normal",
+        "speed": "High"
+      },
+      "signature_skill": "Royal Smasher",
+      "extra_skills": [],
+      "evolutions": [
+        { "dp": "0-6", "target": "Rosemon" },
+        { "dp": "7+", "target": "Gryphonmon" }
+      ]
+    },
+    "Digitamamon": {
+      "level": "Ultimate",
+      "type": "Data",
+      "family": "Spirit",
+      "specialty": "Darkness",
+      "growth": {
+        "hp": "Normal",
+        "mp": "Low",
+        "attack": "High",
+        "defense": "Normal",
+        "speed": "Normal"
+      },
+      "signature_skill": "Enigma",
+      "extra_skills": [
+        {
+          "skill": "Alien Ray",
+          "type": "Attack",
+          "locations": ["Mt. Infinity", "Core Tower", "Chaos Tower"]
+        },
+        {
+          "skill": "Cherry Bomb",
+          "type": "Attack",
+          "locations": ["Rootkit Rift", "Core Tower", "Chaos Tower"]
+        }
+      ],
+      "evolutions": [
+        { "dp": "0-4", "target": "SaberLeomon" },
+        { "dp": "5-8", "target": "Puppetmon" },
+        { "dp": "9+", "target": "BK-I-Dramon" }
+      ]
+    },
+    "Etemon": {
+      "level": "Ultimate",
+      "type": "Virus",
+      "family": "Beast",
+      "specialty": "None",
+      "growth": {
+        "hp": "High",
+        "mp": "Low",
+        "attack": "Low",
+        "defense": "High",
+        "speed": "Normal"
+      },
+      "signature_skill": "Love Serenade",
+      "extra_skills": [
+        {
+          "skill": "Sonic Crusher",
+          "type": "Attack",
+          "locations": [
+            "Beetleland",
+            "Mt. Infinity",
+            "Core Tower",
+            "Chaos Tower"
+          ]
+        },
+        {
+          "skill": "Poop Toss",
+          "type": "Attack",
+          "locations": [
+            "Beetleland",
+            "Mt. Infinity",
+            "Core Tower",
+            "Chaos Tower"
+          ]
+        }
+      ],
+      "evolutions": [{ "dp": "0+", "target": "MetalEtemon" }]
+    },
+    "ExTyrannomon": {
+      "level": "Ultimate",
+      "type": "Vaccine",
+      "family": "Spirit",
+      "specialty": "Darkness",
+      "growth": {
+        "hp": "Normal",
+        "mp": "High",
+        "attack": "Normal",
+        "defense": "Normal",
+        "speed": "Low"
+      },
+      "signature_skill": "Pretty Attack",
+      "extra_skills": [],
+      "evolutions": [
+        { "dp": "0-3", "target": "V-Myotismon" },
+        { "dp": "4+", "target": "Puppetmon" }
+      ]
+    },
+    "Garbagemon": {
+      "level": "Ultimate",
+      "type": "Virus",
+      "family": "Junk",
+      "specialty": "Machine",
+      "growth": {
+        "hp": "Low",
+        "mp": "High",
+        "attack": "Normal",
+        "defense": "High",
+        "speed": "Low"
+      },
+      "signature_skill": "Junk Chunker",
+      "extra_skills": [],
+      "evolutions": [
+        { "dp": "0-1", "target": "Ebemon" },
+        { "dp": "2+", "target": "P-Numemon" }
+      ]
+    },
+    "Garudamon": {
+      "level": "Ultimate",
+      "type": "Vaccine",
+      "family": "Flying",
+      "specialty": "Nature",
+      "growth": {
+        "hp": "High",
+        "mp": "Low",
+        "attack": "Normal",
+        "defense": "Normal",
+        "speed": "Normal"
+      },
+      "signature_skill": "Shadow Wing",
+      "extra_skills": [
+        {
+          "skill": "V-Wing Blade",
+          "type": "Attack",
+          "locations": [
+            "Beetleland",
+            "Mt. Infinity",
+            "Core Tower",
+            "Chaos Tower"
+          ]
+        }
+      ],
+      "evolutions": [{ "dp": "0+", "target": "Phoenixmon" }]
+    },
+    "Gigadramon": {
+      "level": "Ultimate",
+      "type": "Virus",
+      "family": "Flying",
+      "specialty": "Machine",
+      "growth": {
+        "hp": "Low",
+        "mp": "Low",
+        "attack": "High",
+        "defense": "Normal",
+        "speed": "High"
+      },
+      "signature_skill": "Genocide Gear",
+      "extra_skills": [
+        {
+          "skill": "Shadow Wing",
+          "type": "Interrupt",
+          "locations": [
+            "Factorial Town",
+            "Mt. Infinity",
+            "Rootkit Rift",
+            "Core Tower",
+            "Chaos Tower"
+          ]
+        },
+        {
+          "skill": "Deadly Bomb",
+          "type": "Attack",
+          "locations": [
+            "Adware Abyss",
+            "Rootkit Rift",
+            "Core Tower",
+            "Chaos Tower"
+          ]
+        }
+      ],
+      "evolutions": [
+        { "dp": "0-3", "target": "M-Seadramon" },
+        { "dp": "4+", "target": "BM-Garurumon" }
+      ]
+    },
+    "Giromon": {
+      "level": "Ultimate",
+      "type": "Vaccine",
+      "family": "Junk",
+      "specialty": "Machine",
+      "growth": {
+        "hp": "High",
+        "mp": "Low",
+        "attack": "High",
+        "defense": "Low",
+        "speed": "Normal"
+      },
+      "signature_skill": "Deadly Bomb",
+      "extra_skills": [],
+      "evolutions": [
+        { "dp": "0-5", "target": "HiAndromon" },
+        { "dp": "6+", "target": "P-Mamemon" }
+      ]
+    },
+    "Kimeramon": {
+      "level": "Ultimate",
+      "type": "Data",
+      "family": "Dragon",
+      "specialty": "None",
+      "growth": {
+        "hp": "Normal",
+        "mp": "Normal",
+        "attack": "Normal",
+        "defense": "Normal",
+        "speed": "Normal"
+      },
+      "signature_skill": "Heat Viper",
+      "extra_skills": [],
+      "evolutions": [
+        { "dp": "0-6", "target": "Gryphonmon" },
+        { "dp": "7+", "target": "Machinedramon" }
+      ]
+    },
+    "Lillymon": {
+      "level": "Ultimate",
+      "type": "Data",
+      "family": "Plant",
+      "specialty": "Nature",
+      "growth": {
+        "hp": "Low",
+        "mp": "High",
+        "attack": "Low",
+        "defense": "Normal",
+        "speed": "High"
+      },
+      "signature_skill": "Flower Cannon",
+      "extra_skills": [
+        {
+          "skill": "Solid State",
+          "type": "Assist",
+          "locations": [
+            "Beetleland",
+            "Rootkit Rift",
+            "Core Tower",
+            "Chaos Tower"
+          ]
+        }
+      ],
+      "evolutions": [{ "dp": "0+", "target": "Rosemon" }]
+    },
+    "M-Kabuterimon": {
+      "level": "Ultimate",
+      "type": "Vaccine",
+      "family": "Insect",
+      "specialty": "Nature",
+      "growth": {
+        "hp": "Low",
+        "mp": "Low",
+        "attack": "High",
+        "defense": "High",
+        "speed": "Normal"
+      },
+      "signature_skill": "Horn Buster",
+      "extra_skills": [],
+      "evolutions": [{ "dp": "0+", "target": "H-Kabuterimon" }]
+    },
+    "MA-Tyrannomon": {
+      "level": "Ultimate",
+      "type": "Vaccine",
+      "family": "Dragon",
+      "specialty": "None",
+      "growth": {
+        "hp": "Normal",
+        "mp": "Normal",
+        "attack": "Normal",
+        "defense": "Normal",
+        "speed": "Normal"
+      },
+      "signature_skill": "Master Fire",
+      "extra_skills": [],
+      "evolutions": [{ "dp": "0+", "target": "WarGreymon" }]
+    },
+    "MagnaAngemon": {
+      "level": "Ultimate",
+      "type": "Vaccine",
+      "family": "Spirit",
+      "specialty": "None",
+      "growth": {
+        "hp": "High",
+        "mp": "High",
+        "attack": "Low",
+        "defense": "Low",
+        "speed": "Normal"
+      },
+      "signature_skill": "Heaven's Heal",
+      "extra_skills": [
+        {
+          "skill": "Spiral Sword",
+          "type": "Attack",
+          "locations": ["Mt. Infinity", "Core Tower", "Chaos Tower"]
+        },
+        {
+          "skill": "Soul Chopper",
+          "type": "Attack",
+          "locations": [
+            "Staog Shrine",
+            "Rootkit Rift",
+            "Core Tower",
+            "Chaos Tower"
+          ]
+        }
+      ],
+      "evolutions": [{ "dp": "0+", "target": "Seraphimon" }]
+    },
+    "Mamemon": {
+      "level": "Ultimate",
+      "type": "Data",
+      "family": "Spirit",
+      "specialty": "Machine",
+      "growth": {
+        "hp": "Normal",
+        "mp": "Low",
+        "attack": "Normal",
+        "defense": "High",
+        "speed": "Normal"
+      },
+      "signature_skill": "Smiley Bomb",
+      "extra_skills": [
+        {
+          "skill": "MP Alchemy",
+          "type": "Interrupt",
+          "locations": ["Core Tower", "Chaos Tower"]
+        }
+      ],
+      "evolutions": [
+        { "dp": "0-5", "target": "WarGreymon" },
+        { "dp": "6+", "target": "P-Mamemon" }
+      ]
+    },
+    "Mammothmon": {
+      "level": "Ultimate",
+      "type": "Vaccine",
+      "family": "Beast",
+      "specialty": "None",
+      "growth": {
+        "hp": "High",
+        "mp": "Normal",
+        "attack": "Normal",
+        "defense": "Normal",
+        "speed": "Low"
+      },
+      "signature_skill": "Tusk Strike",
+      "extra_skills": [],
+      "evolutions": [{ "dp": "0+", "target": "S-Mammothmon" }]
+    },
+    "MarineDevimon": {
+      "level": "Ultimate",
+      "type": "Virus",
+      "family": "Marine",
+      "specialty": "Water",
+      "growth": {
+        "hp": "Normal",
+        "mp": "Normal",
+        "attack": "Normal",
+        "defense": "Low",
+        "speed": "High"
+      },
+      "signature_skill": "Evil Wind",
+      "extra_skills": [
+        {
+          "skill": "Forbidden Trident",
+          "type": "Attack",
+          "locations": [
+            "Adware Abyss",
+            "Rootkit Rift",
+            "Core Tower",
+            "Chaos Tower"
+          ]
+        }
+      ],
+      "evolutions": [{ "dp": "0+", "target": "Pukumon" }]
+    },
+    "ME-Tyrannomon": {
+      "level": "Ultimate",
+      "type": "Virus",
+      "family": "Dragon",
+      "specialty": "Machine",
+      "growth": {
+        "hp": "Normal",
+        "mp": "Low",
+        "attack": "Normal",
+        "defense": "High",
+        "speed": "Normal"
+      },
+      "signature_skill": "Giga Destroyer II",
+      "extra_skills": [],
+      "evolutions": [
+        { "dp": "0-3", "target": "BM-Garurumon" },
+        { "dp": "4-7", "target": "B-WarGreymon" },
+        { "dp": "8+", "target": "Machinedramon" }
+      ]
+    },
+    "Megadramon": {
+      "level": "Ultimate",
+      "type": "Virus",
+      "family": "Flying",
+      "specialty": "Machine",
+      "growth": {
+        "hp": "Normal",
+        "mp": "Low",
+        "attack": "Normal",
+        "defense": "Normal",
+        "speed": "High"
+      },
+      "signature_skill": "Genocide Attack",
+      "extra_skills": [
+        {
+          "skill": "Energy Bomb",
+          "type": "Counter",
+          "locations": ["Staog Shrine", "Core Tower", "Chaos Tower"]
+        }
+      ],
+      "evolutions": [
+        { "dp": "0-5", "target": "Plesiomon" },
+        { "dp": "6+", "target": "B-WarGreymon" }
+      ]
+    },
+    "MegaSeadramon": {
+      "level": "Ultimate",
+      "type": "Data",
+      "family": "Marine",
+      "specialty": "Water",
+      "growth": {
+        "hp": "Normal",
+        "mp": "High",
+        "attack": "Normal",
+        "defense": "Low",
+        "speed": "Normal"
+      },
+      "signature_skill": "Thunder Javelin",
+      "extra_skills": [],
+      "evolutions": [{ "dp": "0+", "target": "M-Seadramon" }]
+    },
+    "MetalGreymon": {
+      "level": "Ultimate",
+      "type": "Vaccine",
+      "family": "Dragon",
+      "specialty": "Machine",
+      "growth": {
+        "hp": "Normal",
+        "mp": "Low",
+        "attack": "High",
+        "defense": "High",
+        "speed": "Low"
+      },
+      "signature_skill": "Giga Destroyer",
+      "extra_skills": [],
+      "evolutions": [
+        { "dp": "0-9", "target": "WarGreymon" },
+        { "dp": "10-11", "target": "Omnimon (M)" },
+        { "dp": "12+", "target": "Omnimon (A)" }
+      ]
+    },
+    "MetalMamemon": {
+      "level": "Ultimate",
+      "type": "Data",
+      "family": "Spirit",
+      "specialty": "Machine",
+      "growth": {
+        "hp": "Normal",
+        "mp": "Low",
+        "attack": "High",
+        "defense": "Normal",
+        "speed": "Normal"
+      },
+      "signature_skill": "Energy Bomb",
+      "extra_skills": [],
+      "evolutions": [
+        { "dp": "0-5", "target": "M-Garurumon" },
+        { "dp": "6+", "target": "P-Mamemon" }
+      ]
+    },
+    "Meteormon": {
+      "level": "Ultimate",
+      "type": "Data",
+      "family": "Spirit",
+      "specialty": "Machine",
+      "growth": {
+        "hp": "Normal",
+        "mp": "Low",
+        "attack": "High",
+        "defense": "High",
+        "speed": "Low"
+      },
+      "signature_skill": "Guard Rock",
+      "extra_skills": [
+        {
+          "skill": "Meteor Squall",
+          "type": "Counter",
+          "locations": [
+            "Great Canyon",
+            "Mt. Infinity",
+            "Staog Shrine",
+            "Core Tower"
+          ]
+        },
+        {
+          "skill": "Thunder Javelin",
+          "type": "Attack",
+          "locations": [
+            "Adware Abyss",
+            "Rootkit Rift",
+            "Core Tower",
+            "Chaos Tower"
+          ]
+        }
+      ],
+      "evolutions": [
+        { "dp": "0-1", "target": "MetalEtemon" },
+        { "dp": "2-3", "target": "Ebemon" },
+        { "dp": "4-9", "target": "M-Garurumon" },
+        { "dp": "10-11", "target": "Baihumon (R)" },
+        { "dp": "12+", "target": "Baihumon (A)" }
+      ]
+    },
+    "Monzaemon": {
+      "level": "Ultimate",
+      "type": "Vaccine",
+      "family": "Junk",
+      "specialty": "None",
+      "growth": {
+        "hp": "Normal",
+        "mp": "High",
+        "attack": "Low",
+        "defense": "Normal",
+        "speed": "Normal"
+      },
+      "signature_skill": "Lovely Attack",
+      "extra_skills": [
+        {
+          "skill": "Pretty Attack",
+          "type": "Attack",
+          "locations": [
+            "Misty Trees",
+            "Factorial Town",
+            "Core Tower",
+            "Chaos Tower"
+          ]
+        },
+        {
+          "skill": "Fairy Tale",
+          "type": "Attack",
+          "locations": [
+            "Factorial Town",
+            "Mt. Infinity",
+            "Staog Shrine",
+            "Rootkit Rift",
+            "Core Tower",
+            "Chaos Tower"
+          ]
+        }
+      ],
+      "evolutions": [
+        { "dp": "0-4", "target": "SaberLeomon" },
+        { "dp": "5-6", "target": "Seraphimon" },
+        { "dp": "7+", "target": "Jijimon" }
+      ]
+    },
+    "Myotismon": {
+      "level": "Ultimate",
+      "type": "Virus",
+      "family": "Spirit",
+      "specialty": "Darkness",
+      "growth": {
+        "hp": "Low",
+        "mp": "High",
+        "attack": "Normal",
+        "defense": "Normal",
+        "speed": "Normal"
+      },
+      "signature_skill": "Night Raid",
+      "extra_skills": [],
+      "evolutions": [
+        { "dp": "0-9", "target": "V-Myotismon" },
+        { "dp": "10-11", "target": "Diaboromon (R)" },
+        { "dp": "12+", "target": "Diaboromon (A)" }
+      ]
+    },
+    "Okuwamon": {
+      "level": "Ultimate",
+      "type": "Virus",
+      "family": "Insect",
+      "specialty": "Nature",
+      "growth": {
+        "hp": "Normal",
+        "mp": "Low",
+        "attack": "High",
+        "defense": "Low",
+        "speed": "High"
+      },
+      "signature_skill": "Scissoer Arm Ω",
+      "extra_skills": [],
+      "evolutions": [
+        { "dp": "0-9", "target": "GranKuwagamon" },
+        { "dp": "10-11", "target": "Diaboromon (M)" },
+        { "dp": "12+", "target": "Diaboromon (A)" }
+      ]
+    },
+    "Panjyamon": {
+      "level": "Ultimate",
+      "type": "Vaccine",
+      "family": "Spirit",
+      "specialty": "Water",
+      "growth": {
+        "hp": "Normal",
+        "mp": "Low",
+        "attack": "Normal",
+        "defense": "Normal",
+        "speed": "High"
+      },
+      "signature_skill": "Giga Heal",
+      "extra_skills": [
+        {
+          "skill": "Haouken",
+          "type": "Counter",
+          "locations": ["Freezeland", "Mt. Infinity", "Core Tower"]
+        },
+        {
+          "skill": "Halley Squall",
+          "type": "Attack",
+          "locations": [
+            "Staog Shrine",
+            "Rootkit Rift",
+            "Core Tower",
+            "Chaos Tower"
+          ]
+        },
+        {
+          "skill": "Jyuouken",
+          "type": "Attack",
+          "locations": [
+            "Staog Shrine",
+            "Rootkit Rift",
+            "Core Tower",
+            "Chaos Tower"
+          ]
+        }
+      ],
+      "evolutions": [
+        { "dp": "0-3", "target": "Boltmon" },
+        { "dp": "4-6", "target": "SaberLeomon" },
+        { "dp": "7+", "target": "Magnadramon" }
+      ]
+    },
+    "Phantomon": {
+      "level": "Ultimate",
+      "type": "Virus",
+      "family": "Spirit",
+      "specialty": "Darkness",
+      "growth": {
+        "hp": "Low",
+        "mp": "High",
+        "attack": "High",
+        "defense": "Low",
+        "speed": "Normal"
+      },
+      "signature_skill": "Soul Chopper",
+      "extra_skills": [],
+      "evolutions": [{ "dp": "0+", "target": "Pierrotmon" }]
+    },
+    "Piximon": {
+      "level": "Ultimate",
+      "type": "Data",
+      "family": "Flying",
+      "specialty": "Nature",
+      "growth": {
+        "hp": "Low",
+        "mp": "Normal",
+        "attack": "High",
+        "defense": "Normal",
+        "speed": "Normal"
+      },
+      "signature_skill": "Fairy Tale",
+      "extra_skills": [],
+      "evolutions": [
+        { "dp": "0-2", "target": "Jijimon" },
+        { "dp": "3-4", "target": "MarineAngemon" },
+        { "dp": "5+", "target": "Phoenixmon" }
+      ]
+    },
+    "Pumpkinmon": {
+      "level": "Ultimate",
+      "type": "Data",
+      "family": "Plant",
+      "specialty": "Darkness",
+      "growth": {
+        "hp": "Normal",
+        "mp": "Normal",
+        "attack": "High",
+        "defense": "Low",
+        "speed": "Normal"
+      },
+      "signature_skill": "Trick or Treat",
+      "extra_skills": [
+        {
+          "skill": "Master Fire",
+          "type": "Attack",
+          "locations": ["Core Tower", "Chaos Tower"]
+        }
+      ],
+      "evolutions": [
+        { "dp": "0-4", "target": "Puppetmon" },
+        { "dp": "5+", "target": "Rosemon" }
+      ]
+    },
+    "Raidramon": {
+      "level": "Ultimate",
+      "type": "Vaccine",
+      "family": "Flying",
+      "specialty": "None",
+      "growth": {
+        "hp": "Normal",
+        "mp": "Low",
+        "attack": "Normal",
+        "defense": "Normal",
+        "speed": "High"
+      },
+      "signature_skill": "Blue Thunder",
+      "extra_skills": [],
+      "evolutions": [
+        { "dp": "0-6", "target": "M-Garurumon" },
+        { "dp": "7+", "target": "I-Dramon" }
+      ]
+    },
+    "Scorpiomon": {
+      "level": "Ultimate",
+      "type": "Data",
+      "family": "Insect",
+      "specialty": "Water",
+      "growth": {
+        "hp": "Low",
+        "mp": "Low",
+        "attack": "Normal",
+        "defense": "High",
+        "speed": "High"
+      },
+      "signature_skill": "Stinger Surprise",
+      "extra_skills": [
+        {
+          "skill": "Alien Ray",
+          "type": "Attack",
+          "locations": ["Mt. Infinity", "Core Tower", "Chaos Tower"]
+        }
+      ],
+      "evolutions": [
+        { "dp": "0-3", "target": "Plesiomon" },
+        { "dp": "4-6", "target": "GranKuwagamon" },
+        { "dp": "7+", "target": "H-Kabuterimon" }
+      ]
+    },
+    "ShogunGekomon": {
+      "level": "Ultimate",
+      "type": "Virus",
+      "family": "Marine",
+      "specialty": "Water",
+      "growth": {
+        "hp": "High",
+        "mp": "Normal",
+        "attack": "Low",
+        "defense": "High",
+        "speed": "Low"
+      },
+      "signature_skill": "Musical Fist",
+      "extra_skills": [
+        {
+          "skill": "Sonic Crusher",
+          "type": "Attack",
+          "locations": [
+            "Beetleland",
+            "Rootkit Rift",
+            "Core Tower",
+            "Chaos Tower"
+          ]
+        },
+        {
+          "skill": "Love Serenade",
+          "type": "Attack",
+          "locations": [
+            "Adware Abyss",
+            "Rootkit Rift",
+            "Core Tower",
+            "Chaos Tower"
+          ]
+        }
+      ],
+      "evolutions": [
+        { "dp": "0-6", "target": "Pukumon" },
+        { "dp": "7+", "target": "MetalEtemon" }
+      ]
+    },
+    "SkullGreymon": {
+      "level": "Ultimate",
+      "type": "Virus",
+      "family": "Dragon",
+      "specialty": "Darkness",
+      "growth": {
+        "hp": "Normal",
+        "mp": "Low",
+        "attack": "High",
+        "defense": "Normal",
+        "speed": "Normal"
+      },
+      "signature_skill": "Ground Zero",
+      "extra_skills": [],
+      "evolutions": [
+        { "dp": "0-4", "target": "S-Mammothmon" },
+        { "dp": "5-8", "target": "B-WarGreymon" },
+        { "dp": "9+", "target": "Machinedramon" }
+      ]
+    },
+    "SkullMeramon": {
+      "level": "Ultimate",
+      "type": "Data",
+      "family": "Junk",
+      "specialty": "Fire",
+      "growth": {
+        "hp": "High",
+        "mp": "Low",
+        "attack": "High",
+        "defense": "Normal",
+        "speed": "Low"
+      },
+      "signature_skill": "Heavy Metal Fire",
+      "extra_skills": [],
+      "evolutions": [
+        { "dp": "0-5", "target": "Boltmon" },
+        { "dp": "6+", "target": "V-Myotismon" }
+      ]
+    },
+    "SuperStarmon": {
+      "level": "Ultimate",
+      "type": "Data",
+      "family": "Spirit",
+      "specialty": "None",
+      "growth": {
+        "hp": "Normal",
+        "mp": "Normal",
+        "attack": "Normal",
+        "defense": "Normal",
+        "speed": "Normal"
+      },
+      "signature_skill": "Halley Squall",
+      "extra_skills": [],
+      "evolutions": [
+        { "dp": "0-9", "target": "Jijimon" },
+        { "dp": "10-11", "target": "Baihumon (M)" },
+        { "dp": "12+", "target": "Baihumon (A)" }
+      ]
+    },
+    "Tekkamon": {
+      "level": "Ultimate",
+      "type": "Virus",
+      "family": "Junk",
+      "specialty": "Machine",
+      "growth": {
+        "hp": "Low",
+        "mp": "Low",
+        "attack": "High",
+        "defense": "High",
+        "speed": "Normal"
+      },
+      "signature_skill": "Reverse Program",
+      "extra_skills": [
+        {
+          "skill": "Spiral Sword",
+          "type": "Attack",
+          "locations": [
+            "GreyLord Manor",
+            "Mt. Infinity",
+            "Staog Shrine",
+            "Rootkit Rift",
+            "Core Tower",
+            "Chaos Tower"
+          ]
+        }
+      ],
+      "evolutions": [
+        { "dp": "0-4", "target": "HiAndromon" },
+        { "dp": "5+", "target": "Pierrotmon" }
+      ]
+    },
+    "Tinmon": {
+      "level": "Ultimate",
+      "type": "Data",
+      "family": "Junk",
+      "specialty": "Machine",
+      "growth": {
+        "hp": "Normal",
+        "mp": "High",
+        "attack": "High",
+        "defense": "Low",
+        "speed": "Low"
+      },
+      "signature_skill": "Anti-Magic",
+      "extra_skills": [
+        {
+          "skill": "Alien Ray",
+          "type": "Attack",
+          "locations": [
+            "Misty Trees",
+            "Factorial Town",
+            "Core Tower",
+            "Chaos Tower"
+          ]
+        }
+      ],
+      "evolutions": [
+        { "dp": "0-1", "target": "Ebemon" },
+        { "dp": "2+", "target": "Boltmon" }
+      ]
+    },
+    "Triceramon": {
+      "level": "Ultimate",
+      "type": "Data",
+      "family": "Dragon",
+      "specialty": "None",
+      "growth": {
+        "hp": "High",
+        "mp": "Low",
+        "attack": "Normal",
+        "defense": "High",
+        "speed": "Low"
+      },
+      "signature_skill": "Tri-Horn Attack",
+      "extra_skills": [],
+      "evolutions": [{ "dp": "0+", "target": "SaberLeomon" }]
+    },
+    "Vademon": {
+      "level": "Ultimate",
+      "type": "Virus",
+      "family": "Junk",
+      "specialty": "None",
+      "growth": {
+        "hp": "Normal",
+        "mp": "Normal",
+        "attack": "Normal",
+        "defense": "Normal",
+        "speed": "Normal"
+      },
+      "signature_skill": "Alien Ray",
+      "extra_skills": [
+        {
+          "skill": "Giga Heal",
+          "type": "Assist",
+          "locations": ["Mt. Infinity", "Core Tower", "Chaos Tower"]
+        }
+      ],
+      "evolutions": [{ "dp": "0+", "target": "Ebemon" }]
+    },
+    "Vermilimon": {
+      "level": "Ultimate",
+      "type": "Data",
+      "family": "Dragon",
+      "specialty": "None",
+      "growth": {
+        "hp": "Normal",
+        "mp": "Normal",
+        "attack": "High",
+        "defense": "Normal",
+        "speed": "Low"
+      },
+      "signature_skill": "Vermili Blaze",
+      "extra_skills": [
+        {
+          "skill": "Trick Void",
+          "type": "Assist",
+          "locations": [
+            "Mt. Infinity",
+            "Staog Shrine",
+            "Core Tower",
+            "Chaos Tower"
+          ]
+        }
+      ],
+      "evolutions": [{ "dp": "0+", "target": "B-WarGreymon" }]
+    },
+    "WaruMonzaemon": {
+      "level": "Ultimate",
+      "type": "Virus",
+      "family": "Junk",
+      "specialty": "Darkness",
+      "growth": {
+        "hp": "Normal",
+        "mp": "High",
+        "attack": "Normal",
+        "defense": "Low",
+        "speed": "Normal"
+      },
+      "signature_skill": "Heartbreak Hit",
+      "extra_skills": [
+        {
+          "skill": "Megalo Spark",
+          "type": "Interrupt",
+          "locations": ["Misty Trees", "Beetleland", "Core Tower"]
+        },
+        {
+          "skill": "Junk Chunker",
+          "type": "Attack",
+          "locations": ["Rootkit Rift", "Chaos Tower"]
+        },
+        {
+          "skill": "Ground Zero",
+          "type": "Attack",
+          "locations": ["Rootkit Rift", "Chaos Tower"]
+        }
+      ],
+      "evolutions": [
+        { "dp": "0-3", "target": "MetalEtemon" },
+        { "dp": "4+", "target": "S-Mammothmon" }
+      ]
+    },
+    "WaruSeadramon": {
+      "level": "Ultimate",
+      "type": "Virus",
+      "family": "Marine",
+      "specialty": "Water",
+      "growth": {
+        "hp": "Low",
+        "mp": "High",
+        "attack": "Normal",
+        "defense": "Normal",
+        "speed": "Normal"
+      },
+      "signature_skill": "Variable Wave",
+      "extra_skills": [
+        {
+          "skill": "Thunder Javelin",
+          "type": "Attack",
+          "locations": [
+            "Mt. Infinity",
+            "Rootkit Rift",
+            "Core Tower",
+            "Chaos Tower"
+          ]
+        },
+        {
+          "skill": "Tri-Horn Attack",
+          "type": "Attack",
+          "locations": [
+            "Adware Abyss",
+            "Rootkit Rift",
+            "Core Tower",
+            "Chaos Tower"
+          ]
+        }
+      ],
+      "evolutions": [
+        { "dp": "0-8", "target": "B-WarGreymon" },
+        { "dp": "9+", "target": "BK-I-Dramon" }
+      ]
+    },
+    "WereGarurumon": {
+      "level": "Ultimate",
+      "type": "Vaccine",
+      "family": "Beast",
+      "specialty": "None",
+      "growth": {
+        "hp": "Normal",
+        "mp": "Low",
+        "attack": "Normal",
+        "defense": "High",
+        "speed": "Normal"
+      },
+      "signature_skill": "Kaiser Nail",
+      "extra_skills": [],
+      "evolutions": [
+        { "dp": "0-8", "target": "M-Garurumon" },
+        { "dp": "9-11", "target": "Omnimon (R)" },
+        { "dp": "12+", "target": "Omnimon (A)" }
+      ]
+    },
+    "Whamon": {
+      "level": "Ultimate",
+      "type": "Vaccine",
+      "family": "Marine",
+      "specialty": "Water",
+      "growth": {
+        "hp": "High",
+        "mp": "High",
+        "attack": "Low",
+        "defense": "Normal",
+        "speed": "Low"
+      },
+      "signature_skill": "Tidal Wave",
+      "extra_skills": [
+        {
+          "skill": "Holy Arrow",
+          "type": "Attack",
+          "locations": ["Adware Abyss", "Core Tower", "Chaos Tower"]
+        }
+      ],
+      "evolutions": [{ "dp": "0+", "target": "MarineAngemon" }]
+    },
+    "Zudomon": {
+      "level": "Ultimate",
+      "type": "Vaccine",
+      "family": "Marine",
+      "specialty": "Water",
+      "growth": {
+        "hp": "Normal",
+        "mp": "Normal",
+        "attack": "High",
+        "defense": "Normal",
+        "speed": "Low"
+      },
+      "signature_skill": "Vulcan's Hammer",
+      "extra_skills": [
+        {
+          "skill": "Holy Arrow",
+          "type": "Attack",
+          "locations": ["Adware Abyss", "Core Tower", "Chaos Tower"]
+        }
+      ],
+      "evolutions": [
+        { "dp": "0-4", "target": "Plesiomon" },
+        { "dp": "5+", "target": "SaberLeomon" }
+      ]
+    }
+  },
+
+  "Megas": {
+    "Baihumon (M)": {
+      "level": "Mega",
+      "type": "Data",
+      "family": "Beast",
+      "specialty": "None",
+      "growth": {
+        "hp": "High",
+        "mp": "Normal",
+        "attack": "Normal",
+        "defense": "High",
+        "speed": "Normal"
+      },
+      "signature_skill": "Tekkosou",
+      "extra_skills": []
+    },
+    "Baihumon (R)": {
+      "level": "Mega",
+      "type": "Data",
+      "family": "Beast",
+      "specialty": "None",
+      "growth": {
+        "hp": "High",
+        "mp": "Normal",
+        "attack": "Normal",
+        "defense": "High",
+        "speed": "Normal"
+      },
+      "signature_skill": "Seidouhou",
+      "extra_skills": []
+    },
+    "Baihumon (A)": {
+      "level": "Mega",
+      "type": "Data",
+      "family": "Beast",
+      "specialty": "None",
+      "growth": {
+        "hp": "High",
+        "mp": "Normal",
+        "attack": "Normal",
+        "defense": "High",
+        "speed": "Normal"
+      },
+      "signature_skill": "Kongou",
+      "extra_skills": []
+    },
+    "BK-I-Dramon": {
+      "level": "Mega",
+      "type": "Virus",
+      "family": "Flying",
+      "specialty": "None",
+      "growth": {
+        "hp": "High",
+        "mp": "Low",
+        "attack": "Normal",
+        "defense": "Normal",
+        "speed": "High"
+      },
+      "signature_skill": "Mega Death",
+      "extra_skills": []
+    },
+    "BM-Garurumon": {
+      "level": "Mega",
+      "type": "Virus",
+      "family": "Beast",
+      "specialty": "Machine",
+      "growth": {
+        "hp": "Low",
+        "mp": "Low",
+        "attack": "High",
+        "defense": "High",
+        "speed": "Normal"
+      },
+      "signature_skill": "Grace Cross Freezer",
+      "extra_skills": []
+    },
+    "B-WarGreymon": {
+      "level": "Mega",
+      "type": "Virus",
+      "family": "Dragon",
+      "specialty": "None",
+      "growth": {
+        "hp": "Normal",
+        "mp": "Low",
+        "attack": "High",
+        "defense": "Normal",
+        "speed": "Normal"
+      },
+      "signature_skill": "Terra Destroyer",
+      "extra_skills": []
+    },
+    "Boltmon": {
+      "level": "Mega",
+      "type": "Data",
+      "family": "Junk",
+      "specialty": "Machine",
+      "growth": {
+        "hp": "Normal",
+        "mp": "Normal",
+        "attack": "Normal",
+        "defense": "Normal",
+        "speed": "Normal"
+      },
+      "signature_skill": "Tomahawk Steiner",
+      "extra_skills": [
+        {
+          "skill": "Fairy Tale",
+          "type": "Attack",
+          "locations": ["Core Tower", "Chaos Tower"]
+        },
+        {
+          "skill": "Starlight Explosion",
+          "type": "Attack",
+          "locations": ["Core Tower", "Chaos Tower"]
+        }
+      ]
+    },
+    "Diaboromon (M)": {
+      "level": "Mega",
+      "type": "Virus",
+      "family": "Insect",
+      "specialty": "Darkness",
+      "growth": {
+        "hp": "Normal",
+        "mp": "Normal",
+        "attack": "High",
+        "defense": "Normal",
+        "speed": "High"
+      },
+      "signature_skill": "Paradise Lost",
+      "extra_skills": []
+    },
+    "Diaboromon (R)": {
+      "level": "Mega",
+      "type": "Virus",
+      "family": "Insect",
+      "specialty": "Darkness",
+      "growth": {
+        "hp": "Normal",
+        "mp": "Normal",
+        "attack": "High",
+        "defense": "Normal",
+        "speed": "High"
+      },
+      "signature_skill": "Catastrophe Cannon",
+      "extra_skills": []
+    },
+    "Diaboromon (A)": {
+      "level": "Mega",
+      "type": "Virus",
+      "family": "Insect",
+      "specialty": "Darkness",
+      "growth": {
+        "hp": "Normal",
+        "mp": "Normal",
+        "attack": "High",
+        "defense": "Normal",
+        "speed": "High"
+      },
+      "signature_skill": "Multiply",
+      "extra_skills": []
+    },
+    "Ebemon": {
+      "level": "Mega",
+      "type": "Virus",
+      "family": "Junk",
+      "specialty": "Machine",
+      "growth": {
+        "hp": "Normal",
+        "mp": "Normal",
+        "attack": "Normal",
+        "defense": "Normal",
+        "speed": "Normal"
+      },
+      "signature_skill": "Brain Rupture",
+      "extra_skills": [
+        {
+          "skill": "Halley Squall",
+          "type": "Attack",
+          "locations": ["Core Tower", "Chaos Tower"]
+        }
+      ]
+    },
+    "GranKuwagamon": {
+      "level": "Mega",
+      "type": "Virus",
+      "family": "Insect",
+      "specialty": "Nature",
+      "growth": {
+        "hp": "Normal",
+        "mp": "Normal",
+        "attack": "Normal",
+        "defense": "Low",
+        "speed": "High"
+      },
+      "signature_skill": "Dimension Scissor",
+      "extra_skills": []
+    },
+    "Gryphonmon": {
+      "level": "Mega",
+      "type": "Data",
+      "family": "Flying",
+      "specialty": "Nature",
+      "growth": {
+        "hp": "Low",
+        "mp": "Normal",
+        "attack": "High",
+        "defense": "Normal",
+        "speed": "High"
+      },
+      "signature_skill": "Supersonic Voice",
+      "extra_skills": []
+    },
+    "H-Kabuterimon": {
+      "level": "Mega",
+      "type": "Vaccine",
+      "family": "Insect",
+      "specialty": "Nature",
+      "growth": {
+        "hp": "Low",
+        "mp": "Low",
+        "attack": "High",
+        "defense": "High",
+        "speed": "Normal"
+      },
+      "signature_skill": "Giga Blaster",
+      "extra_skills": [
+        {
+          "skill": "Heat Viper",
+          "type": "Attack",
+          "locations": ["Chaos Tower"]
+        }
+      ]
+    },
+    "HiAndromon": {
+      "level": "Mega",
+      "type": "Vaccine",
+      "family": "Junk",
+      "specialty": "Machine",
+      "growth": {
+        "hp": "Normal",
+        "mp": "Normal",
+        "attack": "Normal",
+        "defense": "Normal",
+        "speed": "Normal"
+      },
+      "signature_skill": "Atomic Ray",
+      "extra_skills": [
+        {
+          "skill": "Heaven's Heal",
+          "type": "Assist",
+          "locations": ["Core Tower", "Chaos Tower"]
+        }
+      ]
+    },
+    "I-Dramon": {
+      "level": "Mega",
+      "type": "Vaccine",
+      "family": "Flying",
+      "specialty": "None",
+      "growth": {
+        "hp": "Low",
+        "mp": "High",
+        "attack": "Normal",
+        "defense": "Normal",
+        "speed": "High"
+      },
+      "signature_skill": "Mega Fire",
+      "extra_skills": []
+    },
+    "Jijimon": {
+      "level": "Mega",
+      "type": "Vaccine",
+      "family": "Beast",
+      "specialty": "None",
+      "growth": {
+        "hp": "High",
+        "mp": "High",
+        "attack": "Normal",
+        "defense": "Normal",
+        "speed": "Low"
+      },
+      "signature_skill": "Hung on Death",
+      "extra_skills": []
+    },
+    "Machinedramon": {
+      "level": "Mega",
+      "type": "Virus",
+      "family": "Dragon",
+      "specialty": "Machine",
+      "growth": {
+        "hp": "Normal",
+        "mp": "Normal",
+        "attack": "Normal",
+        "defense": "Normal",
+        "speed": "Normal"
+      },
+      "signature_skill": "Infinity Cannon",
+      "extra_skills": [
+        {
+          "skill": "Bullet Hammer",
+          "type": "Attack",
+          "locations": ["Chaos Tower"]
+        }
+      ]
+    },
+    "Magnadramon": {
+      "level": "Mega",
+      "type": "Vaccine",
+      "family": "Spirit",
+      "specialty": "None",
+      "growth": {
+        "hp": "High",
+        "mp": "High",
+        "attack": "Normal",
+        "defense": "Low",
+        "speed": "Normal"
+      },
+      "signature_skill": "Holy Flame",
+      "extra_skills": []
+    },
+    "MarineAngemon": {
+      "level": "Mega",
+      "type": "Vaccine",
+      "family": "Marine",
+      "specialty": "Water",
+      "growth": {
+        "hp": "High",
+        "mp": "High",
+        "attack": "Low",
+        "defense": "Normal",
+        "speed": "Normal"
+      },
+      "signature_skill": "Ocean Love",
+      "extra_skills": [
+        {
+          "skill": "Holy Arrow",
+          "type": "Attack",
+          "locations": ["Adware Abyss", "Core Tower", "Chaos Tower"]
+        },
+        {
+          "skill": "Anti-Magic",
+          "type": "Assist",
+          "locations": ["Adware Abyss", "Core Tower", "Chaos Tower"]
+        }
+      ]
+    },
+    "MetalEtemon": {
+      "level": "Mega",
+      "type": "Virus",
+      "family": "Beast",
+      "specialty": "Machine",
+      "growth": {
+        "hp": "Normal",
+        "mp": "Normal",
+        "attack": "Low",
+        "defense": "High",
+        "speed": "High"
+      },
+      "signature_skill": "Banana Slip",
+      "extra_skills": []
+    },
+    "M-Garurumon": {
+      "level": "Mega",
+      "type": "Data",
+      "family": "Beast",
+      "specialty": "Machine",
+      "growth": {
+        "hp": "Low",
+        "mp": "Low",
+        "attack": "Normal",
+        "defense": "High",
+        "speed": "High"
+      },
+      "signature_skill": "Cocytus Breath",
+      "extra_skills": []
+    },
+    "M-Seadramon": {
+      "level": "Mega",
+      "type": "Data",
+      "family": "Marine",
+      "specialty": "Machine",
+      "growth": {
+        "hp": "Low",
+        "mp": "Low",
+        "attack": "Normal",
+        "defense": "High",
+        "speed": "High"
+      },
+      "signature_skill": "Ultimate Stream",
+      "extra_skills": [
+        {
+          "skill": "Deadly Bomb",
+          "type": "Attack",
+          "locations": ["Adware Abyss", "Core Tower"]
+        },
+        {
+          "skill": "Giga Heal",
+          "type": "Assist",
+          "locations": ["Adware Abyss", "Core Tower"]
+        },
+        {
+          "skill": "Atomic Ray",
+          "type": "Attack",
+          "locations": ["Chaos Tower"]
+        }
+      ]
+    },
+    "Omnimon (M)": {
+      "level": "Mega",
+      "type": "Vaccine",
+      "family": "Spirit",
+      "specialty": "None",
+      "growth": {
+        "hp": "Normal",
+        "mp": "Normal",
+        "attack": "High",
+        "defense": "High",
+        "speed": "Normal"
+      },
+      "signature_skill": "Grey Sword",
+      "extra_skills": []
+    },
+    "Omnimon (R)": {
+      "level": "Mega",
+      "type": "Vaccine",
+      "family": "Spirit",
+      "specialty": "None",
+      "growth": {
+        "hp": "Normal",
+        "mp": "Normal",
+        "attack": "High",
+        "defense": "High",
+        "speed": "Normal"
+      },
+      "signature_skill": "Garuru Cannon",
+      "extra_skills": []
+    },
+    "Omnimon (A)": {
+      "level": "Mega",
+      "type": "Vaccine",
+      "family": "Spirit",
+      "specialty": "None",
+      "growth": {
+        "hp": "Normal",
+        "mp": "Normal",
+        "attack": "High",
+        "defense": "High",
+        "speed": "Normal"
+      },
+      "signature_skill": "Ω Heal",
+      "extra_skills": []
+    },
+    "Phoenixmon": {
+      "level": "Mega",
+      "type": "Vaccine",
+      "family": "Flying",
+      "specialty": "Fire",
+      "growth": {
+        "hp": "Normal",
+        "mp": "High",
+        "attack": "Normal",
+        "defense": "Low",
+        "speed": "High"
+      },
+      "signature_skill": "Starlight Explosion",
+      "extra_skills": []
+    },
+    "Pierrotmon": {
+      "level": "Mega",
+      "type": "Virus",
+      "family": "Spirit",
+      "specialty": "Darkness",
+      "growth": {
+        "hp": "Low",
+        "mp": "High",
+        "attack": "High",
+        "defense": "Normal",
+        "speed": "Normal"
+      },
+      "signature_skill": "Trump Sword",
+      "extra_skills": []
+    },
+    "P-Numemon": {
+      "level": "Mega",
+      "type": "Virus",
+      "family": "Junk",
+      "specialty": "Machine",
+      "growth": {
+        "hp": "High",
+        "mp": "High",
+        "attack": "Low",
+        "defense": "High",
+        "speed": "Low"
+      },
+      "signature_skill": "Platinum Junk",
+      "extra_skills": []
+    },
+    "Plesiomon": {
+      "level": "Mega",
+      "type": "Data",
+      "family": "Marine",
+      "specialty": "Water",
+      "growth": {
+        "hp": "High",
+        "mp": "Normal",
+        "attack": "Normal",
+        "defense": "High",
+        "speed": "Low"
+      },
+      "signature_skill": "Sorrow Blue",
+      "extra_skills": []
+    },
+    "P-Mamemon": {
+      "level": "Mega",
+      "type": "Data",
+      "family": "Spirit",
+      "specialty": "Machine",
+      "growth": {
+        "hp": "High",
+        "mp": "Low",
+        "attack": "Normal",
+        "defense": "High",
+        "speed": "Normal"
+      },
+      "signature_skill": "Smiley Warhead",
+      "extra_skills": []
+    },
+    "Pukumon": {
+      "level": "Mega",
+      "type": "Virus",
+      "family": "Marine",
+      "specialty": "Water",
+      "growth": {
+        "hp": "High",
+        "mp": "Low",
+        "attack": "High",
+        "defense": "Normal",
+        "speed": "Normal"
+      },
+      "signature_skill": "Needle Squall",
+      "extra_skills": []
+    },
+    "Puppetmon": {
+      "level": "Mega",
+      "type": "Virus",
+      "family": "Plant",
+      "specialty": "Nature",
+      "growth": {
+        "hp": "Low",
+        "mp": "High",
+        "attack": "Normal",
+        "defense": "Normal",
+        "speed": "High"
+      },
+      "signature_skill": "Bullet Hammer",
+      "extra_skills": [
+        {
+          "skill": "Reverse Program",
+          "type": "Interrupt",
+          "locations": ["Core Tower", "Chaos Tower"]
+        }
+      ]
+    },
+    "Rosemon": {
+      "level": "Mega",
+      "type": "Data",
+      "family": "Plant",
+      "specialty": "Nature",
+      "growth": {
+        "hp": "Low",
+        "mp": "High",
+        "attack": "High",
+        "defense": "Normal",
+        "speed": "Normal"
+      },
+      "signature_skill": "Rose Spear",
+      "extra_skills": []
+    },
+    "S-Mammothmon": {
+      "level": "Mega",
+      "type": "Vaccine",
+      "family": "Beast",
+      "specialty": "Darkness",
+      "growth": {
+        "hp": "High",
+        "mp": "Low",
+        "attack": "High",
+        "defense": "Normal",
+        "speed": "Normal"
+      },
+      "signature_skill": "Spiral Bone",
+      "extra_skills": []
+    },
+    "SaberLeomon": {
+      "level": "Mega",
+      "type": "Data",
+      "family": "Beast",
+      "specialty": "None",
+      "growth": {
+        "hp": "High",
+        "mp": "Low",
+        "attack": "Normal",
+        "defense": "Normal",
+        "speed": "High"
+      },
+      "signature_skill": "Nail Crusher",
+      "extra_skills": []
+    },
+    "Seraphimon": {
+      "level": "Mega",
+      "type": "Vaccine",
+      "family": "Spirit",
+      "specialty": "None",
+      "growth": {
+        "hp": "High",
+        "mp": "High",
+        "attack": "Low",
+        "defense": "Normal",
+        "speed": "Normal"
+      },
+      "signature_skill": "Final Heal",
+      "extra_skills": []
+    },
+    "V-Myotismon": {
+      "level": "Mega",
+      "type": "Virus",
+      "family": "Spirit",
+      "specialty": "Darkness",
+      "growth": {
+        "hp": "Low",
+        "mp": "High",
+        "attack": "Normal",
+        "defense": "High",
+        "speed": "Normal"
+      },
+      "signature_skill": "Venom Infuse",
+      "extra_skills": []
+    },
+    "WarGreymon": {
+      "level": "Mega",
+      "type": "Vaccine",
+      "family": "Dragon",
+      "specialty": "None",
+      "growth": {
+        "hp": "Normal",
+        "mp": "Low",
+        "attack": "Normal",
+        "defense": "High",
+        "speed": "Normal"
+      },
+      "signature_skill": "Terra Force",
+      "extra_skills": []
+    }
+  }
+}

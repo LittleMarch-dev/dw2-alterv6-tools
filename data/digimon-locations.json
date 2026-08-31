@@ -1,0 +1,1409 @@
+{
+  "Gabumon": [
+    "Initial Cave (Floor 1)",
+    "Codec Cavern (Floor 3 ~ 7)",
+    "Client Coast (Floor 3 ~ 4)",
+    "TCP Terrace (Floor 1)",
+    "QoS Quarry (Floor 2 / 5)",
+    "Core Tower (Floor 4)",
+    "Core Tower (Floor 5)"
+  ],
+  "Gazimon": [
+    "Initial Cave (Floor 1)",
+    "Conflux Cave (Floor 1)",
+    "FSB Field (Floor 2 ~ 4)",
+    "Client Coast (Floor 3 ~ 4)",
+    "Client Coast (Floor 5 ~ 8)",
+    "RISC River (Floor 1 ~ 2)",
+    "QoS Quarry (Floor 3 / 6)",
+    "Core Tower (Floor 4)",
+    "Core Tower (Floor 5)",
+    "Core Tower (Floor 6)"
+  ],
+  "Tapirmon": [
+    "Initial Cave (Floor 1)",
+    "Conflux Cave (Floor 3)",
+    "Registry Roost (Floor 3 ~ 5)",
+    "Client Coast (Floor 3 ~ 4)",
+    "TCP Terrace (Floor 1)",
+    "Protocol Pit (Floor 1)",
+    "QoS Quarry (Floor 1 / 4)",
+    "Core Tower (Floor 4)",
+    "Core Tower (Floor 5)"
+  ],
+  "Betamon": [
+    "Initial Cave (Floor 2)",
+    "BASIC Beach (Floor 1 ~ 4)",
+    "UEFI Uplands (Floor 1 ~ 2)",
+    "UEFI Uplands (Floor 2 ~ 4)",
+    "UEFI Uplands (Floor 5)",
+    "PCI Preserve (Floor 1)",
+    "PCI Preserve (Floor 2 ~ 5)",
+    "FSB Field (Floor 1)",
+    "Client Coast (Floor 1)",
+    "RISC River (Floor 1 ~ 2)",
+    "Core Tower (Floor 2)",
+    "Core Tower (Floor 3)",
+    "Core Tower (Floor 7)"
+  ],
+  "ModokiBetamon": [
+    "Initial Cave (Floor 2)",
+    "UEFI Uplands (Floor 5)",
+    "Codec Cavern (Floor 3 ~ 7)",
+    "Client Coast (Floor 3 ~ 4)",
+    "TCP Terrace (Floor 1)",
+    "Native Forest (Floor 1 ~ 6)",
+    "Tropical Jungle (Floor 1)",
+    "Core Tower (Floor 5)",
+    "Core Tower (Floor 7)"
+  ],
+  "Goburimon": [
+    "Conflux Cave (Floor 1)",
+    "FSB Field (Floor 2 ~ 4)",
+    "Client Coast (Floor 3 ~ 4)",
+    "Protocol Pit (Floor 2 ~ 7)",
+    "Native Forest (Floor 1 ~ 6)",
+    "Tropical Jungle (Floor 1 / 3)",
+    "Core Tower (Floor 5)"
+  ],
+  "Elecmon": [
+    "Conflux Cave (Floor 2 / 4 ~ 5)",
+    "TCP Terrace (Floor 2 ~ 4)"
+  ],
+  "Psychemon": [
+    "Conflux Cave (Floor 2 / 4 ~ 5)",
+    "FSB Field (Floor 5 ~ 6)",
+    "Codec Cavern (Floor 4 ~ 7)",
+    "TCP Terrace (Floor 1)",
+    "Core Tower (Floor 7)",
+    "Core Tower (Floor 8)"
+  ],
+  "ClearAgumon": [
+    "Conflux Cave (Floor 3)",
+    "Registry Roost (Floor 5 ~ 7)",
+    "TCP Terrace (Floor 1)",
+    "Protocol Pit (Floor 1 ~ 2)",
+    "Core Tower (Floor 8)"
+  ],
+  "SnowAgumon": [
+    "Conflux Cave (Floor 3)",
+    "Registry Roost (Floor 3 ~ 5)",
+    "Client Coast (Floor 3 ~ 4)",
+    "TCP Terrace (Floor 1)",
+    "Protocol Pit (Floor 1)",
+    "IDS Ice Cave (Floor 1 ~ 2)",
+    "Core Tower (Floor 5)"
+  ],
+  "ToyAgumon": [
+    "Conflux Cave (Floor 3)",
+    "TCP Terrace (Floor 2 ~ 4)"
+  ],
+  "Shamamon": [
+    "Conflux Cave (Floor 5)",
+    "RISC River (Floor 1 ~ 2)"
+  ],
+  "SnowGoburimon": [
+    "Conflux Cave (Floor 5)"
+  ],
+  "Biyomon": [
+    "BASIC Beach (Floor 1 ~ 4)",
+    "PCI Preserve (Floor 1)",
+    "PCI Preserve (Floor 2 ~ 5)",
+    "Registry Roost (Floor 1 ~ 4)",
+    "Client Coast (Floor 1)",
+    "TCP Terrace (Floor 3 ~ 6)",
+    "Core Tower (Floor 2)",
+    "Core Tower (Floor 3)",
+    "Core Tower (Floor 10)"
+  ],
+  "Candlemon": [
+    "BASIC Beach (Floor 1 ~ 4)",
+    "UEFI Uplands (Floor 1 ~ 2)",
+    "UEFI Uplands (Floor 2 ~ 4)",
+    "Codec Cavern (Floor 1 ~ 3)",
+    "Client Coast (Floor 1)",
+    "TCP Terrace (Floor 2 ~ 4)",
+    "Core Tower (Floor 2)",
+    "Core Tower (Floor 3)"
+  ],
+  "Floramon": [
+    "UEFI Uplands (Floor 2 ~ 4)",
+    "Codec Cavern (Floor 1 ~ 3)",
+    "Client Coast (Floor 1)",
+    "TCP Terrace (Floor 3 ~ 6)",
+    "RISC River (Floor 2 ~ 6)",
+    "Core Tower (Floor 3)",
+    "Core Tower (Floor 9)"
+  ],
+  "Tentomon": [
+    "PCI Preserve (Floor 2 ~ 5)",
+    "Registry Roost (Floor 1 ~ 4)",
+    "Client Coast (Floor 1)",
+    "TCP Terrace (Floor 2 ~ 4)",
+    "Core Tower (Floor 3)"
+  ],
+  "BlackAgumon": [
+    "PCI Preserve (Floor 6 ~ 7)",
+    "Great Canyon (Floor 1 ~ 5)"
+  ],
+  "Veemon": [
+    "PCI Preserve (Floor 6 ~ 7)",
+    "TCP Terrace (Floor 3 ~ 6)",
+    "Protocol Pit (Floor 2 ~ 7)",
+    "DialUp Desert (Floor 1 ~ 2)",
+    "Core Tower (Floor 9)"
+  ],
+  "Birdramon": [
+    "PCI Preserve (Floor 6 ~ 7)",
+    "QoS Quarry (Floor 7 ~ 11)",
+    "Titan Bunker (Floor 3 / 6)",
+    "Great Canyon (Floor 1 ~ 5)",
+    "Core Tower (Floor 11)",
+    "Core Tower (Floor 16)"
+  ],
+  "Cyclomon": [
+    "PCI Preserve (Floor 6 ~ 7)",
+    "Undersea Base (Floor 2 ~ 3)",
+    "Coastal Depot (Floor 8 ~ 9)",
+    "Tropical Jungle (Floor 10 ~ 11)",
+    "Great Canyon (Floor 8 ~ 12)",
+    "Misty Trees (Floor 9 ~ 14)",
+    "Beetleland (Floor 5 ~ 10)",
+    "GreyLord Manor (Floor 4 ~ 5 / 7 ~ 8)",
+    "Staog Shrine (Floor 1 ~ 2)",
+    "Core Tower (Floor 11)",
+    "Core Tower (Floor 17 ~ 18)",
+    "Core Tower (Floor 22)"
+  ],
+  "D-Tyrannomon": [
+    "PCI Preserve (Floor 6 ~ 7)",
+    "Great Canyon (Floor 8 ~ 10)"
+  ],
+  "DarkLizamon": [
+    "PCI Preserve (Floor 6 ~ 7)",
+    "QoS Quarry (Floor 2 / 5)",
+    "Misty Trees (Floor 8 / 10 ~ 12)",
+    "Beetleland (Floor 1 ~ 6)",
+    "GreyLord Manor (Floor 1 ~ 3 / 9)",
+    "Core Tower (Floor 15)"
+  ],
+  "Deltamon": [
+    "PCI Preserve (Floor 6 ~ 7)",
+    "DialUp Desert (Floor 3 / 5 ~ 7)",
+    "QoS Quarry (Floor 7 ~ 11)",
+    "Titan Bunker (Floor 1 / 5)",
+    "Great Canyon (Floor 1 ~ 5)",
+    "GreyLord Manor (Floor 2 / 4 ~ 6)",
+    "Mt. Infinity (Floor 1 / 3)",
+    "Core Tower (Floor 16)"
+  ],
+  "FlareLizamon": [
+    "PCI Preserve (Floor 6 ~ 7)",
+    "QoS Quarry (Floor 7 ~ 11)",
+    "Titan Bunker (Floor 4 / 8)",
+    "Native Forest (Floor 5 ~ 6)",
+    "Tropical Jungle (Floor 5 ~ 7)",
+    "Great Canyon (Floor 5 ~ 8)",
+    "Misty Trees (Floor 7 ~ 8 / 10)",
+    "Factorial Town (Floor 1 ~ 3)",
+    "Factorial Town (Floor 1 ~ 3 / 5 ~ 6)",
+    "Core Tower (Floor 11)",
+    "Core Tower (Floor 16)"
+  ],
+  "Greymon": [
+    "PCI Preserve (Floor 6 ~ 7)",
+    "QoS Quarry (Floor 1 / 4)",
+    "QoS Quarry (Floor 3 / 6)",
+    "Great Canyon (Floor 6 ~ 10)",
+    "Core Tower (Floor 11)",
+    "Core Tower (Floor 15)"
+  ],
+  "Kabuterimon": [
+    "PCI Preserve (Floor 6 ~ 7)",
+    "QoS Quarry (Floor 7 ~ 11)",
+    "Titan Bunker (Floor 2 / 7)",
+    "Tropical Jungle (Floor 8 ~ 9)",
+    "Misty Trees (Floor 3 ~ 7)",
+    "Beetleland (Floor 1 ~ 4)",
+    "Core Tower (Floor 11)",
+    "Core Tower (Floor 16)"
+  ],
+  "Tyrannomon": [
+    "PCI Preserve (Floor 6 ~ 7)",
+    "QoS Quarry (Floor 1 / 4)",
+    "QoS Quarry (Floor 2 / 5)",
+    "Great Canyon (Floor 8 ~ 10)",
+    "Core Tower (Floor 15)"
+  ],
+  "Veedramon": [
+    "PCI Preserve (Floor 6 ~ 7)",
+    "QoS Quarry (Floor 3 / 6)",
+    "Great Canyon (Floor 8 ~ 10)",
+    "Core Tower (Floor 11)",
+    "Core Tower (Floor 15)"
+  ],
+  "S-ToyAgumon": [
+    "FSB Field (Floor 5 ~ 6)",
+    "QoS Quarry (Floor 2 / 5)",
+    "Core Tower (Floor 7)",
+    "Core Tower (Floor 15)"
+  ],
+  "Agumon": [
+    "Registry Roost (Floor 5 ~ 7)",
+    "TCP Terrace (Floor 1)",
+    "TCP Terrace (Floor 3 ~ 6)",
+    "Protocol Pit (Floor 1 ~ 2)",
+    "Protocol Pit (Floor 2 ~ 7)",
+    "DialUp Desert (Floor 1 ~ 2)",
+    "Core Tower (Floor 8)",
+    "Core Tower (Floor 9)"
+  ],
+  "Muchomon": [
+    "Registry Roost (Floor 5 ~ 7)",
+    "Codec Cavern (Floor 5 ~ 7)",
+    "Core Tower (Floor 7)"
+  ],
+  "Penguinmon": [
+    "Registry Roost (Floor 5 ~ 7)",
+    "Codec Cavern (Floor 5 ~ 7)",
+    "Client Coast (Floor 5 ~ 8)",
+    "Core Tower (Floor 6)",
+    "Core Tower (Floor 7)"
+  ],
+  "Solarmon": [
+    "Registry Roost (Floor 5 ~ 7)",
+    "TCP Terrace (Floor 1)",
+    "Protocol Pit (Floor 1 ~ 2)",
+    "QoS Quarry (Floor 3 / 6)",
+    "Core Tower (Floor 8)",
+    "Core Tower (Floor 15)"
+  ],
+  "Aruraumon": [
+    "Codec Cavern (Floor 4 ~ 7)",
+    "TCP Terrace (Floor 1)",
+    "Readme Ruins (Floor 1 ~ 3)",
+    "Core Tower (Floor 8)"
+  ],
+  "Patamon": [
+    "Codec Cavern (Floor 4 ~ 7)",
+    "TCP Terrace (Floor 1)",
+    "QoS Quarry (Floor 1 / 4)",
+    "Core Tower (Floor 8)",
+    "Core Tower (Floor 15)"
+  ],
+  "Crabmon": [
+    "Client Coast (Floor 5 ~ 8)",
+    "RISC River (Floor 1 / 3)",
+    "Core Tower (Floor 6)"
+  ],
+  "Gizamon": [
+    "Client Coast (Floor 5 ~ 8)",
+    "RISC River (Floor 1 ~ 2)",
+    "Core Tower (Floor 6)"
+  ],
+  "Gomamon": [
+    "Client Coast (Floor 5 ~ 8)",
+    "Core Tower (Floor 6)"
+  ],
+  "Gotsumon": [
+    "Client Coast (Floor 5 ~ 8)",
+    "RISC River (Floor 1 / 3)",
+    "Readme Ruins (Floor 1 ~ 4)",
+    "IDS Ice Cave (Floor 1 ~ 5)",
+    "Core Tower (Floor 6)"
+  ],
+  "Palmon": [
+    "TCP Terrace (Floor 3 ~ 6)",
+    "RISC River (Floor 2 ~ 6)",
+    "Native Forest (Floor 1 ~ 6)",
+    "Core Tower (Floor 9)"
+  ],
+  "Airdramon": [
+    "TCP Terrace (Floor 3 ~ 6)",
+    "Protocol Pit (Floor 2 ~ 7)",
+    "DialUp Desert (Floor 1 ~ 2)",
+    "QoS Quarry (Floor 7 ~ 11)",
+    "Titan Bunker (Floor 2 / 7)",
+    "Great Canyon (Floor 1 ~ 5)",
+    "Core Tower (Floor 9)",
+    "Core Tower (Floor 16)"
+  ],
+  "Centarumon": [
+    "TCP Terrace (Floor 3 ~ 6)",
+    "RISC River (Floor 2 ~ 6)",
+    "Readme Ruins (Floor 1 ~ 3)",
+    "Tropical Jungle (Floor 5 ~ 7)",
+    "Great Canyon (Floor 5 ~ 8)",
+    "Factorial Town (Floor 1 ~ 3 / 5 ~ 6)",
+    "Core Tower (Floor 9)"
+  ],
+  "Kokatorimon": [
+    "TCP Terrace (Floor 3 ~ 6)",
+    "DialUp Desert (Floor 4 / 8 ~ 9)",
+    "Coastal Depot (Floor 3 ~ 4)",
+    "Titan Bunker (Floor 4 / 8)",
+    "Tropical Jungle (Floor 7 ~ 9)",
+    "Misty Trees (Floor 2 ~ 3 / 5)",
+    "Core Tower (Floor 10)"
+  ],
+  "ShimaUnimon": [
+    "TCP Terrace (Floor 3 ~ 6)",
+    "Readme Ruins (Floor 7 ~ 9)",
+    "Coastal Depot (Floor 7)",
+    "Tropical Jungle (Floor 5 ~ 7)",
+    "Misty Trees (Floor 1 ~ 2 / 4)",
+    "Beetleland (Floor 1 ~ 4)",
+    "Core Tower (Floor 10)",
+    "Core Tower (Floor 14)"
+  ],
+  "Mushroomon": [
+    "RISC River (Floor 1 ~ 2)"
+  ],
+  "Dokunemon": [
+    "RISC River (Floor 2 ~ 6)",
+    "Native Forest (Floor 1 ~ 6)",
+    "Core Tower (Floor 9)"
+  ],
+  "Otamamon": [
+    "RISC River (Floor 2 ~ 6)",
+    "Core Tower (Floor 9)"
+  ],
+  "Woodmon": [
+    "RISC River (Floor 2 ~ 6)",
+    "RISC River (Floor 5 ~ 7)",
+    "Deserted Fort (Floor 1 ~ 4)",
+    "Coastal Depot (Floor 1 ~ 2)",
+    "Tropical Jungle (Floor 5 ~ 7)",
+    "Misty Trees (Floor 1 ~ 2 / 4)",
+    "Beetleland (Floor 1 ~ 4)",
+    "Core Tower (Floor 9)",
+    "Core Tower (Floor 11)"
+  ],
+  "Fugamon": [
+    "RISC River (Floor 5 ~ 7)",
+    "Coastal Depot (Floor 1 ~ 2)",
+    "Tropical Jungle (Floor 8 ~ 9)",
+    "Misty Trees (Floor 3 ~ 7)",
+    "Core Tower (Floor 11)"
+  ],
+  "RedVegimon": [
+    "RISC River (Floor 5 ~ 7)",
+    "Coastal Depot (Floor 1 ~ 2)",
+    "Native Forest (Floor 1 ~ 6)",
+    "Tropical Jungle (Floor 1 / 3)",
+    "Core Tower (Floor 11)"
+  ],
+  "Hagurumon": [
+    "Protocol Pit (Floor 2 ~ 7)"
+  ],
+  "Tsukaimon": [
+    "Protocol Pit (Floor 2 ~ 7)"
+  ],
+  "DemiDevimon": [
+    "Protocol Pit (Floor 3 ~ 7)",
+    "DialUp Desert (Floor 1 ~ 2)"
+  ],
+  "Kunemon": [
+    "Protocol Pit (Floor 3 ~ 7)",
+    "DialUp Desert (Floor 1 ~ 2)"
+  ],
+  "Bakemon": [
+    "Protocol Pit (Floor 3 ~ 7)",
+    "Protocol Pit (Floor 8)",
+    "DialUp Desert (Floor 1 ~ 2)",
+    "DialUp Desert (Floor 2 / 4)",
+    "IDS Ice Cave (Floor 10 ~ 15)",
+    "Coastal Depot (Floor 1 ~ 2)",
+    "Titan Bunker (Floor 9 ~ 10)",
+    "Freezeland (Floor 1 ~ 5)",
+    "Misty Trees (Floor 8 / 10 ~ 12)",
+    "GreyLord Manor (Floor 1 ~ 3 / 9)",
+    "Core Tower (Floor 11)"
+  ],
+  "Guardromon": [
+    "Protocol Pit (Floor 8)",
+    "DialUp Desert (Floor 2 / 4)",
+    "Deserted Fort (Floor 1 ~ 4)",
+    "Coastal Depot (Floor 1 ~ 2)",
+    "Factorial Town (Floor 4 / 6 ~ 9 / 11)",
+    "Mt. Infinity (Floor 4 / 7)",
+    "Staog Shrine (Floor 2 ~ 3)",
+    "Rootkit Rift (Floor 1 ~ 2)",
+    "Core Tower (Floor 11)",
+    "Core Tower (Floor 23)",
+    "Chaos Tower (Floor 1 ~ 2)"
+  ],
+  "Tuskmon": [
+    "Protocol Pit (Floor 8)",
+    "DialUp Desert (Floor 2 / 4)",
+    "QoS Quarry (Floor 7 ~ 11)",
+    "Coastal Depot (Floor 1 ~ 2)",
+    "Titan Bunker (Floor 1 / 5)",
+    "Great Canyon (Floor 1 ~ 5)",
+    "Great Canyon (Floor 6 ~ 10)",
+    "Core Tower (Floor 11)",
+    "Core Tower (Floor 16)"
+  ],
+  "BlackGabumon": [
+    "DialUp Desert (Floor 3 / 5 ~ 7)"
+  ],
+  "SandYanmamon": [
+    "DialUp Desert (Floor 3 / 5 ~ 7)",
+    "DialUp Desert (Floor 4 / 8 ~ 9)",
+    "Deserted Fort (Floor 8 ~ 9)",
+    "Coastal Depot (Floor 3 ~ 4)",
+    "Titan Bunker (Floor 4 / 8)",
+    "Titan Bunker (Floor 9 ~ 10)",
+    "Great Canyon (Floor 3 ~ 4)",
+    "Great Canyon (Floor 10 ~ 13)",
+    "Mt. Infinity (Floor 4 / 6)",
+    "Staog Shrine (Floor 1 ~ 2)",
+    "Core Tower (Floor 22)"
+  ],
+  "Togemon": [
+    "DialUp Desert (Floor 4 / 8 ~ 9)",
+    "Coastal Depot (Floor 3 ~ 4)",
+    "Titan Bunker (Floor 4 / 8)",
+    "Native Forest (Floor 1 ~ 6)",
+    "Tropical Jungle (Floor 1)"
+  ],
+  "Kuwagamon": [
+    "DialUp Desert (Floor 5 / 7 / 9)",
+    "Readme Ruins (Floor 5 ~ 8)",
+    "Coastal Depot (Floor 5 ~ 6)",
+    "Titan Bunker (Floor 1 / 5)",
+    "Beetleland (Floor 1 ~ 6)",
+    "Core Tower (Floor 12 ~ 13)"
+  ],
+  "Raremon": [
+    "DialUp Desert (Floor 5 / 7 / 9)",
+    "Readme Ruins (Floor 5 ~ 8)",
+    "Coastal Depot (Floor 5 ~ 6)",
+    "Titan Bunker (Floor 1 / 5)",
+    "GreyLord Manor (Floor 2 / 4 ~ 6)",
+    "Mt. Infinity (Floor 1 / 3)",
+    "Core Tower (Floor 12 ~ 13)"
+  ],
+  "Zassoumon": [
+    "DialUp Desert (Floor 5 / 7 / 9)",
+    "Readme Ruins (Floor 5 ~ 8)",
+    "Coastal Depot (Floor 5 ~ 6)",
+    "Titan Bunker (Floor 1 / 5)",
+    "Great Canyon (Floor 1 ~ 5)",
+    "Core Tower (Floor 12 ~ 13)"
+  ],
+  "Gatomon": [
+    "DialUp Desert (Floor 6 ~ 9)",
+    "Deserted Fort (Floor 1 ~ 4)",
+    "Coastal Depot (Floor 3 ~ 4)",
+    "Titan Bunker (Floor 2 / 7)",
+    "Freezeland (Floor 7 ~ 9)",
+    "Core Tower (Floor 12 ~ 13)"
+  ],
+  "Gururumon": [
+    "DialUp Desert (Floor 6 ~ 9)",
+    "IDS Ice Cave (Floor 14 ~ 15)",
+    "Coastal Depot (Floor 3 ~ 4)",
+    "Coastal Depot (Floor 10 ~ 11)",
+    "Titan Bunker (Floor 2 / 7)",
+    "Titan Bunker (Floor 12 ~ 13)",
+    "Freezeland (Floor 8 / 10 ~ 12)",
+    "Core Tower (Floor 12 ~ 13)",
+    "Core Tower (Floor 21)"
+  ],
+  "Unimon": [
+    "DialUp Desert (Floor 6 ~ 9)",
+    "Coastal Depot (Floor 3 ~ 4)",
+    "Titan Bunker (Floor 2 / 7)",
+    "Native Forest (Floor 5 ~ 6)",
+    "Misty Trees (Floor 7 ~ 8 / 10)",
+    "Factorial Town (Floor 1 ~ 3)",
+    "Core Tower (Floor 12 ~ 13)"
+  ],
+  "Drimogemon": [
+    "Readme Ruins (Floor 1 ~ 4)",
+    "IDS Ice Cave (Floor 1 ~ 5)",
+    "QoS Quarry (Floor 7 ~ 11)",
+    "Titan Bunker (Floor 4 / 8)",
+    "Factorial Town (Floor 4 ~ 9)",
+    "Mt. Infinity (Floor 1 ~ 2)",
+    "Core Tower (Floor 16)"
+  ],
+  "Ninjamon": [
+    "Readme Ruins (Floor 1 ~ 4)",
+    "IDS Ice Cave (Floor 1 ~ 5)",
+    "Deserted Fort (Floor 3 ~ 7)",
+    "Tropical Jungle (Floor 5 ~ 7)",
+    "Great Canyon (Floor 5 ~ 8)",
+    "Factorial Town (Floor 1 ~ 3 / 5 ~ 6)",
+    "Core Tower (Floor 19 ~ 20)"
+  ],
+  "Akatorimon": [
+    "Readme Ruins (Floor 2 ~ 4 / 7 ~ 8)",
+    "Coastal Depot (Floor 5 ~ 6)",
+    "Titan Bunker (Floor 4 / 8)",
+    "Native Forest (Floor 5 ~ 6)",
+    "Misty Trees (Floor 7 ~ 8 / 10)",
+    "Factorial Town (Floor 1 ~ 3)",
+    "Core Tower (Floor 14)"
+  ],
+  "Wizardmon": [
+    "Readme Ruins (Floor 2 ~ 4 / 7 ~ 8)",
+    "Deserted Fort (Floor 8 ~ 9)",
+    "Coastal Depot (Floor 5 ~ 6)",
+    "Coastal Depot (Floor 10 ~ 11)",
+    "Titan Bunker (Floor 4 / 8)",
+    "Titan Bunker (Floor 11 ~ 13)",
+    "Misty Trees (Floor 8 / 10 ~ 12)",
+    "GreyLord Manor (Floor 1 ~ 3 / 9)",
+    "Core Tower (Floor 14)",
+    "Core Tower (Floor 21)"
+  ],
+  "Yanmamon": [
+    "Readme Ruins (Floor 2 ~ 4 / 7 ~ 8)",
+    "Coastal Depot (Floor 5 ~ 6)",
+    "Titan Bunker (Floor 4 / 8)",
+    "Native Forest (Floor 1 ~ 6)",
+    "Tropical Jungle (Floor 1)",
+    "Core Tower (Floor 14)"
+  ],
+  "Leomon": [
+    "Readme Ruins (Floor 7 ~ 9)",
+    "Coastal Depot (Floor 7)",
+    "Native Forest (Floor 1 ~ 6)",
+    "Tropical Jungle (Floor 8 ~ 9)",
+    "Misty Trees (Floor 3 ~ 7)",
+    "Beetleland (Floor 1 ~ 4)",
+    "Core Tower (Floor 14)"
+  ],
+  "Tortamon": [
+    "Readme Ruins (Floor 7 ~ 9)",
+    "IDS Ice Cave (Floor 14 ~ 15)",
+    "Coastal Depot (Floor 7)",
+    "Coastal Depot (Floor 10 ~ 11)",
+    "Titan Bunker (Floor 12 ~ 13)",
+    "Freezeland (Floor 8 / 10 ~ 12)",
+    "Core Tower (Floor 14)",
+    "Core Tower (Floor 21)"
+  ],
+  "Frigimon": [
+    "IDS Ice Cave (Floor 1 ~ 2)",
+    "IDS Ice Cave (Floor 5 ~ 7 / 9 ~ 11)",
+    "Titan Bunker (Floor 2 / 7)",
+    "Freezeland (Floor 7 ~ 9)",
+    "Core Tower (Floor 12 ~ 13)"
+  ],
+  "Syakomon": [
+    "IDS Ice Cave (Floor 1 ~ 5)"
+  ],
+  "Angemon": [
+    "IDS Ice Cave (Floor 1 ~ 5)",
+    "IDS Ice Cave (Floor 10 ~ 15)",
+    "Deserted Fort (Floor 1 ~ 4)",
+    "Titan Bunker (Floor 9 ~ 10)",
+    "Freezeland (Floor 1 ~ 2 / 4 ~ 5)",
+    "Freezeland (Floor 6 ~ 10)",
+    "Misty Trees (Floor 6 / 8)"
+  ],
+  "Icemon": [
+    "IDS Ice Cave (Floor 1 ~ 5)",
+    "Freezeland (Floor 3 ~ 6)",
+    "Factorial Town (Floor 1 ~ 3)"
+  ],
+  "Hyogamon": [
+    "IDS Ice Cave (Floor 4 / 6 ~ 7 / 9)",
+    "IDS Ice Cave (Floor 10 ~ 15)",
+    "Coastal Depot (Floor 2 / 4 / 6)",
+    "Titan Bunker (Floor 1 / 5)",
+    "Titan Bunker (Floor 9 ~ 10)",
+    "Freezeland (Floor 1 ~ 5)",
+    "Core Tower (Floor 14)"
+  ],
+  "Numemon": [
+    "IDS Ice Cave (Floor 4 / 6 ~ 7 / 9)",
+    "Coastal Depot (Floor 2 / 4 / 6)",
+    "Titan Bunker (Floor 1 / 5)",
+    "Native Forest (Floor 1 ~ 6)",
+    "Tropical Jungle (Floor 1 / 3)",
+    "Core Tower (Floor 14)"
+  ],
+  "Soulmon": [
+    "IDS Ice Cave (Floor 4 / 6 ~ 7 / 9)",
+    "Coastal Depot (Floor 2 / 4 / 6)",
+    "Titan Bunker (Floor 1 / 5)",
+    "GreyLord Manor (Floor 8 ~ 14)",
+    "Mt. Infinity (Floor 4 ~ 5 / 7)",
+    "Rootkit Rift (Floor 1 ~ 3)",
+    "Core Tower (Floor 14)",
+    "Core Tower (Floor 23)",
+    "Chaos Tower (Floor 1 ~ 2)"
+  ],
+  "Ikkakumon": [
+    "IDS Ice Cave (Floor 5 ~ 7 / 9 ~ 11)",
+    "Titan Bunker (Floor 2 / 7)",
+    "Freezeland (Floor 6 ~ 10)",
+    "Misty Trees (Floor 6 / 8)",
+    "Core Tower (Floor 12 ~ 13)"
+  ],
+  "Mojyamon": [
+    "IDS Ice Cave (Floor 5 ~ 7 / 9 ~ 11)",
+    "IDS Ice Cave (Floor 10 ~ 15)",
+    "Titan Bunker (Floor 2 / 7)",
+    "Titan Bunker (Floor 9 ~ 10)",
+    "Freezeland (Floor 1 ~ 2 / 4 ~ 5)",
+    "Core Tower (Floor 12 ~ 13)"
+  ],
+  "Dolphmon": [
+    "IDS Ice Cave (Floor 10 ~ 15)",
+    "Undersea Base (Floor 2 ~ 3)",
+    "Coastal Depot (Floor 8 ~ 9)",
+    "Titan Bunker (Floor 9 ~ 10)",
+    "Freezeland (Floor 1 ~ 2 / 4 ~ 5)",
+    "Core Tower (Floor 17 ~ 18)"
+  ],
+  "IceDevimon": [
+    "IDS Ice Cave (Floor 10 ~ 15)",
+    "Titan Bunker (Floor 9 ~ 10)",
+    "Freezeland (Floor 1 ~ 5)",
+    "Freezeland (Floor 7 ~ 9)"
+  ],
+  "Mammothmon": [
+    "IDS Ice Cave (Floor 14 ~ 15)",
+    "Coastal Depot (Floor 10 ~ 11)",
+    "Titan Bunker (Floor 12 ~ 13)",
+    "Freezeland (Floor 8 / 10 ~ 12)",
+    "Staog Shrine (Floor 7 ~ 12 / 14 / 20)",
+    "Rootkit Rift (Floor 15 ~ 17 / 19)",
+    "Core Tower (Floor 21)",
+    "Core Tower (Floor 28)",
+    "Chaos Tower (Floor 11 ~ 12)"
+  ],
+  "Meramon": [
+    "QoS Quarry (Floor 1 / 4)",
+    "Factorial Town (Floor 4 ~ 9)",
+    "Mt. Infinity (Floor 1 ~ 2)",
+    "Core Tower (Floor 15)"
+  ],
+  "Devimon": [
+    "QoS Quarry (Floor 2 / 5)",
+    "QoS Quarry (Floor 3 / 6)",
+    "GreyLord Manor (Floor 3 ~ 7)",
+    "Mt. Infinity (Floor 1 / 3)",
+    "Core Tower (Floor 15)"
+  ],
+  "Garurumon": [
+    "QoS Quarry (Floor 7 ~ 11)",
+    "Titan Bunker (Floor 2 / 7)",
+    "Freezeland (Floor 10 ~ 14)",
+    "Mt. Infinity (Floor 3 / 5 ~ 6)",
+    "Core Tower (Floor 16)",
+    "Core Tower (Floor 23)"
+  ],
+  "Monochromon": [
+    "QoS Quarry (Floor 7 ~ 11)",
+    "Deserted Fort (Floor 8 ~ 9)",
+    "Titan Bunker (Floor 3 / 6)",
+    "Titan Bunker (Floor 9 ~ 10)",
+    "Great Canyon (Floor 1 ~ 5)",
+    "Great Canyon (Floor 3 ~ 4)",
+    "Great Canyon (Floor 6 ~ 10)",
+    "Core Tower (Floor 16)"
+  ],
+  "Orgemon": [
+    "QoS Quarry (Floor 7 ~ 11)",
+    "Titan Bunker (Floor 3 / 6)",
+    "Tropical Jungle (Floor 10 ~ 11)",
+    "Great Canyon (Floor 1 ~ 5)",
+    "Great Canyon (Floor 8 ~ 12)",
+    "Misty Trees (Floor 9 ~ 14)",
+    "Beetleland (Floor 5 ~ 10)",
+    "Factorial Town (Floor 4 ~ 9)",
+    "GreyLord Manor (Floor 4 ~ 5 / 7 ~ 8)",
+    "Mt. Infinity (Floor 1 ~ 2)",
+    "Staog Shrine (Floor 1 ~ 2)",
+    "Core Tower (Floor 16)",
+    "Core Tower (Floor 22)"
+  ],
+  "P-Sukamon": [
+    "QoS Quarry (Floor 7 ~ 11)",
+    "Titan Bunker (Floor 1 / 5)",
+    "Great Canyon (Floor 1 ~ 5)",
+    "Core Tower (Floor 16)"
+  ],
+  "Starmon": [
+    "QoS Quarry (Floor 7 ~ 11)",
+    "Deserted Fort (Floor 8 ~ 9)",
+    "Coastal Depot (Floor 10 ~ 11)",
+    "Titan Bunker (Floor 4 / 8)",
+    "Titan Bunker (Floor 11 ~ 13)",
+    "Core Tower (Floor 16)",
+    "Core Tower (Floor 21)"
+  ],
+  "Coelamon": [
+    "Undersea Base (Floor 1 ~ 3)",
+    "Coastal Depot (Floor 8 ~ 9)",
+    "Tropical Jungle (Floor 3 ~ 4)",
+    "Core Tower (Floor 17 ~ 18)"
+  ],
+  "Gekomon": [
+    "Undersea Base (Floor 1 ~ 3)",
+    "Coastal Depot (Floor 8 ~ 9)",
+    "Tropical Jungle (Floor 8 ~ 9)",
+    "Misty Trees (Floor 3 ~ 7)",
+    "Core Tower (Floor 17 ~ 18)"
+  ],
+  "Gesomon": [
+    "Undersea Base (Floor 1 ~ 3)",
+    "Coastal Depot (Floor 8 ~ 9)",
+    "Core Tower (Floor 17 ~ 18)"
+  ],
+  "Octomon": [
+    "Undersea Base (Floor 1 ~ 3)",
+    "Coastal Depot (Floor 8 ~ 9)",
+    "Core Tower (Floor 17 ~ 18)"
+  ],
+  "Seadramon": [
+    "Undersea Base (Floor 1 ~ 3)",
+    "Undersea Base (Floor 2 ~ 3)",
+    "Coastal Depot (Floor 8 ~ 9)",
+    "Tropical Jungle (Floor 3 ~ 4)",
+    "Freezeland (Floor 3 ~ 6)",
+    "Factorial Town (Floor 1 ~ 3)",
+    "Core Tower (Floor 17 ~ 18)"
+  ],
+  "Shellmon": [
+    "Undersea Base (Floor 1 ~ 3)",
+    "Coastal Depot (Floor 8 ~ 9)",
+    "Tropical Jungle (Floor 3 ~ 4)",
+    "Core Tower (Floor 17 ~ 18)"
+  ],
+  "Apemon": [
+    "Deserted Fort (Floor 1 ~ 4)",
+    "Tropical Jungle (Floor 8 ~ 9)",
+    "Misty Trees (Floor 3 ~ 7)",
+    "Beetleland (Floor 1 ~ 4)"
+  ],
+  "Vegimon": [
+    "Deserted Fort (Floor 1 ~ 4)",
+    "Tropical Jungle (Floor 12)",
+    "Misty Trees (Floor 12 ~ 15)",
+    "Beetleland (Floor 6 ~ 9)",
+    "Core Tower (Floor 22)"
+  ],
+  "Clockmon": [
+    "Deserted Fort (Floor 3 ~ 7)",
+    "GreyLord Manor (Floor 3 ~ 7)",
+    "Mt. Infinity (Floor 1 / 3)",
+    "Core Tower (Floor 19 ~ 20)"
+  ],
+  "Kiwimon": [
+    "Deserted Fort (Floor 3 ~ 7)",
+    "Tropical Jungle (Floor 7 ~ 9)",
+    "Misty Trees (Floor 2 ~ 3 / 5)",
+    "Core Tower (Floor 19 ~ 20)"
+  ],
+  "Kogamon": [
+    "Deserted Fort (Floor 4 ~ 7)",
+    "Freezeland (Floor 3 ~ 6)",
+    "Factorial Town (Floor 1 ~ 3)",
+    "Core Tower (Floor 19 ~ 20)"
+  ],
+  "MoriShellmon": [
+    "Deserted Fort (Floor 4 ~ 7)",
+    "Tropical Jungle (Floor 7 ~ 9)",
+    "Misty Trees (Floor 2 ~ 3 / 5)",
+    "Core Tower (Floor 19 ~ 20)"
+  ],
+  "N-Drimogemon": [
+    "Deserted Fort (Floor 4 ~ 7)",
+    "Core Tower (Floor 19 ~ 20)"
+  ],
+  "B-Garurumon": [
+    "Deserted Fort (Floor 5 ~ 8)",
+    "Beetleland (Floor 1 ~ 6)",
+    "Core Tower (Floor 19 ~ 20)"
+  ],
+  "Flamedramon": [
+    "Deserted Fort (Floor 5 ~ 8)",
+    "Core Tower (Floor 19 ~ 20)"
+  ],
+  "Tankmon": [
+    "Deserted Fort (Floor 5 ~ 8)",
+    "Deserted Fort (Floor 8 ~ 9)",
+    "Titan Bunker (Floor 9 ~ 10)",
+    "Great Canyon (Floor 3 ~ 4)",
+    "Core Tower (Floor 19 ~ 20)"
+  ],
+  "Mamemon": [
+    "Deserted Fort (Floor 8 ~ 9)",
+    "Coastal Depot (Floor 10 ~ 11)",
+    "Titan Bunker (Floor 11 ~ 13)",
+    "Factorial Town (Floor 4 / 6 ~ 9 / 11)",
+    "Mt. Infinity (Floor 4 / 7)",
+    "Staog Shrine (Floor 2 ~ 3)",
+    "Rootkit Rift (Floor 1 ~ 2)",
+    "Core Tower (Floor 21)",
+    "Core Tower (Floor 23)",
+    "Core Tower (Floor 36 ~ 37)",
+    "Chaos Tower (Floor 1 ~ 2)",
+    "Chaos Tower (Floor 23 ~ 25)"
+  ],
+  "Devidramon": [
+    "Deserted Fort (Floor 9)",
+    "Coastal Depot (Floor 10 ~ 11)",
+    "Titan Bunker (Floor 11 ~ 13)",
+    "GreyLord Manor (Floor 2 / 4 ~ 6)",
+    "Mt. Infinity (Floor 1 / 3)",
+    "Core Tower (Floor 21)"
+  ],
+  "Flymon": [
+    "Deserted Fort (Floor 9)",
+    "Coastal Depot (Floor 10 ~ 11)",
+    "Titan Bunker (Floor 11 ~ 13)",
+    "Tropical Jungle (Floor 5 ~ 7)",
+    "Misty Trees (Floor 1 ~ 2 / 4)",
+    "Beetleland (Floor 1 ~ 4)",
+    "Core Tower (Floor 21)"
+  ],
+  "MarineDevimon": [
+    "Deserted Fort (Floor 9)",
+    "Coastal Depot (Floor 10 ~ 11)",
+    "Titan Bunker (Floor 11 ~ 13)",
+    "Adware Abyss (Floor 1 ~ 12)",
+    "Rootkit Rift (Floor 18)",
+    "Core Tower (Floor 21)",
+    "Core Tower (Floor 29 ~ 30)",
+    "Chaos Tower (Floor 13 ~ 14)"
+  ],
+  "Nanimon": [
+    "Tropical Jungle (Floor 8 ~ 9)",
+    "Misty Trees (Floor 3 ~ 7)"
+  ],
+  "Vademon": [
+    "Tropical Jungle (Floor 10 ~ 11)",
+    "Great Canyon (Floor 8 ~ 12)",
+    "Misty Trees (Floor 9 ~ 14)",
+    "Beetleland (Floor 5 ~ 10)",
+    "GreyLord Manor (Floor 4 ~ 5 / 7 ~ 8)",
+    "Mt. Infinity (Floor 17 ~ 18)",
+    "Staog Shrine (Floor 1 ~ 2)",
+    "Core Tower (Floor 22)",
+    "Core Tower (Floor 28)",
+    "Chaos Tower (Floor 11 ~ 14)"
+  ],
+  "Cherrymon": [
+    "Tropical Jungle (Floor 12)",
+    "Misty Trees (Floor 12 ~ 15)",
+    "Beetleland (Floor 6 ~ 9)",
+    "Core Tower (Floor 22)"
+  ],
+  "WaruMonzaemon": [
+    "Tropical Jungle (Floor 12)",
+    "Misty Trees (Floor 12 ~ 15)",
+    "Beetleland (Floor 6 ~ 9)",
+    "Rootkit Rift (Floor 20 ~ 24)",
+    "Core Tower (Floor 22)",
+    "Chaos Tower (Floor 19 ~ 20)"
+  ],
+  "Meteormon": [
+    "Great Canyon (Floor 10 ~ 13)",
+    "Mt. Infinity (Floor 4 / 6)",
+    "Staog Shrine (Floor 1 ~ 2)",
+    "Adware Abyss (Floor 1 ~ 12)",
+    "Rootkit Rift (Floor 17 ~ 18)",
+    "Core Tower (Floor 22)",
+    "Core Tower (Floor 29 ~ 30)",
+    "Chaos Tower (Floor 13 ~ 14)"
+  ],
+  "Triceramon": [
+    "Great Canyon (Floor 10 ~ 13)",
+    "Mt. Infinity (Floor 4 / 6)",
+    "Mt. Infinity (Floor 15 ~ 18)",
+    "Staog Shrine (Floor 1 ~ 2)",
+    "Staog Shrine (Floor 6 / 9 ~ 11)",
+    "Rootkit Rift (Floor 11 ~ 12 / 14 ~ 15)",
+    "Core Tower (Floor 22)",
+    "Core Tower (Floor 26)",
+    "Chaos Tower (Floor 8 ~ 10)"
+  ],
+  "Sorcerymon": [
+    "Freezeland (Floor 6 ~ 10)",
+    "Misty Trees (Floor 6 / 8)"
+  ],
+  "Panjyamon": [
+    "Freezeland (Floor 10 ~ 14)",
+    "Mt. Infinity (Floor 3 / 5 ~ 6)",
+    "Staog Shrine (Floor 18 ~ 20)",
+    "Rootkit Rift (Floor 13 / 16 ~ 17 / 19 ~ 21 / 23)",
+    "Core Tower (Floor 23)",
+    "Core Tower (Floor 32)",
+    "Chaos Tower (Floor 17 ~ 18)"
+  ],
+  "Zudomon": [
+    "Freezeland (Floor 10 ~ 14)",
+    "Mt. Infinity (Floor 3 / 5 ~ 6)",
+    "Adware Abyss (Floor 16 ~ 17)",
+    "Core Tower (Floor 23)",
+    "Core Tower (Floor 33)",
+    "Chaos Tower (Floor 17 ~ 19)"
+  ],
+  "Andromon": [
+    "Misty Trees (Floor 13 ~ 15)",
+    "Factorial Town (Floor 8 ~ 14)",
+    "Core Tower (Floor 27)",
+    "Core Tower (Floor 36 ~ 37)",
+    "Chaos Tower (Floor 1)",
+    "Chaos Tower (Floor 23 ~ 25)"
+  ],
+  "Monzaemon": [
+    "Misty Trees (Floor 13 ~ 15)",
+    "Factorial Town (Floor 8 ~ 14)",
+    "Factorial Town (Floor 14 ~ 18)",
+    "Mt. Infinity (Floor 7 / 9 ~ 10 / 13)",
+    "Staog Shrine (Floor 3 / 5 / 7)",
+    "Rootkit Rift (Floor 6 ~ 7 / 9)",
+    "Core Tower (Floor 24)",
+    "Core Tower (Floor 27)",
+    "Chaos Tower (Floor 1)",
+    "Chaos Tower (Floor 3 ~ 5)"
+  ],
+  "Tinmon": [
+    "Misty Trees (Floor 13 ~ 15)",
+    "Factorial Town (Floor 8 ~ 14)",
+    "Core Tower (Floor 27)",
+    "Chaos Tower (Floor 1)"
+  ],
+  "Blossomon": [
+    "Beetleland (Floor 7 ~ 12)",
+    "Mt. Infinity (Floor 5 / 9 ~ 10 / 13)",
+    "Staog Shrine (Floor 4 ~ 5 / 7)",
+    "Rootkit Rift (Floor 4 / 7 / 11)",
+    "Core Tower (Floor 24)",
+    "Chaos Tower (Floor 2 ~ 3)"
+  ],
+  "Deramon": [
+    "Beetleland (Floor 7 ~ 12)",
+    "Mt. Infinity (Floor 5 / 9 ~ 10 / 13)",
+    "Staog Shrine (Floor 4 ~ 5 / 7)",
+    "Rootkit Rift (Floor 4 / 7 / 11)",
+    "Core Tower (Floor 24)",
+    "Chaos Tower (Floor 2 ~ 3)"
+  ],
+  "Piximon": [
+    "Beetleland (Floor 7 ~ 12)",
+    "Mt. Infinity (Floor 5 / 9 ~ 10 / 13)",
+    "Staog Shrine (Floor 4 ~ 5 / 7)",
+    "Rootkit Rift (Floor 4 / 7 / 11)",
+    "Core Tower (Floor 24)",
+    "Chaos Tower (Floor 2 ~ 3)"
+  ],
+  "Etemon": [
+    "Beetleland (Floor 10 / 12 ~ 16)",
+    "Mt. Infinity (Floor 8 / 11 ~ 12)",
+    "Core Tower (Floor 25)",
+    "Chaos Tower (Floor 6 ~ 7)"
+  ],
+  "Garudamon": [
+    "Beetleland (Floor 10 / 12 ~ 16)",
+    "Mt. Infinity (Floor 8 / 11 ~ 12)",
+    "Core Tower (Floor 25)",
+    "Chaos Tower (Floor 6 ~ 7)"
+  ],
+  "M-Kabuterimon": [
+    "Beetleland (Floor 10 / 12 ~ 16)",
+    "Mt. Infinity (Floor 8 / 11 ~ 12)",
+    "Core Tower (Floor 25)",
+    "Chaos Tower (Floor 6 ~ 7)"
+  ],
+  "Lillymon": [
+    "Beetleland (Floor 11 ~ 16)",
+    "Rootkit Rift (Floor 3 / 5)",
+    "Core Tower (Floor 25)",
+    "Chaos Tower (Floor 6 ~ 7)"
+  ],
+  "Okuwamon": [
+    "Beetleland (Floor 11 ~ 16)",
+    "Rootkit Rift (Floor 3 / 5)",
+    "Core Tower (Floor 25)",
+    "Chaos Tower (Floor 6 ~ 7)"
+  ],
+  "ShogunGekomon": [
+    "Beetleland (Floor 11 ~ 16)",
+    "Adware Abyss (Floor 1 ~ 12)",
+    "Rootkit Rift (Floor 3 / 5)",
+    "Rootkit Rift (Floor 18)",
+    "Core Tower (Floor 25)",
+    "Core Tower (Floor 29 ~ 30)",
+    "Chaos Tower (Floor 6 ~ 7)",
+    "Chaos Tower (Floor 13 ~ 14)"
+  ],
+  "Garbagemon": [
+    "Factorial Town (Floor 4 / 6 ~ 9 / 11)",
+    "Mt. Infinity (Floor 4 / 7)",
+    "Staog Shrine (Floor 2 ~ 3)",
+    "Rootkit Rift (Floor 1 ~ 2)",
+    "Rootkit Rift (Floor 20 ~ 24)",
+    "Core Tower (Floor 23)",
+    "Chaos Tower (Floor 1 ~ 2)",
+    "Chaos Tower (Floor 19 ~ 20)"
+  ],
+  "Datamon": [
+    "Factorial Town (Floor 11 ~ 15)",
+    "Mt. Infinity (Floor 8 / 11 ~ 12)",
+    "Rootkit Rift (Floor 1 / 4 / 8)",
+    "Core Tower (Floor 27)",
+    "Chaos Tower (Floor 4 ~ 5)"
+  ],
+  "Gigadramon": [
+    "Factorial Town (Floor 11 ~ 15)",
+    "Mt. Infinity (Floor 8 / 11 ~ 12)",
+    "Adware Abyss (Floor 10 ~ 17)",
+    "Rootkit Rift (Floor 1 / 4 / 8)",
+    "Rootkit Rift (Floor 18 ~ 21)",
+    "Core Tower (Floor 27)",
+    "Core Tower (Floor 32)",
+    "Chaos Tower (Floor 4 ~ 5)",
+    "Chaos Tower (Floor 17 ~ 18)"
+  ],
+  "SkullMeramon": [
+    "Factorial Town (Floor 11 ~ 15)",
+    "Mt. Infinity (Floor 8 / 11 ~ 12)",
+    "Rootkit Rift (Floor 1 / 4 / 8)",
+    "Core Tower (Floor 27)",
+    "Chaos Tower (Floor 4 ~ 5)"
+  ],
+  "ExTyrannomon": [
+    "Factorial Town (Floor 14 ~ 18)",
+    "Mt. Infinity (Floor 7 / 9 ~ 10 / 13)",
+    "Staog Shrine (Floor 3 / 5 / 7)",
+    "Rootkit Rift (Floor 6 ~ 7 / 9)",
+    "Core Tower (Floor 24)",
+    "Chaos Tower (Floor 3 ~ 5)"
+  ],
+  "Giromon": [
+    "Factorial Town (Floor 14 ~ 18)",
+    "Mt. Infinity (Floor 7 / 9 ~ 10 / 13)",
+    "Staog Shrine (Floor 3 / 5 / 7)",
+    "Rootkit Rift (Floor 6 ~ 7 / 9)",
+    "Core Tower (Floor 24)",
+    "Chaos Tower (Floor 3 ~ 5)"
+  ],
+  "Sukamon": [
+    "GreyLord Manor (Floor 3 ~ 7)",
+    "Mt. Infinity (Floor 1 / 3)"
+  ],
+  "Pumpkinmon": [
+    "GreyLord Manor (Floor 8 ~ 14)",
+    "Mt. Infinity (Floor 4 ~ 5 / 7)",
+    "Rootkit Rift (Floor 1 ~ 3)",
+    "Core Tower (Floor 23)",
+    "Core Tower (Floor 36 ~ 37)",
+    "Chaos Tower (Floor 1 ~ 2)",
+    "Chaos Tower (Floor 23 ~ 25)"
+  ],
+  "WereGarurumon": [
+    "GreyLord Manor (Floor 8 ~ 14)",
+    "Mt. Infinity (Floor 4 ~ 5 / 7)",
+    "Staog Shrine (Floor 7 ~ 12 / 14 / 20)",
+    "Rootkit Rift (Floor 1 ~ 3)",
+    "Rootkit Rift (Floor 15 ~ 17 / 19)",
+    "Core Tower (Floor 23)",
+    "Core Tower (Floor 28)",
+    "Chaos Tower (Floor 1 ~ 2)",
+    "Chaos Tower (Floor 11 ~ 12)"
+  ],
+  "BlueMeramon": [
+    "GreyLord Manor (Floor 10 ~ 17)",
+    "Mt. Infinity (Floor 11 ~ 12)",
+    "Rootkit Rift (Floor 2 / 6 / 8)",
+    "Core Tower (Floor 25 / 27)",
+    "Chaos Tower (Floor 5 ~ 6)"
+  ],
+  "Phantomon": [
+    "GreyLord Manor (Floor 10 ~ 17)",
+    "Mt. Infinity (Floor 11 ~ 12)",
+    "Rootkit Rift (Floor 2 / 6 / 8)",
+    "Core Tower (Floor 25 / 27)",
+    "Chaos Tower (Floor 5 ~ 6)"
+  ],
+  "SuperStarmon": [
+    "GreyLord Manor (Floor 10 ~ 17)",
+    "Mt. Infinity (Floor 11 ~ 12)",
+    "Rootkit Rift (Floor 2 / 6 / 8)",
+    "Core Tower (Floor 25 / 27)",
+    "Chaos Tower (Floor 5 ~ 6)"
+  ],
+  "Myotismon": [
+    "GreyLord Manor (Floor 13 ~ 16 / 18)",
+    "Mt. Infinity (Floor 6 / 10 / 13)",
+    "Staog Shrine (Floor 3 / 5 / 7)",
+    "Rootkit Rift (Floor 5 / 7 / 10)",
+    "Core Tower (Floor 24)",
+    "Chaos Tower (Floor 3 ~ 4)"
+  ],
+  "SkullGreymon": [
+    "GreyLord Manor (Floor 13 ~ 16 / 18)",
+    "Mt. Infinity (Floor 6 / 10 / 13)",
+    "Staog Shrine (Floor 3 / 5 / 7)",
+    "Rootkit Rift (Floor 5 / 7 / 10)",
+    "Core Tower (Floor 24)",
+    "Chaos Tower (Floor 3 ~ 4)"
+  ],
+  "Tekkamon": [
+    "GreyLord Manor (Floor 13 ~ 16 / 18)",
+    "Mt. Infinity (Floor 6 / 10 / 13)",
+    "Staog Shrine (Floor 3 / 5 / 7)",
+    "Rootkit Rift (Floor 5 / 7 / 10)",
+    "Core Tower (Floor 24)",
+    "Chaos Tower (Floor 3 ~ 4)"
+  ],
+  "AeroVeedramon": [
+    "Mt. Infinity (Floor 15 ~ 18)",
+    "Staog Shrine (Floor 6 / 9 ~ 10 / 12)",
+    "Rootkit Rift (Floor 9 / 12 / 14 ~ 15)",
+    "Core Tower (Floor 26)",
+    "Chaos Tower (Floor 8 ~ 10)"
+  ],
+  "Angewomon": [
+    "Mt. Infinity (Floor 15 ~ 18)",
+    "Staog Shrine (Floor 6 / 9 ~ 10 / 12)",
+    "Rootkit Rift (Floor 9 / 12 / 14 ~ 15)",
+    "Core Tower (Floor 26)",
+    "Chaos Tower (Floor 8 ~ 10)"
+  ],
+  "BW-Garurumon": [
+    "Mt. Infinity (Floor 15 ~ 18)",
+    "Rootkit Rift (Floor 10 / 12 / 14 ~ 15 / 17)",
+    "Core Tower (Floor 26)",
+    "Chaos Tower (Floor 7 ~ 10)"
+  ],
+  "Kimeramon": [
+    "Mt. Infinity (Floor 15 ~ 18)",
+    "Staog Shrine (Floor 6 / 9 ~ 11)",
+    "Rootkit Rift (Floor 11 ~ 12 / 14 ~ 15)",
+    "Core Tower (Floor 26)",
+    "Chaos Tower (Floor 8 ~ 10)"
+  ],
+  "ME-Tyrannomon": [
+    "Mt. Infinity (Floor 15 ~ 18)",
+    "Rootkit Rift (Floor 10 / 12 / 14 ~ 15 / 17)",
+    "Core Tower (Floor 26)",
+    "Chaos Tower (Floor 7 ~ 10)"
+  ],
+  "MetalGreymon": [
+    "Mt. Infinity (Floor 15 ~ 18)",
+    "Staog Shrine (Floor 6 / 9 ~ 10 / 12)",
+    "Rootkit Rift (Floor 9 / 12 / 14 ~ 15)",
+    "Core Tower (Floor 26)",
+    "Chaos Tower (Floor 8 ~ 10)"
+  ],
+  "MetalMamemon": [
+    "Mt. Infinity (Floor 15 ~ 18)",
+    "Staog Shrine (Floor 6 / 9 ~ 11)",
+    "Rootkit Rift (Floor 11 ~ 12 / 14 ~ 15)",
+    "Core Tower (Floor 26)",
+    "Chaos Tower (Floor 8 ~ 10)"
+  ],
+  "WaruSeadramon": [
+    "Mt. Infinity (Floor 15 ~ 18)",
+    "Adware Abyss (Floor 10 ~ 17)",
+    "Rootkit Rift (Floor 10 / 12 / 14 ~ 15 / 17)",
+    "Rootkit Rift (Floor 18 ~ 21)",
+    "Core Tower (Floor 26)",
+    "Core Tower (Floor 32)",
+    "Chaos Tower (Floor 7 ~ 10)",
+    "Chaos Tower (Floor 17 ~ 18)"
+  ],
+  "Digitamamon": [
+    "Mt. Infinity (Floor 17 ~ 18)",
+    "Rootkit Rift (Floor 20 ~ 24)",
+    "Core Tower (Floor 28)",
+    "Core Tower (Floor 33)",
+    "Chaos Tower (Floor 11 ~ 14)",
+    "Chaos Tower (Floor 19 ~ 20)"
+  ],
+  "Scorpiomon": [
+    "Mt. Infinity (Floor 17 ~ 18)",
+    "Adware Abyss (Floor 1 ~ 12)",
+    "Rootkit Rift (Floor 17 ~ 18)",
+    "Core Tower (Floor 28)",
+    "Core Tower (Floor 29 ~ 30)",
+    "Chaos Tower (Floor 11 ~ 14)",
+    "Chaos Tower (Floor 13 ~ 14)"
+  ],
+  "MagnaAngemon": [
+    "Mt. Infinity (Floor 19 ~ 21)",
+    "Staog Shrine (Floor 18 ~ 20)",
+    "Rootkit Rift (Floor 13 / 16 ~ 17 / 19 ~ 21 / 23)",
+    "Core Tower (Floor 31)",
+    "Core Tower (Floor 32)",
+    "Chaos Tower (Floor 15 ~ 16)",
+    "Chaos Tower (Floor 17 ~ 18)"
+  ],
+  "Megadramon": [
+    "Mt. Infinity (Floor 19 ~ 21)",
+    "Staog Shrine (Floor 12 ~ 17)",
+    "Staog Shrine (Floor 15 ~ 19)",
+    "Core Tower (Floor 28)",
+    "Core Tower (Floor 31)",
+    "Chaos Tower (Floor 11 ~ 12)",
+    "Chaos Tower (Floor 15 ~ 16)"
+  ],
+  "Vermilimon": [
+    "Mt. Infinity (Floor 19 ~ 21)",
+    "Staog Shrine (Floor 12 ~ 17)",
+    "Staog Shrine (Floor 13 ~ 19)",
+    "Rootkit Rift (Floor 20 ~ 24)",
+    "Core Tower (Floor 28)",
+    "Core Tower (Floor 31)",
+    "Core Tower (Floor 33)",
+    "Chaos Tower (Floor 11 ~ 12)",
+    "Chaos Tower (Floor 15 ~ 16)",
+    "Chaos Tower (Floor 19 ~ 20)"
+  ],
+  "Boltmon": [
+    "Mt. Infinity (Floor 19 ~ 21)",
+    "Staog Shrine (Floor 13 ~ 19)",
+    "Core Tower (Floor 31)",
+    "Core Tower (Floor 34 ~ 35)",
+    "Core Tower (Floor 36 ~ 37)",
+    "Chaos Tower (Floor 15 ~ 16)",
+    "Chaos Tower (Floor 21 ~ 22)",
+    "Chaos Tower (Floor 23 ~ 25)"
+  ],
+  "Ebemon": [
+    "Mt. Infinity (Floor 19 ~ 21)",
+    "Staog Shrine (Floor 15 ~ 19)",
+    "Core Tower (Floor 31)",
+    "Core Tower (Floor 34 ~ 35)",
+    "Chaos Tower (Floor 15 ~ 16)",
+    "Chaos Tower (Floor 21 ~ 22)"
+  ],
+  "HiAndromon": [
+    "Mt. Infinity (Floor 19 ~ 21)",
+    "Core Tower (Floor 31)",
+    "Core Tower (Floor 34 ~ 35)",
+    "Chaos Tower (Floor 15 ~ 16)",
+    "Chaos Tower (Floor 21 ~ 22)"
+  ],
+  "Raidramon": [
+    "Staog Shrine (Floor 7 ~ 12 / 14 / 20)",
+    "Rootkit Rift (Floor 15 ~ 17 / 19)",
+    "Core Tower (Floor 28)",
+    "Chaos Tower (Floor 11 ~ 12)"
+  ],
+  "MA-Tyrannomon": [
+    "Staog Shrine (Floor 12 ~ 17)",
+    "Core Tower (Floor 28)",
+    "Chaos Tower (Floor 11 ~ 12)"
+  ],
+  "S-Mammothmon": [
+    "Staog Shrine (Floor 18 ~ 20)",
+    "Rootkit Rift (Floor 13 / 16 ~ 17 / 19 ~ 21 / 23)",
+    "Core Tower (Floor 32)",
+    "Chaos Tower (Floor 17 ~ 18)"
+  ],
+  "Dagomon": [
+    "Adware Abyss (Floor 1 ~ 12)",
+    "Rootkit Rift (Floor 18)",
+    "Core Tower (Floor 29 ~ 30)",
+    "Chaos Tower (Floor 13 ~ 14)"
+  ],
+  "MegaSeadramon": [
+    "Adware Abyss (Floor 1 ~ 12)",
+    "Rootkit Rift (Floor 17 ~ 18)",
+    "Core Tower (Floor 29 ~ 30)",
+    "Chaos Tower (Floor 13 ~ 14)"
+  ],
+  "Pukumon": [
+    "Adware Abyss (Floor 10 ~ 17)",
+    "Rootkit Rift (Floor 18 ~ 21)",
+    "Core Tower (Floor 32)",
+    "Chaos Tower (Floor 17 ~ 18)"
+  ],
+  "M-Seadramon": [
+    "Adware Abyss (Floor 13 ~ 17)",
+    "Rootkit Rift (Floor 20 ~ 24)",
+    "Core Tower (Floor 32)",
+    "Core Tower (Floor 33)",
+    "Chaos Tower (Floor 19 ~ 20)",
+    "Chaos Tower (Floor 26 ~ 29)"
+  ],
+  "Whamon": [
+    "Adware Abyss (Floor 16 ~ 17)",
+    "Core Tower (Floor 33)",
+    "Chaos Tower (Floor 17 ~ 19)"
+  ],
+  "MarineAngemon": [
+    "Adware Abyss (Floor 16 ~ 17)",
+    "Core Tower (Floor 33)",
+    "Chaos Tower (Floor 17 ~ 19)"
+  ],
+  "Puppetmon": [
+    "Rootkit Rift (Floor 20 ~ 24)",
+    "Core Tower (Floor 36 ~ 37)",
+    "Chaos Tower (Floor 19 ~ 20)",
+    "Chaos Tower (Floor 23 ~ 25)"
+  ],
+  "BM-Garurumon": [
+    "Core Tower (Floor 34 ~ 35)",
+    "Chaos Tower (Floor 21 ~ 22)"
+  ],
+  "Magnadramon": [
+    "Core Tower (Floor 34 ~ 35)",
+    "Chaos Tower (Floor 21 ~ 22)"
+  ],
+  "SaberLeomon": [
+    "Core Tower (Floor 34 ~ 35)",
+    "Chaos Tower (Floor 21 ~ 22)"
+  ],
+  "Phoenixmon": [
+    "Core Tower (Floor 36 ~ 37)",
+    "Chaos Tower (Floor 23 ~ 25)"
+  ],
+  "Plesiomon": [
+    "Core Tower (Floor 36 ~ 37)",
+    "Chaos Tower (Floor 23 ~ 25)"
+  ],
+  "Rosemon": [
+    "Core Tower (Floor 36 ~ 37)",
+    "Chaos Tower (Floor 23 ~ 25)"
+  ],
+  "WarGreymon": [
+    "Core Tower (Floor 36 ~ 37)",
+    "Chaos Tower (Floor 23 ~ 25)"
+  ],
+  "Gryphonmon": [
+    "Chaos Tower (Floor 26 ~ 29)"
+  ],
+  "H-Kabuterimon": [
+    "Chaos Tower (Floor 26 ~ 29)"
+  ],
+  "M-Garurumon": [
+    "Chaos Tower (Floor 26 ~ 29)"
+  ],
+  "Machinedramon": [
+    "Chaos Tower (Floor 26 ~ 29)"
+  ],
+  "MetalEtemon": [
+    "Chaos Tower (Floor 26 ~ 29)"
+  ],
+  "P-Mamemon": [
+    "Chaos Tower (Floor 26 ~ 29)"
+  ],
+  "Pierrotmon": [
+    "Chaos Tower (Floor 26 ~ 29)"
+  ],
+  "Seraphimon": [
+    "Chaos Tower (Floor 26 ~ 29)"
+  ],
+  "B-WarGreymon": [
+    "Chaos Tower (Floor 30 ~ 32)"
+  ],
+  "GranKuwagamon": [
+    "Chaos Tower (Floor 30 ~ 32)"
+  ],
+  "V-Myotismon": [
+    "Chaos Tower (Floor 30 ~ 32)"
+  ]
+}

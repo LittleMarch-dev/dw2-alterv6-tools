@@ -1,0 +1,746 @@
+{
+  "Rookie": {
+    "Data": {
+      "Junk": {
+        "Junk": "ClearAgumon",
+        "Insect": "Dokunemon",
+        "Plant": "Aruraumon",
+        "Flying": "Hagurumon",
+        "Spirit": "SnowAgumon",
+        "Beast": "Elecmon",
+        "Dragon": "BlackAgumon",
+        "Marine": "Syakomon"
+      },
+      "Insect": {
+        "Junk": "ToyAgumon",
+        "Insect": "Tentomon",
+        "Plant": "Palmon",
+        "Flying": "Biyomon",
+        "Spirit": "Shamamon",
+        "Beast": "Gazimon",
+        "Dragon": "Agumon",
+        "Marine": "Betamon"
+      },
+      "Plant": {
+        "Junk": "Hagurumon",
+        "Insect": "Tentomon",
+        "Plant": "Palmon",
+        "Flying": "Biyomon",
+        "Spirit": "Gotsumon",
+        "Beast": "Psychemon",
+        "Dragon": "Solarmon",
+        "Marine": "Otamamon"
+      },
+      "Flying": {
+        "Junk": "Tsukaimon",
+        "Insect": "Goburimon",
+        "Plant": "Floramon",
+        "Flying": "Biyomon",
+        "Spirit": "Patamon",
+        "Beast": "Gabumon",
+        "Dragon": "Veemon",
+        "Marine": "SnowGoburimon"
+      },
+      "Spirit": {
+        "Junk": "Candlemon",
+        "Insect": "ClearAgumon",
+        "Plant": "Mushroomon",
+        "Flying": "ToyAgumon",
+        "Spirit": "Patamon",
+        "Beast": "Elecmon",
+        "Dragon": "Gabumon",
+        "Marine": "Syakomon"
+      },
+      "Beast": {
+        "Junk": "Goburimon",
+        "Insect": "Kunemon",
+        "Plant": "Floramon",
+        "Flying": "Patamon",
+        "Spirit": "Tsukaimon",
+        "Beast": "Gabumon",
+        "Dragon": "BlackGabumon",
+        "Marine": "Crabmon"
+      },
+      "Dragon": {
+        "Junk": "Solarmon",
+        "Insect": "BlackAgumon",
+        "Plant": "Elecmon",
+        "Flying": "Candlemon",
+        "Spirit": "SnowAgumon",
+        "Beast": "Veemon",
+        "Dragon": "Agumon",
+        "Marine": "Syakomon"
+      },
+      "Marine": {
+        "Junk": "ModokiBetamon",
+        "Insect": "Crabmon",
+        "Plant": "SnowGoburimon",
+        "Flying": "Muchomon",
+        "Spirit": "Gotsumon",
+        "Beast": "Penguinmon",
+        "Dragon": "Betamon",
+        "Marine": "Crabmon"
+      }
+    },
+    "Vaccine": {
+      "Junk": {
+        "Junk": "ToyAgumon",
+        "Insect": "Kunemon",
+        "Plant": "Mushroomon",
+        "Flying": "Solarmon",
+        "Spirit": "Candlemon",
+        "Beast": "Gazimon",
+        "Dragon": "Betamon",
+        "Marine": "Otamamon"
+      },
+      "Insect": {
+        "Junk": "Dokunemon",
+        "Insect": "Tentomon",
+        "Plant": "Aruraumon",
+        "Flying": "Muchomon",
+        "Spirit": "DemiDevimon",
+        "Beast": "Psychemon",
+        "Dragon": "S-ToyAgumon",
+        "Marine": "Syakomon"
+      },
+      "Plant": {
+        "Junk": "Aruraumon",
+        "Insect": "Dokunemon",
+        "Plant": "Palmon*",
+        "Flying": "Floramon",
+        "Spirit": "Tapirmon",
+        "Beast": "Shamamon",
+        "Dragon": "Gotsumon",
+        "Marine": "ModokiBetamon"
+      },
+      "Flying": {
+        "Junk": "Hagurumon",
+        "Insect": "Tentomon",
+        "Plant": "Tapirmon",
+        "Flying": "Biyomon",
+        "Spirit": "DemiDevimon",
+        "Beast": "Patamon",
+        "Dragon": "Solarmon",
+        "Marine": "Penguinmon"
+      },
+      "Spirit": {
+        "Junk": "ClearAgumon",
+        "Insect": "Tentomon",
+        "Plant": "Palmon",
+        "Flying": "Patamon",
+        "Spirit": "Elecmon",
+        "Beast": "Elecmon",
+        "Dragon": "Agumon",
+        "Marine": "Gomamon"
+      },
+      "Beast": {
+        "Junk": "Tsukaimon",
+        "Insect": "Gazimon",
+        "Plant": "Psychemon",
+        "Flying": "Muchomon",
+        "Spirit": "Shamamon",
+        "Beast": "Tapirmon",
+        "Dragon": "Veemon",
+        "Marine": "SnowAgumon"
+      },
+      "Dragon": {
+        "Junk": "S-ToyAgumon",
+        "Insect": "Biyomon",
+        "Plant": "Floramon",
+        "Flying": "Veemon",
+        "Spirit": "Gazimon",
+        "Beast": "BlackAgumon",
+        "Dragon": "Agumon",
+        "Marine": "Penguinmon"
+      },
+      "Marine": {
+        "Junk": "Muchomon",
+        "Insect": "Otamamon",
+        "Plant": "Palmon",
+        "Flying": "Betamon",
+        "Spirit": "SnowGoburimon",
+        "Beast": "Gomamon",
+        "Dragon": "SnowAgumon",
+        "Marine": "Gomamon"
+      }
+    },
+    "Virus": {
+      "Junk": {
+        "Junk": "Hagurumon",
+        "Insect": "Gotsumon",
+        "Plant": "Palmon",
+        "Flying": "Muchomon",
+        "Spirit": "ClearAgumon",
+        "Beast": "Gabumon",
+        "Dragon": "Agumon",
+        "Marine": "ModokiBetamon"
+      },
+      "Insect": {
+        "Junk": "S-ToyAgumon",
+        "Insect": "Kunemon",
+        "Plant": "Floramon",
+        "Flying": "Hagurumon",
+        "Spirit": "DemiDevimon",
+        "Beast": "BlackGabumon",
+        "Dragon": "BlackAgumon",
+        "Marine": "Otamamon"
+      },
+      "Plant": {
+        "Junk": "ToyAgumon",
+        "Insect": "Kunemon",
+        "Plant": "Mushroomon",
+        "Flying": "Psychemon",
+        "Spirit": "Mushroomon",
+        "Beast": "Tapirmon",
+        "Dragon": "BlackGabumon",
+        "Marine": "Syakomon"
+      },
+      "Flying": {
+        "Junk": "Solarmon",
+        "Insect": "Dokunemon",
+        "Plant": "Aruraumon",
+        "Flying": "Tsukaimon",
+        "Spirit": "Tapirmon",
+        "Beast": "Goburimon",
+        "Dragon": "Biyomon",
+        "Marine": "Betamon"
+      },
+      "Spirit": {
+        "Junk": "Shamamon",
+        "Insect": "Candlemon",
+        "Plant": "Aruraumon",
+        "Flying": "DemiDevimon",
+        "Spirit": "DemiDevimon",
+        "Beast": "Gazimon",
+        "Dragon": "S-ToyAgumon",
+        "Marine": "SnowGoburimon"
+      },
+      "Beast": {
+        "Junk": "Psychemon",
+        "Insect": "Gazimon",
+        "Plant": "Goburimon",
+        "Flying": "Tsukaimon",
+        "Spirit": "Shamamon",
+        "Beast": "BlackGabumon",
+        "Dragon": "Gotsumon",
+        "Marine": "Otamamon"
+      },
+      "Dragon": {
+        "Junk": "Betamon",
+        "Insect": "Kunemon",
+        "Plant": "ModokiBetamon",
+        "Flying": "S-ToyAgumon",
+        "Spirit": "Veemon",
+        "Beast": "Gizamon",
+        "Dragon": "BlackAgumon",
+        "Marine": "Syakomon"
+      },
+      "Marine": {
+        "Junk": "Penguinmon",
+        "Insect": "Dokunemon",
+        "Plant": "ModokiBetamon",
+        "Flying": "Penguinmon",
+        "Spirit": "SnowAgumon",
+        "Beast": "SnowGoburimon",
+        "Dragon": "Gizamon",
+        "Marine": "Gizamon"
+      }
+    }
+  },
+  "Champion": {
+    "Data": {
+      "Junk": {
+        "Junk": "Clockmon",
+        "Insect": "Kabuterimon",
+        "Plant": "Kogamon",
+        "Flying": "Kiwimon",
+        "Spirit": "Bakemon",
+        "Beast": "N-Drimogemon",
+        "Dragon": "Cyclomon",
+        "Marine": "Gekomon"
+      },
+      "Insect": {
+        "Junk": "Nanimon",
+        "Insect": "Yanmamon",
+        "Plant": "Zassoumon",
+        "Flying": "Akatorimon",
+        "Spirit": "Kogamon",
+        "Beast": "Drimogemon",
+        "Dragon": "Tuskmon",
+        "Marine": "Shellmon"
+      },
+      "Plant": {
+        "Junk": "Meramon",
+        "Insect": "Yanmamon",
+        "Plant": "Togemon",
+        "Flying": "Kiwimon",
+        "Spirit": "Ninjamon",
+        "Beast": "ShimaUnimon",
+        "Dragon": "MoriShellmon",
+        "Marine": "MoriShellmon"
+      },
+      "Flying": {
+        "Junk": "FlareLizamon",
+        "Insect": "Yanmamon",
+        "Plant": "Togemon",
+        "Flying": "Akatorimon",
+        "Spirit": "Starmon",
+        "Beast": "Garurumon",
+        "Dragon": "Devidramon",
+        "Marine": "Seadramon"
+      },
+      "Spirit": {
+        "Junk": "Clockmon",
+        "Insect": "Devimon",
+        "Plant": "Vegimon",
+        "Flying": "Kokatorimon",
+        "Spirit": "Icemon",
+        "Beast": "Ogremon",
+        "Dragon": "Tyrannomon",
+        "Marine": "Tortamon"
+      },
+      "Beast": {
+        "Junk": "Tankmon",
+        "Insect": "Apemon",
+        "Plant": "Zassoumon",
+        "Flying": "Kokatorimon",
+        "Spirit": "Leomon",
+        "Beast": "N-Drimogemon",
+        "Dragon": "Deltamon",
+        "Marine": "Mojyamon"
+      },
+      "Dragon": {
+        "Junk": "Meramon",
+        "Insect": "Monochromon",
+        "Plant": "Tyrannomon",
+        "Flying": "Airdramon",
+        "Spirit": "Starmon",
+        "Beast": "Drimogemon",
+        "Dragon": "Monochromon",
+        "Marine": "Seadramon"
+      },
+      "Marine": {
+        "Junk": "P-Sukamon",
+        "Insect": "SandYanmamon",
+        "Plant": "Yanmamon",
+        "Flying": "Angemon",
+        "Spirit": "Icemon",
+        "Beast": "Leomon",
+        "Dragon": "Gesomon",
+        "Marine": "Coelamon"
+      }
+    },
+    "Vaccine": {
+      "Junk": {
+        "Junk": "Centarumon",
+        "Insect": "Flymon",
+        "Plant": "Togemon",
+        "Flying": "Starmon",
+        "Spirit": "Ninjamon",
+        "Beast": "ShimaUnimon",
+        "Dragon": "Veedramon",
+        "Marine": "Tortamon"
+      },
+      "Insect": {
+        "Junk": "Wizardmon",
+        "Insect": "Kabuterimon",
+        "Plant": "RedVegimon",
+        "Flying": "DarkLizamon",
+        "Spirit": "Angemon",
+        "Beast": "Hyogamon",
+        "Dragon": "Greymon",
+        "Marine": "Dolphmon"
+      },
+      "Plant": {
+        "Junk": "Centarumon",
+        "Insect": "Flymon",
+        "Plant": "Togemon*",
+        "Flying": "Akatorimon",
+        "Spirit": "Gatomon",
+        "Beast": "Apemon",
+        "Dragon": "Airdramon",
+        "Marine": "Tortamon"
+      },
+      "Flying": {
+        "Junk": "Sorcerymon",
+        "Insect": "Kabuterimon",
+        "Plant": "Kiwimon",
+        "Flying": "Birdramon",
+        "Spirit": "Angemon",
+        "Beast": "Unimon",
+        "Dragon": "Flamedramon",
+        "Marine": "Dolphmon"
+      },
+      "Spirit": {
+        "Junk": "Raremon",
+        "Insect": "Kuwagamon",
+        "Plant": "Bakemon",
+        "Flying": "Flamedramon",
+        "Spirit": "Leomon",
+        "Beast": "Frigimon",
+        "Dragon": "DarkLizamon",
+        "Marine": "Mojyamon"
+      },
+      "Beast": {
+        "Junk": "Mojyamon",
+        "Insect": "SandYanmamon",
+        "Plant": "Ogremon",
+        "Flying": "Veedramon",
+        "Spirit": "Apemon",
+        "Beast": "Garurumon",
+        "Dragon": "Tyrannomon",
+        "Marine": "Ikkakumon"
+      },
+      "Dragon": {
+        "Junk": "Tankmon",
+        "Insect": "Deltamon",
+        "Plant": "MoriShellmon",
+        "Flying": "Birdramon",
+        "Spirit": "Gatomon",
+        "Beast": "Cyclomon",
+        "Dragon": "Greymon",
+        "Marine": "Octomon"
+      },
+      "Marine": {
+        "Junk": "Numemon",
+        "Insect": "Gekomon",
+        "Plant": "Shellmon",
+        "Flying": "Airdramon",
+        "Spirit": "Sorcerymon",
+        "Beast": "Frigimon",
+        "Dragon": "Tuskmon",
+        "Marine": "Ikkakumon"
+      }
+    },
+    "Virus": {
+      "Junk": {
+        "Junk": "Sukamon",
+        "Insect": "Yanmamon",
+        "Plant": "RedVegimon",
+        "Flying": "Guardromon",
+        "Spirit": "Wizardmon",
+        "Beast": "Gururumon",
+        "Dragon": "FlareLizamon",
+        "Marine": "Numemon"
+      },
+      "Insect": {
+        "Junk": "Kogamon",
+        "Insect": "Kuwagamon",
+        "Plant": "Vegimon",
+        "Flying": "Soulmon",
+        "Spirit": "Devimon",
+        "Beast": "Gururumon",
+        "Dragon": "Cyclomon",
+        "Marine": "Octomon"
+      },
+      "Plant": {
+        "Junk": "Guardromon",
+        "Insect": "SandYanmamon",
+        "Plant": "Woodmon",
+        "Flying": "Kokatorimon",
+        "Spirit": "Unimon",
+        "Beast": "Fugamon",
+        "Dragon": "D-Tyrannomon",
+        "Marine": "Gekomon"
+      },
+      "Flying": {
+        "Junk": "FlareLizamon",
+        "Insect": "Flymon",
+        "Plant": "Zassoumon",
+        "Flying": "DarkLizamon",
+        "Spirit": "Soulmon",
+        "Beast": "B-Garurumon",
+        "Dragon": "Deltamon",
+        "Marine": "Gesomon"
+      },
+      "Spirit": {
+        "Junk": "Nanimon",
+        "Insect": "Flymon",
+        "Plant": "Woodmon",
+        "Flying": "Birdramon",
+        "Spirit": "Bakemon",
+        "Beast": "Fugamon",
+        "Dragon": "Devidramon",
+        "Marine": "Coelamon"
+      },
+      "Beast": {
+        "Junk": "Sukamon",
+        "Insect": "Kuwagamon",
+        "Plant": "Kiwimon",
+        "Flying": "Airdramon",
+        "Spirit": "Devimon",
+        "Beast": "B-Garurumon",
+        "Dragon": "Monochromon",
+        "Marine": "Gesomon"
+      },
+      "Dragon": {
+        "Junk": "P-Sukamon",
+        "Insect": "Tuskmon",
+        "Plant": "Woodmon",
+        "Flying": "Devidramon",
+        "Spirit": "Ninjamon",
+        "Beast": "Ogremon",
+        "Dragon": "D-Tyrannomon",
+        "Marine": "Dolphmon"
+      },
+      "Marine": {
+        "Junk": "Raremon",
+        "Insect": "Shellmon",
+        "Plant": "Vegimon",
+        "Flying": "IceDevimon",
+        "Spirit": "IceDevimon",
+        "Beast": "Hyogamon",
+        "Dragon": "Seadramon",
+        "Marine": "Octomon"
+      }
+    }
+  },
+  "Ultimate": {
+    "Data": {
+      "Junk": {
+        "Junk": "Tinmon",
+        "Insect": "M-Kabuterimon",
+        "Plant": "Pumpkinmon",
+        "Flying": "Deramon",
+        "Spirit": "Giromon",
+        "Beast": "Digitamamon",
+        "Dragon": "Triceramon",
+        "Marine": "Scorpiomon"
+      },
+      "Insect": {
+        "Junk": "SkullMeramon",
+        "Insect": "M-Kabuterimon*",
+        "Plant": "Pumpkinmon",
+        "Flying": "Kimeramon",
+        "Spirit": "Phantomon",
+        "Beast": "WereGarurumon",
+        "Dragon": "Okuwamon*",
+        "Marine": "Scorpiomon"
+      },
+      "Plant": {
+        "Junk": "Cherrymon",
+        "Insect": "Mammothmon",
+        "Plant": "Lillymon",
+        "Flying": "Deramon",
+        "Spirit": "Meteormon",
+        "Beast": "Raidramon",
+        "Dragon": "Triceramon",
+        "Marine": "Panjyamon"
+      },
+      "Flying": {
+        "Junk": "SuperStarmon",
+        "Insect": "Megadramon",
+        "Plant": "Lillymon",
+        "Flying": "Kimeramon",
+        "Spirit": "SuperStarmon",
+        "Beast": "WereGarurumon",
+        "Dragon": "Kimeramon",
+        "Marine": "MegaSeadramon"
+      },
+      "Spirit": {
+        "Junk": "BlueMeramon",
+        "Insect": "Giromon",
+        "Plant": "Lillymon",
+        "Flying": "Raidramon",
+        "Spirit": "Mamemon",
+        "Beast": "MetalMamemon",
+        "Dragon": "MetalMamemon",
+        "Marine": "Zudomon"
+      },
+      "Beast": {
+        "Junk": "Monzaemon",
+        "Insect": "Etemon",
+        "Plant": "Blossomon",
+        "Flying": "Piximon",
+        "Spirit": "Meteormon",
+        "Beast": "WereGarurumon",
+        "Dragon": "Triceramon",
+        "Marine": "Zudomon"
+      },
+      "Dragon": {
+        "Junk": "SkullMeramon",
+        "Insect": "M-Kabuterimon*",
+        "Plant": "Blossomon",
+        "Flying": "Gigadramon",
+        "Spirit": "Mamemon",
+        "Beast": "Panjyamon",
+        "Dragon": "Kimeramon*",
+        "Marine": "MegaSeadramon"
+      },
+      "Marine": {
+        "Junk": "Megadramon",
+        "Insect": "ShogunGekomon",
+        "Plant": "Blossomon",
+        "Flying": "Gigadramon",
+        "Spirit": "MetalMamemon",
+        "Beast": "Panjyamon",
+        "Dragon": "Megadramon",
+        "Marine": "MegaSeadramon"
+      }
+    },
+    "Vaccine": {
+      "Junk": {
+        "Junk": "Andromon",
+        "Insect": "Etemon",
+        "Plant": "Lillymon",
+        "Flying": "Vademon",
+        "Spirit": "Mamemon",
+        "Beast": "WaruMonzaemon",
+        "Dragon": "MetalGreymon",
+        "Marine": "MarineDevimon"
+      },
+      "Insect": {
+        "Junk": "Tekkamon",
+        "Insect": "M-Kabuterimon",
+        "Plant": "WaruMonzaemon",
+        "Flying": "Piximon",
+        "Spirit": "MagnaAngemon",
+        "Beast": "Monzaemon",
+        "Dragon": "MetalGreymon",
+        "Marine": "Zudomon"
+      },
+      "Plant": {
+        "Junk": "Andromon",
+        "Insect": "Blossomon",
+        "Plant": "M-Kabuterimon*",
+        "Flying": "Piximon",
+        "Spirit": "Angewomon",
+        "Beast": "SkullGreymon",
+        "Dragon": "MA-Tyrannomon",
+        "Marine": "Whamon"
+      },
+      "Flying": {
+        "Junk": "Giromon",
+        "Insect": "Tekkamon",
+        "Plant": "Garudamon",
+        "Flying": "AeroVeedramon",
+        "Spirit": "Angewomon",
+        "Beast": "Raidramon",
+        "Dragon": "AeroVeedramon",
+        "Marine": "Whamon"
+      },
+      "Spirit": {
+        "Junk": "Andromon",
+        "Insect": "M-Kabuterimon",
+        "Plant": "Cherrymon",
+        "Flying": "Garudamon",
+        "Spirit": "MagnaAngemon",
+        "Beast": "SuperStarmon",
+        "Dragon": "MA-Tyrannomon",
+        "Marine": "Whamon"
+      },
+      "Beast": {
+        "Junk": "Giromon",
+        "Insect": "Piximon",
+        "Plant": "Raidramon",
+        "Flying": "Garudamon",
+        "Spirit": "Monzaemon",
+        "Beast": "Mammothmon",
+        "Dragon": "SkullGreymon",
+        "Marine": "ShogunGekomon"
+      },
+      "Dragon": {
+        "Junk": "ExTyrannomon",
+        "Insect": "M-Kabuterimon",
+        "Plant": "ME-Tyrannomon",
+        "Flying": "AeroVeedramon",
+        "Spirit": "Angewomon",
+        "Beast": "Raidramon",
+        "Dragon": "MetalGreymon",
+        "Marine": "MegaSeadramon"
+      },
+      "Marine": {
+        "Junk": "Gigadramon",
+        "Insect": "MarineDevimon",
+        "Plant": "Vademon",
+        "Flying": "Megadramon",
+        "Spirit": "Dagomon",
+        "Beast": "Mammothmon",
+        "Dragon": "MA-Tyrannomon",
+        "Marine": "Whamon"
+      }
+    },
+    "Virus": {
+      "Junk": {
+        "Junk": "Datamon",
+        "Insect": "Scorpiomon",
+        "Plant": "Cherrymon",
+        "Flying": "Kimeramon",
+        "Spirit": "BlueMeramon",
+        "Beast": "WaruMonzaemon",
+        "Dragon": "SkullGreymon",
+        "Marine": "ShogunGekomon"
+      },
+      "Insect": {
+        "Junk": "Garbagemon",
+        "Insect": "Okuwamon",
+        "Plant": "Pumpkinmon",
+        "Flying": "Vademon",
+        "Spirit": "Myotismon",
+        "Beast": "BW-Garurumon",
+        "Dragon": "Vermilimon",
+        "Marine": "Dagomon"
+      },
+      "Plant": {
+        "Junk": "Digitamamon",
+        "Insect": "Digitamamon",
+        "Plant": "Cherrymon",
+        "Flying": "Vademon",
+        "Spirit": "ExTyrannomon",
+        "Beast": "BW-Garurumon",
+        "Dragon": "Vermilimon",
+        "Marine": "ShogunGekomon"
+      },
+      "Flying": {
+        "Junk": "Tekkamon",
+        "Insect": "Tinmon",
+        "Plant": "Deramon",
+        "Flying": "WaruSeadramon",
+        "Spirit": "Phantomon",
+        "Beast": "Kimeramon",
+        "Dragon": "WaruSeadramon",
+        "Marine": "MarineDevimon"
+      },
+      "Spirit": {
+        "Junk": "Meteormon",
+        "Insect": "Okuwamon",
+        "Plant": "Pumpkinmon",
+        "Flying": "Tekkamon",
+        "Spirit": "Myotismon",
+        "Beast": "Etemon",
+        "Dragon": "SkullGreymon",
+        "Marine": "Dagomon"
+      },
+      "Beast": {
+        "Junk": "Datamon",
+        "Insect": "Okuwamon",
+        "Plant": "Digitamamon",
+        "Flying": "Gigadramon",
+        "Spirit": "SkullMeramon",
+        "Beast": "BW-Garurumon",
+        "Dragon": "ME-Tyrannomon",
+        "Marine": "MarineDevimon"
+      },
+      "Dragon": {
+        "Junk": "ME-Tyrannomon",
+        "Insect": "Okuwamon",
+        "Plant": "Deramon",
+        "Flying": "Megadramon",
+        "Spirit": "ExTyrannomon",
+        "Beast": "Digitamamon",
+        "Dragon": "Vermilimon",
+        "Marine": "WaruSeadramon"
+      },
+      "Marine": {
+        "Junk": "Garbagemon",
+        "Insect": "Scorpiomon",
+        "Plant": "Cherrymon",
+        "Flying": "WaruSeadramon",
+        "Spirit": "BlueMeramon",
+        "Beast": "Zudomon",
+        "Dragon": "Gigadramon",
+        "Marine": "Dagomon"
+      }
+    }
+  }
+}
