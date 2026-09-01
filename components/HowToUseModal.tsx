@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect, useLayoutEffect } from "react";
-import { TUTORIAL_STEPS } from "@/lib/tutorialData";
 
 interface HowToUseModalProps {
   isOpen: boolean;
