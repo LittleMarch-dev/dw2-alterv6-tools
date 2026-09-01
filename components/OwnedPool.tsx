@@ -31,7 +31,10 @@ export function OwnedPool({
   };
 
   return (
-    <div className="bg-slate-900 border border-slate-800 p-5 rounded-3xl space-y-4">
+    <div
+      id="tutorial-owned-pool"
+      className="bg-slate-900 border border-slate-800 p-5 rounded-3xl space-y-4"
+    >
       <div>
         <h2 className="text-xs font-bold text-amber-400 uppercase tracking-wider">
           Owned Digimon Pool

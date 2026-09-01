@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { GUIDED_TUTORIAL_STEPS, InteractiveStep } from "@/lib/tutorialData";
 
 type Props = {
@@ -17,8 +17,6 @@ export function InteractiveTutorialModal({
   onClose,
   activeTab,
   onTabChange,
-  currentParent1,
-  currentParent2,
 }: Props) {
   const [currentStepIdx, setCurrentStepIdx] = useState(0);
   const [targetRect, setTargetRect] = useState<{
@@ -28,74 +26,99 @@ export function InteractiveTutorialModal({
     height: number;
   } | null>(null);
 
-  const steps: InteractiveStep[] =
-    GUIDED_TUTORIAL_STEPS[activeTab] || GUIDED_TUTORIAL_STEPS.calculator;
-  const step: InteractiveStep = steps[currentStepIdx] || steps[0];
+  // Flatten steps across all 4 tabs
+  const allSteps = [
+    ...GUIDED_TUTORIAL_STEPS.calculator,
+    ...GUIDED_TUTORIAL_STEPS.routes,
+    ...GUIDED_TUTORIAL_STEPS.skills,
+    ...GUIDED_TUTORIAL_STEPS.inventory,
+  ];
+
+  const step: InteractiveStep | undefined = allSteps[currentStepIdx];
+  const targetId = step?.targetId;
 
   useEffect(() => {
     if (isOpen) {
       setCurrentStepIdx(0);
+      onTabChange("calculator");
     }
-  }, [isOpen, activeTab]);
+  }, [isOpen, onTabChange]);
+
+  const measureTarget = useCallback(() => {
+    if (!targetId) return;
+    const el = document.querySelector(targetId);
+    if (el) {
+      const rect = el.getBoundingClientRect();
+      setTargetRect({
+        top: rect.top + window.scrollY,
+        left: rect.left + window.scrollX,
+        width: rect.width,
+        height: rect.height,
+      });
+    } else {
+      setTargetRect(null);
+    }
+  }, [targetId]);
 
   useEffect(() => {
-    if (!isOpen || !step) return;
+    if (!isOpen || !targetId) return;
 
-    onTabChange(step.tab);
+    measureTarget();
+    const t1 = setTimeout(measureTarget, 100);
+    const t2 = setTimeout(measureTarget, 250);
 
-    const updatePosition = () => {
-      const el = document.querySelector(step.targetId);
-      if (el) {
-        const rect = el.getBoundingClientRect();
-        setTargetRect({
-          top: rect.top + window.scrollY,
-          left: rect.left + window.scrollX,
-          width: rect.width,
-          height: rect.height,
-        });
-      }
-    };
-
-    const timer = setTimeout(updatePosition, 150);
-    window.addEventListener("resize", updatePosition);
-    window.addEventListener("scroll", updatePosition);
+    window.addEventListener("resize", measureTarget);
+    window.addEventListener("scroll", measureTarget);
 
     return () => {
-      clearTimeout(timer);
-      window.removeEventListener("resize", updatePosition);
-      window.removeEventListener("scroll", updatePosition);
+      clearTimeout(t1);
+      clearTimeout(t2);
+      window.removeEventListener("resize", measureTarget);
+      window.removeEventListener("scroll", measureTarget);
     };
-  }, [currentStepIdx, isOpen, step, onTabChange]);
-
-  // Auto-advance step on matching input
-  useEffect(() => {
-    if (!isOpen || activeTab !== "calculator") return;
-
-    if (step.id === 1 && currentParent1.toLowerCase() === "gururumon") {
-      setCurrentStepIdx(1);
-    } else if (step.id === 2 && currentParent2.toLowerCase() === "myotismon") {
-      setCurrentStepIdx(2);
-    }
-  }, [currentParent1, currentParent2, step.id, isOpen, activeTab]);
+  }, [isOpen, targetId, activeTab, measureTarget]);
 
   if (!isOpen || !step) return null;
 
-  const isLastStep = currentStepIdx === steps.length - 1;
+  const isLastStep = currentStepIdx === allSteps.length - 1;
+
+  const goToStep = (newIndex: number) => {
+    const nextStep = allSteps[newIndex];
+    if (nextStep) {
+      if (nextStep.tab !== activeTab) {
+        onTabChange(nextStep.tab);
+      }
+      setCurrentStepIdx(newIndex);
+    }
+  };
+
+  const getCardStyle = () => {
+    if (!targetRect)
+      return { top: "50%", left: "50%", transform: "translate(-50%, -50%)" };
+
+    const spaceBelow =
+      window.innerHeight -
+      (targetRect.top - window.scrollY + targetRect.height);
+    const renderAbove = spaceBelow < 250;
+
+    return {
+      top: renderAbove
+        ? "auto"
+        : `${targetRect.top + targetRect.height + 16}px`,
+      bottom: renderAbove
+        ? `${window.innerHeight - targetRect.top + 16}px`
+        : "auto",
+      left: `${Math.max(16, Math.min(targetRect.left, window.innerWidth - 360))}px`,
+    };
+  };
 
   return (
     <>
-      {/* 
-        1. Clean SVG Hole Mask Backdrop:
-        This draws a full screen dark overlay WITH an actual transparent cutout hole
-        directly over the active target box!
-      */}
       {targetRect && (
         <svg className="fixed inset-0 z-40 w-full h-full pointer-events-none">
           <defs>
             <mask id="spotlight-mask">
-              {/* White fills everything (Darkened background) */}
               <rect x="0" y="0" width="100%" height="100%" fill="white" />
-              {/* Black cuts out the spotlight hole (100% bright target) */}
               <rect
                 x={targetRect.left - 6}
                 y={targetRect.top - window.scrollY - 6}
@@ -111,17 +134,18 @@ export function InteractiveTutorialModal({
             y="0"
             width="100%"
             height="100%"
-            fill="rgba(2, 6, 23, 0.85)"
+            fill="rgba(2, 6, 23, 0.8)"
             mask="url(#spotlight-mask)"
+            className="pointer-events-auto"
+            onClick={onClose}
           />
         </svg>
       )}
 
-      {/* 2. Glowing Animated Border Ring around the clear target */}
       {targetRect && (
         <div
           style={{
-            top: `${targetRect.top - 6}px`,
+            top: `${targetRect.top - window.scrollY - 6}px`,
             left: `${targetRect.left - 6}px`,
             width: `${targetRect.width + 12}px`,
             height: `${targetRect.height + 12}px`,
@@ -130,60 +154,62 @@ export function InteractiveTutorialModal({
         />
       )}
 
-      {/* 3. Floating Interactive Guidance Box Anchored Directly Below Target */}
-      {targetRect && (
-        <div
-          style={{
-            top: `${targetRect.top + targetRect.height + 16}px`,
-            left: `${Math.max(16, targetRect.left)}px`,
-            maxWidth: `${Math.min(420, targetRect.width)}px`,
-          }}
-          className="absolute z-50 w-full bg-slate-900 border border-amber-500/50 p-4 rounded-2xl shadow-2xl space-y-3 transition-all duration-300 ease-in-out pointer-events-auto"
-        >
-          <div className="flex justify-between items-center border-b border-slate-800 pb-2">
-            <span className="bg-amber-400 text-slate-950 font-black text-[10px] px-2.5 py-0.5 rounded-full uppercase">
-              {activeTab.toUpperCase()} • STEP {step.id} / {steps.length}
-            </span>
-            <span className="text-xs font-bold text-slate-100">
-              {step.title}
-            </span>
-          </div>
+      <div
+        style={getCardStyle()}
+        className="fixed z-50 w-[calc(100vw-32px)] sm:w-80 bg-slate-900 border border-amber-500/50 p-4 rounded-3xl shadow-2xl space-y-3 pointer-events-auto transition-all duration-300 ease-out"
+      >
+        <div className="flex justify-between items-center border-b border-slate-800 pb-2">
+          <span className="bg-amber-400 text-slate-950 font-black text-[9px] px-2.5 py-0.5 rounded-full uppercase">
+            {step.tab.toUpperCase()} • STEP {currentStepIdx + 1} /{" "}
+            {allSteps.length}
+          </span>
+          <span className="text-xs font-bold text-slate-100 truncate max-w-[150px]">
+            {step.title}
+          </span>
+        </div>
 
-          <p className="text-xs text-amber-200 font-medium leading-relaxed">
-            👉 {step.instruction}
-          </p>
+        <p className="text-xs text-amber-200 font-medium leading-relaxed">
+          👉 {step.instruction}
+        </p>
 
-          <div className="bg-slate-950 p-2 rounded-xl border border-slate-800 text-[11px] text-slate-400">
-            💡 <span className="text-slate-300">{step.proTip}</span>
-          </div>
+        <div className="bg-slate-950 p-2 rounded-xl border border-slate-800 text-[11px] text-slate-400">
+          💡 <span className="text-slate-300">{step.proTip}</span>
+        </div>
 
-          <div className="flex justify-between items-center pt-1">
+        <div className="flex justify-between items-center pt-1">
+          <button
+            onClick={() => goToStep(Math.max(0, currentStepIdx - 1))}
+            disabled={currentStepIdx === 0}
+            className="text-xs text-slate-400 hover:text-white disabled:opacity-30 font-semibold"
+          >
+            ← Back
+          </button>
+
+          <div className="flex items-center gap-2">
             <button
-              onClick={() => setCurrentStepIdx(Math.max(0, currentStepIdx - 1))}
-              disabled={currentStepIdx === 0}
-              className="text-xs text-slate-400 hover:text-white disabled:opacity-30 font-semibold"
+              onClick={onClose}
+              className="text-xs text-slate-500 hover:text-slate-300 font-semibold px-1 py-1"
             >
-              ← Back
+              Skip
             </button>
-
             {isLastStep ? (
               <button
                 onClick={onClose}
-                className="bg-amber-400 text-slate-950 font-bold px-4 py-1.5 rounded-xl text-xs hover:bg-amber-300 transition-all"
+                className="bg-amber-400 text-slate-950 font-bold px-4 py-1.5 rounded-xl text-xs hover:bg-amber-300 transition-all shadow-md"
               >
                 Done 🎉
               </button>
             ) : (
               <button
-                onClick={() => setCurrentStepIdx(currentStepIdx + 1)}
-                className="bg-slate-800 text-slate-200 font-bold px-3 py-1.5 rounded-xl text-xs hover:bg-slate-700 transition-all"
+                onClick={() => goToStep(currentStepIdx + 1)}
+                className="bg-slate-800 text-slate-200 font-bold px-3.5 py-1.5 rounded-xl text-xs hover:bg-slate-700 transition-all shadow-md"
               >
                 Next →
               </button>
             )}
           </div>
         </div>
-      )}
+      </div>
     </>
   );
 }

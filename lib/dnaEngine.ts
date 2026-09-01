@@ -20,8 +20,8 @@ export type FodderStatus = "OWNED" | "CATCHABLE" | "UNCATCHABLE";
 
 export type FodderOption = {
   name: string;
-  level: string;
-  type: string;
+  level: StageLevel;
+  type: AttributeType;
   family: string;
   status: FodderStatus;
   locations: string[];
@@ -50,14 +50,19 @@ export type EvolutionPathOption = {
 
 export type StrategyPreference = "prioDna" | "prioDirect";
 
+interface DomainProgress {
+  name: string;
+}
+
 // Master Data Setup
-export const DOMAIN_PROGRESS = domainProgressData.domains;
-export const DOMAIN_ORDER = DOMAIN_PROGRESS.map((d) => d.name);
+export const DOMAIN_PROGRESS: DomainProgress[] =
+  (domainProgressData as any).domains || [];
+export const DOMAIN_ORDER: string[] = DOMAIN_PROGRESS.map((d) => d.name);
 
 // Fallback to digimon-locations.json for precise floor data
 export const DIGIMON_MAP: Record<string, string[]> =
   (digimonLocations as Record<string, string[]>) ||
-  (domainProgressData.digimon_map as Record<string, string[]>);
+  ((domainProgressData as any).digimon_map as Record<string, string[]>);
 
 export const RANK_HIERARCHY: Record<StageLevel, number> = {
   Rookie: 1,
@@ -66,9 +71,14 @@ export const RANK_HIERARCHY: Record<StageLevel, number> = {
   Mega: 4,
 };
 
-export function getFlatCatalog(): Record<string, DigimonProfile> {
-  const flat: Record<string, any> = {};
-  const raw = rawCatalogData as any;
+// ---------------------------------------------------------------------------
+// Catalog & Lookup Initialization
+// ---------------------------------------------------------------------------
+
+function buildCatalog(): Record<string, DigimonProfile> {
+  const flat: Record<string, DigimonProfile> = {};
+  const raw = rawCatalogData as Record<string, any>;
+
   if (raw.Rookies || raw.Champions || raw.Ultimates || raw.Megas) {
     ["Rookies", "Champions", "Ultimates", "Megas"].forEach((stage) => {
       if (raw[stage]) Object.assign(flat, raw[stage]);
@@ -76,14 +86,30 @@ export function getFlatCatalog(): Record<string, DigimonProfile> {
   } else {
     Object.assign(flat, raw);
   }
+
+  // Normalize family property casing
   Object.keys(flat).forEach((name) => {
-    if (!flat[name].family && flat[name].Family)
-      flat[name].family = flat[name].Family;
+    const item = flat[name] as any;
+    if (!item.family && item.Family) {
+      item.family = item.Family;
+    }
   });
+
   return flat;
 }
 
-export const catalog = getFlatCatalog();
+export const catalog: Record<string, DigimonProfile> = buildCatalog();
+
+// Fast O(1) Fodder Lookup Index: Stage -> Family -> Array of Catalog Names
+const catalogByStageFamily = (() => {
+  const map = new Map<string, string[]>();
+  Object.entries(catalog).forEach(([name, profile]) => {
+    const key = `${profile.level}:${profile.family}`;
+    if (!map.has(key)) map.set(key, []);
+    map.get(key)!.push(name);
+  });
+  return map;
+})();
 
 /**
  * Case-insensitive catalog lookup helper with string normalization fallback.
@@ -119,6 +145,10 @@ export function isDigimonCatchableInProgress(
   return { catchable: validLocations.length > 0, validLocations };
 }
 
+// ---------------------------------------------------------------------------
+// DNA Calculation Engine
+// ---------------------------------------------------------------------------
+
 export type AdvancedDnaResult = {
   result: string | null;
   stage: string;
@@ -127,14 +157,14 @@ export type AdvancedDnaResult = {
   reason: string;
   p1Details: {
     name: string;
-    level: string;
-    type: string;
+    level: StageLevel;
+    type: AttributeType;
     family: string;
   } | null;
   p2Details: {
     name: string;
-    level: string;
-    type: string;
+    level: StageLevel;
+    type: AttributeType;
     family: string;
   } | null;
 };
@@ -153,8 +183,22 @@ export function getAdvancedDnaResult(
       winningType: null,
       winningParent: null,
       reason: "Select two valid Digimon.",
-      p1Details: p1Match ? { name: p1Match.key, ...p1Match.profile } : null,
-      p2Details: p2Match ? { name: p2Match.key, ...p2Match.profile } : null,
+      p1Details: p1Match
+        ? {
+            name: p1Match.key,
+            level: p1Match.profile.level,
+            type: p1Match.profile.type,
+            family: p1Match.profile.family,
+          }
+        : null,
+      p2Details: p2Match
+        ? {
+            name: p2Match.key,
+            level: p2Match.profile.level,
+            type: p2Match.profile.type,
+            family: p2Match.profile.family,
+          }
+        : null,
     };
   }
 
@@ -189,7 +233,7 @@ export function getAdvancedDnaResult(
   }
 
   // 1. Determine Outcome Stage
-  let dnaStage = "Rookie";
+  let dnaStage: StageLevel = "Rookie";
   if (p1.level === "Mega" && p2.level === "Mega") {
     dnaStage = "Ultimate";
   } else if (
@@ -273,6 +317,10 @@ export function getAdvancedDnaResult(
   };
 }
 
+// ---------------------------------------------------------------------------
+// Skill Search & Special MRA Setup
+// ---------------------------------------------------------------------------
+
 export function searchSkills(searchTerm: string) {
   const matches: Array<{
     digimon: string;
@@ -344,6 +392,10 @@ export const SPECIAL_MRA_MAP: Record<string, SpecialMraTarget[]> = {
   ],
 };
 
+// ---------------------------------------------------------------------------
+// Pathfinding Engine (Optimized BFS)
+// ---------------------------------------------------------------------------
+
 export function findAllEvolutionPaths(
   startName: string,
   targetGoal: string,
@@ -351,7 +403,13 @@ export function findAllEvolutionPaths(
   unlockedDomain: string = DOMAIN_ORDER[0],
   strategy: StrategyPreference = "prioDna",
 ): EvolutionPathOption[] {
-  if (startName === targetGoal) return [];
+  const startMatch = getCatalogProfile(startName);
+  const targetMatch = getCatalogProfile(targetGoal);
+
+  const startKey = startMatch ? startMatch.key : startName;
+  const targetKey = targetMatch ? targetMatch.key : targetGoal;
+
+  if (startKey === targetKey) return [];
 
   const maxDomainIndex = DOMAIN_ORDER.indexOf(unlockedDomain);
   const foundPaths: EvolutionPathOption[] = [];
@@ -365,18 +423,18 @@ export function findAllEvolutionPaths(
     "Dragon",
     "Marine",
   ];
-  const stages = ["Champion", "Ultimate", "Mega"];
+  const stages: StageLevel[] = ["Champion", "Ultimate", "Mega"];
 
   const queue: Array<{
     current: string;
     path: RouteStep[];
     visitedNodes: Set<string>;
-  }> = [{ current: startName, path: [], visitedNodes: new Set([startName]) }];
+  }> = [{ current: startKey, path: [], visitedNodes: new Set([startKey]) }];
 
   while (queue.length > 0 && foundPaths.length < 5) {
     const { current, path, visitedNodes } = queue.shift()!;
 
-    if (current === targetGoal) {
+    if (current === targetKey) {
       const hasDna = path.some((s) => s.action === "DNA");
       foundPaths.push({
         id: `path-${foundPaths.length + 1}`,
@@ -397,93 +455,91 @@ export function findAllEvolutionPaths(
     if (!profile) continue;
 
     const pushDirectEvoSteps = () => {
-      if (profile.evolutions) {
-        for (const evo of profile.evolutions) {
-          const nextTarget = evo.target.replace("*", "").trim();
-          if (!visitedNodes.has(nextTarget) && catalog[nextTarget]) {
-            const nextVisited = new Set(visitedNodes);
-            nextVisited.add(nextTarget);
+      if (!profile.evolutions) return;
 
-            queue.push({
-              current: nextTarget,
-              path: [
-                ...path,
-                {
-                  action: "DIGIVOLVE",
-                  from: current,
-                  target: nextTarget,
-                  dpRequired: evo.dp,
-                  description: `Digivolve ${current} → ${nextTarget} (DP Req: ${evo.dp})`,
-                },
-              ],
-              visitedNodes: nextVisited,
-            });
-          }
+      for (const evo of profile.evolutions) {
+        const nextTarget = evo.target.replace("*", "").trim();
+        if (!visitedNodes.has(nextTarget) && catalog[nextTarget]) {
+          const nextVisited = new Set(visitedNodes);
+          nextVisited.add(nextTarget);
+
+          queue.push({
+            current: nextTarget,
+            path: [
+              ...path,
+              {
+                action: "DIGIVOLVE",
+                from: current,
+                target: nextTarget,
+                dpRequired: evo.dp,
+                description: `Digivolve ${current} → ${nextTarget} (DP Req: ${evo.dp})`,
+              },
+            ],
+            visitedNodes: nextVisited,
+          });
         }
       }
     };
 
     const pushDnaResetSteps = () => {
-      if (profile.level !== "Rookie" && path.length < 3) {
-        for (const stageReq of stages) {
-          for (const familyReq of families) {
-            const sampleDigimon = Object.keys(catalog).find(
-              (name) =>
-                catalog[name].level === stageReq &&
-                catalog[name].family === familyReq,
+      // Limit DNA reset depth to prevent infinite combinatorial expansion
+      if (profile.level === "Rookie" || path.length >= 3) return;
+
+      for (const stageReq of stages) {
+        for (const familyReq of families) {
+          const candidateNames =
+            catalogByStageFamily.get(`${stageReq}:${familyReq}`) || [];
+
+          if (candidateNames.length === 0) continue;
+
+          // Pick the first sample Digimon from pre-indexed candidate list
+          const sampleDigimon = candidateNames[0];
+          const dnaTest = getAdvancedDnaResult(current, sampleDigimon);
+
+          if (
+            dnaTest.result &&
+            catalog[dnaTest.result] &&
+            !visitedNodes.has(dnaTest.result)
+          ) {
+            // Build valid fodder options using O(1) catalog candidates
+            const validFodderDigimon: FodderOption[] = candidateNames.map(
+              (name) => {
+                const { catchable, validLocations } =
+                  isDigimonCatchableInProgress(name, maxDomainIndex);
+                let status: FodderStatus = "UNCATCHABLE";
+                if (userInventory.includes(name)) status = "OWNED";
+                else if (catchable) status = "CATCHABLE";
+
+                return {
+                  name,
+                  level: catalog[name].level,
+                  type: catalog[name].type,
+                  family: catalog[name].family,
+                  status,
+                  locations: validLocations,
+                };
+              },
             );
 
-            if (!sampleDigimon) continue;
+            const nextVisited = new Set(visitedNodes);
+            nextVisited.add(dnaTest.result);
 
-            const dnaTest = getAdvancedDnaResult(current, sampleDigimon);
-            if (
-              dnaTest.result &&
-              catalog[dnaTest.result] &&
-              !visitedNodes.has(dnaTest.result)
-            ) {
-              const validFodderDigimon: FodderOption[] = Object.keys(catalog)
-                .filter(
-                  (name) =>
-                    catalog[name].level === stageReq &&
-                    catalog[name].family === familyReq,
-                )
-                .map((name) => {
-                  const { catchable, validLocations } =
-                    isDigimonCatchableInProgress(name, maxDomainIndex);
-                  let status: FodderStatus = "UNCATCHABLE";
-                  if (userInventory.includes(name)) status = "OWNED";
-                  else if (catchable) status = "CATCHABLE";
-
-                  return {
-                    name,
-                    level: catalog[name].level,
-                    type: catalog[name].type,
-                    family: catalog[name].family,
-                    status,
-                    locations: validLocations,
-                  };
-                });
-
-              const nextVisited = new Set(visitedNodes);
-              nextVisited.add(dnaTest.result);
-
-              queue.push({
-                current: dnaTest.result,
-                path: [
-                  ...path,
-                  {
-                    action: "DNA",
-                    from: current,
-                    target: dnaTest.result,
-                    requiredStage: stageReq,
-                    requiredFamily: familyReq,
-                    validFodders: validFodderDigimon,
-                    description: `DNA ${current} + Any [${stageReq} / ${familyReq} Family] → ${dnaTest.result}`,
-                  },
-                ],
-                visitedNodes: nextVisited,
-              });
-            }
+            queue.push({
+              current: dnaTest.result,
+              path: [
+                ...path,
+                {
+                  action: "DNA",
+                  from: current,
+                  target: dnaTest.result,
+                  requiredStage: stageReq,
+                  requiredFamily: familyReq,
+                  validFodders: validFodderDigimon,
+                  description: `DNA ${current} + Any [${stageReq} / ${familyReq} Family] → ${dnaTest.result}`,
+                },
+              ],
+              visitedNodes: nextVisited,
+            });
           }
         }
       }

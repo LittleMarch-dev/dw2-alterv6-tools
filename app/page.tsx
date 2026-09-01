@@ -65,9 +65,13 @@ export default function DW2App() {
           </div>
 
           <div className="flex items-center gap-2 flex-wrap sm:flex-nowrap w-full sm:w-auto">
+            {/* FIXED: Open showTutorialModal instead of isHowToUseOpen */}
             <button
-              onClick={() => setShowTutorialModal(true)}
-              className="bg-slate-950 border border-slate-800 text-amber-300 hover:border-amber-400 text-xs font-bold px-3 py-1.5 rounded-xl transition-colors flex items-center gap-1.5"
+              onClick={() => {
+                setActiveTab("calculator"); // Always start tour at Tab 1
+                setShowTutorialModal(true);
+              }}
+              className="bg-slate-900 border border-slate-800 hover:border-amber-400/50 text-slate-300 hover:text-amber-400 text-xs font-bold px-3 py-1.5 rounded-xl transition-colors cursor-pointer"
             >
               📖 How to Use
             </button>
@@ -176,6 +180,8 @@ export default function DW2App() {
             onRemoveInventory={handleRemoveInventory}
           />
         )}
+
+        {/* Single Dynamic Interactive Tutorial Modal */}
         <InteractiveTutorialModal
           isOpen={showTutorialModal}
           onClose={() => setShowTutorialModal(false)}

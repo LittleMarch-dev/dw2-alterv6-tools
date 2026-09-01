@@ -27,8 +27,9 @@ export function MoveSearch({ onSelectDigimon }: MoveSearchProps) {
 
   return (
     <div className="space-y-4">
+      {/* FIXED: Updated id to #tutorial-skills-search */}
       <div
-        id="tutorial-skill-input"
+        id="tutorial-skills-search"
         className="bg-slate-900 border border-slate-800 p-4 rounded-2xl"
       >
         <AutocompleteInput
@@ -42,8 +43,9 @@ export function MoveSearch({ onSelectDigimon }: MoveSearchProps) {
         />
       </div>
 
+      {/* FIXED: Updated id to #tutorial-skills-results */}
       <div
-        id="tutorial-skill-results"
+        id="tutorial-skills-results"
         className="bg-slate-900 border border-slate-800 p-5 rounded-3xl space-y-3"
       >
         <h2 className="text-xs font-bold text-amber-400 uppercase tracking-wider border-b border-slate-800 pb-2">
@@ -51,7 +53,6 @@ export function MoveSearch({ onSelectDigimon }: MoveSearchProps) {
         </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           {skillDropSources.map((source, idx) => {
-            // Strip raw MRA suffixes ((M), (R), (A)) for visual presentation
             const cleanDigimonName = source.digimon
               .replace(/\s*\([RMA]\)/gi, "")
               .trim();

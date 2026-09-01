@@ -14,6 +14,17 @@ interface DnaCalculatorProps {
   onOpenMatrix: () => void;
 }
 
+// Helper to resolve raw inputs like "Diaboromon" to catalog entries like "Diaboromon (M)"
+function resolveCatalogKey(inputName: string): string {
+  if (!inputName) return "";
+  if (catalog[inputName]) return inputName;
+
+  // Check if adding MRA suffixes resolves to a valid key
+  const variants = [`${inputName} (M)`, `${inputName} (R)`, `${inputName} (A)`];
+  const found = variants.find((v) => catalog[v]);
+  return found || inputName;
+}
+
 export function DnaCalculator({
   parent1,
   parent2,
@@ -24,9 +35,14 @@ export function DnaCalculator({
 }: DnaCalculatorProps) {
   const [showTreeModal, setShowTreeModal] = useState(false);
 
+  // Normalize inputs to valid catalog keys
+  const resolvedP1 = useMemo(() => resolveCatalogKey(parent1), [parent1]);
+  const resolvedP2 = useMemo(() => resolveCatalogKey(parent2), [parent2]);
+
+  // Run calculation using resolved catalog keys
   const dnaDetails = useMemo(
-    () => getAdvancedDnaResult(parent1, parent2),
-    [parent1, parent2],
+    () => getAdvancedDnaResult(resolvedP1, resolvedP2),
+    [resolvedP1, resolvedP2],
   );
 
   const handleSwapParents = () => {
@@ -35,8 +51,8 @@ export function DnaCalculator({
   };
 
   // Lookup parent catalog details for live badges
-  const p1Profile = catalog[parent1];
-  const p2Profile = catalog[parent2];
+  const p1Profile = catalog[resolvedP1];
+  const p2Profile = catalog[resolvedP2];
 
   const cleanOutcomeName = dnaDetails.result
     ? dnaDetails.result.replace(/\s*\([RMA]\)/gi, "").trim()
@@ -66,7 +82,10 @@ export function DnaCalculator({
       {/* Parent Inputs & Metadata Badges */}
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 relative">
         {/* Desktop Swap Button */}
-        <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 hidden sm:block">
+        <div
+          id="tutorial-swap-btn"
+          className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 hidden sm:block"
+        >
           <button
             type="button"
             onClick={handleSwapParents}
@@ -78,7 +97,10 @@ export function DnaCalculator({
         </div>
 
         {/* Parent 1 Input + Badges */}
-        <div className="bg-slate-950 border border-slate-800 p-4 rounded-2xl space-y-2.5">
+        <div
+          id="tutorial-parent-1"
+          className="bg-slate-950 border border-slate-800 p-4 rounded-2xl space-y-2.5"
+        >
           <AutocompleteInput
             label="Parent 1 (First Digimon)"
             value={parent1}
@@ -114,7 +136,10 @@ export function DnaCalculator({
         </div>
 
         {/* Parent 2 Input + Badges */}
-        <div className="bg-slate-950 border border-slate-800 p-4 rounded-2xl space-y-2.5">
+        <div
+          id="tutorial-parent-2"
+          className="bg-slate-950 border border-slate-800 p-4 rounded-2xl space-y-2.5"
+        >
           <AutocompleteInput
             label="Parent 2 (Second Digimon)"
             value={parent2}
@@ -140,7 +165,10 @@ export function DnaCalculator({
       </div>
 
       {/* DNA Result Summary Box */}
-      <div className="bg-slate-950 border border-slate-800 p-5 rounded-2xl space-y-4">
+      <div
+        id="tutorial-outcome-card"
+        className="bg-slate-950 border border-slate-800 p-5 rounded-2xl space-y-4"
+      >
         <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2 border-b border-slate-800/80 pb-3">
           <div>
             <span className="text-[10px] text-slate-500 uppercase font-bold tracking-wider block">
@@ -171,7 +199,7 @@ export function DnaCalculator({
                 </span>
                 <span className="text-xs text-slate-400">
                   Result Stage:{" "}
-                  <strong className="text-white">{dnaDetails.stage}</strong> •
+                  <strong className="text-white">{dnaDetails.stage}</strong> •{" "}
                   Attribute:{" "}
                   <strong className="text-amber-300">
                     {catalog[dnaDetails.result!]?.type ||

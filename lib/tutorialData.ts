@@ -1,12 +1,11 @@
-export type InteractiveStep = {
+export interface InteractiveStep {
   id: number;
   title: string;
-  tab: "calculator" | "routes" | "skills" | "inventory";
   instruction: string;
-  targetId: string;
   proTip: string;
-  expectedValue?: string;
-};
+  targetId: string;
+  tab: "calculator" | "routes" | "skills" | "inventory";
+}
 
 export const GUIDED_TUTORIAL_STEPS: Record<
   "calculator" | "routes" | "skills" | "inventory",
@@ -15,107 +14,77 @@ export const GUIDED_TUTORIAL_STEPS: Record<
   calculator: [
     {
       id: 1,
-      title: "🧬 Master Rank Dominance",
+      title: "Set Parent 1",
+      instruction: 'Type "Gururumon" into Parent 1 or pick it from the list.',
+      proTip: "Gururumon is a Champion level Data attribute Digimon.",
+      targetId: "#tutorial-parent-1",
       tab: "calculator",
-      instruction:
-        'Type "WarGreymon" (Mega / Vaccine / Dragon) as Parent 1 to test high-rank breeding!',
-      targetId: "#tutorial-parent1-input",
-      proTip:
-        "In the V6 Mod, higher rank parents override attribute triangle advantage!",
-      expectedValue: "WarGreymon",
     },
     {
       id: 2,
-      title: "⚔️ High-Tier Fodder Fusion",
+      title: "Set Parent 2",
+      instruction: 'Type "Myotismon" into Parent 2.',
+      proTip: "Attribute priority evaluates automatically upon selection.",
+      targetId: "#tutorial-parent-2",
       tab: "calculator",
-      instruction: 'Type "MetalGarurumon" (Mega / Data / Beast) as Parent 2.',
-      targetId: "#tutorial-parent2-input",
-      proTip:
-        "Combine two Mega Digimon to output powerful Ultimate stage resets!",
-      expectedValue: "MetalGarurumon",
     },
     {
       id: 3,
-      title: "🔥 Instant Fusion Preview",
-      tab: "calculator",
+      title: "Check Result & Mega Branches",
       instruction:
-        "Check the DNA Outcome box! The simulator calculates exact species, stage resets, and family rules automatically.",
-      targetId: "#tutorial-dna-result",
-      proTip:
-        'Hit "View DNA Family Matrix" to inspect all 64 family combination outcomes!',
+        'View your resulting species, then click "View Mega Branches".',
+      proTip: "Mega routes are sorted with lowest DP requirements first.",
+      targetId: "#tutorial-outcome-card",
+      tab: "calculator",
     },
   ],
   routes: [
     {
-      id: 1,
-      title: "🚀 Legendary Goal Pathfinder",
-      tab: "routes",
-      instruction:
-        "Set your starter Digimon and aim for legendary endgame targets like Omnimon, Diaboromon, or Imperialdramon!",
+      id: 4,
+      title: "Current Digimon & Target Goal",
+      instruction: "Enter your current Digimon and desired endgame target.",
+      proTip: "Route paths auto-adjust as you advance tower progress.",
       targetId: "#tutorial-route-inputs",
-      proTip:
-        "The pathfinder engine scans all 3 attribute tables to find the shortest breeding route.",
+      tab: "routes",
     },
     {
-      id: 2,
-      title: "⚡ Fast-Track Level Cap Resets",
+      id: 5,
+      title: "Target Signature Skills",
+      instruction: "Select the specific skill variant you want to unlock.",
+      proTip: "MRA forms like Diaboromon feature branch-specific moves.",
+      targetId: "#tutorial-target-skills",
       tab: "routes",
-      instruction:
-        'Toggle between "⚡ Prioritize DNA Reset" to clear EL caps fast, or "🛡️ Prioritize Direct Digivolve".',
-      targetId: "#tutorial-route-toggle",
-      proTip:
-        "DNA Resets save hours of grinding by lowering stage and raising max EL caps!",
     },
     {
-      id: 3,
-      title: "🟢 Flexible Family Fodders",
-      tab: "routes",
-      instruction:
-        "Check the colored badges! The app gives you ALL valid Digimon matching the family criteria instead of locking you into one species.",
-      targetId: "#tutorial-route-steps",
+      id: 6,
+      title: "Optimal Step-by-Step Path",
+      instruction: "View step-by-step DNA combinations and fodder Digimon.",
       proTip:
-        "🟢 = Owned in your Bank | 🟡 = Catchable in your Unlocked Domain | 🔴 = Uncatchable",
+        "Click any fodder button to inspect or add it to your owned pool.",
+      targetId: "#tutorial-evolution-routes",
+      tab: "routes",
     },
   ],
   skills: [
     {
-      id: 1,
-      title: "🎯 Hunt Endgame Skill Carriers",
-      tab: "skills",
-      instruction:
-        'Search for high-value moves like "Dramon Killer", "Giga Blaster", or "Mega Heal".',
-      targetId: "#tutorial-skill-input",
-      proTip: "Finds both signature moves and wild inheritable extra skills!",
-    },
-    {
-      id: 2,
-      title: "🗺️ Wild Encounter Radar",
-      tab: "skills",
-      instruction:
-        "Instantly view which wild Digimon carry the skill and which domains they spawn in based on your story progress.",
-      targetId: "#tutorial-skill-results",
+      id: 7,
+      title: "Search & Filter Signature Moves",
+      instruction: "Filter moves by name, element type, or target Digimon.",
       proTip:
-        "Change your Progress level in the header to filter encounter locations!",
+        "Search signature moves to trace which Digimon pass down powerful attacks.",
+      targetId: "#tutorial-skills-search",
+      tab: "skills",
     },
   ],
   inventory: [
     {
-      id: 1,
-      title: "📦 Sync Your Server Bank",
+      id: 8,
+      title: "Manage Owned Pool",
+      instruction: "Track Digimon currently in your Digivice or Server Box.",
+      proTip:
+        "Adding owned Digimon automatically flags them as ready fodder in the Route Finder.",
+      targetId: "#tutorial-owned-pool",
       tab: "inventory",
-      instruction:
-        "Add Digimon currently sitting in your Digivice or Server Bank to your Owned Pool.",
-      targetId: "#tutorial-inventory-input",
-      proTip: "Saves automatically to your browser storage!",
-    },
-    {
-      id: 2,
-      title: "✨ Smart Route Highlighting",
-      tab: "inventory",
-      instruction:
-        "Owned Digimon light up with green 🟢 badges across all Route Finder paths to minimize grinding!",
-      targetId: "#tutorial-inventory-list",
-      proTip: "Remove Digimon anytime using the red × button.",
     },
   ],
 };

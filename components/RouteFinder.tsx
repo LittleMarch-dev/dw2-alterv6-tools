@@ -5,6 +5,7 @@ import {
   findAllEvolutionPaths,
   StrategyPreference,
   SPECIAL_MRA_MAP,
+  catalog,
 } from "@/lib/dnaEngine";
 import { AutocompleteInput } from "./AutocompleteInput";
 
@@ -13,6 +14,40 @@ interface RouteFinderProps {
   userInventory: string[];
   onSelectDigimon: (name: string) => void;
   allDigimonNames: string[];
+}
+
+function sanitizeDisplayName(rawName: string): string {
+  if (!rawName) return "";
+  return rawName
+    .replace(/\s*\([RMA]\)/gi, "")
+    .replace(/\s*\[.*?\]/g, "")
+    .trim();
+}
+
+function resolveCatalogKey(inputName: string): string {
+  if (!inputName) return "";
+  if (catalog[inputName]) return inputName;
+
+  const variants = [`${inputName} (M)`, `${inputName} (R)`, `${inputName} (A)`];
+  const found = variants.find((v) => catalog[v]);
+  return found || inputName;
+}
+
+function getUniqueFodders(
+  validFodders?: Array<{ name: string; status: string }>,
+) {
+  if (!validFodders) return [];
+  const map = new Map();
+  for (const fodder of validFodders) {
+    const cleanName = sanitizeDisplayName(fodder.name);
+    if (!map.has(cleanName)) {
+      map.set(cleanName, {
+        ...fodder,
+        displayName: cleanName,
+      });
+    }
+  }
+  return Array.from(map.values());
 }
 
 export function RouteFinder({
@@ -26,13 +61,9 @@ export function RouteFinder({
   const [selectedRouteIdx, setSelectedRouteIdx] = useState<number>(0);
   const [strategy, setStrategy] = useState<StrategyPreference>("prioDna");
 
-  // Track the selected move variant key for Diaboromon / Omnimon / Baihumon
   const [selectedMraKey, setSelectedMraKey] = useState<string | null>(null);
-
-  // Check if current goal is one of the 3 special Digimon
   const specialOptions = SPECIAL_MRA_MAP[evoGoal];
 
-  // Auto-reset selected move when goal changes
   useEffect(() => {
     if (specialOptions) {
       setSelectedMraKey(specialOptions[0].catalogKey);
@@ -41,28 +72,41 @@ export function RouteFinder({
     }
   }, [evoGoal]);
 
-  // Use either the selected MRA variant key or the direct goal string
   const activeEngineGoal = specialOptions
     ? selectedMraKey || specialOptions[0].catalogKey
     : evoGoal;
 
+  const resolvedStart = useMemo(() => resolveCatalogKey(evoStart), [evoStart]);
+  const resolvedGoal = useMemo(
+    () => resolveCatalogKey(activeEngineGoal),
+    [activeEngineGoal],
+  );
+
+  // Return only strictly valid routes from engine
   const evoRouteOptions = useMemo(
     () =>
       findAllEvolutionPaths(
-        evoStart,
-        activeEngineGoal,
+        resolvedStart,
+        resolvedGoal,
         userInventory,
         unlockedDomain,
         strategy,
       ),
-    [evoStart, activeEngineGoal, userInventory, unlockedDomain, strategy],
+    [resolvedStart, resolvedGoal, userInventory, unlockedDomain, strategy],
   );
+
+  // Reset selected index if available options change
+  useEffect(() => {
+    if (selectedRouteIdx >= evoRouteOptions.length) {
+      setSelectedRouteIdx(0);
+    }
+  }, [evoRouteOptions, selectedRouteIdx]);
 
   const activeRoute = evoRouteOptions[selectedRouteIdx] || evoRouteOptions[0];
 
   return (
     <div className="space-y-4 sm:space-y-6">
-      {/* Search Priority Toggle */}
+      {/* Route Search Priority */}
       <div className="bg-slate-900 border border-slate-800 p-3.5 rounded-2xl flex flex-col sm:flex-row justify-between items-center gap-3">
         <div>
           <span className="text-xs font-bold text-amber-400 uppercase tracking-wider block">
@@ -101,7 +145,10 @@ export function RouteFinder({
       </div>
 
       {/* Start and Target Goal Inputs */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+      <div
+        id="tutorial-route-inputs"
+        className="grid grid-cols-1 sm:grid-cols-2 gap-4"
+      >
         <div className="bg-slate-900 border border-slate-800 p-4 rounded-2xl">
           <AutocompleteInput
             label="Current Digimon"
@@ -121,43 +168,58 @@ export function RouteFinder({
       </div>
 
       {/* SPECIAL MRA SKILL SELECTION PROMPT */}
-      {specialOptions && (
-        <div className="bg-slate-950 border border-amber-500/30 p-4 rounded-2xl space-y-3 shadow-lg">
-          <div className="flex items-center justify-between">
-            <span className="text-xs font-bold text-amber-400 uppercase tracking-wider">
-              🎯 Choose Target Skill to Learn for {evoGoal}:
-            </span>
-          </div>
+      <div id="tutorial-target-skills">
+        {specialOptions ? (
+          <div className="bg-slate-950 border border-amber-500/30 p-4 rounded-2xl space-y-3 shadow-lg">
+            <div className="flex items-center justify-between">
+              <span className="text-xs font-bold text-amber-400 uppercase tracking-wider">
+                🎯 Choose Target Skill to Learn for{" "}
+                {sanitizeDisplayName(evoGoal)}:
+              </span>
+            </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
-            {specialOptions.map((opt) => (
-              <button
-                key={opt.catalogKey}
-                type="button"
-                onClick={() => setSelectedMraKey(opt.catalogKey)}
-                className={`p-3 rounded-xl border text-left transition-all ${
-                  (selectedMraKey || specialOptions[0].catalogKey) ===
-                  opt.catalogKey
-                    ? "bg-amber-400 text-slate-950 border-amber-400 font-bold shadow-md"
-                    : "bg-slate-900 text-slate-300 border-slate-800 hover:border-slate-700"
-                }`}
-              >
-                <div className="text-xs font-black">{opt.moveName}</div>
-                <div className="text-[10px] opacity-75 mt-0.5">{opt.dpReq}</div>
-              </button>
-            ))}
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
+              {specialOptions.map((opt) => (
+                <button
+                  key={opt.catalogKey}
+                  type="button"
+                  onClick={() => setSelectedMraKey(opt.catalogKey)}
+                  className={`p-3 rounded-xl border text-left transition-all ${
+                    (selectedMraKey || specialOptions[0].catalogKey) ===
+                    opt.catalogKey
+                      ? "bg-amber-400 text-slate-950 border-amber-400 font-bold shadow-md"
+                      : "bg-slate-900 text-slate-300 border-slate-800 hover:border-slate-700"
+                  }`}
+                >
+                  <div className="text-xs font-black">{opt.moveName}</div>
+                  <div className="text-[10px] opacity-75 mt-0.5">
+                    {opt.dpReq}
+                  </div>
+                </button>
+              ))}
+            </div>
           </div>
-        </div>
-      )}
+        ) : (
+          <div className="bg-slate-900/40 border border-slate-800/40 p-3 rounded-2xl text-[11px] text-slate-500 text-center">
+            Standard Digimon evolution selected. No specialized MRA skill branch
+            required.
+          </div>
+        )}
+      </div>
 
       {/* Evolution Route Display Steps */}
-      <div className="bg-slate-900 border border-slate-800 p-5 rounded-3xl space-y-4">
+      <div
+        id="tutorial-evolution-routes"
+        className="bg-slate-900 border border-slate-800 p-5 rounded-3xl space-y-4"
+      >
         <div className="flex justify-between items-center border-b border-slate-800 pb-3">
           <h2 className="text-xs font-bold text-amber-400 uppercase tracking-wider">
             Evolution Routes
           </h2>
+          {/* Dynamic badge count reflecting actual valid options */}
           <span className="text-[11px] bg-slate-800 text-slate-300 px-2.5 py-0.5 rounded-full font-semibold">
-            {evoRouteOptions.length} Options
+            {evoRouteOptions.length} Valid{" "}
+            {evoRouteOptions.length === 1 ? "Option" : "Options"}
           </span>
         </div>
 
@@ -167,16 +229,17 @@ export function RouteFinder({
           </p>
         ) : (
           <div className="space-y-3">
+            {/* Dynamic tabs render ONLY for available valid options */}
             {evoRouteOptions.length > 1 && (
               <div className="flex gap-2 overflow-x-auto pb-1">
                 {evoRouteOptions.map((opt, idx) => (
                   <button
-                    key={opt.id}
+                    key={opt.id || idx}
                     onClick={() => setSelectedRouteIdx(idx)}
                     className={`px-3 py-1.5 rounded-xl text-xs font-bold border transition-all whitespace-nowrap ${
                       selectedRouteIdx === idx
-                        ? "bg-amber-400 text-slate-950 border-amber-400"
-                        : "bg-slate-950 text-slate-400 border-slate-800"
+                        ? "bg-amber-400 text-slate-950 border-amber-400 shadow-md"
+                        : "bg-slate-950 text-slate-400 border-slate-800 hover:text-white"
                     }`}
                   >
                     {idx === 0 ? "⭐ Best Way" : `Option ${idx + 1}`} (
@@ -188,56 +251,67 @@ export function RouteFinder({
 
             {activeRoute && (
               <div className="space-y-3">
-                {activeRoute.steps.map((step, idx) => (
-                  <div
-                    key={idx}
-                    className="bg-slate-950 border border-slate-800 p-4 rounded-2xl space-y-3"
-                  >
-                    <div className="flex justify-between items-center flex-wrap gap-2">
-                      <div className="flex items-center gap-2">
-                        <span className="bg-amber-400 text-slate-950 text-[10px] font-black px-2 py-0.5 rounded-md">
-                          STEP {idx + 1}
-                        </span>
-                        <span className="text-sm font-bold text-slate-100">
-                          {step.description.replace(/\s*\([RMA]\)/gi, "")}
-                        </span>
-                      </div>
-                    </div>
+                {activeRoute.steps.map((step, idx) => {
+                  const uniqueFodders = getUniqueFodders(step.validFodders);
 
-                    {step.validFodders && step.validFodders.length > 0 && (
-                      <div className="bg-slate-900 border border-slate-800/80 p-3 rounded-xl space-y-2">
-                        <span className="text-amber-400 font-bold uppercase text-[10px] tracking-wider block">
-                          Select Any {step.requiredStage} with [
-                          {step.requiredFamily}] Family (
-                          {step.validFodders.length} Options):
-                        </span>
-                        <div className="flex flex-wrap gap-1.5 max-h-40 overflow-y-auto pt-1">
-                          {step.validFodders.map((fodder) => (
-                            <button
-                              key={fodder.name}
-                              type="button"
-                              onClick={() => onSelectDigimon(fodder.name)}
-                              className={`text-[11px] font-semibold px-2.5 py-1 rounded-xl border flex items-center gap-1.5 transition-transform hover:scale-105 ${
-                                fodder.status === "OWNED"
-                                  ? "bg-emerald-500/10 text-emerald-400 border-emerald-500/30"
-                                  : fodder.status === "CATCHABLE"
-                                    ? "bg-amber-500/10 text-amber-300 border-amber-500/30"
-                                    : "bg-red-500/10 text-red-500/30 border-red-500/20"
-                              }`}
-                            >
-                              <span>
-                                {fodder.status === "OWNED" && "🟢"}
-                                {fodder.status === "CATCHABLE" && "🟡"}
-                                {fodder.status === "UNCATCHABLE" && "🔴"}
-                              </span>
-                              <span>{fodder.name}</span>
-                            </button>
-                          ))}
+                  return (
+                    <div
+                      key={idx}
+                      className="bg-slate-950 border border-slate-800 p-4 rounded-2xl space-y-3"
+                    >
+                      <div className="flex justify-between items-center flex-wrap gap-2">
+                        <div className="flex items-center gap-2">
+                          <span className="bg-amber-400 text-slate-950 text-[10px] font-black px-2 py-0.5 rounded-md">
+                            STEP {idx + 1}
+                          </span>
+                          <span className="text-sm font-bold text-slate-100">
+                            {sanitizeDisplayName(step.description)}
+                          </span>
                         </div>
                       </div>
-                    )}
-                  </div>
-                ))}
+
+                      {uniqueFodders.length > 0 && (
+                        <div className="bg-slate-900 border border-slate-800/80 p-3 rounded-xl space-y-2">
+                          <span className="text-amber-400 font-bold uppercase text-[10px] tracking-wider block">
+                            Select Any {step.requiredStage} with [
+                            {step.requiredFamily}] Family (
+                            {uniqueFodders.length} Options):
+                          </span>
+                          <div className="flex flex-wrap gap-1.5 max-h-40 overflow-y-auto pt-1">
+                            {uniqueFodders.map((fodder) => (
+                              <button
+                                key={fodder.displayName}
+                                type="button"
+                                onClick={() => onSelectDigimon(fodder.name)}
+                                title={
+                                  fodder.status === "OWNED"
+                                    ? `${fodder.displayName} is in your owned pool!`
+                                    : fodder.status === "CATCHABLE"
+                                      ? `${fodder.displayName} is catchable!`
+                                      : `${fodder.displayName} is uncatchable in current progress.`
+                                }
+                                className={`text-[11px] font-semibold px-2.5 py-1 rounded-xl border flex items-center gap-1.5 transition-transform hover:scale-105 ${
+                                  fodder.status === "OWNED"
+                                    ? "bg-emerald-500/10 text-emerald-400 border-emerald-500/30"
+                                    : fodder.status === "CATCHABLE"
+                                      ? "bg-amber-500/10 text-amber-300 border-amber-500/30"
+                                      : "bg-red-500/10 text-red-400/60 border-red-500/20 opacity-70"
+                                }`}
+                              >
+                                <span>
+                                  {fodder.status === "OWNED" && "🟢"}
+                                  {fodder.status === "CATCHABLE" && "🟡"}
+                                  {fodder.status === "UNCATCHABLE" && "🔴"}
+                                </span>
+                                <span>{fodder.displayName}</span>
+                              </button>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+                    </div>
+                  );
+                })}
               </div>
             )}
           </div>
