@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useMemo, useEffect } from "react";
-import { SPECIAL_MRA_MAP, catalog } from "@/lib/dnaEngine";
+import { SPECIAL_MRA_MAP, catalog, StageLevel } from "@/lib/dnaEngine";
 import {
   findShortestSafeRoute,
   RouteResult,
@@ -33,13 +33,27 @@ function resolveCatalogKey(inputName: string): string {
   return found || inputName;
 }
 
-function getFoddersForFamily(family?: string, userInventory: string[] = []) {
+// Strict DW2 DNA Fodder Filter:
+// 1. Rookies CANNOT be used as DNA parents/fodder.
+// 2. Ultimate -> Champion requires Ultimate fodder.
+// 3. Ultimate -> Rookie or Champion -> Rookie requires Champion fodder.
+function getFoddersForFamily(
+  family?: string,
+  userInventory: string[] = [],
+  fromStage?: StageLevel,
+  toStage?: StageLevel,
+) {
   if (!family) return [];
+
+  const requiredFodderLevel: StageLevel =
+    fromStage === "Ultimate" && toStage === "Champion"
+      ? "Ultimate"
+      : "Champion";
 
   const matches = Object.keys(catalog).filter(
     (key) =>
       catalog[key].family === family &&
-      (catalog[key].level === "Champion" || catalog[key].level === "Ultimate"),
+      catalog[key].level === requiredFodderLevel,
   );
 
   return matches.map((name) => {
@@ -50,6 +64,7 @@ function getFoddersForFamily(family?: string, userInventory: string[] = []) {
       name,
       displayName: cleanName,
       status: isOwned ? "OWNED" : "CATCHABLE",
+      level: catalog[name].level,
     };
   });
 }
@@ -225,7 +240,14 @@ export function RouteFinder({
               const fodders = getFoddersForFamily(
                 step.fodderFamily,
                 userInventory,
+                step.fromStage,
+                step.toStage,
               );
+
+              const requiredFodderLevel =
+                step.fromStage === "Ultimate" && step.toStage === "Champion"
+                  ? "Ultimate"
+                  : "Champion";
 
               return (
                 <div
@@ -274,8 +296,8 @@ export function RouteFinder({
                   {step.actionType === "DNA" && fodders.length > 0 && (
                     <div className="bg-slate-900 border border-slate-800/80 p-3 rounded-xl space-y-2">
                       <span className="text-amber-400 font-bold uppercase text-[10px] tracking-wider block">
-                        Recommended Fodders [{step.fodderFamily} Family] (
-                        {fodders.length} Options):
+                        Recommended {requiredFodderLevel} Fodders [
+                        {step.fodderFamily} Family] ({fodders.length} Options):
                       </span>
                       <div className="flex flex-wrap gap-1.5 max-h-40 overflow-y-auto pt-1">
                         {fodders.map((fodder) => (
