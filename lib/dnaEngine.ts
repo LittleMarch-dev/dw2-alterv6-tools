@@ -1,10 +1,14 @@
 import rawCatalogData from "@/data/digimon-catalog.json";
 import dnaData from "@/data/dna-table.json";
 import domainProgressData from "@/data/domain-progress.json";
+import digimonLocations from "@/data/digimon-locations.json";
+
+export type StageLevel = "Rookie" | "Champion" | "Ultimate" | "Mega";
+export type AttributeType = "Vaccine" | "Data" | "Virus";
 
 export type DigimonProfile = {
-  level: "Rookie" | "Champion" | "Ultimate" | "Mega";
-  type: "Vaccine" | "Data" | "Virus";
+  level: StageLevel;
+  type: AttributeType;
   family: string;
   specialty?: string;
   signature_skill?: string;
@@ -44,14 +48,23 @@ export type EvolutionPathOption = {
   isRecommended?: boolean;
 };
 
+export type StrategyPreference = "prioDna" | "prioDirect";
+
+// Master Data Setup
 export const DOMAIN_PROGRESS = domainProgressData.domains;
 export const DOMAIN_ORDER = DOMAIN_PROGRESS.map((d) => d.name);
-export const DIGIMON_MAP = domainProgressData.digimon_map as Record<
-  string,
-  string[]
->;
 
-export type StrategyPreference = "prioDna" | "prioDirect";
+// Fallback to digimon-locations.json for precise floor data
+export const DIGIMON_MAP: Record<string, string[]> =
+  (digimonLocations as Record<string, string[]>) ||
+  (domainProgressData.digimon_map as Record<string, string[]>);
+
+export const RANK_HIERARCHY: Record<StageLevel, number> = {
+  Rookie: 1,
+  Champion: 2,
+  Ultimate: 3,
+  Mega: 4,
+};
 
 export function getFlatCatalog(): Record<string, DigimonProfile> {
   const flat: Record<string, any> = {};
@@ -72,13 +85,35 @@ export function getFlatCatalog(): Record<string, DigimonProfile> {
 
 export const catalog = getFlatCatalog();
 
+/**
+ * Case-insensitive catalog lookup helper with string normalization fallback.
+ */
+export function getCatalogProfile(
+  name: string,
+): { key: string; profile: DigimonProfile } | null {
+  if (!name) return null;
+  if (catalog[name]) return { key: name, profile: catalog[name] };
+
+  const normalized = name.toLowerCase().replace(/[^a-z0-9]/g, "");
+  const matchKey = Object.keys(catalog).find(
+    (key) => key.toLowerCase().replace(/[^a-z0-9]/g, "") === normalized,
+  );
+
+  if (matchKey && catalog[matchKey]) {
+    return { key: matchKey, profile: catalog[matchKey] };
+  }
+
+  return null;
+}
+
 export function isDigimonCatchableInProgress(
   digimonName: string,
   maxDomainIndex: number,
 ) {
   const allLocations = DIGIMON_MAP[digimonName] || [];
   const validLocations = allLocations.filter((loc) => {
-    const domainIdx = DOMAIN_ORDER.indexOf(loc);
+    const domainName = loc.split("(")[0].split("-")[0].trim();
+    const domainIdx = DOMAIN_ORDER.indexOf(domainName);
     return domainIdx !== -1 && domainIdx <= maxDomainIndex;
   });
   return { catchable: validLocations.length > 0, validLocations };
@@ -87,7 +122,7 @@ export function isDigimonCatchableInProgress(
 export type AdvancedDnaResult = {
   result: string | null;
   stage: string;
-  winningType: "Vaccine" | "Data" | "Virus" | null;
+  winningType: AttributeType | null;
   winningParent: string | null;
   reason: string;
   p1Details: {
@@ -108,29 +143,34 @@ export function getAdvancedDnaResult(
   p1Name: string,
   p2Name: string,
 ): AdvancedDnaResult {
-  const p1 = catalog[p1Name];
-  const p2 = catalog[p2Name];
+  const p1Match = getCatalogProfile(p1Name);
+  const p2Match = getCatalogProfile(p2Name);
 
-  if (!p1 || !p2) {
+  if (!p1Match || !p2Match) {
     return {
       result: null,
       stage: "Invalid Digimon",
       winningType: null,
       winningParent: null,
       reason: "Select two valid Digimon.",
-      p1Details: null,
-      p2Details: null,
+      p1Details: p1Match ? { name: p1Match.key, ...p1Match.profile } : null,
+      p2Details: p2Match ? { name: p2Match.key, ...p2Match.profile } : null,
     };
   }
 
+  const p1 = p1Match.profile;
+  const p2 = p2Match.profile;
+  const actualP1Name = p1Match.key;
+  const actualP2Name = p2Match.key;
+
   const p1Details = {
-    name: p1Name,
+    name: actualP1Name,
     level: p1.level,
     type: p1.type,
     family: p1.family,
   };
   const p2Details = {
-    name: p2Name,
+    name: actualP2Name,
     level: p2.level,
     type: p2.type,
     family: p2.family,
@@ -148,7 +188,7 @@ export function getAdvancedDnaResult(
     };
   }
 
-  // 1. Determine Stage Outcome
+  // 1. Determine Outcome Stage
   let dnaStage = "Rookie";
   if (p1.level === "Mega" && p2.level === "Mega") {
     dnaStage = "Ultimate";
@@ -162,37 +202,29 @@ export function getAdvancedDnaResult(
     dnaStage = "Rookie";
   }
 
-  // Rank Scale
-  const levelRanks: Record<string, number> = {
-    Champion: 1,
-    Ultimate: 2,
-    Mega: 3,
-  };
-  const p1Rank = levelRanks[p1.level] || 0;
-  const p2Rank = levelRanks[p2.level] || 0;
+  const p1Rank = RANK_HIERARCHY[p1.level] || 0;
+  const p2Rank = RANK_HIERARCHY[p2.level] || 0;
 
   let winningType = p1.type;
   let winningFamily = p1.family;
   let secondaryFamily = p2.family;
-  let winningParent = p1Name;
+  let winningParent = actualP1Name;
   let reason = "";
 
-  // 2. DNA Priority Rule Resolution
+  // 2. Rank & Attribute Rule Evaluation
   if (p1Rank > p2Rank) {
-    // Parent 1 Higher Rank: Parent 1 completely overrides Attribute & Primary Family!
     winningType = p1.type;
     winningFamily = p1.family;
     secondaryFamily = p2.family;
-    winningParent = p1Name;
-    reason = `Rank Dominance: ${p1Name} (${p1.level}) > ${p2Name} (${p2.level}). Lower rank prevents attribute advantage. ${p1Name} controls Attribute (${p1.type}) & Primary Family (${p1.family}).`;
+    winningParent = actualP1Name;
+    reason = `Rank Dominance: ${actualP1Name} (${p1.level}) > ${actualP2Name} (${p2.level}). ${actualP1Name} controls Attribute (${p1.type}) & Primary Family (${p1.family}).`;
   } else {
-    // Parent 1 Equal or Lower Rank: Evaluate Attribute Advantage (Data > Vaccine > Virus > Data)
     if (p1.type === p2.type) {
       winningType = p1.type;
       winningFamily = p1.family;
       secondaryFamily = p2.family;
-      winningParent = p1Name;
-      reason = `Same Attribute (${p1.type}): ${p1Name} takes priority.`;
+      winningParent = actualP1Name;
+      reason = `Same Attribute (${p1.type}): ${actualP1Name} takes priority.`;
     } else if (
       (p1.type === "Data" && p2.type === "Vaccine") ||
       (p1.type === "Vaccine" && p2.type === "Virus") ||
@@ -201,18 +233,18 @@ export function getAdvancedDnaResult(
       winningType = p1.type;
       winningFamily = p1.family;
       secondaryFamily = p2.family;
-      winningParent = p1Name;
-      reason = `Attribute Advantage: ${p1.type} beats ${p2.type} (${p1Name} Wins Primary Family).`;
+      winningParent = actualP1Name;
+      reason = `Attribute Advantage: ${p1.type} beats ${p2.type} (${actualP1Name} Wins Primary Family).`;
     } else {
       winningType = p2.type;
-      winningFamily = p1.family; // Parent 1 stays Primary Family, but P2 Attribute wins
+      winningFamily = p1.family;
       secondaryFamily = p2.family;
-      winningParent = p2Name;
-      reason = `Attribute Advantage: ${p2.type} beats ${p1.type} (${p2Name} Attribute Wins).`;
+      winningParent = actualP2Name;
+      reason = `Attribute Advantage: ${p2.type} beats ${p1.type} (${actualP2Name} Attribute Wins).`;
     }
   }
 
-  // 3. DNA Table Lookup
+  // 3. DNA Table Outcome Lookup
   const rawResult = (dnaData as any)[dnaStage]?.[winningType]?.[
     winningFamily
   ]?.[secondaryFamily];
@@ -272,13 +304,45 @@ export function searchSkills(searchTerm: string) {
           digimon: digimonName,
           skill: item.skill,
           type: item.type,
-          locations: item.locations,
+          locations: DIGIMON_MAP[digimonName] || item.locations,
         });
       }
     });
   });
   return matches;
 }
+
+export interface SpecialMraTarget {
+  moveName: string;
+  catalogKey: string;
+  dpReq: string;
+}
+
+export const SPECIAL_MRA_MAP: Record<string, SpecialMraTarget[]> = {
+  Diaboromon: [
+    {
+      moveName: "Catastrophe Cannon",
+      catalogKey: "Diaboromon (R)",
+      dpReq: "DP 10-11",
+    },
+    {
+      moveName: "Paradise Lost",
+      catalogKey: "Diaboromon (M)",
+      dpReq: "DP 10-11",
+    },
+    { moveName: "Multiply", catalogKey: "Diaboromon (A)", dpReq: "DP 12+" },
+  ],
+  Omnimon: [
+    { moveName: "Grey Sword", catalogKey: "Omnimon (M)", dpReq: "DP 10-11" },
+    { moveName: "Garuru Cannon", catalogKey: "Omnimon (R)", dpReq: "DP 10-11" },
+    { moveName: "Ω Heal", catalogKey: "Omnimon (A)", dpReq: "DP 12+" },
+  ],
+  Baihumon: [
+    { moveName: "Seidouhou", catalogKey: "Baihumon (R)", dpReq: "DP 10-11" },
+    { moveName: "Tekkosou", catalogKey: "Baihumon (M)", dpReq: "DP 10-11" },
+    { moveName: "Kongou", catalogKey: "Baihumon (A)", dpReq: "DP 12+" },
+  ],
+};
 
 export function findAllEvolutionPaths(
   startName: string,
@@ -332,7 +396,6 @@ export function findAllEvolutionPaths(
     const profile = catalog[current];
     if (!profile) continue;
 
-    // Helper functions for queued options
     const pushDirectEvoSteps = () => {
       if (profile.evolutions) {
         for (const evo of profile.evolutions) {
@@ -426,7 +489,6 @@ export function findAllEvolutionPaths(
       }
     };
 
-    // Evaluate order based on strategy preference
     if (strategy === "prioDirect") {
       pushDirectEvoSteps();
       pushDnaResetSteps();
