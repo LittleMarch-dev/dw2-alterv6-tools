@@ -1,6 +1,7 @@
 "use client";
 
 import { catalog, DIGIMON_MAP } from "@/lib/dnaEngine";
+import { formatStepDigimonName } from "@/lib/routeEngine";
 
 interface DigimonInfoModalProps {
   digimon: string;
@@ -20,11 +21,22 @@ export function DigimonInfoModal({
   const profile = catalog[digimon];
   const locations = DIGIMON_MAP[digimon] || [];
 
+  // Convert raw catalog keys (e.g., "Omnimon (M)") to readable UI names (e.g., "Omnimon [Grey Sword Variant]")
+  const formattedTitle = formatStepDigimonName(digimon);
+
+  // Match inventory by raw catalog key or clean display name
+  const isOwned = userInventory.some(
+    (item) =>
+      item === digimon || formatStepDigimonName(item) === formattedTitle,
+  );
+
   return (
     <div className="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4">
       <div className="bg-slate-900 border border-amber-500/30 p-5 rounded-3xl max-w-sm w-full space-y-3 shadow-2xl">
         <div className="flex justify-between items-center border-b border-slate-800 pb-2">
-          <h3 className="text-base font-bold text-amber-400">{digimon}</h3>
+          <h3 className="text-base font-bold text-amber-400">
+            {formattedTitle}
+          </h3>
           <button
             onClick={onClose}
             className="text-slate-400 hover:text-white font-bold text-sm"
@@ -75,7 +87,7 @@ export function DigimonInfoModal({
         </div>
 
         <div className="pt-2">
-          {!userInventory.includes(digimon) ? (
+          {!isOwned ? (
             <button
               onClick={() => {
                 onAddInventory(digimon);
