@@ -482,7 +482,7 @@ export function findAllEvolutionPaths(
     };
 
     const pushDnaResetSteps = () => {
-      // Limit DNA reset depth to prevent infinite combinatorial expansion
+      // Limit DNA  reset depth to prevent infinite combinatorial expansion
       if (profile.level === "Rookie" || path.length >= 3) return;
 
       for (const stageReq of stages) {
