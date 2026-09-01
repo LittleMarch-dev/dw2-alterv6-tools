@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Digimon World 2 Alternative DNA Guide",
+  title: "Digimon World 2 Alt DNA Guide",
   description: "DNA Calculator and Evolution Route Finder for DW2 Alt v6",
 };
 
