@@ -1,5 +1,7 @@
 import { catalog, getAdvancedDnaResult, StageLevel } from "@/lib/dnaEngine";
 
+export type StrategyPreference = "prioDna" | "prioDirect";
+
 export type RouteStep = {
   stepNumber: number;
   actionType: "START" | "DIGIVOLVE" | "DNA";
@@ -9,6 +11,7 @@ export type RouteStep = {
   toStage: StageLevel;
   currentDp: number;
   fodderFamily?: string;
+  fodderLevel?: StageLevel;
   dpRequirement?: string;
   reason: string;
 };
@@ -22,7 +25,7 @@ export type RouteResult = {
   message?: string;
 };
 
-// Legendary Predecessor Map matching catalog DP branches
+// Mandatory Predecessor Map matching catalog DP evolution branches
 const MANDATORY_PREDECESSORS: Record<string, string[]> = {
   "Diaboromon (R)": ["Myotismon"], // Catastrophe Cannon (DP 10-11)
   "Diaboromon (M)": ["Okuwamon"], // Paradise Lost (DP 10-11)
@@ -77,11 +80,10 @@ const FAMILIES = [
 type SearchState = {
   currentDigimon: string;
   currentDp: number;
-  dnaLocked: boolean;
+  highestAchievedStage: StageLevel;
   path: RouteStep[];
 };
 
-// Strip stage labels like (Ultimate) while preserving variant tags like (R), (M), (A)
 function cleanKey(inputName: string): string {
   if (!inputName) return "";
   return inputName
@@ -105,10 +107,21 @@ function parseDpRange(dpStr?: string): { min: number; max: number } {
   return { min: 0, max: 99 };
 }
 
+function getHigherStage(stageA: StageLevel, stageB: StageLevel): StageLevel {
+  const order: Record<StageLevel, number> = {
+    Rookie: 1,
+    Champion: 2,
+    Ultimate: 3,
+    Mega: 4,
+  };
+  return order[stageA] >= order[stageB] ? stageA : stageB;
+}
+
 export function findShortestSafeRoute(
   startDigimonRaw: string,
   startDp: number,
   targetGoalRaw: string,
+  targetFodderTier: StageLevel = "Champion",
 ): RouteResult {
   const startDigimon = cleanKey(startDigimonRaw);
   const targetGoal = cleanKey(targetGoalRaw);
@@ -133,7 +146,7 @@ export function findShortestSafeRoute(
     {
       currentDigimon: startDigimon,
       currentDp: startDp,
-      dnaLocked: false,
+      highestAchievedStage: startProfile.level,
       path: [],
     },
   ];
@@ -141,15 +154,16 @@ export function findShortestSafeRoute(
   const visited = new Set<string>();
 
   while (queue.length > 0) {
-    const { currentDigimon, currentDp, dnaLocked, path } = queue.shift()!;
+    const { currentDigimon, currentDp, highestAchievedStage, path } =
+      queue.shift()!;
     const profile = catalog[currentDigimon];
     if (!profile) continue;
 
-    const stateKey = `${currentDigimon}-DP${currentDp}-${dnaLocked}`;
+    const stateKey = `${currentDigimon}-DP${currentDp}-${highestAchievedStage}`;
     if (visited.has(stateKey)) continue;
     visited.add(stateKey);
 
-    // Goal Reach Validation
+    // Goal Reach Validation (Enforces mandatory predecessor evolution checks)
     if (currentDigimon === targetGoal) {
       const predecessorSatisfied =
         !requiredPredecessors ||
@@ -171,9 +185,9 @@ export function findShortestSafeRoute(
       }
     }
 
-    if (path.length >= 12) continue;
+    if (path.length >= 14) continue;
 
-    // --- 1. Natural Digivolution Branch (Strict DP Bounds Check) ---
+    // --- 1. Natural Digivolution Branch ---
     if (profile.evolutions) {
       for (const evo of profile.evolutions) {
         const nextTarget = cleanKey(evo.target);
@@ -183,14 +197,15 @@ export function findShortestSafeRoute(
           const { min: minDp, max: maxDp } = parseDpRange(evo.dp);
 
           if (currentDp >= minDp && currentDp <= maxDp) {
-            const isUltimateOrHigher =
-              nextProfile.level === "Ultimate" || nextProfile.level === "Mega";
-            const nextDnaLocked = isUltimateOrHigher ? false : dnaLocked;
+            const nextHighestStage = getHigherStage(
+              highestAchievedStage,
+              nextProfile.level,
+            );
 
             queue.push({
               currentDigimon: nextTarget,
               currentDp,
-              dnaLocked: nextDnaLocked,
+              highestAchievedStage: nextHighestStage,
               path: [
                 ...path,
                 {
@@ -211,43 +226,48 @@ export function findShortestSafeRoute(
       }
     }
 
-    // --- 2. DNA Reset Branch (DP Accumulation Loop + Skill Guardrail) ---
-    if (!dnaLocked && currentDp < 15) {
+    // --- 2. DNA Reset Branch ---
+    // Rule: Must re-digivolve back to highestAchievedStage before performing another DNA reset!
+    const canPerformDnaReset = profile.level === highestAchievedStage;
+
+    if (canPerformDnaReset && currentDp < 15) {
       for (const fam of FAMILIES) {
         const nextDp = currentDp + 1;
 
-        const sampleFodder =
-          Object.keys(catalog).find(
-            (k) => catalog[k].family === fam && catalog[k].level === "Champion",
-          ) || "Greymon";
+        // Fetch sample fodder matching the exact stage selected from the UI tab
+        const sampleFodderKey = Object.keys(catalog).find(
+          (k) =>
+            catalog[k].family === fam && catalog[k].level === targetFodderTier,
+        );
 
-        const dnaRes = getAdvancedDnaResult(currentDigimon, sampleFodder);
-        const resultDigimon = dnaRes.result;
+        if (sampleFodderKey) {
+          const dnaRes = getAdvancedDnaResult(currentDigimon, sampleFodderKey);
+          const resultDigimon = dnaRes.result;
 
-        if (resultDigimon && catalog[resultDigimon]) {
-          const resProfile = catalog[resultDigimon];
-          const isLowStage =
-            resProfile.level === "Champion" || resProfile.level === "Rookie";
+          if (resultDigimon && catalog[resultDigimon]) {
+            const resProfile = catalog[resultDigimon];
 
-          queue.push({
-            currentDigimon: resultDigimon,
-            currentDp: nextDp,
-            dnaLocked: isLowStage,
-            path: [
-              ...path,
-              {
-                stepNumber: path.length + 1,
-                actionType: "DNA",
-                fromDigimon: currentDigimon,
-                fromStage: profile.level,
-                toDigimon: resultDigimon,
-                toStage: resProfile.level,
-                currentDp: nextDp,
-                fodderFamily: fam,
-                reason: `DNA Reset (+1 DP Gain ➔ ${nextDp} DP total)`,
-              },
-            ],
-          });
+            queue.push({
+              currentDigimon: resultDigimon,
+              currentDp: nextDp,
+              highestAchievedStage, // Preserve high stage requirement for subsequent resets
+              path: [
+                ...path,
+                {
+                  stepNumber: path.length + 1,
+                  actionType: "DNA",
+                  fromDigimon: currentDigimon,
+                  fromStage: profile.level,
+                  toDigimon: resultDigimon,
+                  toStage: resProfile.level,
+                  currentDp: nextDp,
+                  fodderFamily: fam,
+                  fodderLevel: targetFodderTier,
+                  reason: `Stage-Preserved DNA Reset (+1 DP Gain ➔ ${nextDp} DP total using ${targetFodderTier} Fodder)`,
+                },
+              ],
+            });
+          }
         }
       }
     }

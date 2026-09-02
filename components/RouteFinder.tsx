@@ -33,27 +33,16 @@ function resolveCatalogKey(inputName: string): string {
   return found || inputName;
 }
 
-// Strict DW2 DNA Fodder Filter:
-// 1. Rookies CANNOT be used as DNA parents/fodder.
-// 2. Ultimate -> Champion requires Ultimate fodder.
-// 3. Ultimate -> Rookie or Champion -> Rookie requires Champion fodder.
-function getFoddersForFamily(
+function getFoddersForStep(
   family?: string,
+  fodderLevel?: StageLevel,
   userInventory: string[] = [],
-  fromStage?: StageLevel,
-  toStage?: StageLevel,
 ) {
-  if (!family) return [];
-
-  const requiredFodderLevel: StageLevel =
-    fromStage === "Ultimate" && toStage === "Champion"
-      ? "Ultimate"
-      : "Champion";
+  if (!family || !fodderLevel) return [];
 
   const matches = Object.keys(catalog).filter(
     (key) =>
-      catalog[key].family === family &&
-      catalog[key].level === requiredFodderLevel,
+      catalog[key].family === family && catalog[key].level === fodderLevel,
   );
 
   return matches.map((name) => {
@@ -64,7 +53,6 @@ function getFoddersForFamily(
       name,
       displayName: cleanName,
       status: isOwned ? "OWNED" : "CATCHABLE",
-      level: catalog[name].level,
     };
   });
 }
@@ -80,9 +68,33 @@ export function RouteFinder({
   const [evoGoal, setEvoGoal] = useState<string>("Diaboromon");
   const [selectedMraKey, setSelectedMraKey] = useState<string | null>(null);
 
+  const [selectedFodderTier, setSelectedFodderTier] =
+    useState<StageLevel>("Champion");
+
+  const resolvedStart = useMemo(() => resolveCatalogKey(evoStart), [evoStart]);
+  const startProfile = catalog[resolvedStart];
+  const starterStage: StageLevel = startProfile?.level || "Rookie";
+
+  // Available Fodder Level Tabs based on Starter Stage
+  const availableFodderTiers = useMemo<StageLevel[]>(() => {
+    if (starterStage === "Mega") {
+      return ["Champion", "Ultimate", "Mega"];
+    }
+    if (starterStage === "Ultimate") {
+      return ["Champion", "Ultimate"];
+    }
+    return ["Champion"];
+  }, [starterStage]);
+
+  // Sync selected fodder tier when starter stage changes
+  useEffect(() => {
+    if (!availableFodderTiers.includes(selectedFodderTier)) {
+      setSelectedFodderTier(availableFodderTiers[0]);
+    }
+  }, [availableFodderTiers, selectedFodderTier]);
+
   const specialOptions = SPECIAL_MRA_MAP[evoGoal];
 
-  // Sync selected variant key when target goal changes
   useEffect(() => {
     if (specialOptions && specialOptions.length > 0) {
       setSelectedMraKey(specialOptions[0].catalogKey);
@@ -98,31 +110,37 @@ export function RouteFinder({
     return evoGoal;
   }, [specialOptions, selectedMraKey, evoGoal]);
 
-  const resolvedStart = useMemo(() => resolveCatalogKey(evoStart), [evoStart]);
   const resolvedGoal = useMemo(
     () => resolveCatalogKey(activeEngineGoal),
     [activeEngineGoal],
   );
 
-  // Execute DP-aware route engine calculation
   const routeResult: RouteResult = useMemo(() => {
-    return findShortestSafeRoute(resolvedStart, currentDp, resolvedGoal);
-  }, [resolvedStart, currentDp, resolvedGoal]);
+    return findShortestSafeRoute(
+      resolvedStart,
+      currentDp,
+      resolvedGoal,
+      selectedFodderTier,
+    );
+  }, [resolvedStart, currentDp, resolvedGoal, selectedFodderTier]);
 
   return (
     <div className="space-y-4 sm:space-y-6">
-      {/* Pickers: Start Digimon, DP, Target Goal */}
+      {/* STEP 1: Starter Inputs */}
       <div
         id="tutorial-route-inputs"
         className="grid grid-cols-1 sm:grid-cols-3 gap-4"
       >
         <div className="bg-slate-900 border border-slate-800 p-4 rounded-2xl">
           <AutocompleteInput
-            label="Current Digimon"
+            label="1. Current Starter Digimon"
             value={evoStart}
             onChange={setEvoStart}
             options={allDigimonNames}
           />
+          <span className="text-[10px] text-amber-400 font-bold mt-1 block uppercase">
+            Current Stage: {starterStage}
+          </span>
         </div>
 
         <div className="bg-slate-900 border border-slate-800 p-4 rounded-2xl">
@@ -149,17 +167,51 @@ export function RouteFinder({
         </div>
       </div>
 
-      {/* Target Skill Selector (Special MRA Options) */}
+      {/* STEP 2: Fodder Level Selector Tabs */}
+      {(starterStage === "Ultimate" || starterStage === "Mega") && (
+        <div className="bg-slate-900 border border-slate-800 p-4 rounded-2xl space-y-3">
+          <div className="flex justify-between items-center flex-wrap gap-2">
+            <div>
+              <span className="text-xs font-bold text-amber-400 uppercase tracking-wider block">
+                2. Choose DNA Fodder Stage Strategy
+              </span>
+              <p className="text-[11px] text-slate-400">
+                Select your preferred fodder tier for DNA resets.
+              </p>
+            </div>
+
+            <div className="flex bg-slate-950 p-1 rounded-xl border border-slate-800 gap-1">
+              {availableFodderTiers.map((tier) => (
+                <button
+                  key={tier}
+                  type="button"
+                  onClick={() => setSelectedFodderTier(tier)}
+                  className={`px-3 py-1.5 rounded-lg text-xs font-bold transition-all ${
+                    selectedFodderTier === tier
+                      ? "bg-amber-400 text-slate-950 shadow-md"
+                      : "text-slate-400 hover:text-white"
+                  }`}
+                >
+                  {tier === "Champion" &&
+                    "🛡️ Champion Fodder (Reset to Rookie)"}
+                  {tier === "Ultimate" &&
+                    "⚡ Ultimate Fodder (Reset to Champion)"}
+                  {tier === "Mega" && "🔥 Mega Fodder (Reset to Ultimate)"}
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Target Skill Selection */}
       <div id="tutorial-target-skills">
         {specialOptions ? (
           <div className="bg-slate-950 border border-amber-500/30 p-4 rounded-2xl space-y-3 shadow-lg">
-            <div className="flex items-center justify-between">
-              <span className="text-xs font-bold text-amber-400 uppercase tracking-wider">
-                🎯 Choose Target Skill to Learn for{" "}
-                {sanitizeDisplayName(evoGoal)}:
-              </span>
-            </div>
-
+            <span className="text-xs font-bold text-amber-400 uppercase tracking-wider block">
+              🎯 Choose Target Skill to Learn for {sanitizeDisplayName(evoGoal)}
+              :
+            </span>
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
               {specialOptions.map((opt) => (
                 <button
@@ -199,7 +251,7 @@ export function RouteFinder({
             </h2>
             {routeResult.success && (
               <span className="text-[10px] bg-emerald-950 text-emerald-300 border border-emerald-500/40 px-2 py-0.5 rounded-full font-bold">
-                Success Generate
+                🛡️ 0 Skill Loss Guaranteed
               </span>
             )}
           </div>
@@ -237,17 +289,11 @@ export function RouteFinder({
         ) : (
           <div className="space-y-3">
             {routeResult.path.map((step) => {
-              const fodders = getFoddersForFamily(
+              const fodders = getFoddersForStep(
                 step.fodderFamily,
+                step.fodderLevel,
                 userInventory,
-                step.fromStage,
-                step.toStage,
               );
-
-              const requiredFodderLevel =
-                step.fromStage === "Ultimate" && step.toStage === "Champion"
-                  ? "Ultimate"
-                  : "Champion";
 
               return (
                 <div
@@ -296,13 +342,13 @@ export function RouteFinder({
                   {step.actionType === "DNA" && fodders.length > 0 && (
                     <div className="bg-slate-900 border border-slate-800/80 p-3 rounded-xl space-y-2">
                       <span className="text-amber-400 font-bold uppercase text-[10px] tracking-wider block">
-                        Recommended {requiredFodderLevel} Fodders [
+                        Recommended {step.fodderLevel} Fodders [
                         {step.fodderFamily} Family] ({fodders.length} Options):
                       </span>
                       <div className="flex flex-wrap gap-1.5 max-h-40 overflow-y-auto pt-1">
-                        {fodders.map((fodder) => (
+                        {fodders.map((fodder, idx) => (
                           <button
-                            key={fodder.displayName}
+                            key={`${fodder.name}-${idx}`}
                             type="button"
                             onClick={() => onSelectDigimon(fodder.name)}
                             className={`text-[11px] font-semibold px-2.5 py-1 rounded-xl border flex items-center gap-1.5 transition-transform hover:scale-105 ${
