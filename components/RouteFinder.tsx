@@ -251,7 +251,7 @@ export function RouteFinder({
             </h2>
             {routeResult.success && (
               <span className="text-[10px] bg-emerald-950 text-emerald-300 border border-emerald-500/40 px-2 py-0.5 rounded-full font-bold">
-                🛡️ 0 Skill Loss Guaranteed
+                🛡️ Generate Success
               </span>
             )}
           </div>
