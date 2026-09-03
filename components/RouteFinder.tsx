@@ -34,6 +34,10 @@ function resolveCatalogKey(inputName: string): string {
   return found || inputName;
 }
 
+function formatDpDisplay(dp: number): string {
+  return dp >= 14 ? "14+" : `${dp}`;
+}
+
 function copyDebugLogToClipboard(
   evoStart: string,
   currentDp: number,
@@ -58,6 +62,7 @@ function copyDebugLogToClipboard(
       totalSteps: routeResult.totalSteps,
       totalDnaResets: routeResult.totalDnaResets,
       finalDp: routeResult.finalDp,
+      warningNotice: routeResult.warningNotice || null,
       message: routeResult.message || null,
       suggestedGoal: routeResult.suggestedGoal || null,
       path: routeResult.path.map((step) => ({
@@ -277,6 +282,14 @@ export function RouteFinder({
         </div>
       )}
 
+      {/* Top Warning Alert Banner for High DP inputs (>14 DP) */}
+      {routeResult.warningNotice && (
+        <div className="p-4 rounded-2xl bg-amber-500/10 border border-amber-500/40 text-amber-200 text-xs font-semibold flex items-center gap-2.5 shadow-lg">
+          <span className="text-base">⚡</span>
+          <span>{routeResult.warningNotice}</span>
+        </div>
+      )}
+
       <div
         id="tutorial-evolution-routes"
         className="bg-slate-900 border border-slate-800 p-5 rounded-3xl space-y-4"
@@ -335,7 +348,7 @@ export function RouteFinder({
                 <span>
                   End DP:{" "}
                   <strong className="text-emerald-400">
-                    {routeResult.finalDp} DP
+                    {formatDpDisplay(routeResult.finalDp)} DP
                   </strong>
                 </span>
               </div>
@@ -398,7 +411,7 @@ export function RouteFinder({
 
                     <div className="flex items-center gap-2">
                       <span className="text-[10px] bg-slate-900 border border-slate-800 px-2 py-0.5 rounded text-emerald-400 font-bold">
-                        Resulting DP: {step.currentDp}
+                        Resulting DP: {formatDpDisplay(step.currentDp)}
                       </span>
                       <span
                         className={`text-[10px] font-bold px-2 py-0.5 rounded ${

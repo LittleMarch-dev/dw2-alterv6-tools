@@ -23,6 +23,7 @@ export type RouteResult = {
   path: RouteStep[];
   message?: string;
   suggestedGoal?: string;
+  warningNotice?: string;
 };
 
 function flattenCatalog(data: any): Record<string, any> {
@@ -30,7 +31,11 @@ function flattenCatalog(data: any): Record<string, any> {
   for (const groupKey of Object.keys(data)) {
     const group = data[groupKey];
     for (const name of Object.keys(group)) {
-      flat[name] = group[name];
+      const item = group[name];
+      if (!item.family && item.Family) {
+        item.family = item.Family;
+      }
+      flat[name] = item;
     }
   }
   return flat;
@@ -252,12 +257,19 @@ export function findShortestSafeRoute(
     };
   }
 
+  // 14+ DP Capping Notice for UI Alert
+  const isOverCapped = startDp > 14;
+  const effectiveStartDp = Math.min(startDp, 14);
+  const warningNotice = isOverCapped
+    ? `⚡ Starting DP of ${startDp} exceeds the maximum DP cap (14 DP). All route calculations and final DP outputs are capped at 14+.`
+    : undefined;
+
   const requiredPredecessors = MANDATORY_PREDECESSORS[targetGoal];
 
   const queue: SearchState[] = [
     {
       currentDigimon: startDigimon,
-      currentDp: startDp,
+      currentDp: effectiveStartDp,
       generationPeakStage: startProfile.level,
       path: [],
     },
@@ -275,7 +287,7 @@ export function findShortestSafeRoute(
     deadEndStates.push({ digimon: currentDigimon, dp: currentDp });
 
     const dnaCount = path.filter((s) => s.actionType === "DNA").length;
-    const stateKey = `${currentDigimon}-DP${currentDp}-GenPeak${generationPeakStage}-Resets${dnaCount}`;
+    const stateKey = `${currentDigimon}-DP${currentDp}`;
     if (visited.has(stateKey)) continue;
     visited.add(stateKey);
 
@@ -295,42 +307,46 @@ export function findShortestSafeRoute(
           totalDnaResets: dnaCount,
           finalDp: currentDp,
           path,
+          warningNotice,
         };
       }
     }
 
-    if (path.length >= 35) continue;
+    if (path.length >= 60) continue;
 
-    // 1. DNA Reset Branch (Evaluated First)
-    const isStarterLowRank =
-      startProfile.level === "Rookie" || startProfile.level === "Champion";
+    // 1. DNA RESET BRANCH
+    // Rule A: Non-Rookie starters reset IMMEDIATELY on Step 1.
+    // Rule B: Subsequent resets MUST match the starter's original stage level (Ultimate starter = Ultimate reset).
+    // Rule C: Back-to-back resets are forbidden.
+    const isStepOne = path.length === 0;
+    const isStarterRookie = startProfile.level === "Rookie";
+    const targetResetStage = isStarterRookie ? "Champion" : startProfile.level;
 
-    const isAtResetStage = isStarterLowRank
-      ? profile.level === "Champion" ||
-        profile.level === "Ultimate" ||
-        profile.level === "Mega"
-      : profile.level === startProfile.level || profile.level === "Mega";
+    const isAtResetStage = isStepOne
+      ? !isStarterRookie
+      : profile.level === targetResetStage;
 
-    const canPerformDnaReset = isAtResetStage && currentDp < 15;
+    const lastStepWasDna =
+      path.length > 0 && path[path.length - 1].actionType === "DNA";
 
-    let resetAttempted = false;
+    const canPerformDnaReset = isAtResetStage && !lastStepWasDna;
 
     if (canPerformDnaReset) {
       for (const fam of FAMILIES) {
-        const nextDp = currentDp + 1;
+        // Enforce 14 DP ceiling internally
+        const nextDp = Math.min(currentDp + 1, 14);
 
-        const sampleFodderKey = Object.keys(catalog).find(
+        const candidateFodders = Object.keys(catalog).filter(
           (k) =>
             catalog[k].family === fam && catalog[k].level === targetFodderTier,
         );
 
-        if (sampleFodderKey) {
+        for (const sampleFodderKey of candidateFodders) {
           const dnaRes = getAdvancedDnaResult(currentDigimon, sampleFodderKey);
           const resultDigimon = dnaRes.result;
 
           if (resultDigimon && catalog[resultDigimon]) {
             const resProfile = catalog[resultDigimon];
-            resetAttempted = true;
 
             queue.push({
               currentDigimon: resultDigimon,
@@ -348,7 +364,7 @@ export function findShortestSafeRoute(
                   currentDp: nextDp,
                   fodderFamily: fam,
                   fodderLevel: targetFodderTier,
-                  reason: `DNA Reset #${dnaCount + 1} (+1 DP Gain ➔ ${nextDp} DP total)`,
+                  reason: `DNA Reset #${dnaCount + 1}${nextDp >= 14 ? " (14+ DP Cap)" : ` (+1 DP ➔ ${nextDp} DP)`}`,
                 },
               ],
             });
@@ -357,15 +373,8 @@ export function findShortestSafeRoute(
       }
     }
 
-    // 2. Natural Digivolution Branch
-    // Blocks further digivolution to Ultimate/Mega if a Champion reset is already available for Rookie/Champion starters.
-    const shouldAllowDigivolve = !(
-      isStarterLowRank &&
-      profile.level === "Champion" &&
-      resetAttempted
-    );
-
-    if (profile.evolutions && shouldAllowDigivolve) {
+    // 2. NATURAL DIGIVOLUTION BRANCH
+    if (profile.evolutions) {
       for (const evo of profile.evolutions) {
         const nextTarget = resolveCatalogKey(evo.target);
         const nextProfile = catalog[nextTarget];
@@ -401,7 +410,7 @@ export function findShortestSafeRoute(
                   toStage: nextProfile.level,
                   currentDp,
                   dpRequirement: evo.dp,
-                  reason: `Natural Digivolution (DP ${currentDp} fits ${evo.dp} bracket)`,
+                  reason: `Natural Digivolution (DP ${currentDp >= 14 ? "14+" : currentDp} fits ${evo.dp} bracket)`,
                 },
               ],
             });
@@ -426,5 +435,6 @@ export function findShortestSafeRoute(
     path: [],
     message: diagnostic.message,
     suggestedGoal: diagnostic.suggestedGoal,
+    warningNotice,
   };
 }
