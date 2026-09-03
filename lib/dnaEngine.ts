@@ -246,46 +246,33 @@ export function getAdvancedDnaResult(
     dnaStage = "Rookie";
   }
 
-  const p1Rank = RANK_HIERARCHY[p1.level] || 0;
-  const p2Rank = RANK_HIERARCHY[p2.level] || 0;
-
+  // 2. Attribute Advantage Evaluation
+  // Attribute Advantage ONLY determines resulting type (winningType).
+  // Parent 1 ALWAYS retains Primary Family position regardless of attribute winner.
   let winningType = p1.type;
-  let winningFamily = p1.family;
-  let secondaryFamily = p2.family;
+  const winningFamily = p1.family; // Always Parent 1
+  const secondaryFamily = p2.family; // Always Parent 2
   let winningParent = actualP1Name;
   let reason = "";
 
-  // 2. Rank & Attribute Rule Evaluation
-  if (p1Rank > p2Rank) {
+  if (p1.type === p2.type) {
     winningType = p1.type;
-    winningFamily = p1.family;
-    secondaryFamily = p2.family;
     winningParent = actualP1Name;
-    reason = `Rank Dominance: ${actualP1Name} (${p1.level}) > ${actualP2Name} (${p2.level}). ${actualP1Name} controls Attribute (${p1.type}) & Primary Family (${p1.family}).`;
+    reason = `Same Attribute (${p1.type}): Offspring inherits ${p1.type}.`;
+  } else if (
+    (p1.type === "Data" && p2.type === "Vaccine") ||
+    (p1.type === "Vaccine" && p2.type === "Virus") ||
+    (p1.type === "Virus" && p2.type === "Data")
+  ) {
+    // Parent 1 wins attribute advantage
+    winningType = p1.type;
+    winningParent = actualP1Name;
+    reason = `Attribute Advantage: ${p1.type} beats ${p2.type} → Offspring is ${p1.type}.`;
   } else {
-    if (p1.type === p2.type) {
-      winningType = p1.type;
-      winningFamily = p1.family;
-      secondaryFamily = p2.family;
-      winningParent = actualP1Name;
-      reason = `Same Attribute (${p1.type}): ${actualP1Name} takes priority.`;
-    } else if (
-      (p1.type === "Data" && p2.type === "Vaccine") ||
-      (p1.type === "Vaccine" && p2.type === "Virus") ||
-      (p1.type === "Virus" && p2.type === "Data")
-    ) {
-      winningType = p1.type;
-      winningFamily = p1.family;
-      secondaryFamily = p2.family;
-      winningParent = actualP1Name;
-      reason = `Attribute Advantage: ${p1.type} beats ${p2.type} (${actualP1Name} Wins Primary Family).`;
-    } else {
-      winningType = p2.type;
-      winningFamily = p1.family;
-      secondaryFamily = p2.family;
-      winningParent = actualP2Name;
-      reason = `Attribute Advantage: ${p2.type} beats ${p1.type} (${actualP2Name} Attribute Wins).`;
-    }
+    // Parent 2 wins attribute advantage
+    winningType = p2.type;
+    winningParent = actualP2Name;
+    reason = `Attribute Advantage: ${p2.type} beats ${p1.type} → Offspring is ${p2.type}.`;
   }
 
   // 3. DNA Table Outcome Lookup
@@ -482,7 +469,7 @@ export function findAllEvolutionPaths(
     };
 
     const pushDnaResetSteps = () => {
-      // Limit DNA  reset depth to prevent infinite combinatorial expansion
+      // Limit DNA reset depth to prevent infinite combinatorial expansion
       if (profile.level === "Rookie" || path.length >= 3) return;
 
       for (const stageReq of stages) {
