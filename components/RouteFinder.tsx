@@ -1,9 +1,10 @@
 "use client";
 
 import { useState, useMemo, useEffect } from "react";
-import { SPECIAL_MRA_MAP, catalog, StageLevel } from "@/lib/dnaEngine";
+import { catalog, StageLevel } from "@/lib/dnaEngine";
 import {
   findShortestSafeRoute,
+  getLegendaryVariants,
   RouteResult,
   formatStepDigimonName,
 } from "@/lib/routeEngine";
@@ -31,6 +32,51 @@ function resolveCatalogKey(inputName: string): string {
   const variants = [`${inputName} (M)`, `${inputName} (R)`, `${inputName} (A)`];
   const found = variants.find((v) => catalog[v]);
   return found || inputName;
+}
+
+function copyDebugLogToClipboard(
+  evoStart: string,
+  currentDp: number,
+  evoGoal: string,
+  activeEngineGoal: string,
+  selectedFodderTier: StageLevel,
+  routeResult: RouteResult,
+) {
+  const debugPayload = {
+    timestamp: new Date().toISOString(),
+    inputs: {
+      evoStart,
+      resolvedStart: resolveCatalogKey(evoStart),
+      currentDp,
+      evoGoal,
+      activeEngineGoal,
+      resolvedGoal: resolveCatalogKey(activeEngineGoal),
+      selectedFodderTier,
+    },
+    engineResult: {
+      success: routeResult.success,
+      totalSteps: routeResult.totalSteps,
+      totalDnaResets: routeResult.totalDnaResets,
+      finalDp: routeResult.finalDp,
+      message: routeResult.message || null,
+      suggestedGoal: routeResult.suggestedGoal || null,
+      path: routeResult.path.map((step) => ({
+        stepNumber: step.stepNumber,
+        actionType: step.actionType,
+        fromDigimon: step.fromDigimon,
+        fromStage: step.fromStage,
+        toDigimon: step.toDigimon,
+        toStage: step.toStage,
+        currentDp: step.currentDp,
+        fodderFamily: step.fodderFamily || null,
+        fodderLevel: step.fodderLevel || null,
+        reason: step.reason,
+      })),
+    },
+  };
+
+  navigator.clipboard.writeText(JSON.stringify(debugPayload, null, 2));
+  alert("📋 Engine debug trace copied to clipboard in JSON format!");
 }
 
 function getFoddersForStep(
@@ -64,9 +110,11 @@ export function RouteFinder({
   allDigimonNames,
 }: RouteFinderProps) {
   const [evoStart, setEvoStart] = useState<string>("Myotismon");
-  const [currentDp, setCurrentDp] = useState<number>(8);
+  const [currentDp, setCurrentDp] = useState<number>(1);
   const [evoGoal, setEvoGoal] = useState<string>("Diaboromon");
-  const [selectedMraKey, setSelectedMraKey] = useState<string | null>(null);
+  const [selectedVariantKey, setSelectedVariantKey] = useState<string | null>(
+    null,
+  );
 
   const [selectedFodderTier, setSelectedFodderTier] =
     useState<StageLevel>("Champion");
@@ -75,7 +123,32 @@ export function RouteFinder({
   const startProfile = catalog[resolvedStart];
   const starterStage: StageLevel = startProfile?.level || "Rookie";
 
-  // Available Fodder Level Tabs based on Starter Stage
+  // Check if target has Legendary / MRA Variants (e.g. Diaboromon -> R, M, A)
+  const legendaryVariants = useMemo(
+    () => getLegendaryVariants(evoGoal),
+    [evoGoal],
+  );
+
+  useEffect(() => {
+    if (legendaryVariants.length > 0) {
+      setSelectedVariantKey(legendaryVariants[0].key);
+    } else {
+      setSelectedVariantKey(null);
+    }
+  }, [legendaryVariants]);
+
+  const activeEngineGoal = useMemo(() => {
+    if (legendaryVariants.length > 0 && selectedVariantKey) {
+      return selectedVariantKey;
+    }
+    return evoGoal;
+  }, [legendaryVariants, selectedVariantKey, evoGoal]);
+
+  const resolvedGoal = useMemo(
+    () => resolveCatalogKey(activeEngineGoal),
+    [activeEngineGoal],
+  );
+
   const availableFodderTiers = useMemo<StageLevel[]>(() => {
     if (starterStage === "Mega") {
       return ["Champion", "Ultimate", "Mega"];
@@ -86,34 +159,11 @@ export function RouteFinder({
     return ["Champion"];
   }, [starterStage]);
 
-  // Sync selected fodder tier when starter stage changes
   useEffect(() => {
     if (!availableFodderTiers.includes(selectedFodderTier)) {
       setSelectedFodderTier(availableFodderTiers[0]);
     }
   }, [availableFodderTiers, selectedFodderTier]);
-
-  const specialOptions = SPECIAL_MRA_MAP[evoGoal];
-
-  useEffect(() => {
-    if (specialOptions && specialOptions.length > 0) {
-      setSelectedMraKey(specialOptions[0].catalogKey);
-    } else {
-      setSelectedMraKey(null);
-    }
-  }, [evoGoal, specialOptions]);
-
-  const activeEngineGoal = useMemo(() => {
-    if (specialOptions && specialOptions.length > 0) {
-      return selectedMraKey || specialOptions[0].catalogKey;
-    }
-    return evoGoal;
-  }, [specialOptions, selectedMraKey, evoGoal]);
-
-  const resolvedGoal = useMemo(
-    () => resolveCatalogKey(activeEngineGoal),
-    [activeEngineGoal],
-  );
 
   const routeResult: RouteResult = useMemo(() => {
     return findShortestSafeRoute(
@@ -126,7 +176,6 @@ export function RouteFinder({
 
   return (
     <div className="space-y-4 sm:space-y-6">
-      {/* STEP 1: Starter Inputs */}
       <div
         id="tutorial-route-inputs"
         className="grid grid-cols-1 sm:grid-cols-3 gap-4"
@@ -167,7 +216,31 @@ export function RouteFinder({
         </div>
       </div>
 
-      {/* STEP 2: Fodder Level Selector Tabs */}
+      {/* Legendary / MRA Sub-Variant Pill Selector */}
+      {legendaryVariants.length > 0 && (
+        <div className="bg-slate-900 border border-slate-800 p-4 rounded-2xl space-y-2">
+          <span className="text-xs font-bold text-amber-400 uppercase tracking-wider block">
+            Select {evoGoal} Skill Variant:
+          </span>
+          <div className="flex flex-wrap gap-2">
+            {legendaryVariants.map((variant) => (
+              <button
+                key={variant.key}
+                type="button"
+                onClick={() => setSelectedVariantKey(variant.key)}
+                className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition-all border ${
+                  selectedVariantKey === variant.key
+                    ? "bg-amber-400 text-slate-950 border-amber-300 shadow-md"
+                    : "bg-slate-950 text-slate-400 border-slate-800 hover:text-white"
+                }`}
+              >
+                {variant.label}
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
+
       {(starterStage === "Ultimate" || starterStage === "Mega") && (
         <div className="bg-slate-900 border border-slate-800 p-4 rounded-2xl space-y-3">
           <div className="flex justify-between items-center flex-wrap gap-2">
@@ -204,42 +277,6 @@ export function RouteFinder({
         </div>
       )}
 
-      {/* Target Skill Selection */}
-      <div id="tutorial-target-skills">
-        {specialOptions ? (
-          <div className="bg-slate-950 border border-amber-500/30 p-4 rounded-2xl space-y-3 shadow-lg">
-            <span className="text-xs font-bold text-amber-400 uppercase tracking-wider block">
-              🎯 Choose Target Skill to Learn for {sanitizeDisplayName(evoGoal)}
-              :
-            </span>
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-2">
-              {specialOptions.map((opt) => (
-                <button
-                  key={opt.catalogKey}
-                  type="button"
-                  onClick={() => setSelectedMraKey(opt.catalogKey)}
-                  className={`p-3 rounded-xl border text-left transition-all ${
-                    activeEngineGoal === opt.catalogKey
-                      ? "bg-amber-400 text-slate-950 border-amber-400 font-bold shadow-md"
-                      : "bg-slate-900 text-slate-300 border-slate-800 hover:border-slate-700"
-                  }`}
-                >
-                  <div className="text-xs font-black">{opt.moveName}</div>
-                  <div className="text-[10px] opacity-75 mt-0.5">
-                    Required DP: {opt.dpReq}
-                  </div>
-                </button>
-              ))}
-            </div>
-          </div>
-        ) : (
-          <div className="bg-slate-900/40 border border-slate-800/40 p-3 rounded-2xl text-[11px] text-slate-500 text-center">
-            Standard Digimon evolution selected.
-          </div>
-        )}
-      </div>
-
-      {/* Optimal Evolution Path Timeline */}
       <div
         id="tutorial-evolution-routes"
         className="bg-slate-900 border border-slate-800 p-5 rounded-3xl space-y-4"
@@ -256,35 +293,78 @@ export function RouteFinder({
             )}
           </div>
 
-          {routeResult.success && (
-            <div className="flex gap-2 text-[11px] font-semibold text-slate-400">
-              <span>
-                Steps:{" "}
-                <strong className="text-white">{routeResult.totalSteps}</strong>
-              </span>
-              <span>•</span>
-              <span>
-                DNA Resets:{" "}
-                <strong className="text-white">
-                  {routeResult.totalDnaResets}
-                </strong>
-              </span>
-              <span>•</span>
-              <span>
-                End DP:{" "}
-                <strong className="text-emerald-400">
-                  {routeResult.finalDp} DP
-                </strong>
-              </span>
-            </div>
-          )}
+          <div className="flex items-center gap-2">
+            {typeof window !== "undefined" &&
+              (process.env.NODE_ENV === "development" ||
+                window.location.hostname === "localhost" ||
+                window.location.hostname === "127.0.0.1") && (
+                <button
+                  type="button"
+                  onClick={() =>
+                    copyDebugLogToClipboard(
+                      evoStart,
+                      currentDp,
+                      evoGoal,
+                      activeEngineGoal,
+                      selectedFodderTier,
+                      routeResult,
+                    )
+                  }
+                  className="px-2.5 py-1 rounded-lg bg-slate-800 text-slate-300 hover:text-white hover:bg-slate-700 text-[11px] font-bold transition-all border border-slate-700 flex items-center gap-1.5"
+                >
+                  📋 Copy Engine Debug Log
+                </button>
+              )}
+
+            {routeResult.success && (
+              <div className="flex gap-2 text-[11px] font-semibold text-slate-400">
+                <span>
+                  Steps:{" "}
+                  <strong className="text-white">
+                    {routeResult.totalSteps}
+                  </strong>
+                </span>
+                <span>•</span>
+                <span>
+                  DNA Resets:{" "}
+                  <strong className="text-white">
+                    {routeResult.totalDnaResets}
+                  </strong>
+                </span>
+                <span>•</span>
+                <span>
+                  End DP:{" "}
+                  <strong className="text-emerald-400">
+                    {routeResult.finalDp} DP
+                  </strong>
+                </span>
+              </div>
+            )}
+          </div>
         </div>
 
         {!routeResult.success ? (
-          <div className="p-4 rounded-2xl bg-red-950/30 border border-red-500/30 text-red-300 text-xs font-semibold">
-            ❌{" "}
-            {routeResult.message ||
-              "No valid path found matching DP constraints."}
+          <div className="p-4 rounded-2xl bg-amber-950/40 border border-amber-500/40 text-amber-200 text-xs font-semibold flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 shadow-lg">
+            <div className="flex items-center gap-2.5">
+              <span className="text-base">⚠️</span>
+              <span>
+                {routeResult.message ||
+                  "No valid path found matching DP constraints."}
+              </span>
+            </div>
+
+            {routeResult.suggestedGoal && (
+              <button
+                type="button"
+                onClick={() =>
+                  setEvoGoal(formatStepDigimonName(routeResult.suggestedGoal!))
+                }
+                className="px-3.5 py-1.5 rounded-xl bg-amber-400 text-slate-950 text-xs font-black whitespace-nowrap hover:bg-amber-300 transition-all shadow-md shrink-0"
+              >
+                🎯 Set {formatStepDigimonName(routeResult.suggestedGoal)} as
+                Goal
+              </button>
+            )}
           </div>
         ) : (
           <div className="space-y-3">

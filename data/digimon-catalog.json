@@ -3953,8 +3953,8 @@
       "signature_skill": "Kaiser Nail",
       "extra_skills": [],
       "evolutions": [
-        { "dp": "0-8", "target": "M-Garurumon" },
-        { "dp": "9-11", "target": "Omnimon (R)" },
+        { "dp": "0-9", "target": "M-Garurumon" },
+        { "dp": "10-11", "target": "Omnimon (R)" },
         { "dp": "12+", "target": "Omnimon (A)" }
       ]
     },

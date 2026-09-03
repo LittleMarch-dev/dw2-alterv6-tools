@@ -1,6 +1,5 @@
-import { catalog, getAdvancedDnaResult, StageLevel } from "@/lib/dnaEngine";
-
-export type StrategyPreference = "prioDna" | "prioDirect";
+import rawCatalog from "@/data/digimon-catalog.json";
+import { getAdvancedDnaResult, StageLevel } from "@/lib/dnaEngine";
 
 export type RouteStep = {
   stepNumber: number;
@@ -23,37 +22,75 @@ export type RouteResult = {
   finalDp: number;
   path: RouteStep[];
   message?: string;
+  suggestedGoal?: string;
 };
 
-// Mandatory Predecessor Map matching catalog DP evolution branches
-const MANDATORY_PREDECESSORS: Record<string, string[]> = {
-  "Diaboromon (R)": ["Myotismon"], // Catastrophe Cannon (DP 10-11)
-  "Diaboromon (M)": ["Okuwamon"], // Paradise Lost (DP 10-11)
-  "Diaboromon (A)": ["Myotismon", "Okuwamon"], // Multiply (DP 12+)
+function flattenCatalog(data: any): Record<string, any> {
+  const flat: Record<string, any> = {};
+  for (const groupKey of Object.keys(data)) {
+    const group = data[groupKey];
+    for (const name of Object.keys(group)) {
+      flat[name] = group[name];
+    }
+  }
+  return flat;
+}
 
-  "Omnimon (M)": ["MetalGreymon"], // Grey Sword (DP 10-11)
-  "Omnimon (R)": ["WereGarurumon"], // Garuru Cannon (DP 9-11)
-  "Omnimon (A)": ["MetalGreymon", "WereGarurumon"], // Ω Heal (DP 12+)
+export const catalog: Record<string, any> = flattenCatalog(rawCatalog);
 
-  "Baihumon (R)": ["Meteormon"], // Seidouhou (DP 10-11)
-  "Baihumon (M)": ["SuperStarmon"], // Tekkosou (DP 10-11)
-  "Baihumon (A)": ["Meteormon", "SuperStarmon"], // Kongou (DP 12+)
+export const MANDATORY_PREDECESSORS: Record<string, string[]> = {
+  "Diaboromon (R)": ["Myotismon"],
+  "Diaboromon (M)": ["Okuwamon"],
+  "Diaboromon (A)": ["Myotismon", "Okuwamon"],
+  "Omnimon (M)": ["MetalGreymon"],
+  "Omnimon (R)": ["WereGarurumon"],
+  "Omnimon (A)": ["MetalGreymon", "WereGarurumon"],
+  "Baihumon (R)": ["Meteormon"],
+  "Baihumon (M)": ["SuperStarmon"],
+  "Baihumon (A)": ["Meteormon", "SuperStarmon"],
 };
 
-// Maps raw variant catalog keys to human-readable move names for UI display
 export const VARIANT_LABEL_MAP: Record<string, string> = {
   "Diaboromon (R)": "Diaboromon [Catastrophe Cannon Variant]",
   "Diaboromon (M)": "Diaboromon [Paradise Lost Variant]",
   "Diaboromon (A)": "Diaboromon [Multiply Variant]",
-
   "Omnimon (M)": "Omnimon [Grey Sword Variant]",
   "Omnimon (R)": "Omnimon [Garuru Cannon Variant]",
   "Omnimon (A)": "Omnimon [Ω Heal Variant]",
-
   "Baihumon (R)": "Baihumon [Seidouhou Variant]",
   "Baihumon (M)": "Baihumon [Tekkosou Variant]",
   "Baihumon (A)": "Baihumon [Kongou Variant]",
 };
+
+export function getLegendaryVariants(
+  baseGoalName: string,
+): Array<{ key: string; label: string }> {
+  const clean = baseGoalName.trim().toLowerCase();
+
+  if (clean.includes("diaboromon")) {
+    return [
+      { key: "Diaboromon (R)", label: "Diaboromon [Catastrophe Cannon]" },
+      { key: "Diaboromon (M)", label: "Diaboromon [Paradise Lost]" },
+      { key: "Diaboromon (A)", label: "Diaboromon [Multiply]" },
+    ];
+  }
+  if (clean.includes("omnimon")) {
+    return [
+      { key: "Omnimon (M)", label: "Omnimon [Grey Sword]" },
+      { key: "Omnimon (R)", label: "Omnimon [Garuru Cannon]" },
+      { key: "Omnimon (A)", label: "Omnimon [Ω Heal]" },
+    ];
+  }
+  if (clean.includes("baihumon")) {
+    return [
+      { key: "Baihumon (R)", label: "Baihumon [Seidouhou]" },
+      { key: "Baihumon (M)", label: "Baihumon [Tekkosou]" },
+      { key: "Baihumon (A)", label: "Baihumon [Kongou]" },
+    ];
+  }
+
+  return [];
+}
 
 export function formatStepDigimonName(rawName: string): string {
   if (!rawName) return "";
@@ -80,15 +117,26 @@ const FAMILIES = [
 type SearchState = {
   currentDigimon: string;
   currentDp: number;
-  highestAchievedStage: StageLevel;
+  generationPeakStage: StageLevel;
   path: RouteStep[];
 };
 
-function cleanKey(inputName: string): string {
+function resolveCatalogKey(inputName: string): string {
   if (!inputName) return "";
-  return inputName
-    .replace(/\s*\((Ultimate|Mega|Champion|Rookie)\)\s*/gi, "")
-    .trim();
+  const clean = inputName.trim();
+  if (catalog[clean]) return clean;
+
+  const catalogKeys = Object.keys(catalog);
+  const found = catalogKeys.find(
+    (k) =>
+      k.toLowerCase() === clean.toLowerCase() ||
+      k
+        .toLowerCase()
+        .replace(/\s*\((ultimate|mega|champion|rookie)\)\s*/gi, "") ===
+        clean.toLowerCase(),
+  );
+
+  return found || clean;
 }
 
 function parseDpRange(dpStr?: string): { min: number; max: number } {
@@ -107,14 +155,78 @@ function parseDpRange(dpStr?: string): { min: number; max: number } {
   return { min: 0, max: 99 };
 }
 
-function getHigherStage(stageA: StageLevel, stageB: StageLevel): StageLevel {
-  const order: Record<StageLevel, number> = {
-    Rookie: 1,
-    Champion: 2,
-    Ultimate: 3,
-    Mega: 4,
-  };
-  return order[stageA] >= order[stageB] ? stageA : stageB;
+function analyzeDeadEndDiagnostics(
+  startDp: number,
+  targetGoal: string,
+  targetFodderTier: StageLevel,
+  deadEndStates: Array<{ digimon: string; dp: number }>,
+): { message: string; suggestedGoal?: string } {
+  const targetProfile = catalog[targetGoal];
+  if (!targetProfile)
+    return { message: "No valid path found matching DP constraints." };
+
+  const potentialPredecessors = Object.keys(catalog)
+    .filter((key) => {
+      const prof = catalog[key];
+      return prof.evolutions?.some(
+        (evo: any) => resolveCatalogKey(evo.target) === targetGoal,
+      );
+    })
+    .sort((a, b) => {
+      const aSameFam = catalog[a]?.family === targetProfile.family ? 1 : 0;
+      const bSameFam = catalog[b]?.family === targetProfile.family ? 1 : 0;
+      return bSameFam - aSameFam;
+    });
+
+  for (const predKey of potentialPredecessors) {
+    const predProfile = catalog[predKey];
+    const evoRule = predProfile.evolutions?.find(
+      (evo: any) => resolveCatalogKey(evo.target) === targetGoal,
+    );
+
+    if (evoRule) {
+      const { min: minReqDp, max: maxReqDp } = parseDpRange(evoRule.dp);
+      const reachedPredState = deadEndStates.find(
+        (s) => resolveCatalogKey(s.digimon) === predKey,
+      );
+
+      if (reachedPredState) {
+        if (reachedPredState.dp > maxReqDp) {
+          const excessDp = reachedPredState.dp - maxReqDp;
+          const maxAllowedStartDp = Math.max(0, startDp - excessDp);
+
+          return {
+            message: `⚠️ DP Over-Shot: Reached ${formatStepDigimonName(predKey)} at ${reachedPredState.dp} DP, but ${formatStepDigimonName(targetGoal)} requires ${evoRule.dp} DP. Try lowering your starting DP to ${maxAllowedStartDp} DP or fewer.`,
+            suggestedGoal: predKey,
+          };
+        }
+        if (reachedPredState.dp < minReqDp) {
+          const deficitDp = minReqDp - reachedPredState.dp;
+          const minRequiredStartDp = startDp + deficitDp;
+
+          return {
+            message: `⚠️ DP Deficit: Reached ${formatStepDigimonName(predKey)} at ${reachedPredState.dp} DP, but ${formatStepDigimonName(targetGoal)} requires ${evoRule.dp} DP. Try increasing your starting DP to ${minRequiredStartDp} DP or more.`,
+            suggestedGoal: predKey,
+          };
+        }
+      }
+    }
+  }
+
+  const divertedMega = deadEndStates.find((s) => {
+    const prof = catalog[s.digimon];
+    return prof && prof.level === "Mega" && s.digimon !== targetGoal;
+  });
+
+  if (divertedMega) {
+    const alternativeName = formatStepDigimonName(divertedMega.digimon);
+    return {
+      message: `⚠️ Branch Diversion: Evolution path led to ${alternativeName} (${divertedMega.dp} DP) instead of ${formatStepDigimonName(targetGoal)} due to family line properties. Would you like to set ${alternativeName} as your goal?`,
+      suggestedGoal: divertedMega.digimon,
+    };
+  }
+
+  return { message: "No valid path found matching DP constraints." };
 }
 
 export function findShortestSafeRoute(
@@ -123,8 +235,8 @@ export function findShortestSafeRoute(
   targetGoalRaw: string,
   targetFodderTier: StageLevel = "Champion",
 ): RouteResult {
-  const startDigimon = cleanKey(startDigimonRaw);
-  const targetGoal = cleanKey(targetGoalRaw);
+  const startDigimon = resolveCatalogKey(startDigimonRaw);
+  const targetGoal = resolveCatalogKey(targetGoalRaw);
 
   const startProfile = catalog[startDigimon];
   const targetProfile = catalog[targetGoal];
@@ -136,7 +248,7 @@ export function findShortestSafeRoute(
       totalDnaResets: 0,
       finalDp: startDp,
       path: [],
-      message: `Invalid Digimon key lookup: "${startDigimonRaw}" or "${targetGoalRaw}".`,
+      message: `Invalid Digimon catalog lookup: "${startDigimonRaw}" or "${targetGoalRaw}".`,
     };
   }
 
@@ -146,24 +258,27 @@ export function findShortestSafeRoute(
     {
       currentDigimon: startDigimon,
       currentDp: startDp,
-      highestAchievedStage: startProfile.level,
+      generationPeakStage: startProfile.level,
       path: [],
     },
   ];
 
   const visited = new Set<string>();
+  const deadEndStates: Array<{ digimon: string; dp: number }> = [];
 
   while (queue.length > 0) {
-    const { currentDigimon, currentDp, highestAchievedStage, path } =
+    const { currentDigimon, currentDp, generationPeakStage, path } =
       queue.shift()!;
     const profile = catalog[currentDigimon];
     if (!profile) continue;
 
-    const stateKey = `${currentDigimon}-DP${currentDp}-${highestAchievedStage}`;
+    deadEndStates.push({ digimon: currentDigimon, dp: currentDp });
+
+    const dnaCount = path.filter((s) => s.actionType === "DNA").length;
+    const stateKey = `${currentDigimon}-DP${currentDp}-GenPeak${generationPeakStage}-Resets${dnaCount}`;
     if (visited.has(stateKey)) continue;
     visited.add(stateKey);
 
-    // Goal Reach Validation (Enforces mandatory predecessor evolution checks)
     if (currentDigimon === targetGoal) {
       const predecessorSatisfied =
         !requiredPredecessors ||
@@ -174,7 +289,6 @@ export function findShortestSafeRoute(
         );
 
       if (predecessorSatisfied) {
-        const dnaCount = path.filter((s) => s.actionType === "DNA").length;
         return {
           success: true,
           totalSteps: path.length,
@@ -185,27 +299,34 @@ export function findShortestSafeRoute(
       }
     }
 
-    if (path.length >= 14) continue;
+    if (path.length >= 35) continue;
 
-    // --- 1. Natural Digivolution Branch ---
+    // 1. Natural Digivolution
     if (profile.evolutions) {
       for (const evo of profile.evolutions) {
-        const nextTarget = cleanKey(evo.target);
+        const nextTarget = resolveCatalogKey(evo.target);
         const nextProfile = catalog[nextTarget];
 
         if (nextProfile) {
           const { min: minDp, max: maxDp } = parseDpRange(evo.dp);
 
           if (currentDp >= minDp && currentDp <= maxDp) {
-            const nextHighestStage = getHigherStage(
-              highestAchievedStage,
-              nextProfile.level,
-            );
+            const stageOrder: Record<StageLevel, number> = {
+              Rookie: 1,
+              Champion: 2,
+              Ultimate: 3,
+              Mega: 4,
+            };
+            const nextPeak =
+              stageOrder[nextProfile.level as StageLevel] >
+              stageOrder[generationPeakStage]
+                ? (nextProfile.level as StageLevel)
+                : generationPeakStage;
 
             queue.push({
               currentDigimon: nextTarget,
               currentDp,
-              highestAchievedStage: nextHighestStage,
+              generationPeakStage: nextPeak,
               path: [
                 ...path,
                 {
@@ -226,15 +347,19 @@ export function findShortestSafeRoute(
       }
     }
 
-    // --- 2. DNA Reset Branch ---
-    // Rule: Must re-digivolve back to highestAchievedStage before performing another DNA reset!
-    const canPerformDnaReset = profile.level === highestAchievedStage;
+    // 2. DNA Reset Branch
+    // Strictly require resets to match the starter's rank (e.g. Starter Mega MUST reach Mega before resetting again)
+    const requiredResetStage = startProfile.level;
 
-    if (canPerformDnaReset && currentDp < 15) {
+    const isAtResetStage =
+      profile.level === requiredResetStage || profile.level === "Mega";
+
+    const canPerformDnaReset = isAtResetStage && currentDp < 15;
+
+    if (canPerformDnaReset) {
       for (const fam of FAMILIES) {
         const nextDp = currentDp + 1;
 
-        // Fetch sample fodder matching the exact stage selected from the UI tab
         const sampleFodderKey = Object.keys(catalog).find(
           (k) =>
             catalog[k].family === fam && catalog[k].level === targetFodderTier,
@@ -250,7 +375,7 @@ export function findShortestSafeRoute(
             queue.push({
               currentDigimon: resultDigimon,
               currentDp: nextDp,
-              highestAchievedStage, // Preserve high stage requirement for subsequent resets
+              generationPeakStage: resProfile.level,
               path: [
                 ...path,
                 {
@@ -263,7 +388,7 @@ export function findShortestSafeRoute(
                   currentDp: nextDp,
                   fodderFamily: fam,
                   fodderLevel: targetFodderTier,
-                  reason: `Stage-Preserved DNA Reset (+1 DP Gain ➔ ${nextDp} DP total using ${targetFodderTier} Fodder)`,
+                  reason: `DNA Reset #${dnaCount + 1} (+1 DP Gain ➔ ${nextDp} DP total)`,
                 },
               ],
             });
@@ -273,12 +398,20 @@ export function findShortestSafeRoute(
     }
   }
 
+  const diagnostic = analyzeDeadEndDiagnostics(
+    startDp,
+    targetGoal,
+    targetFodderTier,
+    deadEndStates,
+  );
+
   return {
     success: false,
     totalSteps: 0,
     totalDnaResets: 0,
     finalDp: startDp,
     path: [],
-    message: "No safe route found matching DP constraints.",
+    message: diagnostic.message,
+    suggestedGoal: diagnostic.suggestedGoal,
   };
 }
