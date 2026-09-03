@@ -301,8 +301,71 @@ export function findShortestSafeRoute(
 
     if (path.length >= 35) continue;
 
-    // 1. Natural Digivolution
-    if (profile.evolutions) {
+    // 1. DNA Reset Branch (Evaluated First)
+    const isStarterLowRank =
+      startProfile.level === "Rookie" || startProfile.level === "Champion";
+
+    const isAtResetStage = isStarterLowRank
+      ? profile.level === "Champion" ||
+        profile.level === "Ultimate" ||
+        profile.level === "Mega"
+      : profile.level === startProfile.level || profile.level === "Mega";
+
+    const canPerformDnaReset = isAtResetStage && currentDp < 15;
+
+    let resetAttempted = false;
+
+    if (canPerformDnaReset) {
+      for (const fam of FAMILIES) {
+        const nextDp = currentDp + 1;
+
+        const sampleFodderKey = Object.keys(catalog).find(
+          (k) =>
+            catalog[k].family === fam && catalog[k].level === targetFodderTier,
+        );
+
+        if (sampleFodderKey) {
+          const dnaRes = getAdvancedDnaResult(currentDigimon, sampleFodderKey);
+          const resultDigimon = dnaRes.result;
+
+          if (resultDigimon && catalog[resultDigimon]) {
+            const resProfile = catalog[resultDigimon];
+            resetAttempted = true;
+
+            queue.push({
+              currentDigimon: resultDigimon,
+              currentDp: nextDp,
+              generationPeakStage: resProfile.level,
+              path: [
+                ...path,
+                {
+                  stepNumber: path.length + 1,
+                  actionType: "DNA",
+                  fromDigimon: currentDigimon,
+                  fromStage: profile.level,
+                  toDigimon: resultDigimon,
+                  toStage: resProfile.level,
+                  currentDp: nextDp,
+                  fodderFamily: fam,
+                  fodderLevel: targetFodderTier,
+                  reason: `DNA Reset #${dnaCount + 1} (+1 DP Gain ➔ ${nextDp} DP total)`,
+                },
+              ],
+            });
+          }
+        }
+      }
+    }
+
+    // 2. Natural Digivolution Branch
+    // Blocks further digivolution to Ultimate/Mega if a Champion reset is already available for Rookie/Champion starters.
+    const shouldAllowDigivolve = !(
+      isStarterLowRank &&
+      profile.level === "Champion" &&
+      resetAttempted
+    );
+
+    if (profile.evolutions && shouldAllowDigivolve) {
       for (const evo of profile.evolutions) {
         const nextTarget = resolveCatalogKey(evo.target);
         const nextProfile = catalog[nextTarget];
@@ -339,56 +402,6 @@ export function findShortestSafeRoute(
                   currentDp,
                   dpRequirement: evo.dp,
                   reason: `Natural Digivolution (DP ${currentDp} fits ${evo.dp} bracket)`,
-                },
-              ],
-            });
-          }
-        }
-      }
-    }
-
-    // 2. DNA Reset Branch
-    // Strictly require resets to match the starter's rank (e.g. Starter Mega MUST reach Mega before resetting again)
-    const requiredResetStage = startProfile.level;
-
-    const isAtResetStage =
-      profile.level === requiredResetStage || profile.level === "Mega";
-
-    const canPerformDnaReset = isAtResetStage && currentDp < 15;
-
-    if (canPerformDnaReset) {
-      for (const fam of FAMILIES) {
-        const nextDp = currentDp + 1;
-
-        const sampleFodderKey = Object.keys(catalog).find(
-          (k) =>
-            catalog[k].family === fam && catalog[k].level === targetFodderTier,
-        );
-
-        if (sampleFodderKey) {
-          const dnaRes = getAdvancedDnaResult(currentDigimon, sampleFodderKey);
-          const resultDigimon = dnaRes.result;
-
-          if (resultDigimon && catalog[resultDigimon]) {
-            const resProfile = catalog[resultDigimon];
-
-            queue.push({
-              currentDigimon: resultDigimon,
-              currentDp: nextDp,
-              generationPeakStage: resProfile.level,
-              path: [
-                ...path,
-                {
-                  stepNumber: path.length + 1,
-                  actionType: "DNA",
-                  fromDigimon: currentDigimon,
-                  fromStage: profile.level,
-                  toDigimon: resultDigimon,
-                  toStage: resProfile.level,
-                  currentDp: nextDp,
-                  fodderFamily: fam,
-                  fodderLevel: targetFodderTier,
-                  reason: `DNA Reset #${dnaCount + 1} (+1 DP Gain ➔ ${nextDp} DP total)`,
                 },
               ],
             });
