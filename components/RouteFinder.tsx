@@ -1,7 +1,7 @@
 "use client";
 
 import { useState, useMemo, useEffect } from "react";
-import { catalog, StageLevel } from "@/lib/dnaEngine";
+import { catalog, StageLevel, getAdvancedDnaResult } from "@/lib/dnaEngine";
 import {
   findShortestSafeRoute,
   getLegendaryVariants,
@@ -85,18 +85,27 @@ function copyDebugLogToClipboard(
 }
 
 function getFoddersForStep(
+  fromDigimon?: string,
+  expectedResult?: string,
   family?: string,
   fodderLevel?: StageLevel,
   userInventory: string[] = [],
 ) {
-  if (!family || !fodderLevel) return [];
+  if (!fromDigimon || !expectedResult || !family || !fodderLevel) return [];
 
+  // 1. Get all candidates matching family and tier
   const matches = Object.keys(catalog).filter(
     (key) =>
       catalog[key].family === family && catalog[key].level === fodderLevel,
   );
 
-  return matches.map((name) => {
+  // 2. Dynamically validate each fodder through getAdvancedDnaResult
+  const validMatches = matches.filter((fodderKey) => {
+    const dnaRes = getAdvancedDnaResult(fromDigimon, fodderKey);
+    return dnaRes.result === expectedResult;
+  });
+
+  return validMatches.map((name) => {
     const cleanName = sanitizeDisplayName(name);
     const isOwned =
       userInventory.includes(name) || userInventory.includes(cleanName);
@@ -128,7 +137,6 @@ export function RouteFinder({
   const startProfile = catalog[resolvedStart];
   const starterStage: StageLevel = startProfile?.level || "Rookie";
 
-  // Check if target has Legendary / MRA Variants (e.g. Diaboromon -> R, M, A)
   const legendaryVariants = useMemo(
     () => getLegendaryVariants(evoGoal),
     [evoGoal],
@@ -382,7 +390,10 @@ export function RouteFinder({
         ) : (
           <div className="space-y-3">
             {routeResult.path.map((step) => {
+              // Pass fromDigimon and toDigimon for strict target matching
               const fodders = getFoddersForStep(
+                step.fromDigimon,
+                step.toDigimon,
                 step.fodderFamily,
                 step.fodderLevel,
                 userInventory,
@@ -435,8 +446,8 @@ export function RouteFinder({
                   {step.actionType === "DNA" && fodders.length > 0 && (
                     <div className="bg-slate-900 border border-slate-800/80 p-3 rounded-xl space-y-2">
                       <span className="text-amber-400 font-bold uppercase text-[10px] tracking-wider block">
-                        Recommended {step.fodderLevel} Fodders [
-                        {step.fodderFamily} Family] ({fodders.length} Options):
+                        Valid {step.fodderLevel} Fodders [{step.fodderFamily}{" "}
+                        Family] ({fodders.length} Options):
                       </span>
                       <div className="flex flex-wrap gap-1.5 max-h-40 overflow-y-auto pt-1">
                         {fodders.map((fodder, idx) => (
