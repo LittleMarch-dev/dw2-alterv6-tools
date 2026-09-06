@@ -38,34 +38,39 @@ function parseMinDpValue(dpStr: string): number {
   return Math.min(...matches.map(Number));
 }
 
+function cleanName(rawName: string): string {
+  if (!rawName) return "";
+  return rawName.replace(/\s*\([RMA]\)/gi, "").trim();
+}
+
 function getGroupedTree(baseName: string): ChampionBranch[] {
   const baseProfile = catalog[baseName];
   if (!baseProfile || !baseProfile.evolutions) return [];
 
   const branches: ChampionBranch[] = [];
 
-  baseProfile.evolutions.forEach((evo1) => {
+  baseProfile.evolutions.forEach((evo1: any) => {
     const nextProfile = catalog[evo1.target];
     if (!nextProfile) return;
 
-    const nextName = evo1.target.replace(/\s*\([RMA]\)/gi, "").trim();
+    const nextName = cleanName(evo1.target);
     const currentMinDp = parseMinDpValue(evo1.dp);
 
-    // 1. Rookie -> Champion -> Ultimate -> Mega
+    // 1. ROOKIE START: Rookie -> Champion -> Ultimate -> Mega
     if (nextProfile.level === "Champion") {
       const ultGroups: UltimateGroup[] = [];
 
-      (nextProfile.evolutions || []).forEach((evo2) => {
-        const ultName = evo2.target.replace(/\s*\([RMA]\)/gi, "").trim();
+      (nextProfile.evolutions || []).forEach((evo2: any) => {
+        const ultName = cleanName(evo2.target);
         const ultProfile = catalog[evo2.target];
 
         const megas: MegaOption[] = (ultProfile?.evolutions || []).map(
-          (evo3) => {
+          (evo3: any) => {
             const rawMegaName = evo3.target;
             const megaProfile = catalog[rawMegaName];
 
             return {
-              megaName: rawMegaName.replace(/\s*\([RMA]\)/gi, "").trim(),
+              megaName: cleanName(rawMegaName),
               megaDp: evo3.dp,
               megaType: megaProfile?.type || "Unknown",
               megaSkill: megaProfile?.signature_skill,
@@ -95,20 +100,22 @@ function getGroupedTree(baseName: string): ChampionBranch[] {
         ultimates: ultGroups,
       });
     }
-    // 2. Champion -> Ultimate -> Mega
+    // 2. CHAMPION START: Champion -> Ultimate -> Mega
     else if (nextProfile.level === "Ultimate") {
-      const megas: MegaOption[] = (nextProfile.evolutions || []).map((evo2) => {
-        const rawMegaName = evo2.target;
-        const megaProfile = catalog[rawMegaName];
+      const megas: MegaOption[] = (nextProfile.evolutions || []).map(
+        (evo2: any) => {
+          const rawMegaName = evo2.target;
+          const megaProfile = catalog[rawMegaName];
 
-        return {
-          megaName: rawMegaName.replace(/\s*\([RMA]\)/gi, "").trim(),
-          megaDp: evo2.dp,
-          megaType: megaProfile?.type || "Unknown",
-          megaSkill: megaProfile?.signature_skill,
-          megaDpVal: parseMinDpValue(evo2.dp),
-        };
-      });
+          return {
+            megaName: cleanName(rawMegaName),
+            megaDp: evo2.dp,
+            megaType: megaProfile?.type || "Unknown",
+            megaSkill: megaProfile?.signature_skill,
+            megaDpVal: parseMinDpValue(evo2.dp),
+          };
+        },
+      );
 
       megas.sort((a, b) => a.megaDpVal - b.megaDpVal);
 
@@ -128,13 +135,41 @@ function getGroupedTree(baseName: string): ChampionBranch[] {
         ],
       });
     }
+    // 3. ULTIMATE START: Ultimate -> Mega (Direct Mega Tree)
+    else if (nextProfile.level === "Mega") {
+      const megaProfile = catalog[evo1.target];
+
+      branches.push({
+        nextName: cleanName(evo1.target),
+        nextStage: "Mega",
+        nextType: megaProfile?.type || "Unknown",
+        nextDp: evo1.dp,
+        minDpVal: currentMinDp,
+        ultimates: [
+          {
+            ultName: cleanName(baseName),
+            ultDp: evo1.dp,
+            ultDpVal: currentMinDp,
+            megas: [
+              {
+                megaName: cleanName(evo1.target),
+                megaDp: evo1.dp,
+                megaType: megaProfile?.type || "Unknown",
+                megaSkill: megaProfile?.signature_skill,
+                megaDpVal: currentMinDp,
+              },
+            ],
+          },
+        ],
+      });
+    }
   });
 
   return branches.sort((a, b) => a.minDpVal - b.minDpVal);
 }
 
 export function MegaTreeModal({ digimonName, onClose }: MegaTreeModalProps) {
-  const cleanBaseName = digimonName.replace(/\s*\([RMA]\)/gi, "").trim();
+  const cleanBaseName = cleanName(digimonName);
   const branches = getGroupedTree(digimonName);
 
   return (
@@ -151,6 +186,7 @@ export function MegaTreeModal({ digimonName, onClose }: MegaTreeModalProps) {
             </h3>
           </div>
           <button
+            type="button"
             onClick={onClose}
             className="bg-slate-800 text-slate-300 hover:text-white font-bold h-7 w-7 rounded-full flex items-center justify-center text-xs transition-colors"
           >
@@ -170,14 +206,12 @@ export function MegaTreeModal({ digimonName, onClose }: MegaTreeModalProps) {
                 key={idx}
                 className="bg-slate-950 border border-slate-800 rounded-2xl p-3.5 space-y-3 shadow-md"
               >
-                {/* Champion Stage Header */}
+                {/* Branch Stage Header */}
                 <div className="flex justify-between items-center border-b border-slate-800/80 pb-2">
                   <div>
-                    <div className="flex items-center gap-2">
-                      <span className="text-[9px] font-bold text-amber-400 uppercase tracking-wider block">
-                        Next Step
-                      </span>
-                    </div>
+                    <span className="text-[9px] font-bold text-amber-400 uppercase tracking-wider block">
+                      Next Evolution Branch
+                    </span>
                     <div className="flex items-center gap-2">
                       <h4 className="text-sm font-black text-slate-100">
                         {branch.nextName}
@@ -193,29 +227,33 @@ export function MegaTreeModal({ digimonName, onClose }: MegaTreeModalProps) {
                   </span>
                 </div>
 
-                {/* Grouped Ultimate Sections */}
+                {/* Grouped Ultimate & Mega Sections */}
                 <div className="space-y-2.5">
                   {branch.ultimates.map((ultGroup, uIdx) => (
                     <div
                       key={uIdx}
                       className="bg-slate-900/90 border border-slate-800/90 p-2.5 rounded-xl space-y-2"
                     >
-                      {/* Ultimate Stage Name */}
-                      <div className="flex justify-between items-center text-xs border-b border-slate-800/60 pb-1.5">
-                        <div className="flex items-center gap-1.5">
-                          <span className="text-slate-500 text-[10px]">➔</span>
-                          <span className="font-bold text-slate-200">
-                            {ultGroup.ultName}
+                      {/* Intermediate Stage Name (Suppressed if base input is Ultimate) */}
+                      {branch.nextStage !== "Mega" && (
+                        <div className="flex justify-between items-center text-xs border-b border-slate-800/60 pb-1.5">
+                          <div className="flex items-center gap-1.5">
+                            <span className="text-slate-500 text-[10px]">
+                              ➔
+                            </span>
+                            <span className="font-bold text-slate-200">
+                              {ultGroup.ultName}
+                            </span>
+                          </div>
+                          <span className="text-[9px] text-amber-300 font-mono font-bold bg-amber-500/10 px-1.5 py-0.5 rounded border border-amber-500/20">
+                            {ultGroup.ultDp} DP
                           </span>
                         </div>
-                        <span className="text-[9px] text-amber-300 font-mono font-bold bg-amber-500/10 px-1.5 py-0.5 rounded border border-amber-500/20">
-                          {ultGroup.ultDp} DP
-                        </span>
-                      </div>
+                      )}
 
-                      {/* Mega Targets Under this Ultimate */}
+                      {/* Mega Targets */}
                       {ultGroup.megas.length > 0 && (
-                        <div className="space-y-1 pl-2">
+                        <div className="space-y-1 pl-1">
                           {ultGroup.megas.map((mega, mIdx) => {
                             const isSpecialTrio = [
                               "Omnimon",
