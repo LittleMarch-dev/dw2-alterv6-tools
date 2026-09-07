@@ -14,11 +14,11 @@ export const GUIDED_TUTORIAL_STEPS: Record<
   calculator: [
     {
       id: 1,
-      title: "Set Domain Progress",
+      title: "Set Current Domain",
       instruction:
-        "Select your highest unlocked Domain here first to accurately filter wild fodder and catchable Digimon.",
+        "Select your active domain here to mark wild Digimon available in this specific location as catchable.",
       proTip:
-        "Setting this domain filters catchable routes across all tabs automatically.",
+        "Changing your current domain updates catchable status badges across all tools instantly.",
       targetId: "#tutorial-header-domain-select",
       tab: "calculator",
     },
