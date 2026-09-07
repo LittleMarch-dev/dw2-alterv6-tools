@@ -109,6 +109,7 @@ export function RouteStepCard({
               return (
                 <button
                   key={`${fodder.name}-${idx}`}
+                  id={idx === 0 ? "tutorial-fodder-button" : undefined}
                   type="button"
                   onClick={() => onSelectDigimon(fodder.name)}
                   className={`text-[11px] font-semibold px-2.5 py-1 rounded-xl border flex items-center gap-1.5 transition-transform hover:scale-105 ${badgeStyle}`}

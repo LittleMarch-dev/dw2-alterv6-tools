@@ -262,7 +262,10 @@ export function RouteFinder({
 
       {/* Legendary Sub-Variant Selector */}
       {legendaryVariants.length > 0 && (
-        <div className="bg-slate-900 border border-slate-800 p-4 rounded-2xl space-y-2">
+        <div
+          id="tutorial-target-skills"
+          className="bg-slate-900 border border-slate-800 p-4 rounded-2xl space-y-2"
+        >
           <span className="text-xs font-bold text-amber-400 uppercase tracking-wider block">
             Select {evoGoal} Skill Variant:
           </span>
@@ -286,7 +289,10 @@ export function RouteFinder({
       )}
 
       {(starterStage === "Ultimate" || starterStage === "Mega") && (
-        <div className="bg-slate-900 border border-slate-800 p-4 rounded-2xl space-y-3">
+        <div
+          id="tutorial-fodder-strategy"
+          className="bg-slate-900 border border-slate-800 p-4 rounded-2xl space-y-3"
+        >
           <div className="flex justify-between items-center flex-wrap gap-2">
             <div>
               <span className="text-xs font-bold text-amber-400 uppercase tracking-wider block">

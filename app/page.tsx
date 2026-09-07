@@ -77,7 +77,10 @@ export default function DW2App() {
               📖 How to Use
             </button>
 
-            <div className="flex items-center gap-2 bg-slate-950 border border-slate-800 px-3 py-1.5 rounded-xl w-full sm:w-auto">
+            <div
+              id="tutorial-header-domain-select"
+              className="flex items-center gap-2 bg-slate-950 border border-slate-800 px-3 py-1.5 rounded-xl w-full sm:w-auto"
+            >
               <span className="text-[10px] font-bold text-amber-400 uppercase whitespace-nowrap">
                 Select Domain:
               </span>
@@ -157,16 +160,14 @@ export default function DW2App() {
             allDigimonNames={allDigimonNames}
           />
         )}
-        {/* {activeTab === "skills" && (
-          <MoveSearch onSelectDigimon={setModalDigimon} />
-        )} */}
 
         {activeTab === "skills" && (
           <GlobalSearch
             onSelectDigimon={setModalDigimon}
+            unlockedDomain={unlockedDomain}
             onSelectDomain={(domainName) => {
-              // Optional: Handle domain selection (e.g. set active domain tab or open a modal)
-              console.log("Selected domain:", domainName);
+              setUnlockedDomain(domainName);
+              localStorage.setItem("dw2_unlocked_domain", domainName);
             }}
           />
         )}

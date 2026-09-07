@@ -8,6 +8,7 @@ import { formatStepDigimonName } from "@/lib/routeEngine";
 
 interface GlobalSearchProps {
   onSelectDigimon: (name: string) => void;
+  unlockedDomain?: string;
   onSelectDomain?: (domainName: string) => void;
 }
 
@@ -52,6 +53,7 @@ const normalizeStage = (stageStr: string): string =>
 
 export function GlobalSearch({
   onSelectDigimon,
+  unlockedDomain = "All Domains",
   onSelectDomain,
 }: GlobalSearchProps) {
   const [query, setQuery] = useState<string>("");
@@ -77,6 +79,7 @@ export function GlobalSearch({
   }, []);
 
   // 2. Flatten Skills & build Digimon -> Learned Skills lookup map
+  // 2. Flatten Skills & build Digimon -> Learned Skills lookup map
   const { allSkillsMap, digimonLearnedSkillsMap } = useMemo(() => {
     const skillsMap = new Map<
       string,
@@ -92,8 +95,36 @@ export function GlobalSearch({
           const learnedSkillNames: string[] = [];
 
           skills.forEach((s) => {
+            // Find exact matching variant key in catalogMap if this skill is a signature move
+            let targetDigimonKey = digimonName;
+
+            const cleanBaseName = digimonName
+              .replace(/\s*\([MRA]\)/gi, "")
+              .trim()
+              .toLowerCase();
+
+            for (const [catKey, meta] of allDigimonMap.entries()) {
+              const catBaseName = catKey
+                .replace(/\s*\([MRA]\)/gi, "")
+                .trim()
+                .toLowerCase();
+
+              if (
+                catBaseName === cleanBaseName &&
+                meta.profile?.signature_skill?.toLowerCase() ===
+                  s.name.toLowerCase()
+              ) {
+                targetDigimonKey = catKey; // Assign exact variant key e.g. "Omnimon (A)"
+                break;
+              }
+            }
+
             const list = skillsMap.get(s.name) || [];
-            list.push({ skillInfo: s, digimonName, stage: cleanStage });
+            list.push({
+              skillInfo: s,
+              digimonName: targetDigimonKey,
+              stage: cleanStage,
+            });
             skillsMap.set(s.name, list);
             learnedSkillNames.push(s.name);
           });
@@ -105,7 +136,7 @@ export function GlobalSearch({
     });
 
     return { allSkillsMap: skillsMap, digimonLearnedSkillsMap: digiSkillsMap };
-  }, []);
+  }, [allDigimonMap]);
 
   // 3. Extract unique Domain Names
   const allDomains = useMemo(() => {
@@ -133,11 +164,9 @@ export function GlobalSearch({
       const sigSkill = profile.signature_skill || "";
       const sigSkillLower = sigSkill.toLowerCase();
 
-      // Clean base name for skill lookup (e.g., "Diaboromon (M)" -> "Diaboromon")
       const cleanLookupName = name.replace(/\s*\([MRA]\)/gi, "").trim();
       const learnedSkills = digimonLearnedSkillsMap.get(cleanLookupName) || [];
 
-      // Find signature skills of sibling variants (e.g., Multiply, Catastrophe Cannon, Paradise Lost)
       const siblingSigSkills = new Set<string>();
       allDigimonMap.forEach(({ profile: siblingProfile }, siblingName) => {
         if (
@@ -153,7 +182,6 @@ export function GlobalSearch({
         }
       });
 
-      // Exclude skills that belong to other variant signature slots
       const matchedSkill = q
         ? learnedSkills.find((sName) => {
             const sLower = sName.toLowerCase();
@@ -275,12 +303,16 @@ export function GlobalSearch({
   const hasActiveFilters =
     query.trim().length > 0 ||
     selectedStage !== "ALL" ||
-    selectedSkillType !== "ALL";
+    selectedSkillType !== "ALL" ||
+    activeCategory === "DOMAIN";
 
   return (
     <div className="space-y-4">
       {/* Search Input Bar */}
-      <div className="bg-slate-900 border border-slate-800 p-4 rounded-2xl space-y-3">
+      <div
+        id="tutorial-global-search"
+        className="bg-slate-900 border border-slate-800 p-4 rounded-2xl space-y-3"
+      >
         <div className="relative">
           <span className="absolute inset-y-0 left-3 flex items-center text-slate-400 text-sm">
             🔍
@@ -303,7 +335,10 @@ export function GlobalSearch({
         </div>
 
         {/* Category Filter Pills */}
-        <div className="flex gap-2 border-t border-slate-800/80 pt-2.5 overflow-x-auto text-[10px] font-bold">
+        <div
+          id="tutorial-category-filters"
+          className="flex gap-2 border-t border-slate-800/80 pt-2.5 overflow-x-auto text-[10px] font-bold"
+        >
           {(
             [
               { id: "ALL", label: "All Results" },
@@ -330,8 +365,10 @@ export function GlobalSearch({
         </div>
 
         {/* Filters */}
-        <div className="flex flex-wrap gap-4 border-t border-slate-800/80 pt-2.5">
-          {/* Stage Filter */}
+        <div
+          id="tutorial-stage-filters"
+          className="flex flex-wrap gap-4 border-t border-slate-800/80 pt-2.5"
+        >
           <div className="space-y-1">
             <label className="text-[9px] font-bold uppercase text-slate-400 tracking-wider">
               Digimon Stage:
@@ -355,7 +392,6 @@ export function GlobalSearch({
             </div>
           </div>
 
-          {/* Skill Move Type Filter */}
           {(activeCategory === "SKILL" || activeCategory === "ALL") && (
             <div className="space-y-1">
               <label className="text-[9px] font-bold uppercase text-slate-400 tracking-wider">
@@ -428,7 +464,6 @@ export function GlobalSearch({
                           </button>
                         </div>
 
-                        {/* Signature Skill Badge */}
                         <div className="text-[10px] text-slate-300 flex items-center gap-1">
                           <span>⚡ Signature:</span>
                           <span className="font-semibold text-emerald-400">
@@ -436,7 +471,6 @@ export function GlobalSearch({
                           </span>
                         </div>
 
-                        {/* Matched Extra Skill Badge */}
                         {digi.matchedExtraSkill && (
                           <div className="text-[10px] text-slate-300 bg-amber-500/10 border border-amber-500/30 p-1.5 rounded-lg flex items-center gap-1">
                             <span>💡 Matches Learned Skill:</span>
@@ -514,7 +548,7 @@ export function GlobalSearch({
                             <button
                               key={cIdx}
                               onClick={() => onSelectDigimon(c.digimon)}
-                              className="bg-slate-900 text-slate-300 hover:text-amber-300 border border-slate-800 text-[9px] px-1.5 py-0.5 rounded flex items-center gap-1 transition-colors"
+                              className="bg-slate-900 text-slate-300 hover:text-amber-300 border border-slate-800 text-[9px] px-1.5 py-0.5 rounded flex items-center gap-1 transition-colors cursor-pointer"
                             >
                               <span>{formatStepDigimonName(c.digimon)}</span>
                               <span className="text-[8px] text-slate-500">
@@ -538,57 +572,81 @@ export function GlobalSearch({
                   🏰 Domains ({searchResults.domainResults.length})
                 </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-                  {searchResults.domainResults.map((dom, idx) => (
-                    <div
-                      key={idx}
-                      className="bg-slate-950 border border-slate-800 p-3.5 rounded-2xl space-y-3 text-xs flex flex-col justify-between"
-                    >
-                      <div className="space-y-2">
-                        <div className="flex justify-between items-center border-b border-slate-800 pb-1.5">
-                          <h4 className="font-extrabold text-amber-300 text-sm">
-                            🏰 {dom.domainName}
-                          </h4>
-                          <span className="text-[10px] font-mono text-slate-400 bg-slate-900 px-2 py-0.5 rounded-full border border-slate-800">
-                            {dom.digimonList.length} Species
-                          </span>
+                  {searchResults.domainResults.map((dom, idx) => {
+                    const isCurrentProgress =
+                      unlockedDomain.toLowerCase() ===
+                      dom.domainName.toLowerCase();
+
+                    return (
+                      <div
+                        key={idx}
+                        className="bg-slate-950 border border-slate-800 p-3.5 rounded-2xl space-y-3 text-xs flex flex-col justify-between"
+                      >
+                        <div className="space-y-2">
+                          <div className="flex justify-between items-center border-b border-slate-800 pb-1.5">
+                            <h4 className="font-extrabold text-amber-300 text-sm">
+                              🏰 {dom.domainName}
+                            </h4>
+                            <span className="text-[10px] font-mono text-slate-400 bg-slate-900 px-2 py-0.5 rounded-full border border-slate-800">
+                              {dom.digimonList.length} Species
+                            </span>
+                          </div>
+
+                          <div className="flex flex-wrap gap-1">
+                            {dom.digimonList.slice(0, 4).map((d, dIdx) => (
+                              <span
+                                key={dIdx}
+                                className="bg-slate-900 text-slate-300 border border-slate-800 text-[9px] px-2 py-0.5 rounded-lg"
+                              >
+                                {formatStepDigimonName(d.name)}
+                              </span>
+                            ))}
+                            {dom.digimonList.length > 4 && (
+                              <span className="text-[9px] text-amber-400/80 px-1 py-0.5 font-bold">
+                                +{dom.digimonList.length - 4} more
+                              </span>
+                            )}
+                          </div>
                         </div>
 
-                        <div className="flex flex-wrap gap-1">
-                          {dom.digimonList.slice(0, 4).map((d, dIdx) => (
-                            <span
-                              key={dIdx}
-                              className="bg-slate-900 text-slate-300 border border-slate-800 text-[9px] px-2 py-0.5 rounded-lg"
+                        <div className="flex gap-2">
+                          <button
+                            onClick={() => setSelectedDomainModal(dom)}
+                            className="flex-1 bg-slate-900 hover:bg-slate-800 text-amber-300 border border-slate-800 font-bold py-1.5 rounded-xl text-[10px] transition-colors flex items-center justify-center gap-1.5 cursor-pointer"
+                          >
+                            <span>View Encounters</span>
+                            <span className="text-[9px]">➔</span>
+                          </button>
+                          {onSelectDomain && (
+                            <button
+                              id={
+                                idx === 0
+                                  ? "tutorial-domain-card-progress"
+                                  : undefined
+                              }
+                              type="button"
+                              onClick={() => {
+                                onSelectDomain(dom.domainName);
+                                localStorage.setItem(
+                                  "dw2_unlocked_domain",
+                                  dom.domainName,
+                                );
+                              }}
+                              className={`px-3 py-1.5 rounded-xl text-[10px] font-bold border transition-all cursor-pointer ${
+                                isCurrentProgress
+                                  ? "bg-emerald-500/20 text-emerald-400 border-emerald-500/40"
+                                  : "bg-amber-500/10 hover:bg-amber-500/20 text-amber-300 border-amber-500/30"
+                              }`}
                             >
-                              {formatStepDigimonName(d.name)}
-                            </span>
-                          ))}
-                          {dom.digimonList.length > 4 && (
-                            <span className="text-[9px] text-amber-400/80 px-1 py-0.5 font-bold">
-                              +{dom.digimonList.length - 4} more
-                            </span>
+                              {isCurrentProgress
+                                ? "✓ Progress Set"
+                                : "Set Progress"}
+                            </button>
                           )}
                         </div>
                       </div>
-
-                      <div className="flex gap-2">
-                        <button
-                          onClick={() => setSelectedDomainModal(dom)}
-                          className="flex-1 bg-slate-900 hover:bg-slate-800 text-amber-300 border border-slate-800 font-bold py-1.5 rounded-xl text-[10px] transition-colors flex items-center justify-center gap-1.5"
-                        >
-                          <span>View Encounters</span>
-                          <span className="text-[9px]">➔</span>
-                        </button>
-                        {onSelectDomain && (
-                          <button
-                            onClick={() => onSelectDomain(dom.domainName)}
-                            className="bg-amber-500/10 hover:bg-amber-500/20 text-amber-300 border border-amber-500/30 px-2.5 py-1.5 rounded-xl text-[10px] font-bold transition-colors"
-                          >
-                            Set Progress
-                          </button>
-                        )}
-                      </div>
-                    </div>
-                  ))}
+                    );
+                  })}
                 </div>
               </div>
             )}
@@ -610,7 +668,7 @@ export function GlobalSearch({
               </div>
               <button
                 onClick={() => setSelectedDomainModal(null)}
-                className="bg-slate-800 text-slate-300 hover:text-white font-bold h-7 w-7 rounded-full flex items-center justify-center text-xs transition-colors"
+                className="bg-slate-800 text-slate-300 hover:text-white font-bold h-7 w-7 rounded-full flex items-center justify-center text-xs transition-colors cursor-pointer"
               >
                 ✕
               </button>
@@ -639,7 +697,7 @@ export function GlobalSearch({
                         setSelectedDomainModal(null);
                         onSelectDigimon(d.name);
                       }}
-                      className="text-[9px] bg-slate-900 hover:bg-slate-800 text-amber-300 border border-slate-800 px-2 py-1 rounded-lg font-bold transition-colors"
+                      className="text-[9px] bg-slate-900 hover:bg-slate-800 text-amber-300 border border-slate-800 px-2 py-1 rounded-lg font-bold transition-colors cursor-pointer"
                     >
                       Info
                     </button>
