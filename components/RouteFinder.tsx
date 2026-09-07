@@ -1,7 +1,12 @@
 "use client";
 
 import { useState, useMemo, useEffect } from "react";
-import { catalog, StageLevel, getAdvancedDnaResult } from "@/lib/dnaEngine";
+import {
+  catalog,
+  StageLevel,
+  getAdvancedDnaResult,
+  DIGIMON_MAP,
+} from "@/lib/dnaEngine";
 import {
   findShortestSafeRoute,
   getLegendaryVariants,
@@ -84,12 +89,15 @@ function copyDebugLogToClipboard(
   alert("📋 Engine debug trace copied to clipboard in JSON format!");
 }
 
+type FodderStatus = "OWNED" | "CATCHABLE" | "LOCKED_PROGRESS";
+
 function getFoddersForStep(
   fromDigimon?: string,
   expectedResult?: string,
   family?: string,
   fodderLevel?: StageLevel,
   userInventory: string[] = [],
+  unlockedDomain: string = "All Domains",
 ) {
   if (!fromDigimon || !expectedResult || !family || !fodderLevel) return [];
 
@@ -99,7 +107,7 @@ function getFoddersForStep(
       catalog[key].family === family && catalog[key].level === fodderLevel,
   );
 
-  // 2. Dynamically validate each fodder through getAdvancedDnaResult
+  // 2. Validate each fodder through DNA logic
   const validMatches = matches.filter((fodderKey) => {
     const dnaRes = getAdvancedDnaResult(fromDigimon, fodderKey);
     return dnaRes.result === expectedResult;
@@ -109,10 +117,30 @@ function getFoddersForStep(
     const cleanName = sanitizeDisplayName(name);
     const isOwned =
       userInventory.includes(name) || userInventory.includes(cleanName);
+
+    const locations = DIGIMON_MAP[name] || [];
+
+    let status: FodderStatus = "CATCHABLE";
+
+    if (isOwned) {
+      status = "OWNED";
+    } else if (unlockedDomain && unlockedDomain !== "All Domains") {
+      // Check if fodder appears in the selected domain
+      const isAvailableInUnlocked = locations.some((locStr) => {
+        const domainName = locStr.replace(/\s*\(Floor.*\)/gi, "").trim();
+        return domainName.toLowerCase() === unlockedDomain.toLowerCase();
+      });
+
+      status = isAvailableInUnlocked ? "CATCHABLE" : "LOCKED_PROGRESS";
+    } else {
+      status = "CATCHABLE";
+    }
+
     return {
       name,
       displayName: cleanName,
-      status: isOwned ? "OWNED" : "CATCHABLE",
+      status,
+      locations,
     };
   });
 }
@@ -229,7 +257,7 @@ export function RouteFinder({
         </div>
       </div>
 
-      {/* Legendary / MRA Sub-Variant Pill Selector */}
+      {/* Legendary Sub-Variant Selector */}
       {legendaryVariants.length > 0 && (
         <div className="bg-slate-900 border border-slate-800 p-4 rounded-2xl space-y-2">
           <span className="text-xs font-bold text-amber-400 uppercase tracking-wider block">
@@ -290,7 +318,7 @@ export function RouteFinder({
         </div>
       )}
 
-      {/* Top Warning Alert Banner for High DP inputs (>14 DP) */}
+      {/* Warning Alert Banner */}
       {routeResult.warningNotice && (
         <div className="p-4 rounded-2xl bg-amber-500/10 border border-amber-500/40 text-amber-200 text-xs font-semibold flex items-center gap-2.5 shadow-lg">
           <span className="text-base">⚡</span>
@@ -390,13 +418,13 @@ export function RouteFinder({
         ) : (
           <div className="space-y-3">
             {routeResult.path.map((step) => {
-              // Pass fromDigimon and toDigimon for strict target matching
               const fodders = getFoddersForStep(
                 step.fromDigimon,
                 step.toDigimon,
                 step.fodderFamily,
                 step.fodderLevel,
                 userInventory,
+                unlockedDomain,
               );
 
               return (
@@ -445,28 +473,46 @@ export function RouteFinder({
 
                   {step.actionType === "DNA" && fodders.length > 0 && (
                     <div className="bg-slate-900 border border-slate-800/80 p-3 rounded-xl space-y-2">
-                      <span className="text-amber-400 font-bold uppercase text-[10px] tracking-wider block">
-                        Valid {step.fodderLevel} Fodders [{step.fodderFamily}{" "}
-                        Family] ({fodders.length} Options):
-                      </span>
+                      <div className="flex justify-between items-center flex-wrap gap-1">
+                        <span className="text-amber-400 font-bold uppercase text-[10px] tracking-wider block">
+                          Valid {step.fodderLevel} Fodders [{step.fodderFamily}{" "}
+                          Family] ({fodders.length} Options):
+                        </span>
+                        <div className="flex items-center gap-2 text-[9px] text-slate-400">
+                          <span>🟢 Owned</span>
+                          <span>🔵 Catchable</span>
+                          <span>🔴 Locked Progress</span>
+                        </div>
+                      </div>
+
                       <div className="flex flex-wrap gap-1.5 max-h-40 overflow-y-auto pt-1">
-                        {fodders.map((fodder, idx) => (
-                          <button
-                            key={`${fodder.name}-${idx}`}
-                            type="button"
-                            onClick={() => onSelectDigimon(fodder.name)}
-                            className={`text-[11px] font-semibold px-2.5 py-1 rounded-xl border flex items-center gap-1.5 transition-transform hover:scale-105 ${
-                              fodder.status === "OWNED"
-                                ? "bg-emerald-500/10 text-emerald-400 border-emerald-500/30"
-                                : "bg-amber-500/10 text-amber-300 border-amber-500/30"
-                            }`}
-                          >
-                            <span>
-                              {fodder.status === "OWNED" ? "🟢" : "🟡"}
-                            </span>
-                            <span>{fodder.displayName}</span>
-                          </button>
-                        ))}
+                        {fodders.map((fodder, idx) => {
+                          let badgeStyle =
+                            "bg-amber-500/10 text-amber-300 border-amber-500/30";
+                          let icon = "🔵";
+
+                          if (fodder.status === "OWNED") {
+                            badgeStyle =
+                              "bg-emerald-500/10 text-emerald-400 border-emerald-500/30";
+                            icon = "🟢";
+                          } else if (fodder.status === "LOCKED_PROGRESS") {
+                            badgeStyle =
+                              "bg-red-500/10 text-red-400 border-red-500/30 opacity-70";
+                            icon = "🔴";
+                          }
+
+                          return (
+                            <button
+                              key={`${fodder.name}-${idx}`}
+                              type="button"
+                              onClick={() => onSelectDigimon(fodder.name)}
+                              className={`text-[11px] font-semibold px-2.5 py-1 rounded-xl border flex items-center gap-1.5 transition-transform hover:scale-105 ${badgeStyle}`}
+                            >
+                              <span>{icon}</span>
+                              <span>{formatStepDigimonName(fodder.name)}</span>
+                            </button>
+                          );
+                        })}
                       </div>
                     </div>
                   )}
