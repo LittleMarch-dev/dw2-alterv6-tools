@@ -1,0 +1,3880 @@
+{
+  "Rookies": {
+    "Agumon": [
+      {
+        "name": "Baby Flame",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Fire",
+        "AP": 17.5,
+        "MP": 8,
+        "Effect": null,
+        "Obtain": "Digivolve"
+      }
+    ],
+    "Aruraumon": [
+      {
+        "name": "Poison Ivy",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Nature",
+        "AP": 12.5,
+        "MP": 6,
+        "Effect": "33% chance of injury",
+        "Obtain": "Digivolve"
+      }
+    ],
+    "Betamon": [
+      {
+        "name": "Electric Shock",
+        "Type": "Attack",
+        "target": "Random",
+        "attribute": "Nature",
+        "AP": 17.5,
+        "MP": 6,
+        "Effect": null,
+        "Obtain": "Digivolve"
+      }
+    ],
+    "Biyomon": [
+      {
+        "name": "Magical Fire",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Fire",
+        "AP": 15.0,
+        "MP": 6,
+        "Effect": null,
+        "Obtain": "Digivolve"
+      }
+    ],
+    "BlackAgumon": [
+      {
+        "name": "Baby Flame",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Fire",
+        "AP": 17.5,
+        "MP": 8,
+        "Effect": null,
+        "Obtain": "Digivolve"
+      }
+    ],
+    "BlackGabumon": [
+      {
+        "name": "Petit Fire",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Fire",
+        "AP": 17.5,
+        "MP": 8,
+        "Effect": null,
+        "Obtain": "Digivolve"
+      },
+      {
+        "name": "Anti-Mixup",
+        "Type": "Assist",
+        "target": "Ally",
+        "attribute": null,
+        "AP": null,
+        "MP": 9,
+        "Effect": "Cure confusion and heal 20",
+        "Obtain": "DialUp Desert"
+      }
+    ],
+    "Candlemon": [
+      {
+        "name": "Bonfire",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Fire",
+        "AP": 15.0,
+        "MP": 6,
+        "Effect": null,
+        "Obtain": "Digivolve"
+      }
+    ],
+    "ClearAgumon": [
+      {
+        "name": "Toy Flame",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Fire",
+        "AP": 15.0,
+        "MP": 6,
+        "Effect": null,
+        "Obtain": "Digivolve"
+      },
+      {
+        "name": "Small Heal",
+        "Type": "Assist",
+        "target": "Ally",
+        "attribute": null,
+        "AP": null,
+        "MP": 12,
+        "Effect": "Heal 50",
+        "Obtain": "Conflux Cave"
+      }
+    ],
+    "Crabmon": [
+      {
+        "name": "Scissor Execution",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": null,
+        "AP": 15.0,
+        "MP": 6,
+        "Effect": null,
+        "Obtain": "Digivolve"
+      }
+    ],
+    "DemiDevimon": [
+      {
+        "name": "Demi Dart",
+        "Type": "Interrupt",
+        "target": null,
+        "attribute": "Darkness",
+        "AP": 12.5,
+        "MP": 8,
+        "Effect": "Reduce MP",
+        "Obtain": "Digivolve"
+      }
+    ],
+    "Dokunemon": [
+      {
+        "name": "Electro Thread",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Nature",
+        "AP": 17.5,
+        "MP": 8,
+        "Effect": null,
+        "Obtain": "Digivolve"
+      },
+      {
+        "name": "Invisibility",
+        "Type": "Assist",
+        "target": "Self",
+        "attribute": null,
+        "AP": null,
+        "MP": 18,
+        "Effect": "Cannot be main target",
+        "Obtain": "Native Forest"
+      }
+    ],
+    "Elecmon": [
+      {
+        "name": "Sparkling Thunder",
+        "Type": "Attack",
+        "target": "Random",
+        "attribute": "Nature",
+        "AP": 17.5,
+        "MP": 6,
+        "Effect": null,
+        "Obtain": "Digivolve"
+      },
+      {
+        "name": "Paralyze Breath",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": null,
+        "AP": 12.5,
+        "MP": 6,
+        "Effect": "33% chance of paralysis",
+        "Obtain": "Conflux Cave"
+      }
+    ],
+    "Floramon": [
+      {
+        "name": "Allergy Shower",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Nature",
+        "AP": 15.0,
+        "MP": 6,
+        "Effect": null,
+        "Obtain": "Digivolve"
+      }
+    ],
+    "Gabumon": [
+      {
+        "name": "Petit Fire",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Fire",
+        "AP": 17.5,
+        "MP": 8,
+        "Effect": null,
+        "Obtain": "Digivolve"
+      }
+    ],
+    "Gazimon": [
+      {
+        "name": "Paralyze Breath",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": null,
+        "AP": 12.5,
+        "MP": 6,
+        "Effect": "33% chance of paralysis",
+        "Obtain": "Digivolve"
+      }
+    ],
+    "Gizamon": [
+      {
+        "name": "Spiral Edge",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": null,
+        "AP": 15.0,
+        "MP": 6,
+        "Effect": null,
+        "Obtain": "Digivolve"
+      }
+    ],
+    "Goburimon": [
+      {
+        "name": "Gob Bolt",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Water",
+        "AP": 15.0,
+        "MP": 6,
+        "Effect": null,
+        "Obtain": "Digivolve"
+      },
+      {
+        "name": "Life Shield",
+        "Type": "Interrupt",
+        "target": null,
+        "attribute": null,
+        "AP": null,
+        "MP": 7,
+        "Effect": "Reduce AP by 25%",
+        "Obtain": "Conflux Cave, FSB Field, Client Coast, Protocol Pit, Core Tower"
+      },
+      {
+        "name": "Friendly Fire",
+        "Type": "Attack",
+        "target": "Ally",
+        "attribute": "Fire",
+        "AP": 12.5,
+        "MP": 5,
+        "Effect": "Cure confusion",
+        "Obtain": "Native Forest, Tropical Jungle"
+      }
+    ],
+    "Gomamon": [
+      {
+        "name": "Marching Fishes",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Water",
+        "AP": 15.0,
+        "MP": 6,
+        "Effect": null,
+        "Obtain": "Digivolve"
+      }
+    ],
+    "Gotsumon": [
+      {
+        "name": "Andry Rock",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": null,
+        "AP": 17.5,
+        "MP": 8,
+        "Effect": null,
+        "Obtain": "Digivolve"
+      }
+    ],
+    "Hagurumon": [
+      {
+        "name": "Darkness Gear",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Machine",
+        "AP": 17.5,
+        "MP": 8,
+        "Effect": null,
+        "Obtain": "Digivolve"
+      }
+    ],
+    "Kunemon": [
+      {
+        "name": "Electro Thread",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Nature",
+        "AP": 17.5,
+        "MP": 8,
+        "Effect": null,
+        "Obtain": "Digivolve"
+      }
+    ],
+    "ModokiBetamon": [
+      {
+        "name": "Electric Shock",
+        "Type": "Attack",
+        "target": "Random",
+        "attribute": "Nature",
+        "AP": 17.5,
+        "MP": 6,
+        "Effect": null,
+        "Obtain": "Digivolve"
+      },
+      {
+        "name": "Anti-Freeze",
+        "Type": "Assist",
+        "target": "Ally",
+        "attribute": null,
+        "AP": null,
+        "MP": 9,
+        "Effect": "Cure paralysis and heal 20",
+        "Obtain": "Initial Cave, UEFI Uplands, Core Tower"
+      }
+    ],
+    "Muchomon": [
+      {
+        "name": "Super Slap",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": null,
+        "AP": 15.0,
+        "MP": 6,
+        "Effect": null,
+        "Obtain": "Digivolve"
+      },
+      {
+        "name": "Small Heal",
+        "Type": "Assist",
+        "target": "Ally",
+        "attribute": null,
+        "AP": null,
+        "MP": 12,
+        "Effect": "Heal 50",
+        "Obtain": "Registry Roost, Codec Cavern, Core Tower"
+      }
+    ],
+    "Mushroomon": [
+      {
+        "name": "Allergy Shower",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Nature",
+        "AP": 15.0,
+        "MP": 6,
+        "Effect": null,
+        "Obtain": "Digivolve"
+      }
+    ],
+    "Otamamon": [
+      {
+        "name": "Stun Bubble",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Water",
+        "AP": 12.5,
+        "MP": 6,
+        "Effect": "33% chance of confusion",
+        "Obtain": "Digivolve"
+      }
+    ],
+    "Palmon": [
+      {
+        "name": "Poison Ivy",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Nature",
+        "AP": 12.5,
+        "MP": 6,
+        "Effect": "33% chance of injury",
+        "Obtain": "Digivolve"
+      }
+    ],
+    "Patamon": [
+      {
+        "name": "Air Shot",
+        "Type": "Counter",
+        "target": "Enemy",
+        "attribute": "Nature",
+        "AP": 15.0,
+        "MP": 7,
+        "Effect": "High accuracy",
+        "Obtain": "Digivolve"
+      }
+    ],
+    "Penguinmon": [
+      {
+        "name": "Super Slap",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": null,
+        "AP": 15.0,
+        "MP": 6,
+        "Effect": null,
+        "Obtain": "Digivolve"
+      }
+    ],
+    "Psychemon": [
+      {
+        "name": "Colorful Spark",
+        "Type": "Attack",
+        "target": "All Enemy",
+        "attribute": "Nature",
+        "AP": 12.5,
+        "MP": 10,
+        "Effect": "User's defense is halved until the end of this turn",
+        "Obtain": "Digivolve"
+      }
+    ],
+    "S-ToyAgumon": [
+      {
+        "name": "Toy Flame",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Fire",
+        "AP": 15.0,
+        "MP": 6,
+        "Effect": null,
+        "Obtain": "Digivolve"
+      },
+      {
+        "name": "Patch-Up",
+        "Type": "Assist",
+        "target": "Ally",
+        "attribute": null,
+        "AP": null,
+        "MP": 9,
+        "Effect": "Cure injury and heal 20",
+        "Obtain": "FSB Field, Core Tower"
+      }
+    ],
+    "Shamamon": [
+      {
+        "name": "Shama Bomb",
+        "Type": "Attack",
+        "target": "All Enemy",
+        "attribute": null,
+        "AP": 12.5,
+        "MP": 10,
+        "Effect": "User's defense is halved until the end of this turn",
+        "Obtain": "Digivolve"
+      },
+      {
+        "name": "Gob Bolt",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Water",
+        "AP": 15.0,
+        "MP": 6,
+        "Effect": null,
+        "Obtain": "Conflux Cave"
+      }
+    ],
+    "SnowAgumon": [
+      {
+        "name": "Hail Storm",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Water",
+        "AP": 17.5,
+        "MP": 8,
+        "Effect": null,
+        "Obtain": "Digivolve"
+      }
+    ],
+    "SnowGoburimon": [
+      {
+        "name": "Gob Bolt",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Water",
+        "AP": 15.0,
+        "MP": 6,
+        "Effect": null,
+        "Obtain": "Digivolve"
+      },
+      {
+        "name": "Life Shield",
+        "Type": "Interrupt",
+        "target": null,
+        "attribute": null,
+        "AP": null,
+        "MP": 7,
+        "Effect": "Reduce AP by 25%",
+        "Obtain": "Conflux Cave"
+      }
+    ],
+    "Solarmon": [
+      {
+        "name": "Sol Calor",
+        "Type": "Attack",
+        "target": "All Enemy",
+        "attribute": "Fire",
+        "AP": 12.5,
+        "MP": 10,
+        "Effect": "User's defense is halved until the end of this turn",
+        "Obtain": "Digivolve"
+      },
+      {
+        "name": "Friendly Fire",
+        "Type": "Attack",
+        "target": "Ally",
+        "attribute": "Fire",
+        "AP": 12.5,
+        "MP": 5,
+        "Effect": "Cure confusion",
+        "Obtain": "Registry Roost, TCP Terrace, Protocol Pit, Core Tower"
+      }
+    ],
+    "Syakomon": [
+      {
+        "name": "Black Pearl",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": null,
+        "AP": 20.0,
+        "MP": 8,
+        "Effect": "Be the last to attack",
+        "Obtain": "Digivolve"
+      },
+      {
+        "name": "Stun Bubble",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Water",
+        "AP": 12.5,
+        "MP": 6,
+        "Effect": "33% chance of confusion",
+        "Obtain": "IDS Ice Cave"
+      },
+      {
+        "name": "Small Heal",
+        "Type": "Assist",
+        "target": "Ally",
+        "attribute": null,
+        "AP": null,
+        "MP": 12,
+        "Effect": "Heal 50",
+        "Obtain": "IDS Ice Cave"
+      }
+    ],
+    "Tapirmon": [
+      {
+        "name": "Nightmare Syndrome",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Darkness",
+        "AP": 17.5,
+        "MP": 8,
+        "Effect": null,
+        "Obtain": "Digivolve"
+      }
+    ],
+    "Tentomon": [
+      {
+        "name": "Petit Thunder",
+        "Type": "Attack",
+        "target": "Random",
+        "attribute": "Nature",
+        "AP": 17.5,
+        "MP": 6,
+        "Effect": null,
+        "Obtain": "Digivolve"
+      }
+    ],
+    "ToyAgumon": [
+      {
+        "name": "Toy Flame",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Fire",
+        "AP": 15.0,
+        "MP": 6,
+        "Effect": null,
+        "Obtain": "Digivolve"
+      }
+    ],
+    "Tsukaimon": [
+      {
+        "name": "Air Shot",
+        "Type": "Counter",
+        "target": "Enemy",
+        "attribute": "Nature",
+        "AP": 15.0,
+        "MP": 7,
+        "Effect": "High accuracy",
+        "Obtain": "Digivolve"
+      }
+    ],
+    "Veemon": [
+      {
+        "name": "Vee Headbutt",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": null,
+        "AP": 17.5,
+        "MP": 8,
+        "Effect": null,
+        "Obtain": "Digivolve"
+      }
+    ]
+  },
+  "Champions": {
+    "Airdramon": [
+      {
+        "name": "Spinning Needle",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Nature",
+        "AP": 22.5,
+        "MP": 10,
+        "Effect": "AP is 1.5x if the user is hit by an interrupt",
+        "Obtain": "Digivolve"
+      }
+    ],
+    "Akatorimon": [
+      {
+        "name": "Petri-Fire",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Fire",
+        "AP": 22.5,
+        "MP": 12,
+        "Effect": "66% chance of paralysis",
+        "Obtain": "Digivolve"
+      },
+      {
+        "name": "Turbo Rooster",
+        "Type": "Assist",
+        "target": "Ally",
+        "attribute": null,
+        "AP": null,
+        "MP": 18,
+        "Effect": "Boost speed (Max is 2x)",
+        "Obtain": "Readme Ruins, Coastal Depot, Titan Bunker, Native Forest, Misty Trees, Factorial Town, Core Tower"
+      }
+    ],
+    "Angemon": [
+      {
+        "name": "Heaven's Knuckle",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": null,
+        "AP": 27.5,
+        "MP": 16,
+        "Effect": null,
+        "Obtain": "Digivolve"
+      }
+    ],
+    "Apemon": [
+      {
+        "name": "Dohatsuten",
+        "Type": "Attack",
+        "target": "All Enemy",
+        "attribute": null,
+        "AP": 20.0,
+        "MP": 26,
+        "Effect": null,
+        "Obtain": "Digivolve"
+      }
+    ],
+    "B-Garurumon": [
+      {
+        "name": "Fox Fire",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Fire",
+        "AP": 27.5,
+        "MP": 18,
+        "Effect": null,
+        "Obtain": "Digivolve"
+      },
+      {
+        "name": "Fossil Bite",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": null,
+        "AP": 25.0,
+        "MP": 14,
+        "Effect": "33% chance of injury",
+        "Obtain": "Deserted Fort, Core Tower"
+      },
+      {
+        "name": "Mad Coat",
+        "Type": "Assist",
+        "target": "Ally",
+        "attribute": null,
+        "AP": null,
+        "MP": 20,
+        "Effect": "Boost attack (Max is 2x)",
+        "Obtain": "Deserted Fort, Core Tower"
+      },
+      {
+        "name": "Darkness Ray",
+        "Type": "Assist",
+        "target": "All Ally",
+        "attribute": null,
+        "AP": null,
+        "MP": 10,
+        "Effect": "Attacks become darkness",
+        "Obtain": "Beetleland"
+      }
+    ],
+    "Bakemon": [
+      {
+        "name": "Death Charm",
+        "Type": "Attack",
+        "target": "Random",
+        "attribute": "Darkness",
+        "AP": 27.5,
+        "MP": 12,
+        "Effect": null,
+        "Obtain": "Digivolve"
+      },
+      {
+        "name": "Death Claw",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Darkness",
+        "AP": 25.0,
+        "MP": 12,
+        "Effect": "Reduce MP",
+        "Obtain": "IDS Ice Cave, Titan Bunker, Freezeland"
+      },
+      {
+        "name": "Dark Inferno",
+        "Type": "Assist",
+        "target": "All Enemy",
+        "attribute": null,
+        "AP": null,
+        "MP": 10,
+        "Effect": "Attacks become darkness",
+        "Obtain": "IDS Ice Cave, Titan Bunker, Freezeland"
+      },
+      {
+        "name": "Triplex Force",
+        "Type": "Attack",
+        "target": "All Enemy",
+        "attribute": "Darkness",
+        "AP": 17.5,
+        "MP": 24,
+        "Effect": null,
+        "Obtain": "Misty Trees, GreyLord Manor"
+      }
+    ],
+    "Birdramon": [
+      {
+        "name": "Meteor Wing",
+        "Type": "Attack",
+        "target": "All Enemy",
+        "attribute": "Fire",
+        "AP": 20.0,
+        "MP": 28,
+        "Effect": null,
+        "Obtain": "Digivolve"
+      },
+      {
+        "name": "Mega Flame",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Fire",
+        "AP": 27.5,
+        "MP": 18,
+        "Effect": null,
+        "Obtain": "QoS Quarry, Titan Bunker, Great Canyon, Core Tower"
+      }
+    ],
+    "Centarumon": [
+      {
+        "name": "Hunting Cannon",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Machine",
+        "AP": 22.5,
+        "MP": 16,
+        "Effect": "33% chance of injury and paralysis",
+        "Obtain": "Digivolve"
+      },
+      {
+        "name": "Mech Ray",
+        "Type": "Assist",
+        "target": "All Ally",
+        "attribute": null,
+        "AP": null,
+        "MP": 10,
+        "Effect": "Attacks become machine",
+        "Obtain": "Readme Ruins"
+      }
+    ],
+    "Clockmon": [
+      {
+        "name": "Chrono Breaker",
+        "Type": "Interrupt",
+        "target": null,
+        "attribute": "Machine",
+        "AP": 22.5,
+        "MP": 14,
+        "Effect": "Be the last to attack",
+        "Obtain": "Digivolve"
+      },
+      {
+        "name": "Darkness Gear",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Machine",
+        "AP": 17.5,
+        "MP": 8,
+        "Effect": null,
+        "Obtain": "Deserted Fort, Core Tower"
+      }
+    ],
+    "Coelamon": [
+      {
+        "name": "Fossil Bite",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": null,
+        "AP": 25.0,
+        "MP": 14,
+        "Effect": "33% chance of injury",
+        "Obtain": "Digivolve"
+      }
+    ],
+    "Cyclomon": [
+      {
+        "name": "Hyper Heat",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Fire",
+        "AP": 25.0,
+        "MP": 12,
+        "Effect": null,
+        "Obtain": "Digivolve"
+      },
+      {
+        "name": "Scissoer Arm",
+        "Type": "Attack",
+        "target": "Random",
+        "attribute": null,
+        "AP": 22.5,
+        "MP": 20,
+        "Effect": "Reduce the enemy's defense, but the user's defense is halved until the end of this turn",
+        "Obtain": "PCI Preserve, Core Tower"
+      },
+      {
+        "name": "Crimson Nail",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Darkness",
+        "AP": 30.0,
+        "MP": 22,
+        "Effect": "Copy confusion, demotivating, injury, paralysis from user to enemy",
+        "Obtain": "Undersea Base, Coastal Depot, Core Tower"
+      },
+      {
+        "name": "Hydro Pressure",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Water",
+        "AP": 25.0,
+        "MP": 14,
+        "Effect": null,
+        "Obtain": "Undersea Base, Coastal Depot, Core Tower"
+      }
+    ],
+    "D-Tyrannomon": [
+      {
+        "name": "Fire Blast",
+        "Type": "Attack",
+        "target": "All Enemy",
+        "attribute": "Fire",
+        "AP": 17.5,
+        "MP": 24,
+        "Effect": null,
+        "Obtain": "Digivolve"
+      }
+    ],
+    "DarkLizamon": [
+      {
+        "name": "Hyper Heat",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Fire",
+        "AP": 25.0,
+        "MP": 12,
+        "Effect": null,
+        "Obtain": "Digivolve"
+      },
+      {
+        "name": "Darkness Ray",
+        "Type": "Assist",
+        "target": "All Ally",
+        "attribute": null,
+        "AP": null,
+        "MP": 10,
+        "Effect": "Attacks become darkness",
+        "Obtain": "PCI Preserve"
+      },
+      {
+        "name": "Fire Blast",
+        "Type": "Attack",
+        "target": "All Enemy",
+        "attribute": "Fire",
+        "AP": 17.5,
+        "MP": 24,
+        "Effect": null,
+        "Obtain": "QoS Quarry, Core Tower"
+      },
+      {
+        "name": "Dark Inferno",
+        "Type": "Assist",
+        "target": "All Enemy",
+        "attribute": null,
+        "AP": null,
+        "MP": 10,
+        "Effect": "Attacks become darkness",
+        "Obtain": "QoS Quarry, Beetleland, Core Tower"
+      },
+      {
+        "name": "Hazard Breath",
+        "Type": "Interrupt",
+        "target": null,
+        "attribute": "Nature",
+        "AP": 22.5,
+        "MP": 16,
+        "Effect": "33% chance of injury",
+        "Obtain": "Misty Trees, GreyLord Manor"
+      },
+      {
+        "name": "Petri-Fire",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Fire",
+        "AP": 22.5,
+        "MP": 12,
+        "Effect": "66% chance of paralysis",
+        "Obtain": "Beetleland"
+      }
+    ],
+    "Deltamon": [
+      {
+        "name": "Triplex Force",
+        "Type": "Attack",
+        "target": "All Enemy",
+        "attribute": "Darkness",
+        "AP": 17.5,
+        "MP": 24,
+        "Effect": null,
+        "Obtain": "Digivolve"
+      }
+    ],
+    "Devidramon": [
+      {
+        "name": "Crimson Nail",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Darkness",
+        "AP": 30.0,
+        "MP": 22,
+        "Effect": "Copy confusion, demotivating, injury, paralysis from user to enemy",
+        "Obtain": "Digivolve"
+      }
+    ],
+    "Devimon": [
+      {
+        "name": "Death Claw",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Darkness",
+        "AP": 25.0,
+        "MP": 12,
+        "Effect": "Reduce MP",
+        "Obtain": "Digivolve"
+      }
+    ],
+    "Dolphmon": [
+      {
+        "name": "Pulse Blast",
+        "Type": "Attack",
+        "target": "Random",
+        "attribute": null,
+        "AP": 22.5,
+        "MP": 20,
+        "Effect": "Reduce the enemy's attack, but the user's defense is halved until the end of this turn",
+        "Obtain": "Digivolve"
+      }
+    ],
+    "Drimogemon": [
+      {
+        "name": "Drill Spin",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Machine",
+        "AP": 27.5,
+        "MP": 20,
+        "Effect": "33% chance of injury",
+        "Obtain": "Digivolve"
+      },
+      {
+        "name": "Flame Hit",
+        "Type": "Assist",
+        "target": "All Ally",
+        "attribute": null,
+        "AP": null,
+        "MP": 10,
+        "Effect": "Attacks become fire",
+        "Obtain": "Factorial Town, Mt. Infinity"
+      }
+    ],
+    "Flamedramon": [
+      {
+        "name": "Fire Rocket",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Fire",
+        "AP": 30.0,
+        "MP": 20,
+        "Effect": null,
+        "Obtain": "Digivolve"
+      }
+    ],
+    "FlareLizamon": [
+      {
+        "name": "Blaze Blast",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Fire",
+        "AP": 25.0,
+        "MP": 14,
+        "Effect": null,
+        "Obtain": "Digivolve"
+      },
+      {
+        "name": "Hyper Heat",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Fire",
+        "AP": 25.0,
+        "MP": 12,
+        "Effect": null,
+        "Obtain": "PCI Preserve, QoS Quarry, Titan Bunker, Native Forest, Misty Trees, Factorial Town, Core Tower"
+      },
+      {
+        "name": "Meteor Squall",
+        "Type": "Counter",
+        "target": "Enemy",
+        "attribute": "Fire",
+        "AP": 27.5,
+        "MP": 20,
+        "Effect": "Counter-attack will be an area of effect",
+        "Obtain": "PCI Preserve, Core Tower"
+      },
+      {
+        "name": "Blaze Buster",
+        "Type": "Assist",
+        "target": "All Enemy",
+        "attribute": null,
+        "AP": null,
+        "MP": 10,
+        "Effect": "Attacks become fire",
+        "Obtain": "QoS Quarry, Titan Bunker, Core Tower"
+      },
+      {
+        "name": "Fire Blast",
+        "Type": "Attack",
+        "target": "All Enemy",
+        "attribute": "Fire",
+        "AP": 17.5,
+        "MP": 24,
+        "Effect": null,
+        "Obtain": "Tropical Jungle, Great Canyon, Factorial Town"
+      }
+    ],
+    "Flymon": [
+      {
+        "name": "Deadly Sting",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Nature",
+        "AP": 22.5,
+        "MP": 12,
+        "Effect": "66% chance of injury",
+        "Obtain": "Digivolve"
+      }
+    ],
+    "Frigimon": [
+      {
+        "name": "Sub Zero Ice Punch",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Water",
+        "AP": 22.5,
+        "MP": 16,
+        "Effect": "Every attack stacks 2.5 AP",
+        "Obtain": "Digivolve"
+      },
+      {
+        "name": "Ice Arrow",
+        "Type": "Attack",
+        "target": "All Enemy",
+        "attribute": "Water",
+        "AP": 20.0,
+        "MP": 28,
+        "Effect": null,
+        "Obtain": "Freezeland"
+      }
+    ],
+    "Fugamon": [
+      {
+        "name": "Evil Hurricane",
+        "Type": "Counter",
+        "target": "Enemy",
+        "attribute": "Nature",
+        "AP": 22.5,
+        "MP": 20,
+        "Effect": "100% chance of injury and counter-attack will be an area of effect",
+        "Obtain": "Digivolve"
+      }
+    ],
+    "Garurumon": [
+      {
+        "name": "Fox Fire",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Fire",
+        "AP": 27.5,
+        "MP": 18,
+        "Effect": null,
+        "Obtain": "Digivolve"
+      }
+    ],
+    "Gatomon": [
+      {
+        "name": "Cat Punch",
+        "Type": "Interrupt",
+        "target": null,
+        "attribute": null,
+        "AP": 27.5,
+        "MP": 18,
+        "Effect": null,
+        "Obtain": "Digivolve"
+      },
+      {
+        "name": "Ice Arrow",
+        "Type": "Attack",
+        "target": "All Enemy",
+        "attribute": "Water",
+        "AP": 20.0,
+        "MP": 28,
+        "Effect": null,
+        "Obtain": "Freezeland"
+      }
+    ],
+    "Gekomon": [
+      {
+        "name": "Sonic Crusher",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": null,
+        "AP": 22.5,
+        "MP": 12,
+        "Effect": "66% chance of confusion",
+        "Obtain": "Digivolve"
+      },
+      {
+        "name": "Panic Wave",
+        "Type": "Assist",
+        "target": "Ally",
+        "attribute": null,
+        "AP": null,
+        "MP": 14,
+        "Effect": "Attacks have a 100% chance of confusion",
+        "Obtain": "Undersea Base, Coastal Depot, Core Tower"
+      }
+    ],
+    "Gesomon": [
+      {
+        "name": "Deadly Shade",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Water",
+        "AP": 22.5,
+        "MP": 16,
+        "Effect": "Reduce speed (Max is 2x)",
+        "Obtain": "Digivolve"
+      }
+    ],
+    "Greymon": [
+      {
+        "name": "Mega Flame",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Fire",
+        "AP": 27.5,
+        "MP": 18,
+        "Effect": null,
+        "Obtain": "Digivolve"
+      },
+      {
+        "name": "Mega Heal",
+        "Type": "Assist",
+        "target": "Ally",
+        "attribute": null,
+        "AP": null,
+        "MP": 26,
+        "Effect": "Heal 100",
+        "Obtain": "PCI Preserve, Core Tower"
+      },
+      {
+        "name": "Evil Hurricane",
+        "Type": "Counter",
+        "target": "Enemy",
+        "attribute": "Nature",
+        "AP": 22.5,
+        "MP": 20,
+        "Effect": "100% chance of injury and counter-attack will be an area of effect",
+        "Obtain": "Great Canyon"
+      }
+    ],
+    "Guardromon": [
+      {
+        "name": "Destruction Grenade",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Machine",
+        "AP": 25.0,
+        "MP": 15,
+        "Effect": "High accuracy",
+        "Obtain": "Digivolve"
+      },
+      {
+        "name": "Mech Ray",
+        "Type": "Assist",
+        "target": "All Ally",
+        "attribute": null,
+        "AP": null,
+        "MP": 10,
+        "Effect": "Attacks become machine",
+        "Obtain": "Factorial Town, Mt. Infinity, Staog Shrine, Rootkit Rift, Core Tower, Chaos Tower"
+      }
+    ],
+    "Gururumon": [
+      {
+        "name": "Fox Fire",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Fire",
+        "AP": 27.5,
+        "MP": 18,
+        "Effect": null,
+        "Obtain": "Digivolve"
+      }
+    ],
+    "Hyogamon": [
+      {
+        "name": "Icicle Shot",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Water",
+        "AP": 25.0,
+        "MP": 14,
+        "Effect": null,
+        "Obtain": "Digivolve"
+      },
+      {
+        "name": "Ice Arrow",
+        "Type": "Attack",
+        "target": "All Enemy",
+        "attribute": "Water",
+        "AP": 20.0,
+        "MP": 28,
+        "Effect": null,
+        "Obtain": "IDS Ice Cave, Titan Bunker, Freezeland"
+      }
+    ],
+    "IceDevimon": [
+      {
+        "name": "Death Claw",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Darkness",
+        "AP": 25.0,
+        "MP": 12,
+        "Effect": "Reduce MP",
+        "Obtain": "Digivolve"
+      },
+      {
+        "name": "Ice Arrow",
+        "Type": "Attack",
+        "target": "All Enemy",
+        "attribute": "Water",
+        "AP": 20.0,
+        "MP": 28,
+        "Effect": null,
+        "Obtain": "IDS Ice Cave, Titan Bunker, Freezeland"
+      }
+    ],
+    "Icemon": [
+      {
+        "name": "Ice Arrow",
+        "Type": "Attack",
+        "target": "All Enemy",
+        "attribute": "Water",
+        "AP": 20.0,
+        "MP": 28,
+        "Effect": null,
+        "Obtain": "Digivolve"
+      },
+      {
+        "name": "Panzer Knuckle",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": null,
+        "AP": 25.0,
+        "MP": 15,
+        "Effect": "The user's speed is 2x until the end of this turn",
+        "Obtain": "IDS Ice Cave"
+      },
+      {
+        "name": "Solid State",
+        "Type": "Assist",
+        "target": "Ally",
+        "attribute": null,
+        "AP": null,
+        "MP": 20,
+        "Effect": "Boost defense (Max is 2x)",
+        "Obtain": "IDS Ice Cave, Freezeland, Factorial Town"
+      },
+      {
+        "name": "Hydro Pressure",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Water",
+        "AP": 25.0,
+        "MP": 14,
+        "Effect": null,
+        "Obtain": "Freezeland, Factorial Town"
+      }
+    ],
+    "Ikkakumon": [
+      {
+        "name": "Harpoon Vulcan",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Machine",
+        "AP": 27.5,
+        "MP": 17,
+        "Effect": null,
+        "Obtain": "Digivolve"
+      },
+      {
+        "name": "Water Ray",
+        "Type": "Assist",
+        "target": "All Ally",
+        "attribute": null,
+        "AP": null,
+        "MP": 10,
+        "Effect": "Attacks become water",
+        "Obtain": "IDS Ice Cave, Titan Bunker, Core Tower"
+      }
+    ],
+    "Kabuterimon": [
+      {
+        "name": "Mega Blaster",
+        "Type": "Interrupt",
+        "target": null,
+        "attribute": "Nature",
+        "AP": 22.5,
+        "MP": 18,
+        "Effect": "Reduce AP by 25%",
+        "Obtain": "Digivolve"
+      },
+      {
+        "name": "Deadly Sting",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Nature",
+        "AP": 22.5,
+        "MP": 12,
+        "Effect": "66% chance of injury",
+        "Obtain": "PCI Preserve, Core Tower"
+      },
+      {
+        "name": "Electro Thread",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Nature",
+        "AP": 17.5,
+        "MP": 8,
+        "Effect": null,
+        "Obtain": "QoS Quarry, Titan Bunker, Core Tower"
+      }
+    ],
+    "Kiwimon": [
+      {
+        "name": "Pummel Peck",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Nature",
+        "AP": 27.5,
+        "MP": 17,
+        "Effect": null,
+        "Obtain": "Digivolve"
+      },
+      {
+        "name": "Nature Hit",
+        "Type": "Assist",
+        "target": "All Ally",
+        "attribute": null,
+        "AP": null,
+        "MP": 10,
+        "Effect": "Attacks become nature",
+        "Obtain": "Exchange with a Frigimon at digimon center"
+      }
+    ],
+    "Kogamon": [
+      {
+        "name": "Ninja Knife Throw",
+        "Type": "Counter",
+        "target": "Enemy",
+        "attribute": null,
+        "AP": 22.5,
+        "MP": 14,
+        "Effect": "Counter-attack power will be 1.5x",
+        "Obtain": "Digivolve"
+      },
+      {
+        "name": "Darkness Ray",
+        "Type": "Assist",
+        "target": "All Ally",
+        "attribute": null,
+        "AP": null,
+        "MP": 10,
+        "Effect": "Attacks become darkness",
+        "Obtain": "Deserted Fort, Core Tower"
+      }
+    ],
+    "Kokatorimon": [
+      {
+        "name": "Petri-Fire",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Fire",
+        "AP": 22.5,
+        "MP": 12,
+        "Effect": "66% chance of paralysis",
+        "Obtain": "Digivolve"
+      },
+      {
+        "name": "Fire Blast",
+        "Type": "Attack",
+        "target": "All Enemy",
+        "attribute": "Fire",
+        "AP": 17.5,
+        "MP": 24,
+        "Effect": null,
+        "Obtain": "TCP Terrace, Core Tower"
+      },
+      {
+        "name": "Flame Hit",
+        "Type": "Assist",
+        "target": "All Ally",
+        "attribute": null,
+        "AP": null,
+        "MP": 10,
+        "Effect": "Attacks become fire",
+        "Obtain": "DialUp Desert, Coastal Depot, Titan Bunker"
+      }
+    ],
+    "Kuwagamon": [
+      {
+        "name": "Scissoer Arm",
+        "Type": "Attack",
+        "target": "Random",
+        "attribute": null,
+        "AP": 22.5,
+        "MP": 20,
+        "Effect": "Reduce the enemy's defense, but the user's defense is halved until the end of this turn",
+        "Obtain": "Digivolve"
+      }
+    ],
+    "Leomon": [
+      {
+        "name": "Jyuouken",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": null,
+        "AP": 27.5,
+        "MP": 14,
+        "Effect": "Counter-attack damage will be 1.5x of damage taken",
+        "Obtain": "Digivolve"
+      },
+      {
+        "name": "Holy Shot",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": null,
+        "AP": 25.0,
+        "MP": 12,
+        "Effect": null,
+        "Obtain": "Readme Ruins, Coastal Depot, Core Tower"
+      },
+      {
+        "name": "Cat Punch",
+        "Type": "Interrupt",
+        "target": null,
+        "attribute": null,
+        "AP": 27.5,
+        "MP": 18,
+        "Effect": null,
+        "Obtain": "Native Forest"
+      }
+    ],
+    "Meramon": [
+      {
+        "name": "Burning Fist",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Fire",
+        "AP": 27.5,
+        "MP": 20,
+        "Effect": "33% chance of injury",
+        "Obtain": "Digivolve"
+      }
+    ],
+    "Mojyamon": [
+      {
+        "name": "Icicle Shot",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Water",
+        "AP": 25.0,
+        "MP": 14,
+        "Effect": null,
+        "Obtain": "Digivolve"
+      },
+      {
+        "name": "Cold Blood",
+        "Type": "Assist",
+        "target": "All Enemy",
+        "attribute": null,
+        "AP": null,
+        "MP": 10,
+        "Effect": "Attacks become water",
+        "Obtain": "IDS Ice Cave, Titan Bunker, Freezeland"
+      }
+    ],
+    "Monochromon": [
+      {
+        "name": "Volcano Strike",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Fire",
+        "AP": 27.5,
+        "MP": 16,
+        "Effect": null,
+        "Obtain": "Digivolve"
+      }
+    ],
+    "MoriShellmon": [
+      {
+        "name": "Hydro Pressure",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Water",
+        "AP": 25.0,
+        "MP": 14,
+        "Effect": null,
+        "Obtain": "Digivolve"
+      },
+      {
+        "name": "Icicle Shot",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Water",
+        "AP": 25.0,
+        "MP": 14,
+        "Effect": null,
+        "Obtain": "Deserted Fort, Core Tower"
+      },
+      {
+        "name": "Thunder Ray",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Nature",
+        "AP": 25.0,
+        "MP": 14,
+        "Effect": null,
+        "Obtain": "Deserted Fort, Core Tower"
+      },
+      {
+        "name": "Green Trap",
+        "Type": "Counter",
+        "target": "Enemy",
+        "attribute": "Nature",
+        "AP": 22.5,
+        "MP": 11,
+        "Effect": "25% chance of having the enemy attack miss",
+        "Obtain": "Tropical Jungle, Misty Trees"
+      }
+    ],
+    "N-Drimogemon": [
+      {
+        "name": "Drill Spin",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Machine",
+        "AP": 27.5,
+        "MP": 20,
+        "Effect": "33% chance of injury",
+        "Obtain": "Digivolve"
+      }
+    ],
+    "Nanimon": [
+      {
+        "name": "Poop Toss",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Darkness",
+        "AP": 25.0,
+        "MP": 14,
+        "Effect": "AP is 1.5x if the user has an injury",
+        "Obtain": "Digivolve"
+      },
+      {
+        "name": "Heaven's Knuckle",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": null,
+        "AP": 27.5,
+        "MP": 16,
+        "Effect": null,
+        "Obtain": "Native Forest, Misty Trees"
+      },
+      {
+        "name": "Poison Mushroom",
+        "Type": "Assist",
+        "target": "Ally",
+        "attribute": null,
+        "AP": null,
+        "MP": 8,
+        "Effect": "Attacks have a 100% chance of injury",
+        "Obtain": "Native Forest, Misty Trees"
+      }
+    ],
+    "Ninjamon": [
+      {
+        "name": "Ninja Knife Throw",
+        "Type": "Counter",
+        "target": "Enemy",
+        "attribute": null,
+        "AP": 22.5,
+        "MP": 14,
+        "Effect": "Counter-attack power will be 1.5x",
+        "Obtain": "Digivolve"
+      }
+    ],
+    "Numemon": [
+      {
+        "name": "Horizontal Kick",
+        "Type": "Attack",
+        "target": "Random",
+        "attribute": null,
+        "AP": 25.0,
+        "MP": 10,
+        "Effect": "Be the last to attack",
+        "Obtain": "Digivolve"
+      },
+      {
+        "name": "Buffalo Breath",
+        "Type": "Counter",
+        "target": "Enemy",
+        "attribute": "Darkness",
+        "AP": 25.0,
+        "MP": 16,
+        "Effect": "Counter-attack has a 100% chance of confusion",
+        "Obtain": "Native Forest, Tropical Jungle"
+      }
+    ],
+    "Octomon": [
+      {
+        "name": "Ink Gun",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Water",
+        "AP": 27.5,
+        "MP": 17,
+        "Effect": null,
+        "Obtain": "Digivolve"
+      }
+    ],
+    "Orgemon": [
+      {
+        "name": "Haouken",
+        "Type": "Counter",
+        "target": "Enemy",
+        "attribute": null,
+        "AP": 30.0,
+        "MP": 20,
+        "Effect": "Counter-attack reduces MP",
+        "Obtain": "Digivolve"
+      },
+      {
+        "name": "Mega Heal",
+        "Type": "Assist",
+        "target": "Ally",
+        "attribute": null,
+        "AP": null,
+        "MP": 26,
+        "Effect": "Heal 100",
+        "Obtain": "QoS Quarry, Titan Bunker, Great Canyon, Core Tower"
+      }
+    ],
+    "P-Sukamon": [
+      {
+        "name": "Poop Toss",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Darkness",
+        "AP": 25.0,
+        "MP": 14,
+        "Effect": "AP is 1.5x if the user has an injury",
+        "Obtain": "Digivolve"
+      }
+    ],
+    "Raremon": [
+      {
+        "name": "Buffalo Breath",
+        "Type": "Counter",
+        "target": "Enemy",
+        "attribute": "Darkness",
+        "AP": 25.0,
+        "MP": 16,
+        "Effect": "Counter-attack has a 100% chance of confusion",
+        "Obtain": "Digivolve"
+      },
+      {
+        "name": "Fire Blast",
+        "Type": "Attack",
+        "target": "All Enemy",
+        "attribute": "Fire",
+        "AP": 17.5,
+        "MP": 24,
+        "Effect": null,
+        "Obtain": "GreyLord Manor, Mt. Infinity"
+      }
+    ],
+    "RedVegimon": [
+      {
+        "name": "Hazard Breath",
+        "Type": "Interrupt",
+        "target": null,
+        "attribute": "Nature",
+        "AP": 22.5,
+        "MP": 16,
+        "Effect": "33% chance of injury",
+        "Obtain": "Digivolve"
+      },
+      {
+        "name": "Poison Mushroom",
+        "Type": "Assist",
+        "target": "Ally",
+        "attribute": null,
+        "AP": null,
+        "MP": 8,
+        "Effect": "Attacks have a 100% chance of injury",
+        "Obtain": "RISC River, Coastal Depot, Core Tower"
+      }
+    ],
+    "SandYanmamon": [
+      {
+        "name": "Thunder Ray",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Nature",
+        "AP": 25.0,
+        "MP": 14,
+        "Effect": null,
+        "Obtain": "Digivolve"
+      },
+      {
+        "name": "Stun Ray",
+        "Type": "Assist",
+        "target": "Ally",
+        "attribute": null,
+        "AP": null,
+        "MP": 14,
+        "Effect": "Attacks have a 100% chance of paralysis",
+        "Obtain": "DialUp Desert, Great Canyon, Mt. Infinity, Staog Shrine, Core Tower"
+      },
+      {
+        "name": "Evil Hurricane",
+        "Type": "Counter",
+        "target": "Enemy",
+        "attribute": "Nature",
+        "AP": 22.5,
+        "MP": 20,
+        "Effect": "100% chance of injury and counter-attack will be an area of effect",
+        "Obtain": "Deserted Fort, Titan Bunker, Great Canyon"
+      }
+    ],
+    "Seadramon": [
+      {
+        "name": "Ice Arrow",
+        "Type": "Attack",
+        "target": "All Enemy",
+        "attribute": "Water",
+        "AP": 20.0,
+        "MP": 28,
+        "Effect": null,
+        "Obtain": "Digivolve"
+      },
+      {
+        "name": "Hyper Heat",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Fire",
+        "AP": 25.0,
+        "MP": 12,
+        "Effect": null,
+        "Obtain": "Undersea Base, Coastal Depot, Core Tower"
+      }
+    ],
+    "Shellmon": [
+      {
+        "name": "Hydro Pressure",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Water",
+        "AP": 25.0,
+        "MP": 14,
+        "Effect": null,
+        "Obtain": "Digivolve"
+      }
+    ],
+    "ShimaUnimon": [
+      {
+        "name": "Holy Shot",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": null,
+        "AP": 25.0,
+        "MP": 12,
+        "Effect": null,
+        "Obtain": "Digivolve"
+      },
+      {
+        "name": "Megalo Spark",
+        "Type": "Interrupt",
+        "target": null,
+        "attribute": "Nature",
+        "AP": 22.5,
+        "MP": 18,
+        "Effect": "33% chance of paralysis",
+        "Obtain": "Tropical Jungle, Misty Trees, Beetleland"
+      }
+    ],
+    "Sorcerymon": [
+      {
+        "name": "Crystal Cloud",
+        "Type": "Counter",
+        "target": "Enemy",
+        "attribute": "Water",
+        "AP": 25.0,
+        "MP": 18,
+        "Effect": "Counter-attack will be an area of effect and AP is 1.5x on the attacker",
+        "Obtain": "Digivolve"
+      }
+    ],
+    "Soulmon": [
+      {
+        "name": "Megalo Spark",
+        "Type": "Interrupt",
+        "target": null,
+        "attribute": "Nature",
+        "AP": 22.5,
+        "MP": 18,
+        "Effect": "33% chance of paralysis",
+        "Obtain": "Digivolve"
+      },
+      {
+        "name": "Death Charm",
+        "Type": "Attack",
+        "target": "Random",
+        "attribute": "Darkness",
+        "AP": 27.5,
+        "MP": 12,
+        "Effect": null,
+        "Obtain": "IDS Ice Cave, Coastal Depot, Titan Bunker, Core Tower"
+      },
+      {
+        "name": "Hail Storm",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Water",
+        "AP": 17.5,
+        "MP": 8,
+        "Effect": null,
+        "Obtain": "IDS Ice Cave, Coastal Depot, Titan Bunker, Core Tower"
+      },
+      {
+        "name": "Necro Magic",
+        "Type": "Assist",
+        "target": "All",
+        "attribute": null,
+        "AP": null,
+        "MP": 10,
+        "Effect": "Steal MP from the dead digimon",
+        "Obtain": "GreyLord Manor, Mt. Infinity, Rootkit Rift, Core Tower, Chaos Tower"
+      }
+    ],
+    "Starmon": [
+      {
+        "name": "Meteor Squall",
+        "Type": "Counter",
+        "target": "Enemy",
+        "attribute": "Fire",
+        "AP": 27.5,
+        "MP": 20,
+        "Effect": "Counter-attack will be an area of effect",
+        "Obtain": "Digivolve"
+      },
+      {
+        "name": "Hyper Heat",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Fire",
+        "AP": 25.0,
+        "MP": 12,
+        "Effect": null,
+        "Obtain": "Deserted Fort, Coastal Depot, Titan Bunker, Core Tower"
+      }
+    ],
+    "Sukamon": [
+      {
+        "name": "Poop Toss",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Darkness",
+        "AP": 25.0,
+        "MP": 14,
+        "Effect": "AP is 1.5x if the user has an injury",
+        "Obtain": "Digivolve"
+      }
+    ],
+    "Tankmon": [
+      {
+        "name": "Hyper Canon",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Machine",
+        "AP": 25.0,
+        "MP": 14,
+        "Effect": null,
+        "Obtain": "Digivolve"
+      },
+      {
+        "name": "Implant",
+        "Type": "Assist",
+        "target": "All Enemy",
+        "attribute": null,
+        "AP": null,
+        "MP": 10,
+        "Effect": "Attacks become machine",
+        "Obtain": "Deserted Fort, Titan Bunker, Great Canyon"
+      }
+    ],
+    "Togemon": [
+      {
+        "name": "Prickly Bang Bang",
+        "Type": "Counter",
+        "target": "Enemy",
+        "attribute": "Nature",
+        "AP": 30.0,
+        "MP": 18,
+        "Effect": "Counter-attack has a 100% chance of injury",
+        "Obtain": "Digivolve"
+      },
+      {
+        "name": "Panzer Knuckle",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": null,
+        "AP": 25.0,
+        "MP": 15,
+        "Effect": "The user's speed is 2x until the end of this turn",
+        "Obtain": "Native Forest, Tropical Jungle"
+      }
+    ],
+    "Tortamon": [
+      {
+        "name": "Shell Phalanx",
+        "Type": "Attack",
+        "target": "All Enemy",
+        "attribute": null,
+        "AP": 17.5,
+        "MP": 22,
+        "Effect": null,
+        "Obtain": "Digivolve"
+      },
+      {
+        "name": "Neutralize",
+        "Type": "Assist",
+        "target": "Ally",
+        "attribute": null,
+        "AP": null,
+        "MP": 24,
+        "Effect": "Cure confusion, injury, paralysis and heal 40",
+        "Obtain": "IDS Ice Cave, Coastal Depot, Titan Bunker, Freezeland, Core Tower"
+      }
+    ],
+    "Tuskmon": [
+      {
+        "name": "Panzer Knuckle",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": null,
+        "AP": 25.0,
+        "MP": 15,
+        "Effect": "The user's speed is 2x until the end of this turn",
+        "Obtain": "Digivolve"
+      }
+    ],
+    "Tyrannomon": [
+      {
+        "name": "Blaze Blast",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Fire",
+        "AP": 25.0,
+        "MP": 14,
+        "Effect": null,
+        "Obtain": "Digivolve"
+      },
+      {
+        "name": "Neutralize",
+        "Type": "Assist",
+        "target": "Ally",
+        "attribute": null,
+        "AP": null,
+        "MP": 24,
+        "Effect": "Cure confusion, injury, paralysis and heal 40",
+        "Obtain": "PCI Preserve"
+      },
+      {
+        "name": "Crimson Nail",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Darkness",
+        "AP": 30.0,
+        "MP": 22,
+        "Effect": "Copy confusion, demotivating, injury, paralysis from user to enemy",
+        "Obtain": "Great Canyon"
+      }
+    ],
+    "Unimon": [
+      {
+        "name": "Holy Shot",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": null,
+        "AP": 25.0,
+        "MP": 12,
+        "Effect": null,
+        "Obtain": "Digivolve"
+      },
+      {
+        "name": "Mega Heal",
+        "Type": "Assist",
+        "target": "Ally",
+        "attribute": null,
+        "AP": null,
+        "MP": 26,
+        "Effect": "Heal 100",
+        "Obtain": "Native Forest, Misty Trees, Factorial Town"
+      }
+    ],
+    "Veedramon": [
+      {
+        "name": "V-Nova Blast",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": null,
+        "AP": 22.5,
+        "MP": 10,
+        "Effect": "AP is 1.5x if the enemy is waiting to counter",
+        "Obtain": "Digivolve"
+      }
+    ],
+    "Vegimon": [
+      {
+        "name": "Green Trap",
+        "Type": "Counter",
+        "target": "Enemy",
+        "attribute": "Nature",
+        "AP": 22.5,
+        "MP": 11,
+        "Effect": "25% chance of having the enemy attack miss",
+        "Obtain": "Digivolve"
+      },
+      {
+        "name": "Return to Nature",
+        "Type": "Assist",
+        "target": "All Enemy",
+        "attribute": null,
+        "AP": null,
+        "MP": 10,
+        "Effect": "Attacks become nature",
+        "Obtain": "Deserted Fort"
+      }
+    ],
+    "Wizardmon": [
+      {
+        "name": "Thunder Cloud",
+        "Type": "Counter",
+        "target": "Enemy",
+        "attribute": "Nature",
+        "AP": 25.0,
+        "MP": 16,
+        "Effect": "Counter-attack has a 100% chance of paralysis",
+        "Obtain": "Digivolve"
+      },
+      {
+        "name": "Death Charm",
+        "Type": "Attack",
+        "target": "Random",
+        "attribute": "Darkness",
+        "AP": 27.5,
+        "MP": 12,
+        "Effect": null,
+        "Obtain": "Deserted Fort, Coastal Depot, Titan Bunker, Core Tower"
+      },
+      {
+        "name": "Dope Cancel",
+        "Type": "Assist",
+        "target": "Enemy",
+        "attribute": null,
+        "AP": null,
+        "MP": 16,
+        "Effect": "Cancel the enemy's counter, but the enemy will not take any damage or healing until the end of this turn",
+        "Obtain": "Deserted Fort, Coastal Depot, Titan Bunker, Core Tower"
+      },
+      {
+        "name": "Deadly Shade",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Water",
+        "AP": 22.5,
+        "MP": 16,
+        "Effect": "Reduce speed (Max is 2x)",
+        "Obtain": "Misty Trees, GreyLord Manor"
+      }
+    ],
+    "Woodmon": [
+      {
+        "name": "Branch Drain",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Nature",
+        "AP": 22.5,
+        "MP": 20,
+        "Effect": "Life-stealing damage dealt",
+        "Obtain": "Digivolve"
+      }
+    ],
+    "Yanmamon": [
+      {
+        "name": "Thunder Ray",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Nature",
+        "AP": 25.0,
+        "MP": 14,
+        "Effect": null,
+        "Obtain": "Digivolve"
+      }
+    ],
+    "Zassoumon": [
+      {
+        "name": "Green Trap",
+        "Type": "Counter",
+        "target": "Enemy",
+        "attribute": "Nature",
+        "AP": 22.5,
+        "MP": 11,
+        "Effect": "25% chance of having the enemy attack miss",
+        "Obtain": "Digivolve"
+      },
+      {
+        "name": "Poop Toss",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Darkness",
+        "AP": 25.0,
+        "MP": 14,
+        "Effect": "AP is 1.5x if the user has an injury",
+        "Obtain": "DialUp Desert, Readme Ruins, Coastal Depot, Titan Bunker, Core Tower"
+      },
+      {
+        "name": "Hazard Breath",
+        "Type": "Interrupt",
+        "target": null,
+        "attribute": "Nature",
+        "AP": 22.5,
+        "MP": 16,
+        "Effect": "33% chance of injury",
+        "Obtain": "DialUp Desert, Readme Ruins, Coastal Depot, Titan Bunker, Core Tower"
+      },
+      {
+        "name": "Prickly Bang Bang",
+        "Type": "Counter",
+        "target": "Enemy",
+        "attribute": "Nature",
+        "AP": 30.0,
+        "MP": 18,
+        "Effect": "Counter-attack has a 100% chance of injury",
+        "Obtain": "Great Canyon"
+      }
+    ]
+  },
+  "Ultimates": {
+    "AeroVeedramon": [
+      {
+        "name": "V-Wing Blade",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": null,
+        "AP": 35.0,
+        "MP": 20,
+        "Effect": "AP is 1.5x if the enemy is waiting to counter",
+        "Obtain": "Digivolve"
+      }
+    ],
+    "Andromon": [
+      {
+        "name": "Spiral Sword",
+        "Type": "Attack",
+        "target": "All Enemy",
+        "attribute": null,
+        "AP": 32.5,
+        "MP": 48,
+        "Effect": null,
+        "Obtain": "Digivolve"
+      },
+      {
+        "name": "Shadow Wing",
+        "Type": "Interrupt",
+        "target": null,
+        "attribute": "Fire",
+        "AP": 37.5,
+        "MP": 28,
+        "Effect": null,
+        "Obtain": "Core Tower, Chaos Tower"
+      },
+      {
+        "name": "Lovely Attack",
+        "Type": "Assist",
+        "target": "All",
+        "attribute": null,
+        "AP": null,
+        "MP": 60,
+        "Effect": "Reduce virus digimon attack and defense",
+        "Obtain": "Core Tower, Chaos Tower"
+      }
+    ],
+    "Angewomon": [
+      {
+        "name": "Holy Arrow",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": null,
+        "AP": 40.0,
+        "MP": 28,
+        "Effect": null,
+        "Obtain": "Digivolve"
+      }
+    ],
+    "Blossomon": [
+      {
+        "name": "Spiral Flower",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Nature",
+        "AP": 40.0,
+        "MP": 32,
+        "Effect": "33% chance of injury",
+        "Obtain": "Digivolve"
+      }
+    ],
+    "BlueMeramon": [
+      {
+        "name": "MP Alchemy",
+        "Type": "Interrupt",
+        "target": null,
+        "attribute": null,
+        "AP": null,
+        "MP": 10,
+        "Effect": "Steal MP and reduce AP by 25%",
+        "Obtain": "Digivolve"
+      },
+      {
+        "name": "Heavy Metal Fire",
+        "Type": "Attack",
+        "target": "All Enemy",
+        "attribute": "Fire",
+        "AP": 30.0,
+        "MP": 46,
+        "Effect": null,
+        "Obtain": "GreyLord Manor, Mt. Infinity, Rootkit Rift, Core Tower, Chaos Tower"
+      }
+    ],
+    "BW-Garurumon": [
+      {
+        "name": "Kaiser Nail",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": null,
+        "AP": 35.0,
+        "MP": 27,
+        "Effect": "66% chance of injury",
+        "Obtain": "Digivolve"
+      }
+    ],
+    "Cherrymon": [
+      {
+        "name": "Cherry Bomb",
+        "Type": "Attack",
+        "target": "All Enemy",
+        "attribute": "Nature",
+        "AP": 32.5,
+        "MP": 50,
+        "Effect": null,
+        "Obtain": "Digivolve"
+      }
+    ],
+    "Dagomon": [
+      {
+        "name": "Forbidden Trident",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Water",
+        "AP": 37.5,
+        "MP": 26,
+        "Effect": null,
+        "Obtain": "Digivolve"
+      },
+      {
+        "name": "Stun Ray",
+        "Type": "Assist",
+        "target": "Ally",
+        "attribute": null,
+        "AP": null,
+        "MP": 14,
+        "Effect": "Attacks have a 100% chance of paralysis",
+        "Obtain": "Adware Abyss, Rootkit Rift, Core Tower, Chaos Tower"
+      }
+    ],
+    "Datamon": [
+      {
+        "name": "Plug Bomb",
+        "Type": "Attack",
+        "target": "All Enemy",
+        "attribute": "Machine",
+        "AP": 30.0,
+        "MP": 46,
+        "Effect": null,
+        "Obtain": "Digivolve"
+      }
+    ],
+    "Deramon": [
+      {
+        "name": "Royal Smasher",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Nature",
+        "AP": 37.5,
+        "MP": 25,
+        "Effect": null,
+        "Obtain": "Digivolve"
+      }
+    ],
+    "Digitamamon": [
+      {
+        "name": "Enigma",
+        "Type": "Assist",
+        "target": "All",
+        "attribute": null,
+        "AP": null,
+        "MP": 60,
+        "Effect": "Reduce vaccine digimon attack and defense",
+        "Obtain": "Digivolve"
+      },
+      {
+        "name": "Alien Ray",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Machine",
+        "AP": 40.0,
+        "MP": 30,
+        "Effect": null,
+        "Obtain": "Mt. Infinity, Core Tower, Chaos Tower"
+      },
+      {
+        "name": "Cherry Bomb",
+        "Type": "Attack",
+        "target": "All Enemy",
+        "attribute": "Nature",
+        "AP": 32.5,
+        "MP": 50,
+        "Effect": null,
+        "Obtain": "Rootkit Rift, Core Tower, Chaos Tower"
+      }
+    ],
+    "Etemon": [
+      {
+        "name": "Love Serenade",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": null,
+        "AP": 35.0,
+        "MP": 21,
+        "Effect": "100% chance of demotivating",
+        "Obtain": "Digivolve"
+      },
+      {
+        "name": "Sonic Crusher",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": null,
+        "AP": 22.5,
+        "MP": 12,
+        "Effect": "66% chance of confusion",
+        "Obtain": "Beetleland, Mt. Infinity, Core Tower, Chaos Tower"
+      },
+      {
+        "name": "Poop Toss",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Darkness",
+        "AP": 25.0,
+        "MP": 14,
+        "Effect": "AP is 1.5x if the user has an injury",
+        "Obtain": "Beetleland, Mt. Infinity, Core Tower, Chaos Tower"
+      }
+    ],
+    "ExTyrannomon": [
+      {
+        "name": "Pretty Attack",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": null,
+        "AP": 35.0,
+        "MP": 20,
+        "Effect": "100% chance of demotivating",
+        "Obtain": "Digivolve"
+      }
+    ],
+    "Garbagemon": [
+      {
+        "name": "Junk Chunker",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Darkness",
+        "AP": 35.0,
+        "MP": 24,
+        "Effect": "AP is 1.5x if the user has an injury",
+        "Obtain": "Digivolve"
+      }
+    ],
+    "Garudamon": [
+      {
+        "name": "Shadow Wing",
+        "Type": "Interrupt",
+        "target": null,
+        "attribute": "Fire",
+        "AP": 37.5,
+        "MP": 28,
+        "Effect": null,
+        "Obtain": "Digivolve"
+      },
+      {
+        "name": "V-Wing Blade",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": null,
+        "AP": 35.0,
+        "MP": 20,
+        "Effect": "AP is 1.5x if the enemy is waiting to counter",
+        "Obtain": "Beetleland, Mt. Infinity, Core Tower, Chaos Tower"
+      }
+    ],
+    "Gigadramon": [
+      {
+        "name": "Genocide Gear",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Machine",
+        "AP": 35.0,
+        "MP": 26,
+        "Effect": "The enemy cannot be cured of confusion, demotivating, injury, paralysis until the end of this turn",
+        "Obtain": "Digivolve"
+      },
+      {
+        "name": "Shadow Wing",
+        "Type": "Interrupt",
+        "target": null,
+        "attribute": "Fire",
+        "AP": 37.5,
+        "MP": 28,
+        "Effect": null,
+        "Obtain": "Factorial Town, Mt. Infinity, Rootkit Rift, Core Tower, Chaos Tower"
+      },
+      {
+        "name": "Deadly Bomb",
+        "Type": "Attack",
+        "target": "All Enemy",
+        "attribute": "Machine",
+        "AP": 32.5,
+        "MP": 50,
+        "Effect": null,
+        "Obtain": "Adware Abyss, Rootkit Rift, Core Tower, Chaos Tower"
+      }
+    ],
+    "Giromon": [
+      {
+        "name": "Deadly Bomb",
+        "Type": "Attack",
+        "target": "All Enemy",
+        "attribute": "Machine",
+        "AP": 32.5,
+        "MP": 50,
+        "Effect": null,
+        "Obtain": "Digivolve"
+      }
+    ],
+    "Kimeramon": [
+      {
+        "name": "Heat Viper",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Fire",
+        "AP": 42.5,
+        "MP": 35,
+        "Effect": null,
+        "Obtain": "Digivolve"
+      }
+    ],
+    "Lillymon": [
+      {
+        "name": "Flower Cannon",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Nature",
+        "AP": 37.5,
+        "MP": 26,
+        "Effect": null,
+        "Obtain": "Digivolve"
+      },
+      {
+        "name": "Solid State",
+        "Type": "Assist",
+        "target": "Ally",
+        "attribute": null,
+        "AP": null,
+        "MP": 20,
+        "Effect": "Boost defense (Max is 2x)",
+        "Obtain": "Beetleland, Rootkit Rift, Core Tower, Chaos Tower"
+      }
+    ],
+    "M-Kabuterimon": [
+      {
+        "name": "Horn Buster",
+        "Type": "Interrupt",
+        "target": null,
+        "attribute": null,
+        "AP": 35.0,
+        "MP": 35,
+        "Effect": "Reduce AP by 40%",
+        "Obtain": "Digivolve"
+      }
+    ],
+    "MA-Tyrannomon": [
+      {
+        "name": "Master Fire",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Fire",
+        "AP": 35.0,
+        "MP": 30,
+        "Effect": "Every attack stacks 2.5 AP",
+        "Obtain": "Digivolve"
+      }
+    ],
+    "MagnaAngemon": [
+      {
+        "name": "Heaven's Heal",
+        "Type": "Assist",
+        "target": "All Ally",
+        "attribute": null,
+        "AP": null,
+        "MP": 78,
+        "Effect": "Heal 100",
+        "Obtain": "Digivolve"
+      },
+      {
+        "name": "Spiral Sword",
+        "Type": "Attack",
+        "target": "All Enemy",
+        "attribute": null,
+        "AP": 32.5,
+        "MP": 48,
+        "Effect": null,
+        "Obtain": "Mt. Infinity, Core Tower, Chaos Tower"
+      },
+      {
+        "name": "Soul Chopper",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Darkness",
+        "AP": 35.0,
+        "MP": 28,
+        "Effect": "Attack again without using MP if the enemy is defeated",
+        "Obtain": "Staog Shrine, Rootkit Rift, Core Tower, Chaos Tower"
+      }
+    ],
+    "Mamemon": [
+      {
+        "name": "Smiley Bomb",
+        "Type": "Counter",
+        "target": "Enemy",
+        "attribute": "Machine",
+        "AP": 35.0,
+        "MP": 25,
+        "Effect": "Counter-attack power will be 1.5x",
+        "Obtain": "Digivolve"
+      },
+      {
+        "name": "MP Alchemy",
+        "Type": "Interrupt",
+        "target": null,
+        "attribute": null,
+        "AP": null,
+        "MP": 10,
+        "Effect": "Steal MP and reduce AP by 25%",
+        "Obtain": "Core Tower, Chaos Tower"
+      }
+    ],
+    "Mammothmon": [
+      {
+        "name": "Tusk Strike",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": null,
+        "AP": 35.0,
+        "MP": 20,
+        "Effect": "AP is 1.5x if the user is hit by an interrupt",
+        "Obtain": "Digivolve"
+      }
+    ],
+    "MarineDevimon": [
+      {
+        "name": "Evil Wind",
+        "Type": "Attack",
+        "target": "All Enemy",
+        "attribute": "Water",
+        "AP": 27.5,
+        "MP": 40,
+        "Effect": "Reduce speed (Max is 2x)",
+        "Obtain": "Digivolve"
+      },
+      {
+        "name": "Forbidden Trident",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Water",
+        "AP": 37.5,
+        "MP": 26,
+        "Effect": null,
+        "Obtain": "Adware Abyss, Rootkit Rift, Core Tower, Chaos Tower"
+      }
+    ],
+    "ME-Tyrannomon": [
+      {
+        "name": "Giga Destroyer II",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Machine",
+        "AP": 37.5,
+        "MP": 26,
+        "Effect": null,
+        "Obtain": "Digivolve"
+      }
+    ],
+    "Megadramon": [
+      {
+        "name": "Genocide Attack",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Machine",
+        "AP": 35.0,
+        "MP": 26,
+        "Effect": "The enemy cannot be healed until the end of this turn",
+        "Obtain": "Digivolve"
+      },
+      {
+        "name": "Energy Bomb",
+        "Type": "Counter",
+        "target": "Enemy",
+        "attribute": "Machine",
+        "AP": 35.0,
+        "MP": 30,
+        "Effect": "Counter-attack will be an area of effect",
+        "Obtain": "Staog Shrine, Core Tower, Chaos Tower"
+      }
+    ],
+    "MegaSeadramon": [
+      {
+        "name": "Thunder Javelin",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Nature",
+        "AP": 40.0,
+        "MP": 30,
+        "Effect": null,
+        "Obtain": "Digivolve"
+      }
+    ],
+    "MetalGreymon": [
+      {
+        "name": "Giga Destroyer",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Machine",
+        "AP": 40.0,
+        "MP": 30,
+        "Effect": null,
+        "Obtain": "Digivolve"
+      }
+    ],
+    "MetalMamemon": [
+      {
+        "name": "Energy Bomb",
+        "Type": "Counter",
+        "target": "Enemy",
+        "attribute": "Machine",
+        "AP": 35.0,
+        "MP": 30,
+        "Effect": "Counter-attack will be an area of effect",
+        "Obtain": "Digivolve"
+      }
+    ],
+    "Meteormon": [
+      {
+        "name": "Guard Rock",
+        "Type": "Assist",
+        "target": "Ally",
+        "attribute": null,
+        "AP": null,
+        "MP": 24,
+        "Effect": "The enemy will not take any damage or healing until the end of this turn",
+        "Obtain": "Digivolve"
+      },
+      {
+        "name": "Meteor Squall",
+        "Type": "Counter",
+        "target": "Enemy",
+        "attribute": "Fire",
+        "AP": 27.5,
+        "MP": 20,
+        "Effect": "Counter-attack will be an area of effect",
+        "Obtain": "Great Canyon, Mt. Infinity, Staog Shrine, Core Tower"
+      },
+      {
+        "name": "Thunder Javelin",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Nature",
+        "AP": 40.0,
+        "MP": 30,
+        "Effect": null,
+        "Obtain": "Adware Abyss, Rootkit Rift, Core Tower, Chaos Tower"
+      }
+    ],
+    "Monzaemon": [
+      {
+        "name": "Lovely Attack",
+        "Type": "Assist",
+        "target": "All",
+        "attribute": null,
+        "AP": null,
+        "MP": 60,
+        "Effect": "Reduce virus digimon attack and defense",
+        "Obtain": "Digivolve"
+      },
+      {
+        "name": "Pretty Attack",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": null,
+        "AP": 35.0,
+        "MP": 20,
+        "Effect": "100% chance of demotivating",
+        "Obtain": "Misty Trees, Factorial Town, Core Tower, Chaos Tower"
+      },
+      {
+        "name": "Fairy Tale",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": null,
+        "AP": 37.5,
+        "MP": 28,
+        "Effect": "33% chance of injury",
+        "Obtain": "Factorial Town, Mt. Infinity, Staog Shrine, Rootkit Rift, Core Tower, Chaos Tower"
+      }
+    ],
+    "Myotismon": [
+      {
+        "name": "Night Raid",
+        "Type": "Attack",
+        "target": "All Enemy",
+        "attribute": "Darkness",
+        "AP": 32.5,
+        "MP": 50,
+        "Effect": null,
+        "Obtain": "Digivolve"
+      }
+    ],
+    "Okuwamon": [
+      {
+        "name": "Scissoer Arm \u03a9",
+        "Type": "Counter",
+        "target": "Enemy",
+        "attribute": null,
+        "AP": 15.0,
+        "MP": 63,
+        "Effect": "Reduce the enemy defense and counter-attack will be an area of effect",
+        "Obtain": "Digivolve"
+      }
+    ],
+    "Panjyamon": [
+      {
+        "name": "Giga Heal",
+        "Type": "Assist",
+        "target": "Ally",
+        "attribute": null,
+        "AP": null,
+        "MP": 54,
+        "Effect": "Heal 200",
+        "Obtain": "Digivolve"
+      },
+      {
+        "name": "Haouken",
+        "Type": "Counter",
+        "target": "Enemy",
+        "attribute": null,
+        "AP": 30.0,
+        "MP": 20,
+        "Effect": "Counter-attack reduces MP",
+        "Obtain": "Freezeland, Mt. Infinity, Core Tower"
+      },
+      {
+        "name": "Halley Squall",
+        "Type": "Attack",
+        "target": "All Enemy",
+        "attribute": null,
+        "AP": 30.0,
+        "MP": 50,
+        "Effect": "AP is 1.5x if the enemy is waiting to counter",
+        "Obtain": "Staog Shrine, Rootkit Rift, Core Tower, Chaos Tower"
+      },
+      {
+        "name": "Jyuouken",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": null,
+        "AP": 27.5,
+        "MP": 14,
+        "Effect": "Counter-attack damage will be 1.5x of damage taken",
+        "Obtain": "Staog Shrine, Rootkit Rift, Core Tower, Chaos Tower"
+      }
+    ],
+    "Phantomon": [
+      {
+        "name": "Soul Chopper",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Darkness",
+        "AP": 35.0,
+        "MP": 28,
+        "Effect": "Attack again without using MP if the enemy is defeated",
+        "Obtain": "Digivolve"
+      }
+    ],
+    "Piximon": [
+      {
+        "name": "Fairy Tale",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": null,
+        "AP": 37.5,
+        "MP": 28,
+        "Effect": "33% chance of injury",
+        "Obtain": "Digivolve"
+      }
+    ],
+    "Pumpkinmon": [
+      {
+        "name": "Trick or Treat",
+        "Type": "Attack",
+        "target": "All Enemy",
+        "attribute": "Nature",
+        "AP": 30.0,
+        "MP": 46,
+        "Effect": null,
+        "Obtain": "Digivolve"
+      },
+      {
+        "name": "Master Fire",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Fire",
+        "AP": 35.0,
+        "MP": 30,
+        "Effect": "Every attack stacks 2.5 AP",
+        "Obtain": "Core Tower, Chaos Tower"
+      }
+    ],
+    "Raidramon": [
+      {
+        "name": "Blue Thunder",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Nature",
+        "AP": 42.5,
+        "MP": 35,
+        "Effect": null,
+        "Obtain": "Digivolve"
+      }
+    ],
+    "Scorpiomon": [
+      {
+        "name": "Stinger Surprise",
+        "Type": "Counter",
+        "target": "Enemy",
+        "attribute": null,
+        "AP": 35.0,
+        "MP": 20,
+        "Effect": "25% chance of having the enemy attack miss",
+        "Obtain": "Digivolve"
+      },
+      {
+        "name": "Alien Ray",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Machine",
+        "AP": 40.0,
+        "MP": 30,
+        "Effect": null,
+        "Obtain": "Mt. Infinity, Core Tower, Chaos Tower"
+      }
+    ],
+    "ShogunGekomon": [
+      {
+        "name": "Musical Fist",
+        "Type": "Attack",
+        "target": "Ally",
+        "attribute": null,
+        "AP": 20.0,
+        "MP": 20,
+        "Effect": "Cure confusion, demotivating and healing the digimon which is none-specialty or has the same specialty as the user, but does not work for the same digimon",
+        "Obtain": "Digivolve"
+      },
+      {
+        "name": "Sonic Crusher",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": null,
+        "AP": 22.5,
+        "MP": 12,
+        "Effect": "66% chance of confusion",
+        "Obtain": "Beetleland, Rootkit Rift, Core Tower, Chaos Tower"
+      },
+      {
+        "name": "Love Serenade",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": null,
+        "AP": 35.0,
+        "MP": 21,
+        "Effect": "100% chance of demotivating",
+        "Obtain": "Adware Abyss, Rootkit Rift, Core Tower, Chaos Tower"
+      }
+    ],
+    "SkullGreymon": [
+      {
+        "name": "Ground Zero",
+        "Type": "Attack",
+        "target": "Random",
+        "attribute": "Machine",
+        "AP": 42.5,
+        "MP": 30,
+        "Effect": null,
+        "Obtain": "Digivolve"
+      }
+    ],
+    "SkullMeramon": [
+      {
+        "name": "Heavy Metal Fire",
+        "Type": "Attack",
+        "target": "All Enemy",
+        "attribute": "Fire",
+        "AP": 30.0,
+        "MP": 46,
+        "Effect": null,
+        "Obtain": "Digivolve"
+      }
+    ],
+    "SuperStarmon": [
+      {
+        "name": "Halley Squall",
+        "Type": "Attack",
+        "target": "All Enemy",
+        "attribute": null,
+        "AP": 30.0,
+        "MP": 50,
+        "Effect": "AP is 1.5x if the enemy is waiting to counter",
+        "Obtain": "Digivolve"
+      }
+    ],
+    "Tekkamon": [
+      {
+        "name": "Reverse Program",
+        "Type": "Interrupt",
+        "target": null,
+        "attribute": null,
+        "AP": null,
+        "MP": 20,
+        "Effect": "Steal MP and reduce AP by 40%",
+        "Obtain": "Digivolve"
+      },
+      {
+        "name": "Spiral Sword",
+        "Type": "Attack",
+        "target": "All Enemy",
+        "attribute": null,
+        "AP": 32.5,
+        "MP": 48,
+        "Effect": null,
+        "Obtain": "GreyLord Manor, Mt. Infinity, Staog Shrine, Rootkit Rift, Core Tower, Chaos Tower"
+      }
+    ],
+    "Tinmon": [
+      {
+        "name": "Anti-Magic",
+        "Type": "Assist",
+        "target": "All Ally",
+        "attribute": null,
+        "AP": null,
+        "MP": 72,
+        "Effect": "Cure confusion, injury, paralysis and heal 70",
+        "Obtain": "Digivolve"
+      },
+      {
+        "name": "Alien Ray",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Machine",
+        "AP": 40.0,
+        "MP": 30,
+        "Effect": null,
+        "Obtain": "Misty Trees, Factorial Town, Core Tower, Chaos Tower"
+      }
+    ],
+    "Triceramon": [
+      {
+        "name": "Tri-Horn Attack",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": null,
+        "AP": 40.0,
+        "MP": 32,
+        "Effect": "33% chance of injury",
+        "Obtain": "Digivolve"
+      }
+    ],
+    "Vademon": [
+      {
+        "name": "Alien Ray",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Machine",
+        "AP": 40.0,
+        "MP": 30,
+        "Effect": null,
+        "Obtain": "Digivolve"
+      },
+      {
+        "name": "Giga Heal",
+        "Type": "Assist",
+        "target": "Ally",
+        "attribute": null,
+        "AP": null,
+        "MP": 54,
+        "Effect": "Heal 200",
+        "Obtain": "Mt. Infinity, Core Tower, Chaos Tower"
+      }
+    ],
+    "Vermilimon": [
+      {
+        "name": "Vermili Blaze",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Fire",
+        "AP": 40.0,
+        "MP": 28,
+        "Effect": "Remove enemy buffs",
+        "Obtain": "Digivolve"
+      },
+      {
+        "name": "Trick Void",
+        "Type": "Assist",
+        "target": "All Enemy",
+        "attribute": null,
+        "AP": null,
+        "MP": 30,
+        "Effect": "Copy confusion, demotivating, injury, paralysis from user to enemy",
+        "Obtain": "Mt. Infinity, Staog Shrine, Core Tower, Chaos Tower"
+      }
+    ],
+    "WaruMonzaemon": [
+      {
+        "name": "Heartbreak Hit",
+        "Type": "Assist",
+        "target": "All",
+        "attribute": null,
+        "AP": null,
+        "MP": 60,
+        "Effect": "Reduce data digimon attack and defense",
+        "Obtain": "Digivolve"
+      },
+      {
+        "name": "Megalo Spark",
+        "Type": "Interrupt",
+        "target": null,
+        "attribute": "Nature",
+        "AP": 22.5,
+        "MP": 18,
+        "Effect": "33% chance of paralysis",
+        "Obtain": "Misty Trees, Beetleland, Core Tower"
+      },
+      {
+        "name": "Junk Chunker",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Darkness",
+        "AP": 35.0,
+        "MP": 24,
+        "Effect": "AP is 1.5x if the user has an injury",
+        "Obtain": "Rootkit Rift, Chaos Tower"
+      },
+      {
+        "name": "Ground Zero",
+        "Type": "Attack",
+        "target": "Random",
+        "attribute": "Machine",
+        "AP": 42.5,
+        "MP": 30,
+        "Effect": null,
+        "Obtain": "Rootkit Rift, Chaos Tower"
+      }
+    ],
+    "WaruSeadramon": [
+      {
+        "name": "Variable Wave",
+        "Type": "Assist",
+        "target": "Ally",
+        "attribute": null,
+        "AP": null,
+        "MP": 26,
+        "Effect": "Attacks and defense have a 100% chance of injury",
+        "Obtain": "Digivolve"
+      },
+      {
+        "name": "Thunder Javelin",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Nature",
+        "AP": 40.0,
+        "MP": 30,
+        "Effect": null,
+        "Obtain": "Mt. Infinity, Rootkit Rift, Core Tower, Chaos Tower"
+      },
+      {
+        "name": "Tri-Horn Attack",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": null,
+        "AP": 40.0,
+        "MP": 32,
+        "Effect": "33% chance of injury",
+        "Obtain": "Adware Abyss, Rootkit Rift, Core Tower, Chaos Tower"
+      }
+    ],
+    "WereGarurumon": [
+      {
+        "name": "Kaiser Nail",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": null,
+        "AP": 35.0,
+        "MP": 27,
+        "Effect": "66% chance of injury",
+        "Obtain": "Digivolve"
+      }
+    ],
+    "Whamon": [
+      {
+        "name": "Tidal Wave",
+        "Type": "Counter",
+        "target": "Enemy",
+        "attribute": "Water",
+        "AP": 15.0,
+        "MP": 63,
+        "Effect": "Reduce the enemy attack and counter-attack will be an area of effect",
+        "Obtain": "Digivolve"
+      },
+      {
+        "name": "Holy Arrow",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": null,
+        "AP": 40.0,
+        "MP": 28,
+        "Effect": null,
+        "Obtain": "Adware Abyss, Core Tower, Chaos Tower"
+      }
+    ],
+    "Zudomon": [
+      {
+        "name": "Vulcan's Hammer",
+        "Type": "Attack",
+        "target": "All Enemy",
+        "attribute": null,
+        "AP": 30.0,
+        "MP": 44,
+        "Effect": null,
+        "Obtain": "Digivolve"
+      },
+      {
+        "name": "Holy Arrow",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": null,
+        "AP": 40.0,
+        "MP": 28,
+        "Effect": null,
+        "Obtain": "Adware Abyss, Core Tower, Chaos Tower"
+      }
+    ]
+  },
+  "Megas": {
+    "B-WarGreymon": [
+      {
+        "name": "Terra Destroyer",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Darkness",
+        "AP": 55.0,
+        "MP": 55,
+        "Effect": null,
+        "Obtain": "Digivolve"
+      }
+    ],
+    "Baihumon": [
+      {
+        "name": "Tekkosou",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": null,
+        "AP": 60.0,
+        "MP": 60,
+        "Effect": "33% chance of injury",
+        "Obtain": "Digivolve from SuperStarmon at 10 ~ 11 DP"
+      },
+      {
+        "name": "Seidouhou",
+        "Type": "Attack",
+        "target": "All Enemy",
+        "attribute": "Nature",
+        "AP": 47.5,
+        "MP": 90,
+        "Effect": null,
+        "Obtain": "Digivolve from Meteormon at 10 ~ 11 DP"
+      },
+      {
+        "name": "Kongou",
+        "Type": "Assist",
+        "target": "Self",
+        "attribute": null,
+        "AP": null,
+        "MP": 38,
+        "Effect": "Boost defense (Max is 2x) and oneself will not take any damage or healing until the end of this turn",
+        "Obtain": "Digivolve at 12 ~ 99 DP"
+      }
+    ],
+    "BK-I-dramon": [
+      {
+        "name": "Mega Death",
+        "Type": "Attack",
+        "target": "All Enemy",
+        "attribute": "Darkness",
+        "AP": 47.5,
+        "MP": 90,
+        "Effect": null,
+        "Obtain": "Digivolve"
+      }
+    ],
+    "BM-Garurumon": [
+      {
+        "name": "Grace Cross Freezer",
+        "Type": "Attack",
+        "target": "All Enemy",
+        "attribute": "Machine",
+        "AP": 42.5,
+        "MP": 104,
+        "Effect": "33% chance of paralysis and reduce speed (Max is 2x)",
+        "Obtain": "Digivolve"
+      }
+    ],
+    "Boltmon": [
+      {
+        "name": "Tomahawk Steiner",
+        "Type": "Attack",
+        "target": "All Enemy",
+        "attribute": "Machine",
+        "AP": 45.0,
+        "MP": 90,
+        "Effect": null,
+        "Obtain": "Digivolve"
+      },
+      {
+        "name": "Fairy Tale",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": null,
+        "AP": 37.5,
+        "MP": 28,
+        "Effect": "33% chance of injury",
+        "Obtain": "Core Tower, Chaos Tower"
+      },
+      {
+        "name": "Starlight Explosion",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Fire",
+        "AP": 55.0,
+        "MP": 55,
+        "Effect": null,
+        "Obtain": "Core Tower, Chaos Tower"
+      }
+    ],
+    "Diaboromon": [
+      {
+        "name": "Paradise Lost",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": null,
+        "AP": 60.0,
+        "MP": 60,
+        "Effect": "33% chance of injury",
+        "Obtain": "Digivolve from Okuwamon at 10 ~ 11 DP"
+      },
+      {
+        "name": "Catastrophe Cannon",
+        "Type": "Attack",
+        "target": "All Enemy",
+        "attribute": "Machine",
+        "AP": 47.5,
+        "MP": 90,
+        "Effect": null,
+        "Obtain": "Digivolve from Myotismon at 10 ~ 11 DP"
+      },
+      {
+        "name": "Multiply",
+        "Type": "Assist",
+        "target": "Self",
+        "attribute": null,
+        "AP": null,
+        "MP": 70,
+        "Effect": "Boost attack and speed (Max is 2x), but reduce defense (Max is 2x)",
+        "Obtain": "Digivolve at 12 ~ 99 DP"
+      }
+    ],
+    "Ebemon": [
+      {
+        "name": "Brain Rupture",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": null,
+        "AP": 52.5,
+        "MP": 55,
+        "Effect": "66% chance of confusion",
+        "Obtain": "Digivolve"
+      },
+      {
+        "name": "Halley Squall",
+        "Type": "Attack",
+        "target": "All Enemy",
+        "attribute": null,
+        "AP": 30.0,
+        "MP": 50,
+        "Effect": "AP is 1.5x if the enemy is waiting to counter",
+        "Obtain": "Core Tower, Chaos Tower"
+      }
+    ],
+    "GranKuwagamon": [
+      {
+        "name": "Dimension Scissor",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": null,
+        "AP": 52.5,
+        "MP": 55,
+        "Effect": "66% chance of injury",
+        "Obtain": "Digivolve"
+      }
+    ],
+    "Gryphonmon": [
+      {
+        "name": "Supersonic Voice",
+        "Type": "Attack",
+        "target": "All Enemy",
+        "attribute": null,
+        "AP": 45.0,
+        "MP": 84,
+        "Effect": null,
+        "Obtain": "Digivolve"
+      }
+    ],
+    "H-Kabuterimon": [
+      {
+        "name": "Giga Blaster",
+        "Type": "Interrupt",
+        "target": null,
+        "attribute": "Nature",
+        "AP": 50.0,
+        "MP": 70,
+        "Effect": "Chance of having the enemy attack miss",
+        "Obtain": "Digivolve"
+      },
+      {
+        "name": "Heat Viper",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Fire",
+        "AP": 42.5,
+        "MP": 35,
+        "Effect": null,
+        "Obtain": "Chaos Tower"
+      }
+    ],
+    "HiAndromon": [
+      {
+        "name": "Atomic Ray",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": null,
+        "AP": 50.0,
+        "MP": 50,
+        "Effect": "High accuracy and the user's speed is 2x until the end of this turn",
+        "Obtain": "Digivolve"
+      },
+      {
+        "name": "Heaven's Heal",
+        "Type": "Assist",
+        "target": "All Ally",
+        "attribute": null,
+        "AP": null,
+        "MP": 78,
+        "Effect": "Heal 100",
+        "Obtain": "Core Tower, Chaos Tower"
+      }
+    ],
+    "I-dramon": [
+      {
+        "name": "Mega Fire",
+        "Type": "Attack",
+        "target": "All Enemy",
+        "attribute": "Fire",
+        "AP": 47.5,
+        "MP": 90,
+        "Effect": null,
+        "Obtain": "Digivolve"
+      }
+    ],
+    "Jijimon": [
+      {
+        "name": "Hung on Death",
+        "Type": "Assist",
+        "target": "All",
+        "attribute": null,
+        "AP": null,
+        "MP": 50,
+        "Effect": "Revive the dead digimon as a zombie which has 1 HP and cannot be healed",
+        "Obtain": "Digivolve"
+      }
+    ],
+    "M-Garurumon": [
+      {
+        "name": "Cocytus Breath",
+        "Type": "Attack",
+        "target": "All Enemy",
+        "attribute": "Water",
+        "AP": 45.0,
+        "MP": 88,
+        "Effect": null,
+        "Obtain": "Digivolve"
+      }
+    ],
+    "M-Seadramon": [
+      {
+        "name": "Ultimate Stream",
+        "Type": "Attack",
+        "target": "All Enemy",
+        "attribute": "Machine",
+        "AP": 45.0,
+        "MP": 88,
+        "Effect": null,
+        "Obtain": "Digivolve"
+      },
+      {
+        "name": "Deadly Bomb",
+        "Type": "Attack",
+        "target": "All Enemy",
+        "attribute": "Machine",
+        "AP": 32.5,
+        "MP": 50,
+        "Effect": null,
+        "Obtain": "Adware Abyss, Core Tower"
+      },
+      {
+        "name": "Giga Heal",
+        "Type": "Assist",
+        "target": "Ally",
+        "attribute": null,
+        "AP": null,
+        "MP": 54,
+        "Effect": "Heal 200",
+        "Obtain": "Adware Abyss, Core Tower"
+      },
+      {
+        "name": "Atomic Ray",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": null,
+        "AP": 50.0,
+        "MP": 50,
+        "Effect": "High accuracy and the user's speed is 2x until the end of this turn",
+        "Obtain": "Chaos Tower"
+      }
+    ],
+    "Machinedramon": [
+      {
+        "name": "Infinity Cannon",
+        "Type": "Attack",
+        "target": "Random",
+        "attribute": "Machine",
+        "AP": 25.0,
+        "MP": 60,
+        "Effect": "Continuous attack until the user runs out of MP and every attack stack 2.5 AP (Max is 55 AP) and cannot be countered or interrupted",
+        "Obtain": "Digivolve"
+      },
+      {
+        "name": "Bullet Hammer",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Machine",
+        "AP": 50.0,
+        "MP": 65,
+        "Effect": "The user's speed is 2x and the enemy cannot be healed or be cured of confusion, demotivating, injury, paralysis until the end of this turn",
+        "Obtain": "Chaos Tower"
+      }
+    ],
+    "Magnadramon": [
+      {
+        "name": "Holy Flame",
+        "Type": "Attack",
+        "target": "All Enemy",
+        "attribute": null,
+        "AP": 45.0,
+        "MP": 86,
+        "Effect": null,
+        "Obtain": "Digivolve"
+      }
+    ],
+    "MarineAngemon": [
+      {
+        "name": "Ocean Love",
+        "Type": "Attack",
+        "target": "Random",
+        "attribute": null,
+        "AP": 50.0,
+        "MP": 40,
+        "Effect": "100% chance of demotivating",
+        "Obtain": "Digivolve"
+      },
+      {
+        "name": "Holy Arrow",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": null,
+        "AP": 40.0,
+        "MP": 28,
+        "Effect": null,
+        "Obtain": "Adware Abyss, Core Tower, Chaos Tower"
+      },
+      {
+        "name": "Anti-Magic",
+        "Type": "Assist",
+        "target": "All Ally",
+        "attribute": null,
+        "AP": null,
+        "MP": 72,
+        "Effect": "Cure confusion, injury, paralysis and heal 70",
+        "Obtain": "Adware Abyss, Core Tower, Chaos Tower"
+      }
+    ],
+    "MetalEtemon": [
+      {
+        "name": "Banana Slip",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": null,
+        "AP": 52.5,
+        "MP": 55,
+        "Effect": "66% chance of paralysis",
+        "Obtain": "Digivolve"
+      }
+    ],
+    "Omnimon": [
+      {
+        "name": "Grey Sword",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": null,
+        "AP": 50.0,
+        "MP": 60,
+        "Effect": "66% chance of paralysis and AP is 1.5x if the enemy is waiting to counter",
+        "Obtain": "Digivolve from MetalGreymon at 10 ~ 11 DP"
+      },
+      {
+        "name": "Garuru Cannon",
+        "Type": "Attack",
+        "target": "All Enemy",
+        "attribute": "Water",
+        "AP": 47.5,
+        "MP": 90,
+        "Effect": null,
+        "Obtain": "Digivolve from WereGarurumon at 10 ~ 11 DP"
+      },
+      {
+        "name": "\u03a9 Heal",
+        "Type": "Assist",
+        "target": "Ally",
+        "attribute": null,
+        "AP": null,
+        "MP": 88,
+        "Effect": "Cure confusion, demotivating, injury, paralysis and heal 250",
+        "Obtain": "Digivolve at 12 ~ 99 DP"
+      }
+    ],
+    "P-Mamemon": [
+      {
+        "name": "Smiley Warhead",
+        "Type": "Counter",
+        "target": "Enemy",
+        "attribute": "Machine",
+        "AP": 50.0,
+        "MP": 80,
+        "Effect": "Counter-attack will be an area of effect and AP is 1.5x",
+        "Obtain": "Digivolve"
+      }
+    ],
+    "P-Numemon": [
+      {
+        "name": "Platinum Junk",
+        "Type": "Counter",
+        "target": "Enemy",
+        "attribute": "Darkness",
+        "AP": 50.0,
+        "MP": 48,
+        "Effect": "100% chance of demotivating",
+        "Obtain": "Digivolve"
+      }
+    ],
+    "Phoenixmon": [
+      {
+        "name": "Starlight Explosion",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Fire",
+        "AP": 55.0,
+        "MP": 55,
+        "Effect": null,
+        "Obtain": "Digivolve"
+      }
+    ],
+    "Pierrotmon": [
+      {
+        "name": "Trump Sword",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": null,
+        "AP": 50.0,
+        "MP": 50,
+        "Effect": "Cannot be interrupted",
+        "Obtain": "Digivolve"
+      }
+    ],
+    "Plesiomon": [
+      {
+        "name": "Sorrow Blue",
+        "Type": "Attack",
+        "target": "All Enemy",
+        "attribute": "Water",
+        "AP": 45.0,
+        "MP": 90,
+        "Effect": null,
+        "Obtain": "Digivolve"
+      }
+    ],
+    "Pukumon": [
+      {
+        "name": "Needle Squall",
+        "Type": "Attack",
+        "target": "All Enemy",
+        "attribute": "Machine",
+        "AP": 45.0,
+        "MP": 90,
+        "Effect": null,
+        "Obtain": "Digivolve"
+      }
+    ],
+    "Puppetmon": [
+      {
+        "name": "Bullet Hammer",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": "Machine",
+        "AP": 50.0,
+        "MP": 65,
+        "Effect": "The user's speed is 2x and the enemy cannot be healed or be cured of confusion, demotivating, injury, paralysis until the end of this turn",
+        "Obtain": "Digivolve"
+      },
+      {
+        "name": "Reverse Program",
+        "Type": "Interrupt",
+        "target": null,
+        "attribute": null,
+        "AP": null,
+        "MP": 20,
+        "Effect": "Steal MP and reduce AP by 40%",
+        "Obtain": "Core Tower, Chaos Tower"
+      }
+    ],
+    "Rosemon": [
+      {
+        "name": "Rose Spear",
+        "Type": "Counter",
+        "target": "All Enemy",
+        "attribute": "Nature",
+        "AP": 42.5,
+        "MP": 92,
+        "Effect": "Counter-attack has a 100% chance of injury",
+        "Obtain": "Digivolve"
+      }
+    ],
+    "S-Mammothmon": [
+      {
+        "name": "Spiral Bone",
+        "Type": "Attack",
+        "target": "All Enemy",
+        "attribute": null,
+        "AP": 45.0,
+        "MP": 86,
+        "Effect": null,
+        "Obtain": "Digivolve"
+      }
+    ],
+    "SaberLeomon": [
+      {
+        "name": "Nail Crusher",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": null,
+        "AP": 50.0,
+        "MP": 50,
+        "Effect": "Cannot be countered",
+        "Obtain": "Digivolve"
+      }
+    ],
+    "Seraphimon": [
+      {
+        "name": "Final Heal",
+        "Type": "Assist",
+        "target": "All Ally",
+        "attribute": null,
+        "AP": null,
+        "MP": 128,
+        "Effect": "Heal 200",
+        "Obtain": "Digivolve"
+      },
+      {
+        "name": "Holy Flame",
+        "Type": "Attack",
+        "target": "All Enemy",
+        "attribute": null,
+        "AP": 45.0,
+        "MP": 86,
+        "Effect": null,
+        "Obtain": "Chaos Tower"
+      }
+    ],
+    "V-Myotismon": [
+      {
+        "name": "Venom Infuse",
+        "Type": "Interrupt",
+        "target": null,
+        "attribute": "Darkness",
+        "AP": 50.0,
+        "MP": 70,
+        "Effect": "100% chance of paralysis",
+        "Obtain": "Digivolve"
+      },
+      {
+        "name": "Dimension Scissor",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": null,
+        "AP": 52.5,
+        "MP": 55,
+        "Effect": "66% chance of injury",
+        "Obtain": "Chaos Tower"
+      }
+    ],
+    "WarGreymon": [
+      {
+        "name": "Terra Force",
+        "Type": "Attack",
+        "target": "Enemy",
+        "attribute": null,
+        "AP": 55.0,
+        "MP": 50,
+        "Effect": null,
+        "Obtain": "Digivolve"
+      }
+    ]
+  }
+}

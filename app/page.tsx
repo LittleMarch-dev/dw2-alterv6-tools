@@ -10,6 +10,7 @@ import { OwnedPool } from "@/components/OwnedPool";
 import { DnaMatrixModal } from "@/components/DnaMatrixModal";
 import { DigimonInfoModal } from "@/components/DigimonInfoModal";
 import { InteractiveTutorialModal } from "@/components/InteractiveTutorial";
+import { GlobalSearch } from "@/components/GlobalSearch";
 
 export default function DW2App() {
   const [activeTab, setActiveTab] = useState<
@@ -156,8 +157,18 @@ export default function DW2App() {
             allDigimonNames={allDigimonNames}
           />
         )}
-        {activeTab === "skills" && (
+        {/* {activeTab === "skills" && (
           <MoveSearch onSelectDigimon={setModalDigimon} />
+        )} */}
+
+        {activeTab === "skills" && (
+          <GlobalSearch
+            onSelectDigimon={setModalDigimon}
+            onSelectDomain={(domainName) => {
+              // Optional: Handle domain selection (e.g. set active domain tab or open a modal)
+              console.log("Selected domain:", domainName);
+            }}
+          />
         )}
         {activeTab === "inventory" && (
           <OwnedPool
