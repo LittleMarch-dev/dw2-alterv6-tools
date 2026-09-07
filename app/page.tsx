@@ -79,7 +79,7 @@ export default function DW2App() {
 
             <div className="flex items-center gap-2 bg-slate-950 border border-slate-800 px-3 py-1.5 rounded-xl w-full sm:w-auto">
               <span className="text-[10px] font-bold text-amber-400 uppercase whitespace-nowrap">
-                Progress:
+                Select Domain:
               </span>
               <DomainDropdown
                 options={DOMAIN_ORDER}

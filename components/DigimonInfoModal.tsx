@@ -3,6 +3,7 @@
 import { useMemo } from "react";
 import { catalog, DIGIMON_MAP } from "@/lib/dnaEngine";
 import { formatStepDigimonName } from "@/lib/routeEngine";
+import catalogJson from "@/data/digimon-catalog.json";
 import skillData from "@/data/digimon-skill.json";
 
 interface DigimonInfoModalProps {
@@ -33,6 +34,14 @@ const getSkillLookupName = (rawName: string): string => {
   return cleanName;
 };
 
+function cleanSpeciesName(rawName: string): string {
+  if (!rawName) return "";
+  return rawName
+    .replace(/\s*\[.*?\]/g, "")
+    .trim()
+    .toLowerCase();
+}
+
 export function DigimonInfoModal({
   digimon,
   onClose,
@@ -41,7 +50,41 @@ export function DigimonInfoModal({
   onRemoveInventory,
 }: DigimonInfoModalProps) {
   const profile = catalog[digimon];
-  const locations = DIGIMON_MAP[digimon] || [];
+
+  // Strip variants for location check
+  const lookupKey = digimon
+    .replace(/\s*\[.*?\]/g, "")
+    .replace(/\s*\([MRA]\)/gi, "")
+    .trim();
+  const locations = DIGIMON_MAP[lookupKey] || DIGIMON_MAP[digimon] || [];
+
+  // Scans digimon-catalog.json evolutions arrays and captures DP requirements
+  const priorEvolutions = useMemo(() => {
+    if (locations.length > 0) return [];
+
+    const priors: { parent: string; dp: string }[] = [];
+    const cleanTarget = cleanSpeciesName(digimon);
+
+    Object.values(catalogJson).forEach((stageGroup: Record<string, any>) => {
+      Object.entries(stageGroup).forEach(([speciesName, specProfile]) => {
+        if (specProfile.evolutions && Array.isArray(specProfile.evolutions)) {
+          specProfile.evolutions.forEach(
+            (evo: { dp: string; target: string }) => {
+              if (
+                evo.target === digimon ||
+                evo.target.toLowerCase() === digimon.toLowerCase() ||
+                evo.target.toLowerCase().includes(cleanTarget)
+              ) {
+                priors.push({ parent: speciesName, dp: evo.dp });
+              }
+            },
+          );
+        }
+      });
+    });
+
+    return priors;
+  }, [digimon, locations]);
 
   const moves = useMemo(() => {
     let foundSkills: SkillInfo[] = [];
@@ -101,6 +144,7 @@ export function DigimonInfoModal({
 
         {/* Scrollable Body */}
         <div className="flex-1 overflow-y-auto space-y-3 text-xs pr-1">
+          {/* Moves & Skills */}
           <div className="space-y-2">
             <span className="text-amber-400 font-bold block uppercase text-[10px] tracking-wider">
               ⚔️ Learnable Moves & Skill Descriptions:
@@ -142,13 +186,6 @@ export function DigimonInfoModal({
                         No additional status effect for this skill.
                       </p>
                     )}
-
-                    {skill.Obtain && (
-                      <div className="text-[9px] text-slate-500 font-semibold pt-0.5">
-                        Source:{" "}
-                        <span className="text-slate-400">{skill.Obtain}</span>
-                      </div>
-                    )}
                   </div>
                 ))}
               </div>
@@ -168,27 +205,70 @@ export function DigimonInfoModal({
             )}
           </div>
 
+          {/* Locations OR Prior Forms */}
           <div className="pt-2 border-t border-slate-800">
-            <span className="text-amber-400 font-bold block mb-1.5 uppercase text-[10px] tracking-wider">
-              🗺️ Wild Encounters & Floor Range:
-            </span>
             {locations.length > 0 ? (
-              <div className="flex flex-col gap-1.5 max-h-36 overflow-y-auto pr-1">
-                {locations.map((loc, idx) => (
-                  <div
-                    key={idx}
-                    className="bg-slate-950 text-slate-200 border border-slate-800 text-[11px] px-2.5 py-1.5 rounded-xl flex items-center justify-between"
-                  >
-                    <span className="font-semibold text-slate-300">
-                      📍 {loc}
-                    </span>
-                  </div>
-                ))}
-              </div>
+              <>
+                <span className="text-amber-400 font-bold block mb-1.5 uppercase text-[10px] tracking-wider">
+                  🗺️ Wild Encounters & Floor Range:
+                </span>
+                <div className="flex flex-col gap-1.5 max-h-36 overflow-y-auto pr-1">
+                  {locations.map((loc, idx) => (
+                    <div
+                      key={idx}
+                      className="bg-slate-950 text-slate-200 border border-slate-800 text-[11px] px-2.5 py-1.5 rounded-xl flex items-center justify-between"
+                    >
+                      <span className="font-semibold text-slate-300">
+                        📍 {loc}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </>
             ) : (
-              <p className="text-slate-500 italic text-[11px]">
-                Not available in wild domains (DNA breeding only).
-              </p>
+              <>
+                <div className="flex items-center justify-between mb-1.5">
+                  <span className="text-purple-400 font-bold uppercase text-[10px] tracking-wider block">
+                    🟣 Must Digivolve (No Wild Encounters)
+                  </span>
+                  <span className="text-[9px] bg-purple-950 text-purple-300 border border-purple-500/30 px-2 py-0.5 rounded-full font-bold">
+                    Evolution Only
+                  </span>
+                </div>
+
+                <div className="bg-slate-950 border border-slate-800 p-3 rounded-2xl space-y-2">
+                  <p className="text-[10px] text-slate-400">
+                    This Digimon cannot be caught in wild domains. It must be
+                    evolved directly from a prior stage:
+                  </p>
+
+                  <div className="space-y-1.5">
+                    <span className="text-[9px] text-amber-400 font-bold uppercase tracking-wider block">
+                      Evolves Directly From:
+                    </span>
+                    <div className="flex flex-wrap gap-1.5">
+                      {priorEvolutions.length > 0 ? (
+                        priorEvolutions.map((item, idx) => (
+                          <span
+                            key={idx}
+                            className="bg-slate-900 text-amber-300 border border-amber-500/30 px-2.5 py-1 rounded-xl text-[11px] font-bold flex items-center gap-1.5"
+                          >
+                            <span>⚡ {formatStepDigimonName(item.parent)}</span>
+                            <span className="text-[9px] bg-amber-500/10 text-amber-400 border border-amber-500/20 px-1.5 py-0.2 rounded">
+                              DP {item.dp}
+                            </span>
+                          </span>
+                        ))
+                      ) : (
+                        <span className="text-[10px] text-slate-500 italic">
+                          Requires specific DNA evolution path (check Route
+                          Finder).
+                        </span>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              </>
             )}
           </div>
         </div>

@@ -14,6 +14,7 @@ import {
   formatStepDigimonName,
 } from "@/lib/routeEngine";
 import { AutocompleteInput } from "./AutocompleteInput";
+import { RouteStepCard, FodderStatus, FodderOption } from "./RouteStepCard";
 
 interface RouteFinderProps {
   unlockedDomain: string;
@@ -89,8 +90,6 @@ function copyDebugLogToClipboard(
   alert("📋 Engine debug trace copied to clipboard in JSON format!");
 }
 
-type FodderStatus = "OWNED" | "CATCHABLE" | "LOCKED_PROGRESS";
-
 function getFoddersForStep(
   fromDigimon?: string,
   expectedResult?: string,
@@ -98,16 +97,14 @@ function getFoddersForStep(
   fodderLevel?: StageLevel,
   userInventory: string[] = [],
   unlockedDomain: string = "All Domains",
-) {
+): FodderOption[] {
   if (!fromDigimon || !expectedResult || !family || !fodderLevel) return [];
 
-  // 1. Get all candidates matching family and tier
   const matches = Object.keys(catalog).filter(
     (key) =>
       catalog[key].family === family && catalog[key].level === fodderLevel,
   );
 
-  // 2. Validate each fodder through DNA logic
   const validMatches = matches.filter((fodderKey) => {
     const dnaRes = getAdvancedDnaResult(fromDigimon, fodderKey);
     return dnaRes.result === expectedResult;
@@ -115,17 +112,23 @@ function getFoddersForStep(
 
   return validMatches.map((name) => {
     const cleanName = sanitizeDisplayName(name);
+
+    // 1. Check inventory against both exact key and clean name
     const isOwned =
       userInventory.includes(name) || userInventory.includes(cleanName);
 
-    const locations = DIGIMON_MAP[name] || [];
+    // 2. Normalize lookup key for locations (e.g., "Omnimon (M)" -> "Omnimon")
+    const lookupKey = name.replace(/\s*\([MRA]\)/gi, "").trim();
+    const locations = DIGIMON_MAP[lookupKey] || DIGIMON_MAP[name] || [];
+    const isWild = locations.length > 0;
 
     let status: FodderStatus = "CATCHABLE";
 
     if (isOwned) {
       status = "OWNED";
+    } else if (!isWild) {
+      status = "MUST_DIGIVOLVE";
     } else if (unlockedDomain && unlockedDomain !== "All Domains") {
-      // Check if fodder appears in the selected domain
       const isAvailableInUnlocked = locations.some((locStr) => {
         const domainName = locStr.replace(/\s*\(Floor.*\)/gi, "").trim();
         return domainName.toLowerCase() === unlockedDomain.toLowerCase();
@@ -318,7 +321,7 @@ export function RouteFinder({
         </div>
       )}
 
-      {/* Warning Alert Banner */}
+      {/* Warning Banner */}
       {routeResult.warningNotice && (
         <div className="p-4 rounded-2xl bg-amber-500/10 border border-amber-500/40 text-amber-200 text-xs font-semibold flex items-center gap-2.5 shadow-lg">
           <span className="text-base">⚡</span>
@@ -428,95 +431,13 @@ export function RouteFinder({
               );
 
               return (
-                <div
+                <RouteStepCard
                   key={step.stepNumber}
-                  className="bg-slate-950 border border-slate-800 p-4 rounded-2xl space-y-3"
-                >
-                  <div className="flex justify-between items-center flex-wrap gap-2">
-                    <div className="flex items-center gap-2">
-                      <span className="bg-amber-400 text-slate-950 text-[10px] font-black px-2 py-0.5 rounded-md">
-                        STEP {step.stepNumber}
-                      </span>
-                      <span className="text-sm font-bold text-slate-100">
-                        {formatStepDigimonName(step.fromDigimon)} (
-                        {step.fromStage})
-                        <span className="text-slate-500 mx-1.5">➔</span>
-                        <span className="text-emerald-400">
-                          {formatStepDigimonName(step.toDigimon)}
-                        </span>{" "}
-                        ({step.toStage})
-                      </span>
-                    </div>
-
-                    <div className="flex items-center gap-2">
-                      <span className="text-[10px] bg-slate-900 border border-slate-800 px-2 py-0.5 rounded text-emerald-400 font-bold">
-                        Resulting DP: {formatDpDisplay(step.currentDp)}
-                      </span>
-                      <span
-                        className={`text-[10px] font-bold px-2 py-0.5 rounded ${
-                          step.actionType === "DNA"
-                            ? "bg-purple-900 text-purple-200"
-                            : "bg-blue-900 text-blue-200"
-                        }`}
-                      >
-                        {step.actionType === "DNA"
-                          ? `🧬 DNA RESET (${step.fodderFamily})`
-                          : `⚡ DIGIVOLVE`}
-                      </span>
-                    </div>
-                  </div>
-
-                  <div className="text-[11px] text-slate-400">
-                    <span className="text-slate-500 font-bold">Action: </span>
-                    {step.reason}
-                  </div>
-
-                  {step.actionType === "DNA" && fodders.length > 0 && (
-                    <div className="bg-slate-900 border border-slate-800/80 p-3 rounded-xl space-y-2">
-                      <div className="flex justify-between items-center flex-wrap gap-1">
-                        <span className="text-amber-400 font-bold uppercase text-[10px] tracking-wider block">
-                          Valid {step.fodderLevel} Fodders [{step.fodderFamily}{" "}
-                          Family] ({fodders.length} Options):
-                        </span>
-                        <div className="flex items-center gap-2 text-[9px] text-slate-400">
-                          <span>🟢 Owned</span>
-                          <span>🔵 Catchable</span>
-                          <span>🔴 Locked Progress</span>
-                        </div>
-                      </div>
-
-                      <div className="flex flex-wrap gap-1.5 max-h-40 overflow-y-auto pt-1">
-                        {fodders.map((fodder, idx) => {
-                          let badgeStyle =
-                            "bg-amber-500/10 text-amber-300 border-amber-500/30";
-                          let icon = "🔵";
-
-                          if (fodder.status === "OWNED") {
-                            badgeStyle =
-                              "bg-emerald-500/10 text-emerald-400 border-emerald-500/30";
-                            icon = "🟢";
-                          } else if (fodder.status === "LOCKED_PROGRESS") {
-                            badgeStyle =
-                              "bg-red-500/10 text-red-400 border-red-500/30 opacity-70";
-                            icon = "🔴";
-                          }
-
-                          return (
-                            <button
-                              key={`${fodder.name}-${idx}`}
-                              type="button"
-                              onClick={() => onSelectDigimon(fodder.name)}
-                              className={`text-[11px] font-semibold px-2.5 py-1 rounded-xl border flex items-center gap-1.5 transition-transform hover:scale-105 ${badgeStyle}`}
-                            >
-                              <span>{icon}</span>
-                              <span>{formatStepDigimonName(fodder.name)}</span>
-                            </button>
-                          );
-                        })}
-                      </div>
-                    </div>
-                  )}
-                </div>
+                  step={step}
+                  fodders={fodders}
+                  onSelectDigimon={onSelectDigimon}
+                  formatDpDisplay={formatDpDisplay}
+                />
               );
             })}
           </div>
