@@ -17,19 +17,16 @@ interface SkillInfo {
   name: string;
   Type?: string;
   target?: string;
-  attribute?: string;
+  attribute?: string | null;
   AP?: number;
   MP?: number;
-  Effect?: string;
+  Effect?: string | null;
   Obtain?: string;
 }
 
-// Helper function to strip variant labels & normalize names for skill lookup
 const getSkillLookupName = (rawName: string): string => {
-  // Strips " (M)", " (R)", " (A)" e.g., "Omnimon (M)" -> "Omnimon"
   const cleanName = rawName.replace(/\s*\([MRA]\)/gi, "").trim();
 
-  // Fix known case typos between catalog and skill JSON
   if (cleanName.toLowerCase() === "bk-i-dramon") return "BK-I-dramon";
   if (cleanName.toLowerCase() === "i-dramon") return "I-dramon";
 
@@ -46,13 +43,12 @@ export function DigimonInfoModal({
   const profile = catalog[digimon];
   const locations = DIGIMON_MAP[digimon] || [];
 
-  // Lookup skills for this Digimon variant and filter to match the specific signature skill
   const moves = useMemo(() => {
     let foundSkills: SkillInfo[] = [];
     const searchKey = getSkillLookupName(digimon);
 
     Object.values(skillData).forEach((stageGroup) => {
-      const stageMap = stageGroup as Record<string, SkillInfo[]>;
+      const stageMap = stageGroup as unknown as Record<string, SkillInfo[]>;
       const matchKey = Object.keys(stageMap).find(
         (k) => k.toLowerCase() === searchKey.toLowerCase(),
       );
@@ -60,11 +56,10 @@ export function DigimonInfoModal({
       if (matchKey) {
         const allSkills = stageMap[matchKey];
 
-        // Filter to match only the signature skill for this specific variant
         if (profile?.signature_skill) {
+          const sigSkillTarget = profile.signature_skill.toLowerCase();
           foundSkills = allSkills.filter(
-            (s) =>
-              s.name.toLowerCase() === profile.signature_skill.toLowerCase(),
+            (s) => s.name.toLowerCase() === sigSkillTarget,
           );
         } else {
           foundSkills = allSkills;
@@ -75,10 +70,8 @@ export function DigimonInfoModal({
     return foundSkills;
   }, [digimon, profile]);
 
-  // Convert raw catalog keys (e.g., "Omnimon (M)") to readable UI names
   const formattedTitle = formatStepDigimonName(digimon);
 
-  // Match inventory by raw catalog key or clean display name
   const isOwned = userInventory.some(
     (item) =>
       item === digimon || formatStepDigimonName(item) === formattedTitle,
@@ -106,9 +99,8 @@ export function DigimonInfoModal({
           </button>
         </div>
 
-        {/* Scrollable Content Body */}
+        {/* Scrollable Body */}
         <div className="flex-1 overflow-y-auto space-y-3 text-xs pr-1">
-          {/* Moves & Skills Section */}
           <div className="space-y-2">
             <span className="text-amber-400 font-bold block uppercase text-[10px] tracking-wider">
               ⚔️ Learnable Moves & Skill Descriptions:
@@ -138,7 +130,6 @@ export function DigimonInfoModal({
                       </div>
                     </div>
 
-                    {/* Full Effect / Description Box */}
                     {skill.Effect ? (
                       <p className="text-[10px] text-slate-200 bg-slate-900/90 p-2 rounded-lg border border-slate-800/80 leading-relaxed">
                         <span className="text-amber-400/80 font-semibold block text-[9px] uppercase tracking-wider mb-0.5">
@@ -162,7 +153,6 @@ export function DigimonInfoModal({
                 ))}
               </div>
             ) : profile?.signature_skill ? (
-              /* Fallback to signature skill from catalog if missing in skill.json */
               <div className="bg-slate-950 border border-slate-800 p-2.5 rounded-xl space-y-1">
                 <span className="font-bold text-amber-300 block">
                   {profile.signature_skill}
@@ -178,7 +168,6 @@ export function DigimonInfoModal({
             )}
           </div>
 
-          {/* Locations Section */}
           <div className="pt-2 border-t border-slate-800">
             <span className="text-amber-400 font-bold block mb-1.5 uppercase text-[10px] tracking-wider">
               🗺️ Wild Encounters & Floor Range:
@@ -204,7 +193,7 @@ export function DigimonInfoModal({
           </div>
         </div>
 
-        {/* Footer Actions */}
+        {/* Footer */}
         <div className="pt-2 border-t border-slate-800 shrink-0">
           {!isOwned ? (
             <button

@@ -8,6 +8,7 @@ import { formatStepDigimonName } from "@/lib/routeEngine";
 
 interface GlobalSearchProps {
   onSelectDigimon: (name: string) => void;
+  onSelectDomain?: (domainName: string) => void;
 }
 
 type CategoryFilter = "ALL" | "DIGIMON" | "SKILL" | "DOMAIN";
@@ -49,7 +50,10 @@ interface DomainResult {
 const normalizeStage = (stageStr: string): string =>
   stageStr.toLowerCase().replace(/s$/i, "").trim();
 
-export function GlobalSearch({ onSelectDigimon }: GlobalSearchProps) {
+export function GlobalSearch({
+  onSelectDigimon,
+  onSelectDomain,
+}: GlobalSearchProps) {
   const [query, setQuery] = useState<string>("");
   const [activeCategory, setActiveCategory] = useState<CategoryFilter>("ALL");
   const [selectedStage, setSelectedStage] = useState<StageFilter>("ALL");
@@ -133,7 +137,7 @@ export function GlobalSearch({ onSelectDigimon }: GlobalSearchProps) {
       const cleanLookupName = name.replace(/\s*\([MRA]\)/gi, "").trim();
       const learnedSkills = digimonLearnedSkillsMap.get(cleanLookupName) || [];
 
-      // Find signature skills of sibling variants (e.g. Multiply, Catastrophe Cannon, Paradise Lost)
+      // Find signature skills of sibling variants (e.g., Multiply, Catastrophe Cannon, Paradise Lost)
       const siblingSigSkills = new Set<string>();
       allDigimonMap.forEach(({ profile: siblingProfile }, siblingName) => {
         if (
@@ -566,13 +570,23 @@ export function GlobalSearch({ onSelectDigimon }: GlobalSearchProps) {
                         </div>
                       </div>
 
-                      <button
-                        onClick={() => setSelectedDomainModal(dom)}
-                        className="w-full bg-slate-900 hover:bg-slate-800 text-amber-300 border border-slate-800 font-bold py-1.5 rounded-xl text-[10px] transition-colors flex items-center justify-center gap-1.5"
-                      >
-                        <span>View All Encounters</span>
-                        <span className="text-[9px]">➔</span>
-                      </button>
+                      <div className="flex gap-2">
+                        <button
+                          onClick={() => setSelectedDomainModal(dom)}
+                          className="flex-1 bg-slate-900 hover:bg-slate-800 text-amber-300 border border-slate-800 font-bold py-1.5 rounded-xl text-[10px] transition-colors flex items-center justify-center gap-1.5"
+                        >
+                          <span>View Encounters</span>
+                          <span className="text-[9px]">➔</span>
+                        </button>
+                        {onSelectDomain && (
+                          <button
+                            onClick={() => onSelectDomain(dom.domainName)}
+                            className="bg-amber-500/10 hover:bg-amber-500/20 text-amber-300 border border-amber-500/30 px-2.5 py-1.5 rounded-xl text-[10px] font-bold transition-colors"
+                          >
+                            Set Progress
+                          </button>
+                        )}
+                      </div>
                     </div>
                   ))}
                 </div>
